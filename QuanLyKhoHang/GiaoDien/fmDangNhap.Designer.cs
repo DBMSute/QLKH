@@ -29,52 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmDangNhap));
-            this.pnBack2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.lb1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbLogin = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbRemember = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cbRemember = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.tbPW = new Bunifu.Framework.UI.BunifuTextbox();
-            this.tbACC = new Bunifu.Framework.UI.BunifuTextbox();
-            this.btnExit = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.pnBack2.SuspendLayout();
+            this.pnRight = new System.Windows.Forms.Panel();
+            this.btnExit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnLogin = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.tbPW = new System.Windows.Forms.TextBox();
+            this.tbACC = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnBack2
-            // 
-            this.pnBack2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnBack2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBack2.BackgroundImage")));
-            this.pnBack2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnBack2.Controls.Add(this.lb1);
-            this.pnBack2.Controls.Add(this.lbLogin);
-            this.pnBack2.Controls.Add(this.lbRemember);
-            this.pnBack2.Controls.Add(this.cbRemember);
-            this.pnBack2.Controls.Add(this.tbPW);
-            this.pnBack2.Controls.Add(this.tbACC);
-            this.pnBack2.Controls.Add(this.btnExit);
-            this.pnBack2.Controls.Add(this.btnLogin);
-            this.pnBack2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnBack2.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnBack2.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnBack2.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnBack2.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnBack2.Location = new System.Drawing.Point(561, 0);
-            this.pnBack2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnBack2.Name = "pnBack2";
-            this.pnBack2.Quality = 10;
-            this.pnBack2.Size = new System.Drawing.Size(399, 422);
-            this.pnBack2.TabIndex = 6;
             // 
             // lb1
             // 
             this.lb1.AutoSize = true;
             this.lb1.BackColor = System.Drawing.Color.Transparent;
-            this.lb1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lb1.ForeColor = System.Drawing.Color.White;
-            this.lb1.Location = new System.Drawing.Point(26, 131);
+            this.lb1.Location = new System.Drawing.Point(231, 167);
             this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(112, 20);
+            this.lb1.Size = new System.Drawing.Size(116, 21);
             this.lb1.TabIndex = 7;
             this.lb1.Text = "Who are you?";
             // 
@@ -82,11 +61,11 @@
             // 
             this.lbLogin.AutoSize = true;
             this.lbLogin.BackColor = System.Drawing.Color.Transparent;
-            this.lbLogin.Font = new System.Drawing.Font("Century Gothic", 54F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLogin.Font = new System.Drawing.Font("Century Gothic", 50F);
             this.lbLogin.ForeColor = System.Drawing.Color.White;
-            this.lbLogin.Location = new System.Drawing.Point(-6, 3);
+            this.lbLogin.Location = new System.Drawing.Point(3, 18);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(374, 87);
+            this.lbLogin.Size = new System.Drawing.Size(351, 81);
             this.lbLogin.TabIndex = 0;
             this.lbLogin.Text = "Welcome";
             // 
@@ -96,7 +75,7 @@
             this.lbRemember.BackColor = System.Drawing.Color.Transparent;
             this.lbRemember.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRemember.ForeColor = System.Drawing.Color.White;
-            this.lbRemember.Location = new System.Drawing.Point(273, 300);
+            this.lbRemember.Location = new System.Drawing.Point(251, 306);
             this.lbRemember.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRemember.Name = "lbRemember";
             this.lbRemember.Size = new System.Drawing.Size(96, 21);
@@ -110,122 +89,174 @@
             this.cbRemember.Checked = true;
             this.cbRemember.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.cbRemember.ForeColor = System.Drawing.Color.White;
-            this.cbRemember.Location = new System.Drawing.Point(251, 302);
+            this.cbRemember.Location = new System.Drawing.Point(226, 307);
+            this.cbRemember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbRemember.Name = "cbRemember";
             this.cbRemember.Size = new System.Drawing.Size(20, 20);
             this.cbRemember.TabIndex = 7;
             // 
-            // tbPW
+            // pnRight
             // 
-            this.tbPW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbPW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbPW.BackgroundImage")));
-            this.tbPW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tbPW.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPW.ForeColor = System.Drawing.Color.White;
-            this.tbPW.Icon = ((System.Drawing.Image)(resources.GetObject("tbPW.Icon")));
-            this.tbPW.Location = new System.Drawing.Point(30, 230);
-            this.tbPW.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbPW.Name = "tbPW";
-            this.tbPW.Size = new System.Drawing.Size(338, 61);
-            this.tbPW.TabIndex = 2;
-            this.tbPW.text = "Password...";
-            this.tbPW.OnTextChange += new System.EventHandler(this.tbPW_OnTextChange);
-            // 
-            // tbACC
-            // 
-            this.tbACC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbACC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbACC.BackgroundImage")));
-            this.tbACC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tbACC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbACC.ForeColor = System.Drawing.Color.White;
-            this.tbACC.Icon = ((System.Drawing.Image)(resources.GetObject("tbACC.Icon")));
-            this.tbACC.Location = new System.Drawing.Point(30, 154);
-            this.tbACC.Name = "tbACC";
-            this.tbACC.Size = new System.Drawing.Size(338, 61);
-            this.tbACC.TabIndex = 1;
-            this.tbACC.text = "Account...";
+            this.pnRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnRight.Controls.Add(this.pictureBox2);
+            this.pnRight.Controls.Add(this.pictureBox1);
+            this.pnRight.Controls.Add(this.btnExit);
+            this.pnRight.Controls.Add(this.btnLogin);
+            this.pnRight.Controls.Add(this.tbPW);
+            this.pnRight.Controls.Add(this.tbACC);
+            this.pnRight.Controls.Add(this.lb1);
+            this.pnRight.Controls.Add(this.lbLogin);
+            this.pnRight.Controls.Add(this.lbRemember);
+            this.pnRight.Controls.Add(this.cbRemember);
+            this.pnRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnRight.Location = new System.Drawing.Point(506, 0);
+            this.pnRight.Name = "pnRight";
+            this.pnRight.Size = new System.Drawing.Size(398, 447);
+            this.pnRight.TabIndex = 7;
             // 
             // btnExit
             // 
-            this.btnExit.ActiveBorderThickness = 4;
-            this.btnExit.ActiveCornerRadius = 20;
-            this.btnExit.ActiveFillColor = System.Drawing.Color.Black;
-            this.btnExit.ActiveForecolor = System.Drawing.Color.White;
-            this.btnExit.ActiveLineColor = System.Drawing.Color.White;
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExit.BackColor = System.Drawing.Color.Gray;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.BorderRadius = 0;
             this.btnExit.ButtonText = "Exit";
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.IdleBorderThickness = 4;
-            this.btnExit.IdleCornerRadius = 20;
-            this.btnExit.IdleFillColor = System.Drawing.Color.Transparent;
-            this.btnExit.IdleForecolor = System.Drawing.Color.White;
-            this.btnExit.IdleLineColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(208, 334);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnExit.DisabledColor = System.Drawing.Color.Gray;
+            this.btnExit.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnExit.Iconimage = null;
+            this.btnExit.Iconimage_right = null;
+            this.btnExit.Iconimage_right_Selected = null;
+            this.btnExit.Iconimage_Selected = null;
+            this.btnExit.IconMarginLeft = 0;
+            this.btnExit.IconMarginRight = 0;
+            this.btnExit.IconRightVisible = true;
+            this.btnExit.IconRightZoom = 0D;
+            this.btnExit.IconVisible = true;
+            this.btnExit.IconZoom = 90D;
+            this.btnExit.IsTab = false;
+            this.btnExit.Location = new System.Drawing.Point(229, 363);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(160, 61);
-            this.btnExit.TabIndex = 5;
+            this.btnExit.Normalcolor = System.Drawing.Color.Gray;
+            this.btnExit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExit.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnExit.selected = false;
+            this.btnExit.Size = new System.Drawing.Size(118, 48);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "Exit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnExit.Textcolor = System.Drawing.Color.White;
+            this.btnExit.TextFont = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.ActiveBorderThickness = 4;
-            this.btnLogin.ActiveCornerRadius = 20;
-            this.btnLogin.ActiveFillColor = System.Drawing.Color.Black;
-            this.btnLogin.ActiveForecolor = System.Drawing.Color.White;
-            this.btnLogin.ActiveLineColor = System.Drawing.Color.White;
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
+            this.btnLogin.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLogin.BackColor = System.Drawing.Color.Gray;
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogin.BorderRadius = 0;
             this.btnLogin.ButtonText = "Login";
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.IdleBorderThickness = 4;
-            this.btnLogin.IdleCornerRadius = 20;
-            this.btnLogin.IdleFillColor = System.Drawing.Color.Transparent;
-            this.btnLogin.IdleForecolor = System.Drawing.Color.White;
-            this.btnLogin.IdleLineColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(30, 334);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLogin.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLogin.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLogin.Iconimage = null;
+            this.btnLogin.Iconimage_right = null;
+            this.btnLogin.Iconimage_right_Selected = null;
+            this.btnLogin.Iconimage_Selected = null;
+            this.btnLogin.IconMarginLeft = 0;
+            this.btnLogin.IconMarginRight = 0;
+            this.btnLogin.IconRightVisible = true;
+            this.btnLogin.IconRightZoom = 0D;
+            this.btnLogin.IconVisible = true;
+            this.btnLogin.IconZoom = 90D;
+            this.btnLogin.IsTab = false;
+            this.btnLogin.Location = new System.Drawing.Point(97, 363);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(160, 61);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.Normalcolor = System.Drawing.Color.Gray;
+            this.btnLogin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLogin.selected = false;
+            this.btnLogin.Size = new System.Drawing.Size(118, 48);
+            this.btnLogin.TabIndex = 0;
+            this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.Textcolor = System.Drawing.Color.White;
+            this.btnLogin.TextFont = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // tbPW
+            // 
+            this.tbPW.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPW.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPW.Location = new System.Drawing.Point(97, 259);
+            this.tbPW.Name = "tbPW";
+            this.tbPW.PasswordChar = '*';
+            this.tbPW.Size = new System.Drawing.Size(250, 34);
+            this.tbPW.TabIndex = 9;
+            // 
+            // tbACC
+            // 
+            this.tbACC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbACC.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbACC.Location = new System.Drawing.Point(97, 201);
+            this.tbACC.Name = "tbACC";
+            this.tbACC.Size = new System.Drawing.Size(250, 34);
+            this.tbACC.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.icons8_lock_501;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(51, 253);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.icons8_user_501;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(51, 195);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
             // fmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(960, 422);
-            this.Controls.Add(this.pnBack2);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(904, 447);
+            this.Controls.Add(this.pnRight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmDangNhap";
-            this.pnBack2.ResumeLayout(false);
-            this.pnBack2.PerformLayout();
+            this.pnRight.ResumeLayout(false);
+            this.pnRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuGradientPanel pnBack2;
         private Bunifu.Framework.UI.BunifuCustomLabel lb1;
         private Bunifu.Framework.UI.BunifuCustomLabel lbLogin;
         private Bunifu.Framework.UI.BunifuCustomLabel lbRemember;
         private Bunifu.Framework.UI.BunifuCheckbox cbRemember;
-        private Bunifu.Framework.UI.BunifuTextbox tbPW;
-        private Bunifu.Framework.UI.BunifuTextbox tbACC;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnExit;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
+        private System.Windows.Forms.Panel pnRight;
+        private Bunifu.Framework.UI.BunifuFlatButton btnLogin;
+        private System.Windows.Forms.TextBox tbPW;
+        private System.Windows.Forms.TextBox tbACC;
+        private Bunifu.Framework.UI.BunifuFlatButton btnExit;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

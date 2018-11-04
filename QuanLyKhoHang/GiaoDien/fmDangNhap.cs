@@ -22,10 +22,5 @@ namespace QuanLyKhoHang.GiaoDien
         {
             this.Close();
         }
-
-        private void tbPW_OnTextChange(object sender, EventArgs e)
-        {
-
-        }
     }
 }
