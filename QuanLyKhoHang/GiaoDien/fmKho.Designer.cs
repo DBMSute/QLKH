@@ -59,8 +59,9 @@
             this.panel1.Controls.Add(this.dtgvKho);
             this.panel1.Controls.Add(this.txtTimKiem);
             this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(883, 520);
+            this.panel1.Size = new System.Drawing.Size(1177, 640);
             this.panel1.TabIndex = 0;
             // 
             // btnQuyenTruyCap
@@ -70,9 +71,10 @@
             this.btnQuyenTruyCap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuyenTruyCap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuyenTruyCap.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQuyenTruyCap.Location = new System.Drawing.Point(312, 78);
+            this.btnQuyenTruyCap.Location = new System.Drawing.Point(416, 96);
+            this.btnQuyenTruyCap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuyenTruyCap.Name = "btnQuyenTruyCap";
-            this.btnQuyenTruyCap.Size = new System.Drawing.Size(140, 30);
+            this.btnQuyenTruyCap.Size = new System.Drawing.Size(187, 37);
             this.btnQuyenTruyCap.TabIndex = 30;
             this.btnQuyenTruyCap.Text = "Quyền Truy Cập";
             this.btnQuyenTruyCap.UseVisualStyleBackColor = false;
@@ -85,9 +87,10 @@
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnReload.Location = new System.Drawing.Point(688, 77);
+            this.btnReload.Location = new System.Drawing.Point(917, 95);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(162, 30);
+            this.btnReload.Size = new System.Drawing.Size(216, 37);
             this.btnReload.TabIndex = 29;
             this.btnReload.Text = "Luu";
             this.btnReload.UseVisualStyleBackColor = false;
@@ -100,9 +103,10 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSua.Location = new System.Drawing.Point(176, 78);
+            this.btnSua.Location = new System.Drawing.Point(235, 96);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(62, 30);
+            this.btnSua.Size = new System.Drawing.Size(83, 37);
             this.btnSua.TabIndex = 28;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -115,9 +119,10 @@
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnIn.Location = new System.Drawing.Point(244, 78);
+            this.btnIn.Location = new System.Drawing.Point(325, 96);
+            this.btnIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(62, 30);
+            this.btnIn.Size = new System.Drawing.Size(83, 37);
             this.btnIn.TabIndex = 27;
             this.btnIn.Text = "In";
             this.btnIn.UseVisualStyleBackColor = false;
@@ -130,9 +135,10 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoa.Location = new System.Drawing.Point(108, 78);
+            this.btnXoa.Location = new System.Drawing.Point(144, 96);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(62, 30);
+            this.btnXoa.Size = new System.Drawing.Size(83, 37);
             this.btnXoa.TabIndex = 26;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -145,9 +151,10 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnThem.Location = new System.Drawing.Point(38, 78);
+            this.btnThem.Location = new System.Drawing.Point(51, 96);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(62, 30);
+            this.btnThem.Size = new System.Drawing.Size(83, 37);
             this.btnThem.TabIndex = 25;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -160,9 +167,10 @@
             this.btnHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHang.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnHang.Location = new System.Drawing.Point(110, 16);
+            this.btnHang.Location = new System.Drawing.Point(147, 20);
+            this.btnHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHang.Name = "btnHang";
-            this.btnHang.Size = new System.Drawing.Size(62, 30);
+            this.btnHang.Size = new System.Drawing.Size(83, 37);
             this.btnHang.TabIndex = 24;
             this.btnHang.Text = "Hàng";
             this.btnHang.UseVisualStyleBackColor = false;
@@ -175,9 +183,10 @@
             this.btnKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKho.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKho.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnKho.Location = new System.Drawing.Point(38, 16);
+            this.btnKho.Location = new System.Drawing.Point(51, 20);
+            this.btnKho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnKho.Name = "btnKho";
-            this.btnKho.Size = new System.Drawing.Size(62, 30);
+            this.btnKho.Size = new System.Drawing.Size(83, 37);
             this.btnKho.TabIndex = 22;
             this.btnKho.Text = "Kho";
             this.btnKho.UseVisualStyleBackColor = false;
@@ -190,9 +199,10 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTimKiem.Location = new System.Drawing.Point(688, 17);
+            this.btnTimKiem.Location = new System.Drawing.Point(917, 21);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(162, 30);
+            this.btnTimKiem.Size = new System.Drawing.Size(216, 37);
             this.btnTimKiem.TabIndex = 21;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
@@ -202,27 +212,30 @@
             // 
             this.dtgvKho.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
             this.dtgvKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvKho.Location = new System.Drawing.Point(38, 113);
+            this.dtgvKho.Location = new System.Drawing.Point(51, 139);
+            this.dtgvKho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgvKho.Name = "dtgvKho";
-            this.dtgvKho.Size = new System.Drawing.Size(812, 407);
+            this.dtgvKho.Size = new System.Drawing.Size(1083, 501);
             this.dtgvKho.TabIndex = 1;
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(224, 16);
+            this.txtTimKiem.Location = new System.Drawing.Point(299, 20);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(448, 31);
+            this.txtTimKiem.Size = new System.Drawing.Size(596, 37);
             this.txtTimKiem.TabIndex = 0;
             // 
             // fmKhoHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(883, 526);
+            this.ClientSize = new System.Drawing.Size(1177, 647);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fmKhoHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmKhoHang";

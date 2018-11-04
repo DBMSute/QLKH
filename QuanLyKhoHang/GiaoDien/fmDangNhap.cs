@@ -15,6 +15,17 @@ namespace QuanLyKhoHang.GiaoDien
         public fmDangNhap()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbPW_OnTextChange(object sender, EventArgs e)
+        {
+
         }
     }
 }
