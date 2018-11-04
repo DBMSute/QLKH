@@ -63,6 +63,26 @@ namespace QuanLyKhoHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _392507_64 {
+            get {
+                object obj = ResourceManager.GetObject("392507-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _809537_64 {
+            get {
+                object obj = ResourceManager.GetObject("809537-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_delete_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-delete-26", resourceCulture);
@@ -86,6 +106,16 @@ namespace QuanLyKhoHang.Properties {
         internal static System.Drawing.Bitmap icons8_user_501 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap large_modern_warehouse_theme_blur_background_1385_1615 {
+            get {
+                object obj = ResourceManager.GetObject("large-modern-warehouse-theme-blur-background_1385-1615", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

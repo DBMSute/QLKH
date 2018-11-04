@@ -74,6 +74,12 @@
       <DependentUpon>fmQuanLy.cs</DependentUpon>
     </Compile>
     <Compile Include="Config\Program.cs" />
+    <Compile Include="GiaoDien\fmQuanLy2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmQuanLy2.Designer.cs">
+      <DependentUpon>fmQuanLy2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GiaoDien\fmDangNhap.resx">
       <DependentUpon>fmDangNhap.cs</DependentUpon>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmQuanLy.resx">
       <DependentUpon>fmQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmQuanLy2.resx">
+      <DependentUpon>fmQuanLy2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,6 +133,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-delete-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\large-modern-warehouse-theme-blur-background_1385-1615.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\392507-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\809537-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
