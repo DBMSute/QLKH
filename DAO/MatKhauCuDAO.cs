@@ -8,8 +8,8 @@ namespace DAO
 {
    public class MatKhauCuDAO
     {
-       private static MatKhauCuDAO instance;
-       public static MatKhauCuDAO Instace
+        private static MatKhauCuDAO instance;
+        public static MatKhauCuDAO Instace
         {
             get
             {

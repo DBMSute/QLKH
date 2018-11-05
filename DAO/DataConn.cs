@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace DAO
 {
-   public class DataConn
+    public class DataConn
     {
-        private static DataConn instance;
+         private static DataConn instance;
         public static DataConn Instance
         {
             get
@@ -19,8 +19,8 @@ namespace DAO
                 return instance;
             }
         }
-        //public string connStr = @"Data Source=localhost;Initial Catalog=FinalProject;Integrated Security=True";
-        public string connStr = @"Server=tcp:c601.database.windows.net,1433;
+        public string connStr = @"Data Source=localhost;Initial Catalog=FinalProject;Integrated Security=True";
+        /*public string connStr = @"Server=tcp:c601.database.windows.net,1433;
                                 Initial Catalog=FinalProject;
                                 Persist Security Info=False;
                                 User ID=datnt;Password=Dat13579;
@@ -28,7 +28,7 @@ namespace DAO
                                 Encrypt=True;
                                 TrustServerCertificate=False;
                                 Connection Timeout=300;";
-                                
+                                */
         public DataTable ExecuteQuery(string QuerySql)
         {
             DataTable data = new DataTable();
@@ -42,4 +42,5 @@ namespace DAO
             return data;
         }
     }
+    
 }

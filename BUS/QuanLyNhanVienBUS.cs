@@ -17,5 +17,10 @@ namespace BUS
                 return instance;
             }
         }
+       public int Check(string tenTk,string pass)
+       {
+           return 1;
+          // return DAO.TaiKhoanDAO.Instance.Check(tenTk, pass);
+       }
     }
 }

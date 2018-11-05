@@ -67,18 +67,18 @@
     <Compile Include="GiaoDien\fmNCC_NV_KH.Designer.cs">
       <DependentUpon>fmNCC_NV_KH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config\Program.cs" />
+    <Compile Include="GiaoDien\fmNhaCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmNhaCC.Designer.cs">
+      <DependentUpon>fmNhaCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\fmQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GiaoDien\fmQuanLy.Designer.cs">
       <DependentUpon>fmQuanLy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Config\Program.cs" />
-    <Compile Include="GiaoDien\fmQuanLy2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GiaoDien\fmQuanLy2.Designer.cs">
-      <DependentUpon>fmQuanLy2.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GiaoDien\fmDangNhap.resx">
@@ -90,11 +90,11 @@
     <EmbeddedResource Include="GiaoDien\fmNCC_NV_KH.resx">
       <DependentUpon>fmNCC_NV_KH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmNhaCC.resx">
+      <DependentUpon>fmNhaCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmQuanLy.resx">
       <DependentUpon>fmQuanLy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\fmQuanLy2.resx">
-      <DependentUpon>fmQuanLy2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,28 +120,55 @@
     <None Include="Config\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BUS\BUS.csproj">
-      <Project>{b8c40567-fdee-4e84-8826-a78c84ec1323}</Project>
-      <Name>BUS</Name>
-    </ProjectReference>
+    <None Include="Resources\avt.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-user-501.png" />
+    <None Include="Resources\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-lock-501.png" />
+    <None Include="Resources\customer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-delete-26.png" />
+    <None Include="Resources\edit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\large-modern-warehouse-theme-blur-background_1385-1615.jpg" />
+    <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\392507-64.png" />
+    <None Include="Resources\password.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\809537-64.png" />
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

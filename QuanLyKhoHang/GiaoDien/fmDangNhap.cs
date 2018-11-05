@@ -42,7 +42,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (cpLoading.Value == 100)
             {
                 tmrLoading.Stop();
-                fmQuanLy2 fm = new fmQuanLy2();
+                fmQuanLy fm = new fmQuanLy();
                 fm.Show();
                 this.Hide();
             }

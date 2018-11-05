@@ -172,7 +172,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.icons8_user_501;
+            this.pictureBox2.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.user;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(51, 195);
             this.pictureBox2.Name = "pictureBox2";
@@ -183,7 +183,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.icons8_lock_501;
+            this.pictureBox1.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.password;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(51, 253);
             this.pictureBox1.Name = "pictureBox1";
@@ -235,7 +235,7 @@
             // 
             // tmrLoading
             // 
-            this.tmrLoading.Interval = 20;
+            this.tmrLoading.Interval = 1;
             this.tmrLoading.Tick += new System.EventHandler(this.tmrLoading_Tick);
             // 
             // fmDangNhap
@@ -244,7 +244,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Teal;
-            this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.large_modern_warehouse_theme_blur_background_1385_1615;
+            this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(904, 447);
             this.Controls.Add(this.cpLoading);

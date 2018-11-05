@@ -8,8 +8,8 @@ namespace DAO
 {
    public class ChiTietPhieuXuatDAO
     {
-       private static ChiTietPhieuXuatDAO instance;
-       public static ChiTietPhieuXuatDAO Instace
+        private static ChiTietPhieuXuatDAO instance;
+        public static ChiTietPhieuXuatDAO Instace
         {
             get
             {

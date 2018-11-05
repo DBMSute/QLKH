@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLyKhoHang.GiaoDien
 {
-    public partial class fmNCC_NV_KH : Form
+    public partial class fmNhaCC : Form
     {
-        public fmNCC_NV_KH()
+        public fmNhaCC()
         {
             InitializeComponent();
         }
 
-        private void fmKhoHang_Load(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-                //BUS.KhoBUS.Instace.loadData(dtgvNhaCC);
+            Application.Exit();
         }
-
-
     }
 }

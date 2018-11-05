@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class PhieuXuatDAO
+   public class PhieuXuatDAO
     {
         private static PhieuXuatDAO instance;
         public static PhieuXuatDAO Instace

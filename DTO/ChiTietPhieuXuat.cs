@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class ChiTietPhieuXuat
+  public  class ChiTietPhieuXuat
     {
         public string idpx, idsp, idkh, idkho, soLuong, tongTien;
         public string IDPX
@@ -39,7 +39,7 @@ namespace DTO
             get { return tongTien; }
             set { tongTien = value; }
         }
-        public ChiTietPhieuXuat(string idpx,string idsp,string idkh,string idkho,string
+        public ChiTietPhieuXuat(string idpx, string idsp, string idkh, string idkho, string
             soLuong, string tongTien)
         {
             this.idpx = idpx;

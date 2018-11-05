@@ -40,7 +40,7 @@ namespace QuanLyKhoHang.GiaoDien
         {
             try
             {
-                BUS.KhoBUS.Instace.timKiem(dtgvKho, txtTimKiem.Text);
+                //BUS.KhoBUS.Instace.timKiem(dtgvKho, txtTimKiem.Text);
             }
             catch
             {
@@ -86,7 +86,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void fmKhoHang_Load(object sender, EventArgs e)
         {
-           BUS.KhoBUS.Instace.loadData(dtgvKho);
+           //BUS.KhoBUS.Instace.loadData(dtgvKho);
         }
 
        

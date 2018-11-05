@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class SanPham
+   public class SanPham
     {
-        public string id, ten, idLoai, idKho, donViTinh,tenKho,diaChi;
+        public string id, ten, idLoai, idKho, donViTinh, tenKho, diaChi;
         public float donGia;
         public bool tinhTrang;
         public string ID
@@ -54,10 +54,10 @@ namespace DTO
         public string DIACHI
         {
             get { return diaChi; }
-            set {diaChi = value; }
+            set { diaChi = value; }
         }
-        public SanPham(string id,string ten,string idLoai,string idKho,float donGia,string donViTinh
-            ,string tenKho,string diaChi,bool tinhTrang)
+        public SanPham(string id, string ten, string idLoai, string idKho, float donGia, string donViTinh
+            , string tenKho, string diaChi, bool tinhTrang)
         {
             this.id = id;
             this.ten = ten;

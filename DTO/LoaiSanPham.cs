@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class LoaiSanPham
+   public class LoaiSanPham
     {
         public string id, ten, moTa;
         public string ID
         {
             get { return id; }
-            set { id = value;}
+            set { id = value; }
         }
         public string TEN
         {
@@ -24,7 +24,7 @@ namespace DTO
             get { return moTa; }
             set { moTa = value; }
         }
-        public LoaiSanPham(string id,string ten,string moTa)
+        public LoaiSanPham(string id, string ten, string moTa)
         {
             this.id = id;
             this.ten = ten;

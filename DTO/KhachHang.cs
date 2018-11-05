@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class KhachHang
+   public class KhachHang
     {
+
         public string id, ten, soDT, diaChi;
         public string ID
         {
@@ -29,7 +30,17 @@ namespace DTO
             get { return diaChi; }
             set { diaChi = value; }
         }
-        public KhachHang(string id,string ten,string soDT,string diaChi)
+        public KhachHang()
+        {
+
+        }
+        public KhachHang( string ten, string soDT, string diaChi)
+        {
+            this.ten = ten;
+            this.soDT = soDT;
+            this.diaChi = diaChi;
+        }
+        public KhachHang(string id, string ten, string soDT, string diaChi)
         {
             this.id = id;
             this.ten = ten;
