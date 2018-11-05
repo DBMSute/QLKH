@@ -28,6 +28,7 @@ namespace QuanLyKhoHang.GiaoDien
             cpLoading.Visible = true;
             pnRight.Enabled = false;
             tmrLoading.Start();
+           
             
         }
 

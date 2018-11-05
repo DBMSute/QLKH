@@ -96,6 +96,9 @@ namespace QuanLyKhoHang.GiaoDien
         {
             tmrButon.Enabled = true;
             co = 0;
+            fmNCC_NV_KH fm = new fmNCC_NV_KH();
+            fm.Show();
+            this.Hide();
         }
 
         private void btnCus_Click(object sender, EventArgs e)
@@ -128,11 +131,11 @@ namespace QuanLyKhoHang.GiaoDien
             if (pnProfile.Size == new Size(367, 460))
             {   
                 pnProfile.Size = new Size(246, 97);
-                pnProfile.BackColor = Color.FromArgb(0, 0, 0, 0);
+                pnProfile.BackColor = Color.Transparent;
                 return;
             }
             pnProfile.BackColor = Color.FromArgb(150, 0, 0, 0);
-            pnProfile.Size = new Size(367, 460);                  
+            pnProfile.Size = new Size(367, 460);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -88,9 +88,9 @@
             // cbRemember
             // 
             this.cbRemember.BackColor = System.Drawing.Color.Black;
-            this.cbRemember.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.cbRemember.ChechedOffColor = System.Drawing.Color.Black;
             this.cbRemember.Checked = true;
-            this.cbRemember.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.cbRemember.CheckedOnColor = System.Drawing.Color.Black;
             this.cbRemember.ForeColor = System.Drawing.Color.White;
             this.cbRemember.Location = new System.Drawing.Point(226, 307);
             this.cbRemember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

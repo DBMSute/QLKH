@@ -17,7 +17,10 @@ namespace QuanLyKhoHang.GiaoDien
             InitializeComponent();
         }
 
-    
+        private void fmKhoHang_Load(object sender, EventArgs e)
+        {
+                BUS.KhoBUS.Instace.loadData(dtgvNhaCC);
+        }
 
 
     }

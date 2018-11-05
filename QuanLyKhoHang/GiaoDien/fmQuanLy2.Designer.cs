@@ -39,6 +39,8 @@
             this.lbName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnProfile = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lbDataLG = new System.Windows.Forms.Label();
             this.lbDataDOB = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,10 +52,8 @@
             this.lbLastName = new System.Windows.Forms.Label();
             this.lbFirstName = new System.Windows.Forms.Label();
             this.lbPosition = new System.Windows.Forms.Label();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.tmrButon = new System.Windows.Forms.Timer(this.components);
-            this.btnEdit = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnAvar)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnProfile.SuspendLayout();
@@ -176,9 +176,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.pnProfile);
             this.panel1.Controls.Add(this.btnAna);
-            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnSup);
             this.panel1.Controls.Add(this.btnEmp);
             this.panel1.Controls.Add(this.btnCus);
@@ -211,6 +211,32 @@
             this.pnProfile.Name = "pnProfile";
             this.pnProfile.Size = new System.Drawing.Size(246, 97);
             this.pnProfile.TabIndex = 9;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 17F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(196, 382);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(124, 48);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 17F);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(42, 382);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(124, 48);
+            this.btnEdit.TabIndex = 20;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // lbDataLG
             // 
@@ -344,75 +370,22 @@
             this.lbPosition.TabIndex = 7;
             this.lbPosition.Text = "Manager";
             // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.icons8_delete_26;
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(798, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 8;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // tmrButon
             // 
             this.tmrButon.Interval = 3;
             this.tmrButon.Tick += new System.EventHandler(this.tmrButon_Tick);
             // 
-            // btnEdit
+            // btnExit
             // 
-            this.btnEdit.ActiveBorderThickness = 1;
-            this.btnEdit.ActiveCornerRadius = 1;
-            this.btnEdit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnEdit.ActiveForecolor = System.Drawing.Color.White;
-            this.btnEdit.ActiveLineColor = System.Drawing.Color.White;
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
-            this.btnEdit.ButtonText = "Edit";
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 17F);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.IdleBorderThickness = 1;
-            this.btnEdit.IdleCornerRadius = 1;
-            this.btnEdit.IdleFillColor = System.Drawing.Color.Transparent;
-            this.btnEdit.IdleForecolor = System.Drawing.Color.White;
-            this.btnEdit.IdleLineColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(199, 379);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(142, 63);
-            this.btnEdit.TabIndex = 18;
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnSave
-            // 
-            this.btnSave.ActiveBorderThickness = 1;
-            this.btnSave.ActiveCornerRadius = 1;
-            this.btnSave.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSave.ActiveForecolor = System.Drawing.Color.White;
-            this.btnSave.ActiveLineColor = System.Drawing.Color.White;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.ButtonText = "Save";
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 17F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.IdleBorderThickness = 1;
-            this.btnSave.IdleCornerRadius = 1;
-            this.btnSave.IdleFillColor = System.Drawing.Color.Transparent;
-            this.btnSave.IdleForecolor = System.Drawing.Color.White;
-            this.btnSave.IdleLineColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(21, 379);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(142, 63);
-            this.btnSave.TabIndex = 19;
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.icons8_delete_26;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.Location = new System.Drawing.Point(798, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // fmQuanLy2
             // 
@@ -448,7 +421,6 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbPosition;
-        private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private System.Windows.Forms.Timer tmrButon;
         private System.Windows.Forms.Panel pnProfile;
         private System.Windows.Forms.Label lbAddress;
@@ -461,7 +433,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbDataLN;
         private System.Windows.Forms.Label lbDataFN;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnEdit;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnSave;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox btnExit;
     }
 }
