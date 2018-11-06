@@ -25,11 +25,15 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (BUS.TaiKhoanBUS.Instace.checkAccount(tbACC.Text, tbPW.Text) == false)
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu sai!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             cpLoading.Visible = true;
             pnRight.Enabled = false;
             tmrLoading.Start();
-           
-            
+          
         }
 
         private void tmrLoading_Tick(object sender, EventArgs e)
