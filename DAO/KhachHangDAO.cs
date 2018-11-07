@@ -87,7 +87,7 @@ namespace DAO
      
       public void Xoa(string id)
         {
-            string str = "delete from  KhachHang where id='" + id + "'";
+            string str = "exec sp_Delete_KhachHang  @id='" + id + "'";
             DataConn.Instance.ExecuteQuery(str);
         }
     }

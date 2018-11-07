@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhoHang.GiaoDien
 {
-    partial class fmNhaCC
+    partial class fmNhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmNhaCC));
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbNhaCC = new System.Windows.Forms.Label();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.pnMidL = new System.Windows.Forms.Panel();
-            this.dtgvSup = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SODT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmNhanVien));
             this.QGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SODT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnMidR = new System.Windows.Forms.Panel();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.pbSearch = new System.Windows.Forms.PictureBox();
@@ -49,120 +41,42 @@
             this.btnPrint = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDel = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnAdd = new Bunifu.Framework.UI.BunifuTileButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbNhaCC = new System.Windows.Forms.Label();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pnMidL = new System.Windows.Forms.Panel();
+            this.dtgvSup = new System.Windows.Forms.DataGridView();
+            this.pnTop = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.pnTop.SuspendLayout();
+            this.pnMidR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnMidL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSup)).BeginInit();
-            this.pnMidR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
+            this.pnTop.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnTop
+            // QGIA
             // 
-            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnTop.Controls.Add(this.btnback);
-            this.pnTop.Controls.Add(this.btnExit);
-            this.pnTop.Controls.Add(this.lbNhaCC);
-            this.pnTop.Controls.Add(this.bunifuCircleProgressbar1);
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1080, 100);
-            this.pnTop.TabIndex = 0;
+            this.QGIA.DataPropertyName = "QGIA";
+            this.QGIA.HeaderText = "Quốc gia";
+            this.QGIA.Name = "QGIA";
             // 
-            // btnback
+            // DIACHI
             // 
-            this.btnback.BackColor = System.Drawing.Color.Transparent;
-            this.btnback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnback.Image = global::QuanLyKhoHang.Properties.Resources.back;
-            this.btnback.ImageActive = null;
-            this.btnback.Location = new System.Drawing.Point(12, 12);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(40, 40);
-            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnback.TabIndex = 3;
-            this.btnback.TabStop = false;
-            this.btnback.Zoom = 10;
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
             // 
-            // btnExit
+            // TEN
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1028, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lbNhaCC
-            // 
-            this.lbNhaCC.AutoSize = true;
-            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
-            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
-            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
-            this.lbNhaCC.Location = new System.Drawing.Point(68, 4);
-            this.lbNhaCC.Name = "lbNhaCC";
-            this.lbNhaCC.Size = new System.Drawing.Size(293, 94);
-            this.lbNhaCC.TabIndex = 0;
-            this.lbNhaCC.Text = "Supply";
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 3;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 4;
-            this.bunifuCircleProgressbar1.LineThickness = 3;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(496, 0);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(7);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(100, 100);
-            this.bunifuCircleProgressbar1.TabIndex = 1;
-            this.bunifuCircleProgressbar1.Value = 25;
-            // 
-            // pnMidL
-            // 
-            this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnMidL.Controls.Add(this.dtgvSup);
-            this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnMidL.Location = new System.Drawing.Point(10, 110);
-            this.pnMidL.Name = "pnMidL";
-            this.pnMidL.Size = new System.Drawing.Size(740, 500);
-            this.pnMidL.TabIndex = 1;
-            // 
-            // dtgvSup
-            // 
-            this.dtgvSup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvSup.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvSup.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvSup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.TEN,
-            this.DIACHI,
-            this.SODT,
-            this.QGIA});
-            this.dtgvSup.Location = new System.Drawing.Point(10, 10);
-            this.dtgvSup.Name = "dtgvSup";
-            this.dtgvSup.Size = new System.Drawing.Size(721, 480);
-            this.dtgvSup.TabIndex = 2;
-            this.dtgvSup.TabStop = false;
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên";
+            this.TEN.Name = "TEN";
             // 
             // ID
             // 
@@ -171,37 +85,11 @@
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên";
-            this.TEN.Name = "TEN";
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.Name = "DIACHI";
-            // 
             // SODT
             // 
             this.SODT.DataPropertyName = "SODT";
             this.SODT.HeaderText = "Số điện thoại";
             this.SODT.Name = "SODT";
-            // 
-            // QGIA
-            // 
-            this.QGIA.DataPropertyName = "QGIA";
-            this.QGIA.HeaderText = "Quốc gia";
-            this.QGIA.Name = "QGIA";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(0, 620);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1080, 100);
-            this.panel2.TabIndex = 1;
             // 
             // pnMidR
             // 
@@ -215,7 +103,7 @@
             this.pnMidR.Location = new System.Drawing.Point(757, 110);
             this.pnMidR.Name = "pnMidR";
             this.pnMidR.Size = new System.Drawing.Size(310, 500);
-            this.pnMidR.TabIndex = 2;
+            this.pnMidR.TabIndex = 6;
             // 
             // tbSearch
             // 
@@ -258,7 +146,6 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(135, 135);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPrint
             // 
@@ -316,15 +203,125 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(135, 135);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(0, 620);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1080, 100);
+            this.panel2.TabIndex = 4;
+            // 
+            // lbNhaCC
+            // 
+            this.lbNhaCC.AutoSize = true;
+            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
+            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
+            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
+            this.lbNhaCC.Location = new System.Drawing.Point(68, 4);
+            this.lbNhaCC.Name = "lbNhaCC";
+            this.lbNhaCC.Size = new System.Drawing.Size(423, 94);
+            this.lbNhaCC.TabIndex = 0;
+            this.lbNhaCC.Text = "Employee";
+            // 
+            // bunifuCircleProgressbar1
+            // 
+            this.bunifuCircleProgressbar1.animated = false;
+            this.bunifuCircleProgressbar1.animationIterval = 3;
+            this.bunifuCircleProgressbar1.animationSpeed = 300;
+            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
+            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCircleProgressbar1.LabelVisible = true;
+            this.bunifuCircleProgressbar1.LineProgressThickness = 4;
+            this.bunifuCircleProgressbar1.LineThickness = 3;
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(689, 0);
+            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(7);
+            this.bunifuCircleProgressbar1.MaxValue = 100;
+            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
+            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(100, 100);
+            this.bunifuCircleProgressbar1.TabIndex = 1;
+            this.bunifuCircleProgressbar1.Value = 25;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.Color.Transparent;
+            this.btnback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnback.Image = global::QuanLyKhoHang.Properties.Resources.back;
+            this.btnback.ImageActive = null;
+            this.btnback.Location = new System.Drawing.Point(12, 12);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(40, 40);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnback.TabIndex = 3;
+            this.btnback.TabStop = false;
+            this.btnback.Zoom = 10;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(1028, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            // 
+            // pnMidL
+            // 
+            this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMidL.Controls.Add(this.dtgvSup);
+            this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnMidL.Location = new System.Drawing.Point(10, 110);
+            this.pnMidL.Name = "pnMidL";
+            this.pnMidL.Size = new System.Drawing.Size(740, 500);
+            this.pnMidL.TabIndex = 5;
+            // 
+            // dtgvSup
+            // 
+            this.dtgvSup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvSup.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvSup.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvSup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TEN,
+            this.DIACHI,
+            this.SODT,
+            this.QGIA});
+            this.dtgvSup.Location = new System.Drawing.Point(10, 10);
+            this.dtgvSup.Name = "dtgvSup";
+            this.dtgvSup.Size = new System.Drawing.Size(721, 480);
+            this.dtgvSup.TabIndex = 2;
+            this.dtgvSup.TabStop = false;
+            // 
+            // pnTop
+            // 
+            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnTop.Controls.Add(this.btnback);
+            this.pnTop.Controls.Add(this.btnExit);
+            this.pnTop.Controls.Add(this.lbNhaCC);
+            this.pnTop.Controls.Add(this.bunifuCircleProgressbar1);
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(1080, 100);
+            this.pnTop.TabIndex = 3;
             // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.panel2);
-            this.bunifuGradientPanel1.Controls.Add(this.pnMidR);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidL);
+            this.bunifuGradientPanel1.Controls.Add(this.pnMidR);
+            this.bunifuGradientPanel1.Controls.Add(this.panel2);
             this.bunifuGradientPanel1.Controls.Add(this.pnTop);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
@@ -337,28 +334,25 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(1080, 720);
             this.bunifuGradientPanel1.TabIndex = 8;
             // 
-            // fmNhaCC
+            // fmNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 720);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "fmNhaCC";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fmNhaCC";
-            this.pnTop.ResumeLayout(false);
-            this.pnTop.PerformLayout();
+            this.Name = "fmNhanVien";
+            this.Text = "fmNhanVien";
+            this.pnMidR.ResumeLayout(false);
+            this.pnMidR.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.pnMidL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSup)).EndInit();
-            this.pnMidR.ResumeLayout(false);
-            this.pnMidR.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
+            this.pnTop.ResumeLayout(false);
+            this.pnTop.PerformLayout();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -366,26 +360,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnTop;
-        private System.Windows.Forms.Label lbNhaCC;
-        private System.Windows.Forms.Panel pnMidL;
-        private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
-        private Bunifu.Framework.UI.BunifuImageButton btnback;
-        private Bunifu.Framework.UI.BunifuImageButton btnExit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QGIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SODT;
         private System.Windows.Forms.Panel pnMidR;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.PictureBox pbSearch;
         private Bunifu.Framework.UI.BunifuTileButton btnSave;
         private Bunifu.Framework.UI.BunifuTileButton btnPrint;
         private Bunifu.Framework.UI.BunifuTileButton btnDel;
         private Bunifu.Framework.UI.BunifuTileButton btnAdd;
-        private System.Windows.Forms.PictureBox pbSearch;
-        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbNhaCC;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
+        private Bunifu.Framework.UI.BunifuImageButton btnback;
+        private Bunifu.Framework.UI.BunifuImageButton btnExit;
+        private System.Windows.Forms.Panel pnMidL;
         private System.Windows.Forms.DataGridView dtgvSup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SODT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QGIA;
+        private System.Windows.Forms.Panel pnTop;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
     }
 }

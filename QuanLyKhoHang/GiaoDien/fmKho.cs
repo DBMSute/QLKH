@@ -10,85 +10,81 @@ using System.Windows.Forms;
 
 namespace QuanLyKhoHang.GiaoDien
 {
-    public partial class fmKhoHang : Form
+    public partial class fmKho : Form
     {
-        private bool isKho = true;
-        public fmKhoHang()
+        public fmKho()
         {
             InitializeComponent();
+            BUS.KhoBUS.Instance.loadData(dtgvWare);
+
+        }
+     
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            dtgvWare.Visible = false;
+            dtgvWare.Size = new Size(0, 0);
+            tmrSlide.Start();
         }
 
-        //Xem hang hoac kho
-        //kho      
-        private void btnKho_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            btnKho.BackColor = Color.FromArgb(254, 141, 0);
-            btnHang.BackColor = Color.FromArgb(157, 87, 2);
-            isKho = true;
+            Application.Exit();
         }
-        //Hang
-        private void btnHang_Click(object sender, EventArgs e)
-        {
-            btnHang.BackColor = Color.FromArgb(254, 141, 0);
-            btnKho.BackColor = Color.FromArgb(157, 87, 2);
-            isKho = false;
-        }
-        //
 
-        //Tim Kiem
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private void tmrSlide_Tick(object sender, EventArgs e)
         {
-            try
+            int X, Y;
+            if (pnMidL.Location.X <= -990)
             {
-                //BUS.KhoBUS.Instace.timKiem(dtgvKho, txtTimKiem.Text);
+                if (pnMidL2.Location.X == 10)
+                {
+                    dtgvWare2.Size = new Size(721, 430);
+                    dtgvWare2.Visible = true;
+                    tmrSlide.Stop();
+                    return;
+                }
+                X = pnMidL2.Location.X;
+                Y = pnMidL2.Location.Y;
+                pnMidL2.Location = new Point(X + 100, Y);
             }
-            catch
+            else
             {
 
+                X = pnMidL.Location.X;
+                Y = pnMidL.Location.Y;
+                pnMidL.Location = new Point(X - 100, Y);
             }
         }
 
-        //Them
-        private void btnThem_Click(object sender, EventArgs e)
+        private void tmrSlide2_Tick(object sender, EventArgs e)
         {
-
+            int X, Y;
+            if (pnMidL2.Location.X <= -990)
+            {
+                if (pnMidL.Location.X == 10)
+                {
+                    dtgvWare.Size = new Size(721, 430);
+                    dtgvWare.Visible = true;
+                    tmrSlide2.Stop();
+                    return;
+                }
+                X = pnMidL.Location.X;
+                Y = pnMidL.Location.Y;
+                pnMidL.Location = new Point(X + 100, Y);
+            }
+            else
+            {
+                X = pnMidL2.Location.X;
+                Y = pnMidL2.Location.Y;
+                pnMidL2.Location = new Point(X - 100, Y);
+            }
         }
 
-        //Xoa
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnBack2_Click(object sender, EventArgs e)
         {
-
+            dtgvWare2.Visible = false;
+            dtgvWare2.Size = new Size(0, 0);
+            tmrSlide2.Start();
         }
-
-        //Sua
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //In
-        private void btnIn_Click(object sender, EventArgs e)
-        {
-
-        }
-       
-        //Reload
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //Quyen Truy Cap
-        private void btnQuyenTruyCap_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fmKhoHang_Load(object sender, EventArgs e)
-        {
-           //BUS.KhoBUS.Instace.loadData(dtgvKho);
-        }
-
-       
     }
 }

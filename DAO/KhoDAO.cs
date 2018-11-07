@@ -100,7 +100,7 @@ namespace DAO
        }
        public void xoaKho(string id)
        {
-           string str = "delete from Kho where id='" + id + "'";
+           string str = "exec sp_Delete_KhachHang  @id='" + id + "'";
            DataConn.Instance.ExecuteQuery(str);
        }
     }

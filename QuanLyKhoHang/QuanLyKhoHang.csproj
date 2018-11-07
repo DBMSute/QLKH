@@ -55,6 +55,12 @@
     <Compile Include="GiaoDien\fmDangNhap.Designer.cs">
       <DependentUpon>fmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDien\fmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmKhachHang.Designer.cs">
+      <DependentUpon>fmKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\fmKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     <Compile Include="GiaoDien\fmNhaCC.Designer.cs">
       <DependentUpon>fmNhaCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDien\fmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmNhanVien.Designer.cs">
+      <DependentUpon>fmNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\fmQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +96,9 @@
     <EmbeddedResource Include="GiaoDien\fmDangNhap.resx">
       <DependentUpon>fmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmKhachHang.resx">
+      <DependentUpon>fmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmKho.resx">
       <DependentUpon>fmKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmNhaCC.resx">
       <DependentUpon>fmNhaCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmNhanVien.resx">
+      <DependentUpon>fmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmQuanLy.resx">
       <DependentUpon>fmQuanLy.cs</DependentUpon>

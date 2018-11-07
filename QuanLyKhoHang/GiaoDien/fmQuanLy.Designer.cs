@@ -31,10 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmQuanLy));
             this.tmrButon = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAna = new Bunifu.Framework.UI.BunifuTileButton();
+            this.pnMain = new System.Windows.Forms.Panel();
+            this.btnKho = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnSup = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnAna = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnEmp = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnCus = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.pnProfile = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
@@ -52,9 +55,8 @@
             this.lbName = new System.Windows.Forms.Label();
             this.btnAvar = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbPosition = new System.Windows.Forms.Label();
-            this.btnKho = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnCus = new Bunifu.Framework.UI.BunifuTileButton();
-            this.panel1.SuspendLayout();
+            this.pnMain.SuspendLayout();
+            this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAvar)).BeginInit();
@@ -65,43 +67,41 @@
             this.tmrButon.Interval = 3;
             this.tmrButon.Tick += new System.EventHandler(this.tmrButon_Tick);
             // 
-            // panel1
+            // pnMain
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel1.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.pnProfile);
-            this.panel1.Controls.Add(this.btnKho);
-            this.panel1.Controls.Add(this.btnSup);
-            this.panel1.Controls.Add(this.btnAna);
-            this.panel1.Controls.Add(this.btnEmp);
-            this.panel1.Controls.Add(this.btnCus);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(840, 547);
-            this.panel1.TabIndex = 7;
+            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnMain.Controls.Add(this.btnKho);
+            this.pnMain.Controls.Add(this.btnSup);
+            this.pnMain.Controls.Add(this.btnAna);
+            this.pnMain.Controls.Add(this.btnEmp);
+            this.pnMain.Controls.Add(this.btnCus);
+            this.pnMain.Controls.Add(this.bunifuGradientPanel1);
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.Location = new System.Drawing.Point(0, 0);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(840, 547);
+            this.pnMain.TabIndex = 7;
             // 
-            // btnAna
+            // btnKho
             // 
-            this.btnAna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(81)))), ((int)(((byte)(27)))));
-            this.btnAna.color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(81)))), ((int)(((byte)(27)))));
-            this.btnAna.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(111)))), ((int)(((byte)(57)))));
-            this.btnAna.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAna.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnAna.ForeColor = System.Drawing.Color.White;
-            this.btnAna.Image = global::QuanLyKhoHang.Properties.Resources.analytics;
-            this.btnAna.ImagePosition = 20;
-            this.btnAna.ImageZoom = 40;
-            this.btnAna.LabelPosition = 51;
-            this.btnAna.LabelText = "Thống kê";
-            this.btnAna.Location = new System.Drawing.Point(550, 352);
-            this.btnAna.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.btnAna.Name = "btnAna";
-            this.btnAna.Size = new System.Drawing.Size(190, 160);
-            this.btnAna.TabIndex = 21;
-            this.btnAna.Click += new System.EventHandler(this.btnAna_Click);
+            this.btnKho.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnKho.color = System.Drawing.Color.SeaGreen;
+            this.btnKho.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnKho.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKho.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnKho.ForeColor = System.Drawing.Color.White;
+            this.btnKho.Image = global::QuanLyKhoHang.Properties.Resources.warehouse;
+            this.btnKho.ImagePosition = 20;
+            this.btnKho.ImageZoom = 50;
+            this.btnKho.LabelPosition = 51;
+            this.btnKho.LabelText = "Warehouse";
+            this.btnKho.Location = new System.Drawing.Point(111, 158);
+            this.btnKho.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnKho.Name = "btnKho";
+            this.btnKho.Size = new System.Drawing.Size(190, 160);
+            this.btnKho.TabIndex = 17;
+            this.btnKho.Click += new System.EventHandler(this.btnKho_Click);
             // 
             // btnSup
             // 
@@ -115,13 +115,33 @@
             this.btnSup.ImagePosition = 20;
             this.btnSup.ImageZoom = 20;
             this.btnSup.LabelPosition = 51;
-            this.btnSup.LabelText = "Nhà cung cấp";
+            this.btnSup.LabelText = "Supply";
             this.btnSup.Location = new System.Drawing.Point(111, 352);
             this.btnSup.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.btnSup.Name = "btnSup";
-            this.btnSup.Size = new System.Drawing.Size(407, 160);
+            this.btnSup.Size = new System.Drawing.Size(190, 160);
             this.btnSup.TabIndex = 20;
             this.btnSup.Click += new System.EventHandler(this.btnSup_Click);
+            // 
+            // btnAna
+            // 
+            this.btnAna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(81)))), ((int)(((byte)(27)))));
+            this.btnAna.color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(81)))), ((int)(((byte)(27)))));
+            this.btnAna.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(111)))), ((int)(((byte)(57)))));
+            this.btnAna.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAna.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnAna.ForeColor = System.Drawing.Color.White;
+            this.btnAna.Image = global::QuanLyKhoHang.Properties.Resources.analytics;
+            this.btnAna.ImagePosition = 20;
+            this.btnAna.ImageZoom = 40;
+            this.btnAna.LabelPosition = 51;
+            this.btnAna.LabelText = "Analyze";
+            this.btnAna.Location = new System.Drawing.Point(550, 352);
+            this.btnAna.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnAna.Name = "btnAna";
+            this.btnAna.Size = new System.Drawing.Size(190, 160);
+            this.btnAna.TabIndex = 21;
+            this.btnAna.Click += new System.EventHandler(this.btnAna_Click);
             // 
             // btnEmp
             // 
@@ -135,13 +155,50 @@
             this.btnEmp.ImagePosition = 20;
             this.btnEmp.ImageZoom = 40;
             this.btnEmp.LabelPosition = 51;
-            this.btnEmp.LabelText = "Nhân viên";
+            this.btnEmp.LabelText = "Employee";
             this.btnEmp.Location = new System.Drawing.Point(550, 158);
             this.btnEmp.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.btnEmp.Name = "btnEmp";
             this.btnEmp.Size = new System.Drawing.Size(190, 160);
             this.btnEmp.TabIndex = 19;
             this.btnEmp.Click += new System.EventHandler(this.btnEmp_Click);
+            // 
+            // btnCus
+            // 
+            this.btnCus.BackColor = System.Drawing.Color.Maroon;
+            this.btnCus.color = System.Drawing.Color.Maroon;
+            this.btnCus.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCus.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnCus.ForeColor = System.Drawing.Color.White;
+            this.btnCus.Image = global::QuanLyKhoHang.Properties.Resources.customer;
+            this.btnCus.ImagePosition = 20;
+            this.btnCus.ImageZoom = 40;
+            this.btnCus.LabelPosition = 51;
+            this.btnCus.LabelText = "Customer";
+            this.btnCus.Location = new System.Drawing.Point(328, 158);
+            this.btnCus.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnCus.Name = "btnCus";
+            this.btnCus.Size = new System.Drawing.Size(190, 160);
+            this.btnCus.TabIndex = 18;
+            this.btnCus.Click += new System.EventHandler(this.btnCus_Click);
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnExit);
+            this.bunifuGradientPanel1.Controls.Add(this.pnProfile);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Red;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(840, 547);
+            this.bunifuGradientPanel1.TabIndex = 22;
             // 
             // btnExit
             // 
@@ -157,7 +214,7 @@
             // 
             // pnProfile
             // 
-            this.pnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pnProfile.Controls.Add(this.btnSave);
             this.pnProfile.Controls.Add(this.btnEdit);
             this.pnProfile.Controls.Add(this.lbDataLG);
@@ -364,60 +421,21 @@
             this.lbPosition.TabIndex = 7;
             this.lbPosition.Text = "Manager";
             // 
-            // btnKho
-            // 
-            this.btnKho.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnKho.color = System.Drawing.Color.SeaGreen;
-            this.btnKho.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnKho.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKho.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnKho.ForeColor = System.Drawing.Color.White;
-            this.btnKho.Image = ((System.Drawing.Image)(resources.GetObject("btnKho.Image")));
-            this.btnKho.ImagePosition = 20;
-            this.btnKho.ImageZoom = 40;
-            this.btnKho.LabelPosition = 51;
-            this.btnKho.LabelText = "Kho";
-            this.btnKho.Location = new System.Drawing.Point(111, 158);
-            this.btnKho.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.btnKho.Name = "btnKho";
-            this.btnKho.Size = new System.Drawing.Size(190, 160);
-            this.btnKho.TabIndex = 17;
-            this.btnKho.Click += new System.EventHandler(this.btnKho_Click);
-            // 
-            // btnCus
-            // 
-            this.btnCus.BackColor = System.Drawing.Color.Maroon;
-            this.btnCus.color = System.Drawing.Color.Maroon;
-            this.btnCus.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCus.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnCus.ForeColor = System.Drawing.Color.White;
-            this.btnCus.Image = global::QuanLyKhoHang.Properties.Resources.customer;
-            this.btnCus.ImagePosition = 20;
-            this.btnCus.ImageZoom = 40;
-            this.btnCus.LabelPosition = 51;
-            this.btnCus.LabelText = "Khách Hàng";
-            this.btnCus.Location = new System.Drawing.Point(328, 158);
-            this.btnCus.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.btnCus.Name = "btnCus";
-            this.btnCus.Size = new System.Drawing.Size(190, 160);
-            this.btnCus.TabIndex = 18;
-            this.btnCus.Click += new System.EventHandler(this.btnCus_Click);
-            // 
             // fmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(840, 547);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnMain);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fmQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmQuanLy2";
-            this.panel1.ResumeLayout(false);
+            this.pnMain.ResumeLayout(false);
+            this.bunifuGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.pnProfile.ResumeLayout(false);
             this.pnProfile.PerformLayout();
@@ -429,7 +447,7 @@
         #endregion
         private Bunifu.Framework.UI.BunifuImageButton btnAvar;
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.Label lbPosition;
         private System.Windows.Forms.Timer tmrButon;
         private System.Windows.Forms.Panel pnProfile;
@@ -451,5 +469,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnCus;
         private Bunifu.Framework.UI.BunifuTileButton btnAna;
         private Bunifu.Framework.UI.BunifuTileButton btnSup;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
     }
 }

@@ -21,7 +21,7 @@ namespace DAO
         public List<DTO.NhaCungCap> loadData()
         {
             List<DTO.NhaCungCap> lNcc = new List<DTO.NhaCungCap>();
-            string str = "select * from NhaCungCap";
+            string str = "select * from VI_NhaCungCap_LoadData";
             DataTable data = DataConn.Instance.ExecuteQuery(str);
             foreach (DataRow item in data.Rows)
             {
@@ -91,7 +91,7 @@ namespace DAO
        }
        public void Xoa(string id)
        {
-           string str = "delete from  NhaCungCap where id='" + id + "'";
+           string str = "exec sp_Delete_KhachHang  @id='" + id + "'";
            DataConn.Instance.ExecuteQuery(str);
        }
     }

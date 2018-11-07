@@ -14,7 +14,6 @@ namespace QuanLyKhoHang.GiaoDien
     {
         private int co = -1;
         private int dem = 0;
-        Size s = new Size();
         Size sbtnKho = new Size();
         Size sKhachHang = new Size();
         Size sNhaCC = new Size();
@@ -38,8 +37,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void tmrButon_Tick(object sender, EventArgs e)
         {
-            Size s = new Size();
-            
+            Size s = new Size();        
             if (dem < 7)
             {
                 if (co == 0)
