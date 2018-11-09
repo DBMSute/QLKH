@@ -20,15 +20,15 @@ namespace DAO
             }
         }
         public string connStr = @"Data Source=localhost;Initial Catalog=FinalProject;Integrated Security=True";
-        /*public string connStr = @"Server=tcp:c601.database.windows.net,1433;
-                                Initial Catalog=FinalProject;
-                                Persist Security Info=False;
-                                User ID=datnt;Password=Dat13579;
-                                MultipleActiveResultSets=False;
-                                Encrypt=True;
-                                TrustServerCertificate=False;
-                                Connection Timeout=300;";
-                                */
+        //public string connStr = @"Server=tcp:c601.database.windows.net,1433;
+        //                        Initial Catalog=FinalProject;
+        //                        Persist Security Info=False;
+        //                        User ID=poonnguyen295;Password=Poon13579;
+        //                        MultipleActiveResultSets=False;
+        //                        Encrypt=True;
+        //                        TrustServerCertificate=False;
+        //                        Connection Timeout=300;";
+                                
         public DataTable ExecuteQueryTable(string QuerySql)
         {
             DataTable data = new DataTable();

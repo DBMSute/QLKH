@@ -43,7 +43,18 @@
   <ItemGroup>
     <Compile Include="ChiTietPhieuNhapDAO.cs" />
     <Compile Include="ChiTietPhieuXuatDAO.cs" />
-    <Compile Include="DataConn.cs" />
+    <Compile Include="Config\DataConn.cs" />
+    <Compile Include="DTO\ChiTietPhieuNhap.cs" />
+    <Compile Include="DTO\ChiTietPhieuXuat.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\Kho.cs" />
+    <Compile Include="DTO\LoaiSanPham.cs" />
+    <Compile Include="DTO\MatKhauCu.cs" />
+    <Compile Include="DTO\NhaCungCap.cs" />
+    <Compile Include="DTO\PhieuNhap.cs" />
+    <Compile Include="DTO\PhieuXuat.cs" />
+    <Compile Include="DTO\SanPham.cs" />
+    <Compile Include="DTO\TaiKhoan.cs" />
     <Compile Include="KhachHangDAO.cs" />
     <Compile Include="KhoDAO.cs" />
     <Compile Include="LoaiSanPhamDAO.cs" />
@@ -58,12 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{561806a1-e8f3-4dfa-9d11-9f813e01add9}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
+    <None Include="Config\App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

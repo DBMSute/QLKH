@@ -49,6 +49,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyNhanVienBUS.cs" />
+    <Compile Include="SanPhamBUS.cs" />
     <Compile Include="TaiKhoanBUS.cs" />
     <Compile Include="ThongKeBUS.cs" />
   </ItemGroup>
@@ -59,10 +60,6 @@
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{9d20353d-5142-454e-97ee-6d6a14d48764}</Project>
       <Name>DAO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{561806a1-e8f3-4dfa-9d11-9f813e01add9}</Project>
-      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
