@@ -18,10 +18,10 @@ namespace DAO
             }
         }
 
-        public string CheckAccount(string tenTk)
+        public bool CheckAccount(string tenTk, string passWd)
         {
-            string str = "SELECT dbo.FN_TaiKhoan_GetPasswd('" + tenTk + "')"; 
-            return DataConn.Instance.ExecuteQueryScalar(str);
+            string str = "SELECT dbo.FN_TaiKhoan_CheckLogin('" + tenTk + "','" + passWd + "')"; 
+            return Convert.ToBoolean(DataConn.Instance.ExecuteQueryScalar(str));
         }
 
         public void updateAvatar(string id, byte[] avt)
@@ -78,7 +78,7 @@ namespace DAO
                             "@per = " + pers + "," +
                             "@tinhtrang = " + tinhtrang;
             
-DataConn.Instance.ExecuteQueryScalar(str);
+            DataConn.Instance.ExecuteQueryTable(str);
         }
 
         public void updatePW(string id, string opw, string npw)

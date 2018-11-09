@@ -152,11 +152,10 @@
   <data name="btnLogin.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIwAAAA/CAYAAAAyniDlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADfSURBVHhe7dKxbcNQEAVBls4qWA3hNlSOLBKCo/uyNp8D
-        JrgX7/a6A4JxhJVxhJVxhJVxhJVxhJXt2Pf95+ncP3d1cgdzPe96YOndiWD4jmBIBEMiGBLBkAiGRDAk
-        giERDIlgSARDIhgSwZAIhkQwJIIhEQyJYEgEQyIYEsGQCIZEMCSCIREMiWBIBEMiGBLBkAiGRDAkgiER
-        DIlgSARDIhgSwZAIhkQwJIIhEQyJYEgEQyIYEsGQCIZEMCSCIREMyV8w53k+rse5T3d1cgcDwTjCyjjC
-        yjjCyjjCYDt+AV2LMK52PIuCAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC8SURBVHhe7dIxDoNAEATBeyo/80/vMEgmIMDu1KqSVtrJ
+        ewAAAHC31treB99sn2DW+cCDqxPB8AvBkAiGRDAkgiERDIlgSARDIhgSwZAIhkQwJIIhEQyJYEgEQyIY
+        EsGQCIZEMCSCIREMiWBIBEMiGBLBkAiGRDAkgiERDIlgSARDIhgSwZAIhkQwJIIhEQyJYEgEQyIYEsGQ
+        CIZEMCSCIREMiWBIBEMiGJKrkznn6xjw5OjkDAYAAP7XGDtr9uBgtHNuRwAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="pictureBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

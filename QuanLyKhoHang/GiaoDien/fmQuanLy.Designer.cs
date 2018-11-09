@@ -34,6 +34,10 @@
             this.pnMain = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pnProfile = new System.Windows.Forms.Panel();
+            this.btnEditAD = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEditDOB = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEditLN = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEditFN = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbDataCD = new System.Windows.Forms.Label();
             this.lbCD = new System.Windows.Forms.Label();
             this.lbDataST = new System.Windows.Forms.Label();
@@ -65,20 +69,16 @@
             this.ofdAVT = new System.Windows.Forms.OpenFileDialog();
             this.tmrExtend = new System.Windows.Forms.Timer(this.components);
             this.tmrExtend2 = new System.Windows.Forms.Timer(this.components);
-            this.btnEditFN = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnEditLN = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnEditDOB = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnEditAD = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnMain.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             this.pnProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditAD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditDOB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditLN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditFN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExtend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditFN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditLN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditDOB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditAD)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrButon
@@ -150,8 +150,64 @@
             this.pnProfile.Controls.Add(this.lbPosition);
             this.pnProfile.Location = new System.Drawing.Point(32, 12);
             this.pnProfile.Name = "pnProfile";
-            this.pnProfile.Size = new System.Drawing.Size(395, 470);
+            this.pnProfile.Size = new System.Drawing.Size(299, 135);
             this.pnProfile.TabIndex = 9;
+            // 
+            // btnEditAD
+            // 
+            this.btnEditAD.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditAD.Image = global::QuanLyKhoHang.Properties.Resources.edit;
+            this.btnEditAD.ImageActive = null;
+            this.btnEditAD.Location = new System.Drawing.Point(10, 238);
+            this.btnEditAD.Name = "btnEditAD";
+            this.btnEditAD.Size = new System.Drawing.Size(20, 20);
+            this.btnEditAD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditAD.TabIndex = 31;
+            this.btnEditAD.TabStop = false;
+            this.btnEditAD.Zoom = 10;
+            this.btnEditAD.Click += new System.EventHandler(this.btnEditAD_Click);
+            // 
+            // btnEditDOB
+            // 
+            this.btnEditDOB.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditDOB.Image = global::QuanLyKhoHang.Properties.Resources.edit;
+            this.btnEditDOB.ImageActive = null;
+            this.btnEditDOB.Location = new System.Drawing.Point(10, 208);
+            this.btnEditDOB.Name = "btnEditDOB";
+            this.btnEditDOB.Size = new System.Drawing.Size(20, 20);
+            this.btnEditDOB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditDOB.TabIndex = 30;
+            this.btnEditDOB.TabStop = false;
+            this.btnEditDOB.Zoom = 10;
+            this.btnEditDOB.Click += new System.EventHandler(this.btnEditDOB_Click);
+            // 
+            // btnEditLN
+            // 
+            this.btnEditLN.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditLN.Image = global::QuanLyKhoHang.Properties.Resources.edit;
+            this.btnEditLN.ImageActive = null;
+            this.btnEditLN.Location = new System.Drawing.Point(10, 178);
+            this.btnEditLN.Name = "btnEditLN";
+            this.btnEditLN.Size = new System.Drawing.Size(20, 20);
+            this.btnEditLN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditLN.TabIndex = 29;
+            this.btnEditLN.TabStop = false;
+            this.btnEditLN.Zoom = 10;
+            this.btnEditLN.Click += new System.EventHandler(this.btnEditLN_Click);
+            // 
+            // btnEditFN
+            // 
+            this.btnEditFN.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditFN.Image = global::QuanLyKhoHang.Properties.Resources.edit;
+            this.btnEditFN.ImageActive = null;
+            this.btnEditFN.Location = new System.Drawing.Point(10, 148);
+            this.btnEditFN.Name = "btnEditFN";
+            this.btnEditFN.Size = new System.Drawing.Size(20, 20);
+            this.btnEditFN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditFN.TabIndex = 23;
+            this.btnEditFN.TabStop = false;
+            this.btnEditFN.Zoom = 10;
+            this.btnEditFN.Click += new System.EventHandler(this.btnEditFN_Click);
             // 
             // lbDataCD
             // 
@@ -561,62 +617,6 @@
             this.tmrExtend2.Interval = 1;
             this.tmrExtend2.Tick += new System.EventHandler(this.tmrExtend2_Tick);
             // 
-            // btnEditFN
-            // 
-            this.btnEditFN.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditFN.Image = global::QuanLyKhoHang.Properties.Resources.edit;
-            this.btnEditFN.ImageActive = null;
-            this.btnEditFN.Location = new System.Drawing.Point(10, 148);
-            this.btnEditFN.Name = "btnEditFN";
-            this.btnEditFN.Size = new System.Drawing.Size(20, 20);
-            this.btnEditFN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditFN.TabIndex = 23;
-            this.btnEditFN.TabStop = false;
-            this.btnEditFN.Zoom = 10;
-            this.btnEditFN.Click += new System.EventHandler(this.btnEditFN_Click);
-            // 
-            // btnEditLN
-            // 
-            this.btnEditLN.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditLN.Image = global::QuanLyKhoHang.Properties.Resources.edit;
-            this.btnEditLN.ImageActive = null;
-            this.btnEditLN.Location = new System.Drawing.Point(10, 178);
-            this.btnEditLN.Name = "btnEditLN";
-            this.btnEditLN.Size = new System.Drawing.Size(20, 20);
-            this.btnEditLN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditLN.TabIndex = 29;
-            this.btnEditLN.TabStop = false;
-            this.btnEditLN.Zoom = 10;
-            this.btnEditLN.Click += new System.EventHandler(this.btnEditLN_Click);
-            // 
-            // btnEditDOB
-            // 
-            this.btnEditDOB.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditDOB.Image = global::QuanLyKhoHang.Properties.Resources.edit;
-            this.btnEditDOB.ImageActive = null;
-            this.btnEditDOB.Location = new System.Drawing.Point(10, 208);
-            this.btnEditDOB.Name = "btnEditDOB";
-            this.btnEditDOB.Size = new System.Drawing.Size(20, 20);
-            this.btnEditDOB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditDOB.TabIndex = 30;
-            this.btnEditDOB.TabStop = false;
-            this.btnEditDOB.Zoom = 10;
-            this.btnEditDOB.Click += new System.EventHandler(this.btnEditDOB_Click);
-            // 
-            // btnEditAD
-            // 
-            this.btnEditAD.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditAD.Image = global::QuanLyKhoHang.Properties.Resources.edit;
-            this.btnEditAD.ImageActive = null;
-            this.btnEditAD.Location = new System.Drawing.Point(10, 238);
-            this.btnEditAD.Name = "btnEditAD";
-            this.btnEditAD.Size = new System.Drawing.Size(20, 20);
-            this.btnEditAD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditAD.TabIndex = 31;
-            this.btnEditAD.TabStop = false;
-            this.btnEditAD.Zoom = 10;
-            this.btnEditAD.Click += new System.EventHandler(this.btnEditAD_Click);
-            // 
             // fmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -634,13 +634,13 @@
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.pnProfile.ResumeLayout(false);
             this.pnProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditAD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditDOB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditLN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditFN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExtend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditFN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditLN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditDOB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditAD)).EndInit();
             this.ResumeLayout(false);
 
         }

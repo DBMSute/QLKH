@@ -73,18 +73,18 @@ namespace DTO
         }
         public TaiKhoan(string id, string tenTk, string passWd, byte[]avt, string hovatendem, string ten, string ngaySinh, string diachi, string lastLogin, string createDay, int pers, int tinhTrang)
         {
-            this.id = id;
-            this.tenTk = tenTk;
-            this.passWd = passWd;
-            this.avt = avt;
-            this.hovatendem = hovatendem;
-            this.ten = ten;
-            this.ngaySinh = ngaySinh;
-            this.diachi = diachi;
-            this.lastLogin = lastLogin;
-            this.createDay = createDay;
-            this.pers = pers;
-            this.tinhTrang = tinhTrang;
+            this.ID = id;
+            this.TENTK = tenTk;
+            this.PASSWD = passWd;
+            this.AVT = avt;
+            this.HOVATENDEM = hovatendem;
+            this.TEN = ten;
+            this.NGAYSINH = ngaySinh;
+            this.DIACHI = diachi;
+            this.LASTLOGIN = lastLogin;
+            this.CREATEDAY = createDay;
+            this.PERS = pers;
+            this.TINHTRANG = tinhTrang;
         }
         public TaiKhoan(string id, string passWd, byte[] avt, string hovatendem, string ten, string ngaySinh, string diachi, int pers, int tinhTrang)
         {

@@ -94,6 +94,8 @@ namespace QuanLyKhoHang.GiaoDien
         {
             tmrButon.Enabled = true;
             co = 0;
+            new fmKho().Show();
+            this.Hide();
         }
 
         private void btnCus_Click(object sender, EventArgs e)
@@ -205,10 +207,11 @@ namespace QuanLyKhoHang.GiaoDien
                 fmInputPW fm = new fmInputPW();
                 fm.ShowDialog();
                 BUS.TaiKhoanBUS.Instace.updatePW(lbDataID.Text, fmInputPW.opw, fmInputPW.npw);
+                MessageBox.Show("Success!", "Change Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("New password is existed!\n" + ex.Message, "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password was existed!\n" + ex.Message, "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             loadData();
         }

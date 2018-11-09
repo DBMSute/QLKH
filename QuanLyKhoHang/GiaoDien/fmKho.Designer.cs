@@ -43,11 +43,6 @@
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.dtgvWare = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TAIKHOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TINHTRANG = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnTop = new System.Windows.Forms.Panel();
             this.tmrSlide = new System.Windows.Forms.Timer(this.components);
             this.pnMidL2 = new System.Windows.Forms.Panel();
@@ -60,6 +55,11 @@
             this.tmrSlide2 = new System.Windows.Forms.Timer(this.components);
             this.pnBackground = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAIKHOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOIHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnMidR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
@@ -272,46 +272,12 @@
             this.TEN,
             this.DIACHI,
             this.TAIKHOAN,
-            this.TINHTRANG});
+            this.GIOIHAN});
             this.dtgvWare.Location = new System.Drawing.Point(10, 60);
             this.dtgvWare.Name = "dtgvWare";
             this.dtgvWare.Size = new System.Drawing.Size(721, 430);
             this.dtgvWare.TabIndex = 2;
             this.dtgvWare.TabStop = false;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã nhà CC";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên";
-            this.TEN.Name = "TEN";
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.Name = "DIACHI";
-            // 
-            // TAIKHOAN
-            // 
-            this.TAIKHOAN.DataPropertyName = "TAIKHOAN";
-            this.TAIKHOAN.HeaderText = "Quản lý";
-            this.TAIKHOAN.Name = "TAIKHOAN";
-            // 
-            // TINHTRANG
-            // 
-            this.TINHTRANG.DataPropertyName = "TINHTRANG";
-            this.TINHTRANG.FalseValue = "FALSE";
-            this.TINHTRANG.HeaderText = "Tình trạng";
-            this.TINHTRANG.IndeterminateValue = "null";
-            this.TINHTRANG.Name = "TINHTRANG";
-            this.TINHTRANG.TrueValue = "TRUE";
             // 
             // pnTop
             // 
@@ -426,6 +392,37 @@
             this.panel2.Size = new System.Drawing.Size(1080, 100);
             this.panel2.TabIndex = 4;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã nhà CC";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên";
+            this.TEN.Name = "TEN";
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
+            // 
+            // TAIKHOAN
+            // 
+            this.TAIKHOAN.DataPropertyName = "TAIKHOAN";
+            this.TAIKHOAN.HeaderText = "Quản lý";
+            this.TAIKHOAN.Name = "TAIKHOAN";
+            // 
+            // GIOIHAN
+            // 
+            this.GIOIHAN.DataPropertyName = "GIOIHAN";
+            this.GIOIHAN.HeaderText = "Sức chứa";
+            this.GIOIHAN.Name = "GIOIHAN";
+            // 
             // fmKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,13 +475,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Timer tmrSlide2;
+        private Bunifu.Framework.UI.BunifuGradientPanel pnBackground;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TAIKHOAN;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TINHTRANG;
-        private System.Windows.Forms.Timer tmrSlide2;
-        private Bunifu.Framework.UI.BunifuGradientPanel pnBackground;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIOIHAN;
     }
 }

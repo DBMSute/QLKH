@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,32 +23,9 @@ namespace BUS
 
         public bool checkAccount(string tenTk, string passwd)
         {
-   
-            if (DAO.TaiKhoanDAO.Instance.CheckAccount(tenTk) == EnCrypt(ReverseString(tenTk.ToUpper()) + passwd))
+            if (DAO.TaiKhoanDAO.Instance.CheckAccount(tenTk, passwd) == true) 
                 return true;
             return false;
-        }
-
-        public string ReverseString(string s)
-        {
-            char[] arr = s.ToCharArray(); // chuỗi thành mãng ký tự
-            Array.Reverse(arr); // đảo ngược mãng
-            return new string(arr); // trả về chuỗi mới sau khi đảo mãng
-        }
-
-        public string EnCrypt(string strEnCrypt) //mã hóa sang SHA1
-        {
-            try
-            {
-                SHA1 sha1 = new SHA1CryptoServiceProvider();           
-                sha1.ComputeHash(Encoding.ASCII.GetBytes(strEnCrypt));   
-                byte[] result = sha1.Hash;          
-                return Encoding.ASCII.GetString(result);
-            }
-            catch (Exception) {
-                return null;
-            }
-         
         }
 
         public void updateAvatar(string id, string path)

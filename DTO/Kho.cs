@@ -8,34 +8,34 @@ namespace DTO
 {
   public  class Kho
     {
-        public string id,  ten, diaChi, taiKhoan;
-        public bool tinhTrang;
+        private string id,  ten, diaChi, taiKhoan;
+        private int gioiHan;
 
         public string ID
         {
             get { return id; }
             set { id = value; }
         }
-        public Kho(string id,string ten, string diaChi, string taiKhoan, bool tinhTrang)
+        public Kho(string id,string ten, string diaChi, string taiKhoan, int gioiHan)
         {
-            this.id = id;
-            this.taiKhoan = taiKhoan;
-            this.ten = ten;
-            this.diaChi = diaChi;
-            this.tinhTrang = tinhTrang;
+            this.ID = id;
+            this.TAIKHOAN = taiKhoan;
+            this.TEN = ten;
+            this.DIACHI = diaChi;
+            this.GIOIHAN = gioiHan;
         }
-        public Kho( string ten, string diaChi,string taiKhoan, bool tinhTrang)
+        public Kho( string ten, string diaChi,string taiKhoan, int gioiHan)
         {
-            this.taiKhoan = taiKhoan;
-            this.ten = ten;
-            this.diaChi = diaChi;
-            this.tinhTrang = tinhTrang;
+            this.TAIKHOAN = taiKhoan;
+            this.TEN = ten;
+            this.DIACHI = diaChi;
+            this.GIOIHAN = gioiHan;
         }
-        public Kho( string ten, string diaChi, bool tinhTrang)
+        public Kho( string ten, string diaChi, int gioiHan)
         {
-            this.ten = ten;
-            this.diaChi = diaChi;
-            this.tinhTrang = tinhTrang;
+            this.TEN = ten;
+            this.DIACHI = diaChi;
+            this.GIOIHAN = gioiHan;
         }
       public Kho()
         {
@@ -56,10 +56,10 @@ namespace DTO
             get { return taiKhoan; }
             set { taiKhoan = value; }
         }
-        public bool TINHTRANG
+        public int GIOIHAN
         {
-            get { return tinhTrang; }
-            set { tinhTrang = value; }
+            get { return gioiHan; }
+            set { gioiHan = value; }
         }
     }
 }

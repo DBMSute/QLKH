@@ -36,7 +36,7 @@ namespace BUS
                    foreach (DataGridViewRow dr in dgv.Rows)
                    {
                        DTO.Kho k = new DTO.Kho(dr.Cells[1].Value.ToString(), dr.Cells[2].Value.ToString(), dr.Cells[3].Value.ToString()
-                           , (bool)dr.Cells[4].Value);
+                           , (int)dr.Cells[4].Value);
                        lKho.Add(k);
                    }
                    DAO.KhoDAO.Instance.LuuThem(lKho);
@@ -61,7 +61,7 @@ namespace BUS
                        dr.Cells[1].Value.ToString(),
                        dr.Cells[2].Value.ToString(),
                        dr.Cells[3].Value.ToString()
-                       , (bool)dr.Cells[4].Value);
+                       , (int)dr.Cells[4].Value);
                    lKho.Add(k);
                }
                DAO.KhoDAO.Instance.LuuSua(lKho);
@@ -77,7 +77,7 @@ namespace BUS
        }
        public void themKho(DataGridView dt)
        {
-           dt.DataSource = DAO.KhoDAO.Instance.themKho();
+           //dt.DataSource = DAO.KhoDAO.Instance.themKho();
        }
        public void xoaKho(DataGridView dt,string str)
        {

@@ -31,8 +31,8 @@ namespace DAO
                 string ten = item["ten"].ToString();
                 string diaChi = item["diachi"].ToString();
                 string taiKhoan = item["taikhoan"].ToString();
-                bool tinhTrang = (bool)item["tinhtrang"];
-                Kho kh = new Kho(id,ten,diaChi,taiKhoan,tinhTrang);
+                int gioiHan = (int)item["gioihan"];
+                Kho kh = new Kho(id,ten,diaChi,taiKhoan,gioiHan);
                 khoDao.Add(kh);
             }
             return khoDao;
@@ -51,8 +51,8 @@ namespace DAO
                    string ten = item["ten"].ToString();
                    string diaChi = item["diachi"].ToString();
                    string taiKhoan = item["taikhoan"].ToString();
-                   bool tinhTrang = (bool)item["tinhtrang"];
-                   Kho kh = new Kho( id,ten, diaChi, taiKhoan, tinhTrang);
+                   bool gioiHan = (bool)item["gioiHan"];
+                   Kho kh = new Kho( id, ten, diaChi, taiKhoan, Convert.ToInt32(gioiHan));
                    khoDao.Add(kh);
                }     
            return khoDao;
@@ -60,10 +60,10 @@ namespace DAO
        public void LuuThem(List<Kho> lKho)
        {
                string str = "";          
-               if (lKho[0].tinhTrang)
-                   str = "exec sp_Insert_Kho @ten=N'" + lKho[0].ten + "', @dchi=N'" + lKho[0].diaChi + "', @tk='" + lKho[0].taiKhoan + "', @tinhtrang=1";
-               else
-                   str = "exec sp_Insert_Kho @ten=N'" + lKho[0].ten + "', @dchi=N'" + lKho[0].diaChi + "', @tk='" + lKho[0].taiKhoan + "', @tinhtrang=0";
+               //if (lKho[0].gioiHan)
+               //    str = "exec sp_Insert_Kho @ten=N'" + lKho[0].ten + "', @dchi=N'" + lKho[0].diaChi + "', @tk='" + lKho[0].taiKhoan + "', @gioiHan=1";
+               //else
+               //    str = "exec sp_Insert_Kho @ten=N'" + lKho[0].ten + "', @dchi=N'" + lKho[0].diaChi + "', @tk='" + lKho[0].taiKhoan + "', @gioiHan=0";
            
          DataConn.Instance.ExecuteQueryTable(str);
        }
@@ -71,33 +71,34 @@ namespace DAO
        {
            for (int i = 0; i < lKho.Count; i++)
            {
-               string str = "";
-               if (lKho[i].tinhTrang)
-                   str = "exec  sp_Update_Kho @id='"+lKho[i].id +"', @ten=N'" + lKho[i].ten + "', @dchi=N'" + lKho[i].diaChi + "', @tinhtrang=1";
-               else
-                   str = "exec  sp_Update_Kho @id='" +lKho[i].id + "', @ten=N'" + lKho[i].ten + "', @dchi=N'" + lKho[i].diaChi + "', @tinhtrang=0";
-               DataConn.Instance.ExecuteQueryTable(str);
+               //string str = "";
+               //if (lKho[i].gioiHan)
+               //    str = "exec  sp_Update_Kho @id='"+lKho[i].id +"', @ten=N'" + lKho[i].ten + "', @dchi=N'" + lKho[i].diaChi + "', @gioiHan=1";
+               //else
+               //    str = "exec  sp_Update_Kho @id='" +lKho[i].id + "', @ten=N'" + lKho[i].ten + "', @dchi=N'" + lKho[i].diaChi + "', @gioiHan=0";
+               //DataConn.Instance.ExecuteQueryTable(str);
            }
        }
-       public List<Kho> themKho()
-       {
-           List<Kho> khoDao = new List<Kho>();
-           Kho k = new Kho();
-           khoDao.Add(k);
-           string str = "select * from Kho";
-           DataTable data = DataConn.Instance.ExecuteQueryTable(str);
-           foreach (DataRow item in data.Rows)
-           {
-               string id = item["id"].ToString();
-               string ten = item["ten"].ToString();
-               string diaChi = item["diachi"].ToString();
-               string taiKhoan = item["taikhoan"].ToString();
-               bool tinhTrang = (bool)item["tinhtrang"];
-               Kho kh = new Kho(id,ten, diaChi, taiKhoan, tinhTrang);
-               khoDao.Add(kh);
-           }      
-           return khoDao;
-       }
+      // public List<Kho> themKho()
+      // {
+            //List<Kho> khoDao = new List<Kho>();
+            //Kho k = new Kho();
+            //khoDao.Add(k);
+            //string str = "select * from Kho";
+            //DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            //foreach (DataRow item in data.Rows)
+            //{
+            //    string id = item["id"].ToString();
+            //    string ten = item["ten"].ToString();
+            //    string diaChi = item["diachi"].ToString();
+            //    string taiKhoan = item["taikhoan"].ToString();
+            //    bool gioiHan = (bool)item["gioiHan"];
+            //    Kho kh = new Kho(id,ten, diaChi, taiKhoan, gioiHan);
+            //    khoDao.Add(kh);
+            //}      
+            //return khoDao;
+            
+       //}
        public void xoaKho(string id)
        {
            string str = "exec sp_Delete_KhachHang  @id='" + id + "'";
