@@ -24,7 +24,7 @@ namespace DAO
         {
             List<Kho> khoDao = new List<Kho>();
             string str = "select * from Kho";
-            DataTable data = DataConn.Instance.ExecuteQuery(str);
+            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -44,7 +44,7 @@ namespace DAO
            List<Kho> khoDao = new List<Kho>();
            string str = "select * from Kho where id like N'%"+strTimKiem.Trim()+"%' or ten like N'%"+strTimKiem.Trim()
                +"%' or diachi like N'%"+strTimKiem.Trim()+"%'";
-               DataTable data = DataConn.Instance.ExecuteQuery(str);
+               DataTable data = DataConn.Instance.ExecuteQueryTable(str);
                foreach (DataRow item in data.Rows)
                {
                    string id = item["id"].ToString();
@@ -65,7 +65,7 @@ namespace DAO
                else
                    str = "exec sp_Insert_Kho @ten=N'" + lKho[0].ten + "', @dchi=N'" + lKho[0].diaChi + "', @tk='" + lKho[0].taiKhoan + "', @tinhtrang=0";
            
-         DataConn.Instance.ExecuteQuery(str);
+         DataConn.Instance.ExecuteQueryTable(str);
        }
        public void LuuSua(List<Kho> lKho)
        {
@@ -76,7 +76,7 @@ namespace DAO
                    str = "exec  sp_Update_Kho @id='"+lKho[i].id +"', @ten=N'" + lKho[i].ten + "', @dchi=N'" + lKho[i].diaChi + "', @tinhtrang=1";
                else
                    str = "exec  sp_Update_Kho @id='" +lKho[i].id + "', @ten=N'" + lKho[i].ten + "', @dchi=N'" + lKho[i].diaChi + "', @tinhtrang=0";
-               DataConn.Instance.ExecuteQuery(str);
+               DataConn.Instance.ExecuteQueryTable(str);
            }
        }
        public List<Kho> themKho()
@@ -85,7 +85,7 @@ namespace DAO
            Kho k = new Kho();
            khoDao.Add(k);
            string str = "select * from Kho";
-           DataTable data = DataConn.Instance.ExecuteQuery(str);
+           DataTable data = DataConn.Instance.ExecuteQueryTable(str);
            foreach (DataRow item in data.Rows)
            {
                string id = item["id"].ToString();
@@ -101,7 +101,7 @@ namespace DAO
        public void xoaKho(string id)
        {
            string str = "exec sp_Delete_KhachHang  @id='" + id + "'";
-           DataConn.Instance.ExecuteQuery(str);
+           DataConn.Instance.ExecuteQueryTable(str);
        }
     }
 

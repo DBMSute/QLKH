@@ -12,10 +12,13 @@ namespace QuanLyKhoHang.GiaoDien
 {
     public partial class fmDangNhap : Form
     {
+        public static string tentk = "";
         public fmDangNhap()
         {
             InitializeComponent();
-            
+            tbACC.Text = QuanLyKhoHang.Properties.Settings.Default.UserName;
+            tbPW.Text = QuanLyKhoHang.Properties.Settings.Default.UserPassword;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -30,6 +33,20 @@ namespace QuanLyKhoHang.GiaoDien
                 MessageBox.Show("Tài khoản hoặc mật khẩu sai!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            tentk = tbACC.Text;
+            if (cbRemember.Checked == true)
+            {
+                QuanLyKhoHang.Properties.Settings.Default.UserName = tbACC.Text;
+                QuanLyKhoHang.Properties.Settings.Default.UserPassword = tbPW.Text;
+                QuanLyKhoHang.Properties.Settings.Default.Save();
+            }
+            else
+            {
+                QuanLyKhoHang.Properties.Settings.Default.UserName = null;
+                QuanLyKhoHang.Properties.Settings.Default.UserPassword = null;
+                QuanLyKhoHang.Properties.Settings.Default.Save();
+            }
+            BUS.TaiKhoanBUS.Instace.updateLastLogin(tentk);
             cpLoading.Visible = true;
             pnRight.Enabled = false;
             tmrLoading.Start();
@@ -46,8 +63,8 @@ namespace QuanLyKhoHang.GiaoDien
             if (cpLoading.Value == 100)
             {
                 tmrLoading.Stop();
-                fmQuanLy fm = new fmQuanLy();
-                fm.Show();
+                new fmQuanLy().Show();
+
                 this.Hide();
             }
         }

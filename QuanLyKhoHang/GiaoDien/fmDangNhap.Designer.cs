@@ -124,7 +124,7 @@
             this.btnExit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.ActiveForecolor = System.Drawing.Color.White;
             this.btnExit.ActiveLineColor = System.Drawing.Color.White;
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
             this.btnExit.ButtonText = "Exit";
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -139,7 +139,7 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(5);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(140, 63);
-            this.btnExit.TabIndex = 21;
+            this.btnExit.TabIndex = 4;
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -150,7 +150,7 @@
             this.btnLogin.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogin.ActiveForecolor = System.Drawing.Color.White;
             this.btnLogin.ActiveLineColor = System.Drawing.Color.White;
-            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
             this.btnLogin.ButtonText = "Login";
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -165,7 +165,7 @@
             this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(140, 63);
-            this.btnLogin.TabIndex = 20;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -197,9 +197,9 @@
             this.tbPW.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPW.Location = new System.Drawing.Point(97, 259);
             this.tbPW.Name = "tbPW";
-            this.tbPW.PasswordChar = '*';
+            this.tbPW.PasswordChar = '●';
             this.tbPW.Size = new System.Drawing.Size(250, 34);
-            this.tbPW.TabIndex = 9;
+            this.tbPW.TabIndex = 2;
             // 
             // tbACC
             // 
@@ -208,7 +208,7 @@
             this.tbACC.Location = new System.Drawing.Point(97, 201);
             this.tbACC.Name = "tbACC";
             this.tbACC.Size = new System.Drawing.Size(250, 34);
-            this.tbACC.TabIndex = 8;
+            this.tbACC.TabIndex = 1;
             // 
             // cpLoading
             // 

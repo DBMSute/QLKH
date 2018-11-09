@@ -29,7 +29,7 @@ namespace DAO
                                 TrustServerCertificate=False;
                                 Connection Timeout=300;";
                                 */
-        public DataTable ExecuteQuery(string QuerySql)
+        public DataTable ExecuteQueryTable(string QuerySql)
         {
             DataTable data = new DataTable();
             using (SqlConnection sqlConn = new SqlConnection(connStr))
@@ -40,6 +40,43 @@ namespace DAO
                 sqlConn.Close();
             }
             return data;
+        }
+
+        public string ExecuteQueryScalar(string QuerySql)
+        {
+            string data = null;
+            using (SqlConnection sqlConn = new SqlConnection(connStr))
+            {      
+                SqlCommand comm = new SqlCommand(QuerySql, sqlConn);
+                sqlConn.Open();
+                string temp = comm.ExecuteScalar().ToString();
+                if (temp == "System.Byte[]")
+                {
+                    data = Encoding.ASCII.GetString((byte[])comm.ExecuteScalar());
+                    sqlConn.Close();
+                    return data;
+                }         
+                data = comm.ExecuteScalar().ToString();
+                sqlConn.Close();
+            }
+            return data;
+        }
+
+        public string ExecuteQueryScalar(string QuerySql, string id, byte[] bytes, string type) //type là biến tham chiếu trong SQL
+        {     
+            using (SqlConnection sqlConn = new SqlConnection(connStr))
+            {
+                SqlCommand comm = new SqlCommand(QuerySql, sqlConn);
+                sqlConn.Open();
+                comm.CommandType = CommandType.StoredProcedure;
+                SqlParameter sqlbytes = new SqlParameter(type, SqlDbType.VarBinary);
+                SqlParameter sqlid = new SqlParameter("@id", SqlDbType.VarChar);
+                comm.Parameters.Add(sqlbytes).Value = bytes;
+                comm.Parameters.Add(sqlid).Value = id;
+                comm.ExecuteScalar();
+                sqlConn.Close();
+            }
+            return "";
         }
     }
     

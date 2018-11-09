@@ -18,30 +18,76 @@ namespace DAO
             }
         }
 
-        public int Check(string tenTk, string passwd)
+        public string CheckAccount(string tenTk)
         {
-
-            string str = "select * from TaiKhoan where tentk='" + tenTk + "' and passwd='" + passwd + "'";
-            DataTable dt = DataConn.Instance.ExecuteQuery(str);
-            if (dt.Rows.Count < 1)
-                return -1;
-            int pers = int.Parse(dt.Rows[0]["pers"].ToString());
-            return pers;
+            string str = "SELECT dbo.FN_TaiKhoan_GetPasswd('" + tenTk + "')"; 
+            return DataConn.Instance.ExecuteQueryScalar(str);
         }
 
-        public string Check2(string tenTk, string passwd)
+        public void updateAvatar(string id, byte[] avt)
         {
-            string str = "select passwd from TaiKhoan where tentk = '" + tenTk + "'";
-            DataTable dt = DataConn.Instance.ExecuteQuery(str);      
-            return ToHex((byte[])dt.Rows[0]["passwd"], true);
+            string str = "sp_Update_TaiKhoan_AVT";
+            DataConn.Instance.ExecuteQueryScalar(str, id , avt, "@avt");
         }
 
-        public string ToHex(byte[] bytes, bool upperCase)
+        public DTO.TaiKhoan loadData(string tentk)
         {
-            StringBuilder result = new StringBuilder(bytes.Length * 2);
-            for (int i = 0; i < bytes.Length; i++)
-                result.Append(bytes[i].ToString(upperCase ? "X2" : "x2"));
-            return result.ToString();
+            DTO.TaiKhoan tk = new DTO.TaiKhoan();
+            DateTime date = new DateTime();
+            string str = "SELECT * FROM dbo.VI_TaiKhoan_LoadData WHERE tentk = '" + tentk + "'"; //gọi view
+            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            tk.ID = data.Rows[0]["id"].ToString();
+            tk.TENTK =data.Rows[0]["tentk"].ToString();
+            tk.PASSWD =BitConverter.ToString((byte[]) data.Rows[0]["passwd"]);
+            if (data.Rows[0]["avt"].ToString() == "")
+                tk.AVT = null;
+            else
+                tk.AVT = (byte[])data.Rows[0]["avt"];
+            tk.HOVATENDEM=data.Rows[0]["hovatendem"].ToString();
+            tk.TEN=data.Rows[0]["ten"].ToString();
+            date = (DateTime)data.Rows[0]["ngaysinh"];
+            tk.NGAYSINH = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
+            tk.DIACHI=data.Rows[0]["diachi"].ToString();
+            if (data.Rows[0]["lastlogin"].ToString() == "")
+                tk.LASTLOGIN = "";
+            else
+            {
+               date = (DateTime)data.Rows[0]["lastlogin"];
+                tk.LASTLOGIN = date.ToString("G",new System.Globalization.CultureInfo("es-ES"));
+            }
+            date = (DateTime)data.Rows[0]["createday"];
+            tk.CREATEDAY = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
+            tk.TINHTRANG=Convert.ToInt32(data.Rows[0]["tinhtrang"]);
+            tk.PERS=Convert.ToInt32(data.Rows[0]["pers"]);
+            return tk;
+        }
+
+        public void updateLastLogin(string tentk)
+        {
+            string str = "EXEC dbo.sp_Update_LastLogin @tentk = '" + tentk + "'";
+            DataConn.Instance.ExecuteQueryTable(str);
+        }
+
+        public void updateInfo(string id, string hovatendem, string ten, string ngaysinh, string diachi, int pers, int tinhtrang)
+        {
+            string str = "EXEC dbo.sp_Update_TaiKhoan_Info @id = '" + id + "'," +                       
+                            "@hovatendem = N'" + hovatendem + "'," +
+                            "@ten = N'" + ten + "'," +
+                            "@ngaysinh = '" + DateTime.Parse(ngaysinh) + "'," +
+                            "@diachi = N'" + diachi + "'," +
+                            "@per = " + pers + "," +
+                            "@tinhtrang = " + tinhtrang;
+            
+DataConn.Instance.ExecuteQueryScalar(str);
+        }
+
+        public void updatePW(string id, string opw, string npw)
+        {
+            string str = "EXEC dbo.sp_Update_TaiKhoan_Password " +
+                         "@opw = '" + opw + "'," +
+                         "@npw = '" + npw + "'," +
+                         "@id = '" + id + "'";
+            DataConn.Instance.ExecuteQueryTable(str);
         }
     }
 }

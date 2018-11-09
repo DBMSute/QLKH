@@ -55,6 +55,18 @@
     <Compile Include="GiaoDien\fmDangNhap.Designer.cs">
       <DependentUpon>fmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDien\fmInputDateTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmInputDateTime.Designer.cs">
+      <DependentUpon>fmInputDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien\fmInputPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmInputPW.Designer.cs">
+      <DependentUpon>fmInputPW.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\fmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,12 @@
     <EmbeddedResource Include="GiaoDien\fmDangNhap.resx">
       <DependentUpon>fmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmInputDateTime.resx">
+      <DependentUpon>fmInputDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmInputPW.resx">
+      <DependentUpon>fmInputPW.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmKhachHang.resx">
       <DependentUpon>fmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +142,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -193,6 +212,18 @@
       <Project>{b8c40567-fdee-4e84-8826-a78c84ec1323}</Project>
       <Name>BUS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erroravt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uparrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

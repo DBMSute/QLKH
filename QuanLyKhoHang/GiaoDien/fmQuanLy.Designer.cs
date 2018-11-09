@@ -32,19 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmQuanLy));
             this.tmrButon = new System.Windows.Forms.Timer(this.components);
             this.pnMain = new System.Windows.Forms.Panel();
-            this.btnKho = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnSup = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnAna = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnEmp = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnCus = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.btnExit = new System.Windows.Forms.PictureBox();
             this.pnProfile = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.lbDataCD = new System.Windows.Forms.Label();
+            this.lbCD = new System.Windows.Forms.Label();
+            this.lbDataST = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
+            this.lbDataID = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
+            this.btnEditPW = new System.Windows.Forms.Button();
+            this.btnExtend = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbDataLG = new System.Windows.Forms.Label();
+            this.lbDataAD = new System.Windows.Forms.Label();
             this.lbDataDOB = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lbDataLN = new System.Windows.Forms.Label();
             this.lbDataFN = new System.Windows.Forms.Label();
             this.lbAddress = new System.Windows.Forms.Label();
@@ -52,14 +52,33 @@
             this.lbDateOfBirth = new System.Windows.Forms.Label();
             this.lbLastName = new System.Windows.Forms.Label();
             this.lbFirstName = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.btnAvar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbTenTK = new System.Windows.Forms.Label();
+            this.btnAVT = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbPosition = new System.Windows.Forms.Label();
+            this.btnSup = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnKho = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnAna = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnEmp = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnExit = new System.Windows.Forms.PictureBox();
+            this.btnCus = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnTrans = new Bunifu.Framework.UI.BunifuTileButton();
+            this.ofdAVT = new System.Windows.Forms.OpenFileDialog();
+            this.tmrExtend = new System.Windows.Forms.Timer(this.components);
+            this.tmrExtend2 = new System.Windows.Forms.Timer(this.components);
+            this.btnEditFN = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEditLN = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEditDOB = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEditAD = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnMain.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAvar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExtend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAVT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditFN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditLN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditDOB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditAD)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrButon
@@ -71,17 +90,349 @@
             // 
             this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnMain.Controls.Add(this.btnKho);
-            this.pnMain.Controls.Add(this.btnSup);
-            this.pnMain.Controls.Add(this.btnAna);
-            this.pnMain.Controls.Add(this.btnEmp);
-            this.pnMain.Controls.Add(this.btnCus);
             this.pnMain.Controls.Add(this.bunifuGradientPanel1);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(840, 547);
             this.pnMain.TabIndex = 7;
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.pnProfile);
+            this.bunifuGradientPanel1.Controls.Add(this.btnSup);
+            this.bunifuGradientPanel1.Controls.Add(this.btnKho);
+            this.bunifuGradientPanel1.Controls.Add(this.btnAna);
+            this.bunifuGradientPanel1.Controls.Add(this.btnEmp);
+            this.bunifuGradientPanel1.Controls.Add(this.btnExit);
+            this.bunifuGradientPanel1.Controls.Add(this.btnCus);
+            this.bunifuGradientPanel1.Controls.Add(this.btnTrans);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Red;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(840, 547);
+            this.bunifuGradientPanel1.TabIndex = 22;
+            // 
+            // pnProfile
+            // 
+            this.pnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnProfile.Controls.Add(this.btnEditAD);
+            this.pnProfile.Controls.Add(this.btnEditDOB);
+            this.pnProfile.Controls.Add(this.btnEditLN);
+            this.pnProfile.Controls.Add(this.btnEditFN);
+            this.pnProfile.Controls.Add(this.lbDataCD);
+            this.pnProfile.Controls.Add(this.lbCD);
+            this.pnProfile.Controls.Add(this.lbDataST);
+            this.pnProfile.Controls.Add(this.lbStatus);
+            this.pnProfile.Controls.Add(this.lbDataID);
+            this.pnProfile.Controls.Add(this.lbID);
+            this.pnProfile.Controls.Add(this.btnEditPW);
+            this.pnProfile.Controls.Add(this.btnExtend);
+            this.pnProfile.Controls.Add(this.lbDataLG);
+            this.pnProfile.Controls.Add(this.lbDataAD);
+            this.pnProfile.Controls.Add(this.lbDataDOB);
+            this.pnProfile.Controls.Add(this.lbDataLN);
+            this.pnProfile.Controls.Add(this.lbDataFN);
+            this.pnProfile.Controls.Add(this.lbAddress);
+            this.pnProfile.Controls.Add(this.lbLastLogin);
+            this.pnProfile.Controls.Add(this.lbDateOfBirth);
+            this.pnProfile.Controls.Add(this.lbLastName);
+            this.pnProfile.Controls.Add(this.lbFirstName);
+            this.pnProfile.Controls.Add(this.lbTenTK);
+            this.pnProfile.Controls.Add(this.btnAVT);
+            this.pnProfile.Controls.Add(this.lbPosition);
+            this.pnProfile.Location = new System.Drawing.Point(32, 12);
+            this.pnProfile.Name = "pnProfile";
+            this.pnProfile.Size = new System.Drawing.Size(395, 470);
+            this.pnProfile.TabIndex = 9;
+            // 
+            // lbDataCD
+            // 
+            this.lbDataCD.AutoSize = true;
+            this.lbDataCD.BackColor = System.Drawing.Color.Transparent;
+            this.lbDataCD.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDataCD.ForeColor = System.Drawing.Color.White;
+            this.lbDataCD.Location = new System.Drawing.Point(189, 324);
+            this.lbDataCD.Name = "lbDataCD";
+            this.lbDataCD.Size = new System.Drawing.Size(49, 24);
+            this.lbDataCD.TabIndex = 27;
+            this.lbDataCD.Text = "Null";
+            // 
+            // lbCD
+            // 
+            this.lbCD.AutoSize = true;
+            this.lbCD.BackColor = System.Drawing.Color.Transparent;
+            this.lbCD.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbCD.ForeColor = System.Drawing.Color.White;
+            this.lbCD.Location = new System.Drawing.Point(34, 324);
+            this.lbCD.Name = "lbCD";
+            this.lbCD.Size = new System.Drawing.Size(144, 24);
+            this.lbCD.TabIndex = 26;
+            this.lbCD.Text = "Create Date:";
+            // 
+            // lbDataST
+            // 
+            this.lbDataST.AutoSize = true;
+            this.lbDataST.BackColor = System.Drawing.Color.Transparent;
+            this.lbDataST.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDataST.ForeColor = System.Drawing.Color.White;
+            this.lbDataST.Location = new System.Drawing.Point(189, 294);
+            this.lbDataST.Name = "lbDataST";
+            this.lbDataST.Size = new System.Drawing.Size(49, 24);
+            this.lbDataST.TabIndex = 25;
+            this.lbDataST.Text = "Null";
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lbStatus.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbStatus.ForeColor = System.Drawing.Color.White;
+            this.lbStatus.Location = new System.Drawing.Point(34, 294);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(74, 24);
+            this.lbStatus.TabIndex = 24;
+            this.lbStatus.Text = "Status:";
+            // 
+            // lbDataID
+            // 
+            this.lbDataID.AutoSize = true;
+            this.lbDataID.BackColor = System.Drawing.Color.Transparent;
+            this.lbDataID.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDataID.ForeColor = System.Drawing.Color.White;
+            this.lbDataID.Location = new System.Drawing.Point(189, 114);
+            this.lbDataID.Name = "lbDataID";
+            this.lbDataID.Size = new System.Drawing.Size(49, 24);
+            this.lbDataID.TabIndex = 23;
+            this.lbDataID.Text = "Null";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.BackColor = System.Drawing.Color.Transparent;
+            this.lbID.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbID.ForeColor = System.Drawing.Color.White;
+            this.lbID.Location = new System.Drawing.Point(34, 114);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(36, 24);
+            this.lbID.TabIndex = 22;
+            this.lbID.Text = "ID:";
+            // 
+            // btnEditPW
+            // 
+            this.btnEditPW.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditPW.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditPW.Font = new System.Drawing.Font("Century Gothic", 17F);
+            this.btnEditPW.ForeColor = System.Drawing.Color.White;
+            this.btnEditPW.Location = new System.Drawing.Point(39, 371);
+            this.btnEditPW.Name = "btnEditPW";
+            this.btnEditPW.Size = new System.Drawing.Size(164, 48);
+            this.btnEditPW.TabIndex = 20;
+            this.btnEditPW.Text = "Change PW";
+            this.btnEditPW.UseVisualStyleBackColor = false;
+            this.btnEditPW.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnExtend
+            // 
+            this.btnExtend.BackColor = System.Drawing.Color.Transparent;
+            this.btnExtend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExtend.Image = global::QuanLyKhoHang.Properties.Resources.downarrow;
+            this.btnExtend.ImageActive = null;
+            this.btnExtend.Location = new System.Drawing.Point(265, 65);
+            this.btnExtend.Name = "btnExtend";
+            this.btnExtend.Size = new System.Drawing.Size(35, 35);
+            this.btnExtend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExtend.TabIndex = 28;
+            this.btnExtend.TabStop = false;
+            this.btnExtend.Zoom = 20;
+            this.btnExtend.Click += new System.EventHandler(this.btnExtend_Click);
+            // 
+            // lbDataLG
+            // 
+            this.lbDataLG.AutoSize = true;
+            this.lbDataLG.BackColor = System.Drawing.Color.Transparent;
+            this.lbDataLG.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDataLG.ForeColor = System.Drawing.Color.White;
+            this.lbDataLG.Location = new System.Drawing.Point(189, 264);
+            this.lbDataLG.Name = "lbDataLG";
+            this.lbDataLG.Size = new System.Drawing.Size(49, 24);
+            this.lbDataLG.TabIndex = 17;
+            this.lbDataLG.Text = "Null";
+            // 
+            // lbDataAD
+            // 
+            this.lbDataAD.AutoSize = true;
+            this.lbDataAD.BackColor = System.Drawing.Color.Transparent;
+            this.lbDataAD.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDataAD.ForeColor = System.Drawing.Color.White;
+            this.lbDataAD.Location = new System.Drawing.Point(189, 234);
+            this.lbDataAD.Name = "lbDataAD";
+            this.lbDataAD.Size = new System.Drawing.Size(49, 24);
+            this.lbDataAD.TabIndex = 16;
+            this.lbDataAD.Text = "Null";
+            // 
+            // lbDataDOB
+            // 
+            this.lbDataDOB.AutoSize = true;
+            this.lbDataDOB.BackColor = System.Drawing.Color.Transparent;
+            this.lbDataDOB.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDataDOB.ForeColor = System.Drawing.Color.White;
+            this.lbDataDOB.Location = new System.Drawing.Point(189, 204);
+            this.lbDataDOB.Name = "lbDataDOB";
+            this.lbDataDOB.Size = new System.Drawing.Size(49, 24);
+            this.lbDataDOB.TabIndex = 15;
+            this.lbDataDOB.Text = "Null";
+            // 
+            // lbDataLN
+            // 
+            this.lbDataLN.AutoSize = true;
+            this.lbDataLN.BackColor = System.Drawing.Color.Transparent;
+            this.lbDataLN.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDataLN.ForeColor = System.Drawing.Color.White;
+            this.lbDataLN.Location = new System.Drawing.Point(189, 174);
+            this.lbDataLN.Name = "lbDataLN";
+            this.lbDataLN.Size = new System.Drawing.Size(49, 24);
+            this.lbDataLN.TabIndex = 14;
+            this.lbDataLN.Text = "Null";
+            // 
+            // lbDataFN
+            // 
+            this.lbDataFN.AutoSize = true;
+            this.lbDataFN.BackColor = System.Drawing.Color.Transparent;
+            this.lbDataFN.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDataFN.ForeColor = System.Drawing.Color.White;
+            this.lbDataFN.Location = new System.Drawing.Point(189, 144);
+            this.lbDataFN.Name = "lbDataFN";
+            this.lbDataFN.Size = new System.Drawing.Size(49, 24);
+            this.lbDataFN.TabIndex = 13;
+            this.lbDataFN.Text = "Null";
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.BackColor = System.Drawing.Color.Transparent;
+            this.lbAddress.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbAddress.ForeColor = System.Drawing.Color.White;
+            this.lbAddress.Location = new System.Drawing.Point(34, 234);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(94, 24);
+            this.lbAddress.TabIndex = 12;
+            this.lbAddress.Text = "Address:";
+            // 
+            // lbLastLogin
+            // 
+            this.lbLastLogin.AutoSize = true;
+            this.lbLastLogin.BackColor = System.Drawing.Color.Transparent;
+            this.lbLastLogin.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbLastLogin.ForeColor = System.Drawing.Color.White;
+            this.lbLastLogin.Location = new System.Drawing.Point(34, 264);
+            this.lbLastLogin.Name = "lbLastLogin";
+            this.lbLastLogin.Size = new System.Drawing.Size(109, 24);
+            this.lbLastLogin.TabIndex = 11;
+            this.lbLastLogin.Text = "Last login:";
+            // 
+            // lbDateOfBirth
+            // 
+            this.lbDateOfBirth.AutoSize = true;
+            this.lbDateOfBirth.BackColor = System.Drawing.Color.Transparent;
+            this.lbDateOfBirth.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbDateOfBirth.ForeColor = System.Drawing.Color.White;
+            this.lbDateOfBirth.Location = new System.Drawing.Point(34, 204);
+            this.lbDateOfBirth.Name = "lbDateOfBirth";
+            this.lbDateOfBirth.Size = new System.Drawing.Size(142, 24);
+            this.lbDateOfBirth.TabIndex = 10;
+            this.lbDateOfBirth.Text = "Date of birth:";
+            // 
+            // lbLastName
+            // 
+            this.lbLastName.AutoSize = true;
+            this.lbLastName.BackColor = System.Drawing.Color.Transparent;
+            this.lbLastName.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbLastName.ForeColor = System.Drawing.Color.White;
+            this.lbLastName.Location = new System.Drawing.Point(34, 174);
+            this.lbLastName.Name = "lbLastName";
+            this.lbLastName.Size = new System.Drawing.Size(122, 24);
+            this.lbLastName.TabIndex = 9;
+            this.lbLastName.Text = "Last name:";
+            // 
+            // lbFirstName
+            // 
+            this.lbFirstName.AutoSize = true;
+            this.lbFirstName.BackColor = System.Drawing.Color.Transparent;
+            this.lbFirstName.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.lbFirstName.ForeColor = System.Drawing.Color.White;
+            this.lbFirstName.Location = new System.Drawing.Point(34, 144);
+            this.lbFirstName.Name = "lbFirstName";
+            this.lbFirstName.Size = new System.Drawing.Size(117, 24);
+            this.lbFirstName.TabIndex = 8;
+            this.lbFirstName.Text = "First name:";
+            // 
+            // lbTenTK
+            // 
+            this.lbTenTK.AutoSize = true;
+            this.lbTenTK.BackColor = System.Drawing.Color.Transparent;
+            this.lbTenTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbTenTK.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenTK.ForeColor = System.Drawing.Color.White;
+            this.lbTenTK.Location = new System.Drawing.Point(110, 16);
+            this.lbTenTK.Name = "lbTenTK";
+            this.lbTenTK.Size = new System.Drawing.Size(87, 44);
+            this.lbTenTK.TabIndex = 6;
+            this.lbTenTK.Text = "Null";
+            // 
+            // btnAVT
+            // 
+            this.btnAVT.BackColor = System.Drawing.Color.Transparent;
+            this.btnAVT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAVT.Image = global::QuanLyKhoHang.Properties.Resources.erroravt;
+            this.btnAVT.ImageActive = null;
+            this.btnAVT.Location = new System.Drawing.Point(20, 10);
+            this.btnAVT.Name = "btnAVT";
+            this.btnAVT.Size = new System.Drawing.Size(85, 84);
+            this.btnAVT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAVT.TabIndex = 5;
+            this.btnAVT.TabStop = false;
+            this.btnAVT.Zoom = 10;
+            this.btnAVT.Click += new System.EventHandler(this.btnAVT_Click);
+            // 
+            // lbPosition
+            // 
+            this.lbPosition.AutoSize = true;
+            this.lbPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lbPosition.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPosition.ForeColor = System.Drawing.Color.White;
+            this.lbPosition.Location = new System.Drawing.Point(120, 60);
+            this.lbPosition.Name = "lbPosition";
+            this.lbPosition.Size = new System.Drawing.Size(42, 22);
+            this.lbPosition.TabIndex = 7;
+            this.lbPosition.Text = "Null";
+            // 
+            // btnSup
+            // 
+            this.btnSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(135)))), ((int)(((byte)(219)))));
+            this.btnSup.color = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(135)))), ((int)(((byte)(219)))));
+            this.btnSup.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(155)))), ((int)(((byte)(239)))));
+            this.btnSup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSup.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnSup.ForeColor = System.Drawing.Color.White;
+            this.btnSup.Image = global::QuanLyKhoHang.Properties.Resources.supplier;
+            this.btnSup.ImagePosition = 20;
+            this.btnSup.ImageZoom = 40;
+            this.btnSup.LabelPosition = 51;
+            this.btnSup.LabelText = "Supply";
+            this.btnSup.Location = new System.Drawing.Point(111, 352);
+            this.btnSup.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnSup.Name = "btnSup";
+            this.btnSup.Size = new System.Drawing.Size(190, 160);
+            this.btnSup.TabIndex = 20;
+            this.btnSup.Click += new System.EventHandler(this.btnSup_Click);
             // 
             // btnKho
             // 
@@ -102,26 +453,6 @@
             this.btnKho.Size = new System.Drawing.Size(190, 160);
             this.btnKho.TabIndex = 17;
             this.btnKho.Click += new System.EventHandler(this.btnKho_Click);
-            // 
-            // btnSup
-            // 
-            this.btnSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(135)))), ((int)(((byte)(219)))));
-            this.btnSup.color = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(135)))), ((int)(((byte)(219)))));
-            this.btnSup.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(155)))), ((int)(((byte)(239)))));
-            this.btnSup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSup.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnSup.ForeColor = System.Drawing.Color.White;
-            this.btnSup.Image = global::QuanLyKhoHang.Properties.Resources.supplier;
-            this.btnSup.ImagePosition = 20;
-            this.btnSup.ImageZoom = 20;
-            this.btnSup.LabelPosition = 51;
-            this.btnSup.LabelText = "Supply";
-            this.btnSup.Location = new System.Drawing.Point(111, 352);
-            this.btnSup.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.btnSup.Name = "btnSup";
-            this.btnSup.Size = new System.Drawing.Size(190, 160);
-            this.btnSup.TabIndex = 20;
-            this.btnSup.Click += new System.EventHandler(this.btnSup_Click);
             // 
             // btnAna
             // 
@@ -163,6 +494,18 @@
             this.btnEmp.TabIndex = 19;
             this.btnEmp.Click += new System.EventHandler(this.btnEmp_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.exit;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.Location = new System.Drawing.Point(798, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // btnCus
             // 
             this.btnCus.BackColor = System.Drawing.Color.Maroon;
@@ -176,250 +519,103 @@
             this.btnCus.ImageZoom = 40;
             this.btnCus.LabelPosition = 51;
             this.btnCus.LabelText = "Customer";
-            this.btnCus.Location = new System.Drawing.Point(328, 158);
+            this.btnCus.Location = new System.Drawing.Point(333, 158);
             this.btnCus.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.btnCus.Name = "btnCus";
             this.btnCus.Size = new System.Drawing.Size(190, 160);
             this.btnCus.TabIndex = 18;
             this.btnCus.Click += new System.EventHandler(this.btnCus_Click);
             // 
-            // bunifuGradientPanel1
+            // btnTrans
             // 
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.btnExit);
-            this.bunifuGradientPanel1.Controls.Add(this.pnProfile);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SeaGreen;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Red;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(840, 547);
-            this.bunifuGradientPanel1.TabIndex = 22;
+            this.btnTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTrans.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTrans.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.btnTrans.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrans.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnTrans.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnTrans.Image = global::QuanLyKhoHang.Properties.Resources.transaction1;
+            this.btnTrans.ImagePosition = 20;
+            this.btnTrans.ImageZoom = 42;
+            this.btnTrans.LabelPosition = 51;
+            this.btnTrans.LabelText = "Transaction";
+            this.btnTrans.Location = new System.Drawing.Point(333, 352);
+            this.btnTrans.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnTrans.Name = "btnTrans";
+            this.btnTrans.Size = new System.Drawing.Size(190, 160);
+            this.btnTrans.TabIndex = 22;
             // 
-            // btnExit
+            // ofdAVT
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.exit;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.Location = new System.Drawing.Point(798, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 16;
-            this.btnExit.TabStop = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.ofdAVT.FileName = "ofdAVT";
+            this.ofdAVT.Filter = "JPG files | *.jpg";
+            this.ofdAVT.Title = "Open Avatar File";
             // 
-            // pnProfile
+            // tmrExtend
             // 
-            this.pnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnProfile.Controls.Add(this.btnSave);
-            this.pnProfile.Controls.Add(this.btnEdit);
-            this.pnProfile.Controls.Add(this.lbDataLG);
-            this.pnProfile.Controls.Add(this.lbDataDOB);
-            this.pnProfile.Controls.Add(this.label2);
-            this.pnProfile.Controls.Add(this.lbDataLN);
-            this.pnProfile.Controls.Add(this.lbDataFN);
-            this.pnProfile.Controls.Add(this.lbAddress);
-            this.pnProfile.Controls.Add(this.lbLastLogin);
-            this.pnProfile.Controls.Add(this.lbDateOfBirth);
-            this.pnProfile.Controls.Add(this.lbLastName);
-            this.pnProfile.Controls.Add(this.lbFirstName);
-            this.pnProfile.Controls.Add(this.lbName);
-            this.pnProfile.Controls.Add(this.btnAvar);
-            this.pnProfile.Controls.Add(this.lbPosition);
-            this.pnProfile.Location = new System.Drawing.Point(32, 12);
-            this.pnProfile.Name = "pnProfile";
-            this.pnProfile.Size = new System.Drawing.Size(246, 97);
-            this.pnProfile.TabIndex = 9;
+            this.tmrExtend.Interval = 1;
+            this.tmrExtend.Tick += new System.EventHandler(this.tmrExtend_Tick);
             // 
-            // btnSave
+            // tmrExtend2
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 17F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(196, 382);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(124, 48);
-            this.btnSave.TabIndex = 21;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.tmrExtend2.Interval = 1;
+            this.tmrExtend2.Tick += new System.EventHandler(this.tmrExtend2_Tick);
             // 
-            // btnEdit
+            // btnEditFN
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 17F);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(42, 382);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(124, 48);
-            this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEditFN.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditFN.Image = global::QuanLyKhoHang.Properties.Resources.edit;
+            this.btnEditFN.ImageActive = null;
+            this.btnEditFN.Location = new System.Drawing.Point(10, 148);
+            this.btnEditFN.Name = "btnEditFN";
+            this.btnEditFN.Size = new System.Drawing.Size(20, 20);
+            this.btnEditFN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditFN.TabIndex = 23;
+            this.btnEditFN.TabStop = false;
+            this.btnEditFN.Zoom = 10;
+            this.btnEditFN.Click += new System.EventHandler(this.btnEditFN_Click);
             // 
-            // lbDataLG
+            // btnEditLN
             // 
-            this.lbDataLG.AutoSize = true;
-            this.lbDataLG.BackColor = System.Drawing.Color.Transparent;
-            this.lbDataLG.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbDataLG.ForeColor = System.Drawing.Color.White;
-            this.lbDataLG.Location = new System.Drawing.Point(181, 329);
-            this.lbDataLG.Name = "lbDataLG";
-            this.lbDataLG.Size = new System.Drawing.Size(55, 27);
-            this.lbDataLG.TabIndex = 17;
-            this.lbDataLG.Text = "Null";
+            this.btnEditLN.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditLN.Image = global::QuanLyKhoHang.Properties.Resources.edit;
+            this.btnEditLN.ImageActive = null;
+            this.btnEditLN.Location = new System.Drawing.Point(10, 178);
+            this.btnEditLN.Name = "btnEditLN";
+            this.btnEditLN.Size = new System.Drawing.Size(20, 20);
+            this.btnEditLN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditLN.TabIndex = 29;
+            this.btnEditLN.TabStop = false;
+            this.btnEditLN.Zoom = 10;
+            this.btnEditLN.Click += new System.EventHandler(this.btnEditLN_Click);
             // 
-            // lbDataDOB
+            // btnEditDOB
             // 
-            this.lbDataDOB.AutoSize = true;
-            this.lbDataDOB.BackColor = System.Drawing.Color.Transparent;
-            this.lbDataDOB.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbDataDOB.ForeColor = System.Drawing.Color.White;
-            this.lbDataDOB.Location = new System.Drawing.Point(181, 279);
-            this.lbDataDOB.Name = "lbDataDOB";
-            this.lbDataDOB.Size = new System.Drawing.Size(55, 27);
-            this.lbDataDOB.TabIndex = 16;
-            this.lbDataDOB.Text = "Null";
+            this.btnEditDOB.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditDOB.Image = global::QuanLyKhoHang.Properties.Resources.edit;
+            this.btnEditDOB.ImageActive = null;
+            this.btnEditDOB.Location = new System.Drawing.Point(10, 208);
+            this.btnEditDOB.Name = "btnEditDOB";
+            this.btnEditDOB.Size = new System.Drawing.Size(20, 20);
+            this.btnEditDOB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditDOB.TabIndex = 30;
+            this.btnEditDOB.TabStop = false;
+            this.btnEditDOB.Zoom = 10;
+            this.btnEditDOB.Click += new System.EventHandler(this.btnEditDOB_Click);
             // 
-            // label2
+            // btnEditAD
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(181, 229);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 27);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Null";
-            // 
-            // lbDataLN
-            // 
-            this.lbDataLN.AutoSize = true;
-            this.lbDataLN.BackColor = System.Drawing.Color.Transparent;
-            this.lbDataLN.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbDataLN.ForeColor = System.Drawing.Color.White;
-            this.lbDataLN.Location = new System.Drawing.Point(181, 179);
-            this.lbDataLN.Name = "lbDataLN";
-            this.lbDataLN.Size = new System.Drawing.Size(55, 27);
-            this.lbDataLN.TabIndex = 14;
-            this.lbDataLN.Text = "Null";
-            // 
-            // lbDataFN
-            // 
-            this.lbDataFN.AutoSize = true;
-            this.lbDataFN.BackColor = System.Drawing.Color.Transparent;
-            this.lbDataFN.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbDataFN.ForeColor = System.Drawing.Color.White;
-            this.lbDataFN.Location = new System.Drawing.Point(181, 129);
-            this.lbDataFN.Name = "lbDataFN";
-            this.lbDataFN.Size = new System.Drawing.Size(55, 27);
-            this.lbDataFN.TabIndex = 13;
-            this.lbDataFN.Text = "Null";
-            // 
-            // lbAddress
-            // 
-            this.lbAddress.AutoSize = true;
-            this.lbAddress.BackColor = System.Drawing.Color.Transparent;
-            this.lbAddress.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbAddress.ForeColor = System.Drawing.Color.White;
-            this.lbAddress.Location = new System.Drawing.Point(16, 279);
-            this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(107, 27);
-            this.lbAddress.TabIndex = 12;
-            this.lbAddress.Text = "Address:";
-            // 
-            // lbLastLogin
-            // 
-            this.lbLastLogin.AutoSize = true;
-            this.lbLastLogin.BackColor = System.Drawing.Color.Transparent;
-            this.lbLastLogin.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbLastLogin.ForeColor = System.Drawing.Color.White;
-            this.lbLastLogin.Location = new System.Drawing.Point(16, 329);
-            this.lbLastLogin.Name = "lbLastLogin";
-            this.lbLastLogin.Size = new System.Drawing.Size(124, 27);
-            this.lbLastLogin.TabIndex = 11;
-            this.lbLastLogin.Text = "Last login:";
-            // 
-            // lbDateOfBirth
-            // 
-            this.lbDateOfBirth.AutoSize = true;
-            this.lbDateOfBirth.BackColor = System.Drawing.Color.Transparent;
-            this.lbDateOfBirth.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbDateOfBirth.ForeColor = System.Drawing.Color.White;
-            this.lbDateOfBirth.Location = new System.Drawing.Point(16, 229);
-            this.lbDateOfBirth.Name = "lbDateOfBirth";
-            this.lbDateOfBirth.Size = new System.Drawing.Size(159, 27);
-            this.lbDateOfBirth.TabIndex = 10;
-            this.lbDateOfBirth.Text = "Date of birth:";
-            // 
-            // lbLastName
-            // 
-            this.lbLastName.AutoSize = true;
-            this.lbLastName.BackColor = System.Drawing.Color.Transparent;
-            this.lbLastName.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbLastName.ForeColor = System.Drawing.Color.White;
-            this.lbLastName.Location = new System.Drawing.Point(16, 179);
-            this.lbLastName.Name = "lbLastName";
-            this.lbLastName.Size = new System.Drawing.Size(135, 27);
-            this.lbLastName.TabIndex = 9;
-            this.lbLastName.Text = "Last name:";
-            // 
-            // lbFirstName
-            // 
-            this.lbFirstName.AutoSize = true;
-            this.lbFirstName.BackColor = System.Drawing.Color.Transparent;
-            this.lbFirstName.Font = new System.Drawing.Font("Century Gothic", 16.75F);
-            this.lbFirstName.ForeColor = System.Drawing.Color.White;
-            this.lbFirstName.Location = new System.Drawing.Point(16, 129);
-            this.lbFirstName.Name = "lbFirstName";
-            this.lbFirstName.Size = new System.Drawing.Size(132, 27);
-            this.lbFirstName.TabIndex = 8;
-            this.lbFirstName.Text = "First name:";
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.BackColor = System.Drawing.Color.Transparent;
-            this.lbName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbName.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.Color.White;
-            this.lbName.Location = new System.Drawing.Point(95, 16);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(102, 44);
-            this.lbName.TabIndex = 6;
-            this.lbName.Text = "Ly Ly";
-            // 
-            // btnAvar
-            // 
-            this.btnAvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnAvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAvar.Image = global::QuanLyKhoHang.Properties.Resources.avt;
-            this.btnAvar.ImageActive = null;
-            this.btnAvar.Location = new System.Drawing.Point(9, 16);
-            this.btnAvar.Name = "btnAvar";
-            this.btnAvar.Size = new System.Drawing.Size(70, 70);
-            this.btnAvar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAvar.TabIndex = 5;
-            this.btnAvar.TabStop = false;
-            this.btnAvar.Zoom = 10;
-            this.btnAvar.Click += new System.EventHandler(this.btnAvar_Click);
-            // 
-            // lbPosition
-            // 
-            this.lbPosition.AutoSize = true;
-            this.lbPosition.BackColor = System.Drawing.Color.Transparent;
-            this.lbPosition.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPosition.ForeColor = System.Drawing.Color.White;
-            this.lbPosition.Location = new System.Drawing.Point(101, 60);
-            this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(96, 22);
-            this.lbPosition.TabIndex = 7;
-            this.lbPosition.Text = "Manager";
+            this.btnEditAD.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditAD.Image = global::QuanLyKhoHang.Properties.Resources.edit;
+            this.btnEditAD.ImageActive = null;
+            this.btnEditAD.Location = new System.Drawing.Point(10, 238);
+            this.btnEditAD.Name = "btnEditAD";
+            this.btnEditAD.Size = new System.Drawing.Size(20, 20);
+            this.btnEditAD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditAD.TabIndex = 31;
+            this.btnEditAD.TabStop = false;
+            this.btnEditAD.Zoom = 10;
+            this.btnEditAD.Click += new System.EventHandler(this.btnEditAD_Click);
             // 
             // fmQuanLy
             // 
@@ -433,20 +629,25 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fmQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fmQuanLy2";
+            this.Text = "`";
             this.pnMain.ResumeLayout(false);
             this.bunifuGradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.pnProfile.ResumeLayout(false);
             this.pnProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAvar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExtend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAVT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditFN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditLN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditDOB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditAD)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuImageButton btnAvar;
-        private System.Windows.Forms.Label lbName;
+        private Bunifu.Framework.UI.BunifuImageButton btnAVT;
+        private System.Windows.Forms.Label lbTenTK;
         private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.Label lbPosition;
         private System.Windows.Forms.Timer tmrButon;
@@ -457,12 +658,11 @@
         private System.Windows.Forms.Label lbLastName;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Label lbDataLG;
+        private System.Windows.Forms.Label lbDataAD;
         private System.Windows.Forms.Label lbDataDOB;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbDataLN;
         private System.Windows.Forms.Label lbDataFN;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEditPW;
         private System.Windows.Forms.PictureBox btnExit;
         private Bunifu.Framework.UI.BunifuTileButton btnKho;
         private Bunifu.Framework.UI.BunifuTileButton btnEmp;
@@ -470,5 +670,20 @@
         private Bunifu.Framework.UI.BunifuTileButton btnAna;
         private Bunifu.Framework.UI.BunifuTileButton btnSup;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
+        private System.Windows.Forms.OpenFileDialog ofdAVT;
+        private System.Windows.Forms.Label lbDataID;
+        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.Label lbDataST;
+        private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.Label lbDataCD;
+        private System.Windows.Forms.Label lbCD;
+        private Bunifu.Framework.UI.BunifuTileButton btnTrans;
+        private Bunifu.Framework.UI.BunifuImageButton btnExtend;
+        private System.Windows.Forms.Timer tmrExtend;
+        private System.Windows.Forms.Timer tmrExtend2;
+        private Bunifu.Framework.UI.BunifuImageButton btnEditAD;
+        private Bunifu.Framework.UI.BunifuImageButton btnEditDOB;
+        private Bunifu.Framework.UI.BunifuImageButton btnEditLN;
+        private Bunifu.Framework.UI.BunifuImageButton btnEditFN;
     }
 }
