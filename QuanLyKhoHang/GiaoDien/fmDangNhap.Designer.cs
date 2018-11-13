@@ -52,25 +52,25 @@
             // 
             this.lb1.AutoSize = true;
             this.lb1.BackColor = System.Drawing.Color.Transparent;
-            this.lb1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lb1.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.lb1.ForeColor = System.Drawing.Color.White;
-            this.lb1.Location = new System.Drawing.Point(231, 167);
+            this.lb1.Location = new System.Drawing.Point(175, 68);
             this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(116, 21);
+            this.lb1.Size = new System.Drawing.Size(180, 23);
             this.lb1.TabIndex = 7;
-            this.lb1.Text = "Who are you?";
+            this.lb1.Text = "Quản lý kho hàng";
             // 
             // lbLogin
             // 
             this.lbLogin.AutoSize = true;
             this.lbLogin.BackColor = System.Drawing.Color.Transparent;
-            this.lbLogin.Font = new System.Drawing.Font("Century Gothic", 50F);
+            this.lbLogin.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLogin.ForeColor = System.Drawing.Color.White;
-            this.lbLogin.Location = new System.Drawing.Point(3, 18);
+            this.lbLogin.Location = new System.Drawing.Point(10, 10);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(351, 81);
+            this.lbLogin.Size = new System.Drawing.Size(345, 58);
             this.lbLogin.TabIndex = 0;
-            this.lbLogin.Text = "Welcome";
+            this.lbLogin.Text = "CHÀO MỪNG";
             // 
             // lbRemember
             // 
@@ -81,9 +81,9 @@
             this.lbRemember.Location = new System.Drawing.Point(251, 306);
             this.lbRemember.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRemember.Name = "lbRemember";
-            this.lbRemember.Size = new System.Drawing.Size(96, 21);
+            this.lbRemember.Size = new System.Drawing.Size(70, 21);
             this.lbRemember.TabIndex = 7;
-            this.lbRemember.Text = "Remember";
+            this.lbRemember.Text = "Ghi nhớ";
             // 
             // cbRemember
             // 
@@ -126,7 +126,7 @@
             this.btnExit.ActiveLineColor = System.Drawing.Color.White;
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
-            this.btnExit.ButtonText = "Exit";
+            this.btnExit.ButtonText = "Thoát";
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
@@ -152,7 +152,7 @@
             this.btnLogin.ActiveLineColor = System.Drawing.Color.White;
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
-            this.btnLogin.ButtonText = "Login";
+            this.btnLogin.ButtonText = "Đăng nhập";
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 17F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;

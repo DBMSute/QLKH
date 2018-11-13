@@ -8,39 +8,43 @@ namespace DTO
 {
   public  class Kho
     {
-        private string id,  ten, diaChi, taiKhoan;
-        private int gioiHan;
+        private string id,  ten, diaChi, mng;
+        private int gioiHan, soLuongHang = 0;
 
         public string ID
         {
             get { return id; }
             set { id = value; }
         }
-        public Kho(string id,string ten, string diaChi, string taiKhoan, int gioiHan)
+        public Kho(string id,string ten, string diaChi, string mng, int gioiHan, int soLuongHang)
         {
             this.ID = id;
-            this.TAIKHOAN = taiKhoan;
             this.TEN = ten;
             this.DIACHI = diaChi;
+            this.MNG = mng;
             this.GIOIHAN = gioiHan;
+            this.SOLUONGHANG = soLuongHang;
         }
-        public Kho( string ten, string diaChi,string taiKhoan, int gioiHan)
+        public Kho(string id, string ten, string diaChi, string mng, int gioiHan)
         {
-            this.TAIKHOAN = taiKhoan;
+            this.ID = id;
             this.TEN = ten;
             this.DIACHI = diaChi;
+            this.MNG = mng;
             this.GIOIHAN = gioiHan;
         }
-        public Kho( string ten, string diaChi, int gioiHan)
+        public Kho(string ten, string diaChi, string mng, int gioiHan)
         {
             this.TEN = ten;
             this.DIACHI = diaChi;
+            this.MNG = mng;
             this.GIOIHAN = gioiHan;
         }
-      public Kho()
+        public Kho()
         {
 
         }
+
         public string TEN
         {
             get { return ten; }
@@ -51,15 +55,20 @@ namespace DTO
             get { return diaChi; }
             set { diaChi = value; }
         }
-        public string TAIKHOAN
+        public string MNG
         {
-            get { return taiKhoan; }
-            set { taiKhoan = value; }
+            get { return mng; }
+            set { mng = value; }
         }
         public int GIOIHAN
         {
             get { return gioiHan; }
             set { gioiHan = value; }
+        }
+        public int SOLUONGHANG
+        {
+            get { return soLuongHang; }
+            set { soLuongHang = value; }
         }
     }
 }

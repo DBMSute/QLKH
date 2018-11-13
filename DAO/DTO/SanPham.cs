@@ -8,7 +8,7 @@ namespace DTO
 {
    public class SanPham
     {
-        private string id, ten, idLoai, tenLoai, idKho, donViTinh, tinhTrang;
+        private string id, ten, tenLoai, idKho, donViTinh, tinhTrang;
         private double donGia;
         private int soluong;
         public string ID
@@ -20,11 +20,6 @@ namespace DTO
         {
             get { return ten; }
             set { ten = value; }
-        }
-        public string IDLoai
-        {
-            get { return idLoai; }
-            set { idLoai = value; }
         }
         public string TENLOAI
         {
@@ -56,17 +51,35 @@ namespace DTO
             get { return tinhTrang; }
             set { tinhTrang = value; }
         }
-        public SanPham(string id, string ten, string idLoai, string tenLoai, string idKho, int soluong, double donGia, string donViTinh, string tinhTrang)
+        public SanPham(string id, string ten, string tenLoai, string idKho, int soluong, double donGia, string donViTinh, string tinhTrang) //load
         {
             this.ID = id;
             this.TEN = ten;
-            this.IDLoai = idLoai;
             this.TENLOAI = tenLoai;
             this.IDKho = idKho;
             this.SOLUONG = soluong;
-            this.DONVITINH = donViTinh;
             this.DONGIA = donGia;
+            this.DONVITINH = donViTinh;
             this.TINHTRANG = tinhTrang;
+        }
+        public SanPham(string ten, string tenLoai, string idKho, int soluong, double donGia, string donViTinh) //add
+        {
+            this.TEN = ten;
+            this.TENLOAI = tenLoai;
+            this.IDKho = idKho;
+            this.SOLUONG = soluong;
+            this.DONGIA = donGia;
+            this.DONVITINH = donViTinh;
+        }
+        public SanPham(string id, string ten, string tenLoai, string idKho, int soluong, double donGia, string donViTinh) //edit
+        {
+            this.ID = id;
+            this.TEN = ten;
+            this.TENLOAI = tenLoai;
+            this.IDKho = idKho;
+            this.SOLUONG = soluong;
+            this.DONGIA = donGia;
+            this.DONVITINH = donViTinh;
         }
         public SanPham()
         { 

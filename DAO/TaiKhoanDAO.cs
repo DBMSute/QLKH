@@ -18,10 +18,10 @@ namespace DAO
             }
         }
 
-        public bool CheckAccount(string tenTk, string passWd)
+        public int CheckAccount(string tenTk, string passWd)
         {
-            string str = "SELECT dbo.FN_TaiKhoan_CheckLogin('" + tenTk + "','" + passWd + "')"; 
-            return Convert.ToBoolean(DataConn.Instance.ExecuteQueryScalar(str));
+            string str = "SELECT dbo.FN_TaiKhoan_CheckLogin('" + tenTk + "','" + passWd + "')";
+            return Convert.ToInt32(DataConn.Instance.ExecuteQueryScalar(str));
         }
 
         public void updateAvatar(string id, byte[] avt)
@@ -34,7 +34,7 @@ namespace DAO
         {
             DTO.TaiKhoan tk = new DTO.TaiKhoan();
             DateTime date = new DateTime();
-            string str = "SELECT * FROM dbo.VI_TaiKhoan_LoadData WHERE tentk = '" + tentk + "'"; //gọi view
+            string str = "SELECT * FROM dbo.FN_TaiKhoan_GetInfo('" + tentk + "')"; //gọi Function
             DataTable data = DataConn.Instance.ExecuteQueryTable(str);
             tk.ID = data.Rows[0]["id"].ToString();
             tk.TENTK =data.Rows[0]["tentk"].ToString();

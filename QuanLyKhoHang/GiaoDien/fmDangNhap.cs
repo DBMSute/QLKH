@@ -23,14 +23,27 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            QuanLyKhoHang.Properties.Settings.Default.UserName = null;
+            QuanLyKhoHang.Properties.Settings.Default.UserPassword = null;
+            QuanLyKhoHang.Properties.Settings.Default.Save();
             Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (BUS.TaiKhoanBUS.Instace.checkAccount(tbACC.Text, tbPW.Text) == false)
+            if (BUS.TaiKhoanBUS.Instace.checkAccount(tbACC.Text, tbPW.Text) == 2)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu sai!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản đang bị khóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (BUS.TaiKhoanBUS.Instace.checkAccount(tbACC.Text, tbPW.Text) == 0)
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (BUS.TaiKhoanBUS.Instace.checkAccount(tbACC.Text, tbPW.Text) == -1)
+            {
+                MessageBox.Show("Lỗi không xác định", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             tentk = tbACC.Text;

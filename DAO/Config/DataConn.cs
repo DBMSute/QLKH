@@ -35,7 +35,8 @@ namespace DAO
             using (SqlConnection sqlConn = new SqlConnection(connStr))
             {
                 SqlCommand comm = new SqlCommand(QuerySql, sqlConn);
-                SqlDataAdapter da = new SqlDataAdapter(comm);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = comm;
                 da.Fill(data);
                 sqlConn.Close();
             }

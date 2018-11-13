@@ -8,7 +8,7 @@ namespace DTO
 {
    public class LoaiSanPham
     {
-        public string id, ten, moTa;
+        private string id, ten, moTa;
         public string ID
         {
             get { return id; }
@@ -26,9 +26,13 @@ namespace DTO
         }
         public LoaiSanPham(string id, string ten, string moTa)
         {
-            this.id = id;
-            this.ten = ten;
-            this.moTa = moTa;
+            this.ID = id;
+            this.TEN = ten;
+            this.MOTA = moTa;
+        }
+        public LoaiSanPham()
+        {
+
         }
     }
 }

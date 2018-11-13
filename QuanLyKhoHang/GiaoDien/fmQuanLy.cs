@@ -14,112 +14,42 @@ namespace QuanLyKhoHang.GiaoDien
 {
     public partial class fmQuanLy : Form
     {
-        private int co = -1;
-        private int dem = 0;
-        Size sbtnKho = new Size();
-        Size sKhachHang = new Size();
-        Size sNhaCC = new Size();
-        Size sQuanLyNV = new Size();
-        Size sThongKe = new Size();
+        public static string sName = null;
 
         public fmQuanLy()
         {
             InitializeComponent();
-            sbtnKho = btnKho.Size;
-            sKhachHang = btnCus.Size;
-            sNhaCC = btnSup.Size;
-            sQuanLyNV = btnEmp.Size;
-            sThongKe = btnAna.Size;
             loadData();
             pnProfile.Size = new Size(lbTenTK.Size.Width + 120, 97);
             btnExtend.Location = new Point(pnProfile.Size.Width - btnExtend.Size.Width, pnProfile.Size.Height - btnExtend.Size.Height);
-        }
-
-        private void tmrButon_Tick(object sender, EventArgs e)
-        {
-            Size s = new Size();        
-            if (dem < 7)
-            {
-                if (co == 0)
-                {
-                    s = btnKho.Size;
-                    s.Height++;
-                    s.Width++;
-                    btnKho.Size = s;
-                }
-                if (co == 1)
-                {
-                    s = btnSup.Size;
-                    s.Height++;
-                    s.Width++;
-                    btnSup.Size = s;
-                }
-                if (co == 2)
-                {
-                    s = btnEmp.Size;
-                    s.Height++;
-                    s.Width++;
-                    btnEmp.Size = s;
-                }
-                if (co == 4)
-                {
-                    s = btnAna.Size;
-                    s.Height++;
-                    s.Width++;
-                    btnAna.Size = s;
-                }
-                if (co == 5)
-                {
-                    s = btnCus.Size;
-                    s.Height++;
-                    s.Width++;
-                    btnCus.Size = s;
-                }
-
-            }
-            else
-            {
-                btnKho.Size = sbtnKho;
-                btnCus.Size = sKhachHang;
-                btnSup.Size = sNhaCC;
-                btnEmp.Size = sQuanLyNV;
-                btnAna.Size = sThongKe;
-                tmrButon.Enabled = false;
-                dem = 0;
-            }
-            dem++;
+            sName = lbDataLN.Text + " " + lbDataFN.Text;
         }
 
         private void btnKho_Click(object sender, EventArgs e)
         {
-            tmrButon.Enabled = true;
-            co = 0;
+            
             new fmKho().Show();
             this.Hide();
         }
 
         private void btnCus_Click(object sender, EventArgs e)
         {
-            tmrButon.Enabled = true;
-            co = 5;
+
         }
 
         private void btnEmp_Click(object sender, EventArgs e)
         {
-            tmrButon.Enabled = true;
-            co = 2;
+
         }
 
         private void btnSup_Click(object sender, EventArgs e)
         {
-            tmrButon.Enabled = true;
-            co = 1;
+  
         }
 
         private void btnAna_Click(object sender, EventArgs e)
         {
-            tmrButon.Enabled = true;
-            co = 4;
+      
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -136,20 +66,17 @@ namespace QuanLyKhoHang.GiaoDien
             if (btnAVT.Image == null)
             {
                 btnAVT.Image = QuanLyKhoHang.Properties.Resources.erroravt;
-                MessageBox.Show("Avatar error!", "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Avartar lỗi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnExtend_Click(object sender, EventArgs e)
         {
-            int W = lbTenTK.Size.Width + 120 < 430 ? 430 : lbTenTK.Size.Width + 120;
+            int W = lbTenTK.Size.Width + 120 < 500 ? 500 : lbTenTK.Size.Width + 120;
             if (pnProfile.Size == new Size(W, 460))
-            {
-                //pnProfile.Size = new Size(lbTenTK.Size.Width + 120, 97); //thu nhỏ         
+            {        
                 tmrExtend2.Start();
                 return;
-            }
-            //pnProfile.BackColor = Color.FromArgb(150, 0, 0, 0);
-            //pnProfile.Size = new Size(W, 460);//phóng to           
+            }  
             tmrExtend.Start();
         }
 
@@ -175,7 +102,7 @@ namespace QuanLyKhoHang.GiaoDien
         private void tmrExtend_Tick(object sender, EventArgs e) //phóng to
         {
             int H = pnProfile.Size.Height;
-            int W = lbTenTK.Size.Width + 120 < 430 ? 430 : lbTenTK.Size.Width + 120;
+            int W = lbTenTK.Size.Width + 120 < 500 ? 500 : lbTenTK.Size.Width + 120;
             if (pnProfile.Size.Height >= 460)
             {
                 pnProfile.Size = new Size(W, 460);          
@@ -188,7 +115,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void tmrExtend2_Tick(object sender, EventArgs e) //thu nhỏ
         {
-            int W = lbTenTK.Size.Width + 120 < 430 ? 430 : lbTenTK.Size.Width + 120;
+            int W = lbTenTK.Size.Width + 120 < 500 ? 500 : lbTenTK.Size.Width + 120;
             int H = pnProfile.Size.Height;
             if (pnProfile.Size.Height <= 97)
             {
@@ -206,12 +133,14 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 fmInputPW fm = new fmInputPW();
                 fm.ShowDialog();
+                if(fmInputPW.npw == null)
+                    return;
                 BUS.TaiKhoanBUS.Instace.updatePW(lbDataID.Text, fmInputPW.opw, fmInputPW.npw);
-                MessageBox.Show("Success!", "Change Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhật mật khẩu thành công!", "Thay đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Password was existed!\n" + ex.Message, "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             loadData();
         }
@@ -226,7 +155,7 @@ namespace QuanLyKhoHang.GiaoDien
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data is invalid!\n" + ex.Message, "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             loadData();
         }
@@ -240,7 +169,7 @@ namespace QuanLyKhoHang.GiaoDien
             }
             catch (Exception ex )
             {
-                MessageBox.Show("Data is invalid!\n"+ex.Message,"Opps...",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             loadData();
         }
@@ -255,7 +184,7 @@ namespace QuanLyKhoHang.GiaoDien
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data is invalid!\n" + ex.Message, "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dữ liệu không hợp lệ!\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             loadData();
         }
@@ -270,7 +199,7 @@ namespace QuanLyKhoHang.GiaoDien
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data is invalid!\n" + ex.Message, "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             loadData();
         }

@@ -21,11 +21,10 @@ namespace BUS
             }
         }
 
-        public bool checkAccount(string tenTk, string passwd)
+        public int checkAccount(string tenTk, string passwd)
         {
-            if (DAO.TaiKhoanDAO.Instance.CheckAccount(tenTk, passwd) == true) 
-                return true;
-            return false;
+            return DAO.TaiKhoanDAO.Instance.CheckAccount(tenTk, passwd);
+
         }
 
         public void updateAvatar(string id, string path)

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmQuanLy));
-            this.tmrButon = new System.Windows.Forms.Timer(this.components);
             this.pnMain = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pnProfile = new System.Windows.Forms.Panel();
@@ -80,11 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tmrButon
-            // 
-            this.tmrButon.Interval = 3;
-            this.tmrButon.Tick += new System.EventHandler(this.tmrButon_Tick);
             // 
             // pnMain
             // 
@@ -150,7 +144,7 @@
             this.pnProfile.Controls.Add(this.lbPosition);
             this.pnProfile.Location = new System.Drawing.Point(32, 12);
             this.pnProfile.Name = "pnProfile";
-            this.pnProfile.Size = new System.Drawing.Size(299, 135);
+            this.pnProfile.Size = new System.Drawing.Size(491, 445);
             this.pnProfile.TabIndex = 9;
             // 
             // btnEditAD
@@ -215,7 +209,7 @@
             this.lbDataCD.BackColor = System.Drawing.Color.Transparent;
             this.lbDataCD.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lbDataCD.ForeColor = System.Drawing.Color.White;
-            this.lbDataCD.Location = new System.Drawing.Point(189, 324);
+            this.lbDataCD.Location = new System.Drawing.Point(243, 324);
             this.lbDataCD.Name = "lbDataCD";
             this.lbDataCD.Size = new System.Drawing.Size(49, 24);
             this.lbDataCD.TabIndex = 27;
@@ -229,9 +223,9 @@
             this.lbCD.ForeColor = System.Drawing.Color.White;
             this.lbCD.Location = new System.Drawing.Point(34, 324);
             this.lbCD.Name = "lbCD";
-            this.lbCD.Size = new System.Drawing.Size(144, 24);
+            this.lbCD.Size = new System.Drawing.Size(204, 24);
             this.lbCD.TabIndex = 26;
-            this.lbCD.Text = "Create Date:";
+            this.lbCD.Text = "Ngày tạo tài khoản:";
             // 
             // lbDataST
             // 
@@ -239,7 +233,7 @@
             this.lbDataST.BackColor = System.Drawing.Color.Transparent;
             this.lbDataST.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lbDataST.ForeColor = System.Drawing.Color.White;
-            this.lbDataST.Location = new System.Drawing.Point(189, 294);
+            this.lbDataST.Location = new System.Drawing.Point(243, 294);
             this.lbDataST.Name = "lbDataST";
             this.lbDataST.Size = new System.Drawing.Size(49, 24);
             this.lbDataST.TabIndex = 25;
@@ -253,9 +247,9 @@
             this.lbStatus.ForeColor = System.Drawing.Color.White;
             this.lbStatus.Location = new System.Drawing.Point(34, 294);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(74, 24);
+            this.lbStatus.Size = new System.Drawing.Size(109, 24);
             this.lbStatus.TabIndex = 24;
-            this.lbStatus.Text = "Status:";
+            this.lbStatus.Text = "Trạng thái:";
             // 
             // lbDataID
             // 
@@ -263,7 +257,7 @@
             this.lbDataID.BackColor = System.Drawing.Color.Transparent;
             this.lbDataID.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lbDataID.ForeColor = System.Drawing.Color.White;
-            this.lbDataID.Location = new System.Drawing.Point(189, 114);
+            this.lbDataID.Location = new System.Drawing.Point(243, 114);
             this.lbDataID.Name = "lbDataID";
             this.lbDataID.Size = new System.Drawing.Size(49, 24);
             this.lbDataID.TabIndex = 23;
@@ -291,7 +285,7 @@
             this.btnEditPW.Name = "btnEditPW";
             this.btnEditPW.Size = new System.Drawing.Size(164, 48);
             this.btnEditPW.TabIndex = 20;
-            this.btnEditPW.Text = "Change PW";
+            this.btnEditPW.Text = "Đổi mật khẩu";
             this.btnEditPW.UseVisualStyleBackColor = false;
             this.btnEditPW.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -316,7 +310,7 @@
             this.lbDataLG.BackColor = System.Drawing.Color.Transparent;
             this.lbDataLG.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lbDataLG.ForeColor = System.Drawing.Color.White;
-            this.lbDataLG.Location = new System.Drawing.Point(189, 264);
+            this.lbDataLG.Location = new System.Drawing.Point(243, 264);
             this.lbDataLG.Name = "lbDataLG";
             this.lbDataLG.Size = new System.Drawing.Size(49, 24);
             this.lbDataLG.TabIndex = 17;
@@ -328,7 +322,7 @@
             this.lbDataAD.BackColor = System.Drawing.Color.Transparent;
             this.lbDataAD.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lbDataAD.ForeColor = System.Drawing.Color.White;
-            this.lbDataAD.Location = new System.Drawing.Point(189, 234);
+            this.lbDataAD.Location = new System.Drawing.Point(243, 234);
             this.lbDataAD.Name = "lbDataAD";
             this.lbDataAD.Size = new System.Drawing.Size(49, 24);
             this.lbDataAD.TabIndex = 16;
@@ -340,7 +334,7 @@
             this.lbDataDOB.BackColor = System.Drawing.Color.Transparent;
             this.lbDataDOB.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lbDataDOB.ForeColor = System.Drawing.Color.White;
-            this.lbDataDOB.Location = new System.Drawing.Point(189, 204);
+            this.lbDataDOB.Location = new System.Drawing.Point(243, 204);
             this.lbDataDOB.Name = "lbDataDOB";
             this.lbDataDOB.Size = new System.Drawing.Size(49, 24);
             this.lbDataDOB.TabIndex = 15;
@@ -352,7 +346,7 @@
             this.lbDataLN.BackColor = System.Drawing.Color.Transparent;
             this.lbDataLN.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lbDataLN.ForeColor = System.Drawing.Color.White;
-            this.lbDataLN.Location = new System.Drawing.Point(189, 174);
+            this.lbDataLN.Location = new System.Drawing.Point(243, 174);
             this.lbDataLN.Name = "lbDataLN";
             this.lbDataLN.Size = new System.Drawing.Size(49, 24);
             this.lbDataLN.TabIndex = 14;
@@ -364,7 +358,7 @@
             this.lbDataFN.BackColor = System.Drawing.Color.Transparent;
             this.lbDataFN.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.lbDataFN.ForeColor = System.Drawing.Color.White;
-            this.lbDataFN.Location = new System.Drawing.Point(189, 144);
+            this.lbDataFN.Location = new System.Drawing.Point(243, 144);
             this.lbDataFN.Name = "lbDataFN";
             this.lbDataFN.Size = new System.Drawing.Size(49, 24);
             this.lbDataFN.TabIndex = 13;
@@ -378,9 +372,9 @@
             this.lbAddress.ForeColor = System.Drawing.Color.White;
             this.lbAddress.Location = new System.Drawing.Point(34, 234);
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(94, 24);
+            this.lbAddress.Size = new System.Drawing.Size(87, 24);
             this.lbAddress.TabIndex = 12;
-            this.lbAddress.Text = "Address:";
+            this.lbAddress.Text = "Địa chỉ:";
             // 
             // lbLastLogin
             // 
@@ -390,9 +384,9 @@
             this.lbLastLogin.ForeColor = System.Drawing.Color.White;
             this.lbLastLogin.Location = new System.Drawing.Point(34, 264);
             this.lbLastLogin.Name = "lbLastLogin";
-            this.lbLastLogin.Size = new System.Drawing.Size(109, 24);
+            this.lbLastLogin.Size = new System.Drawing.Size(210, 24);
             this.lbLastLogin.TabIndex = 11;
-            this.lbLastLogin.Text = "Last login:";
+            this.lbLastLogin.Text = "Đăng nhập lần cuối:";
             // 
             // lbDateOfBirth
             // 
@@ -402,9 +396,9 @@
             this.lbDateOfBirth.ForeColor = System.Drawing.Color.White;
             this.lbDateOfBirth.Location = new System.Drawing.Point(34, 204);
             this.lbDateOfBirth.Name = "lbDateOfBirth";
-            this.lbDateOfBirth.Size = new System.Drawing.Size(142, 24);
+            this.lbDateOfBirth.Size = new System.Drawing.Size(113, 24);
             this.lbDateOfBirth.TabIndex = 10;
-            this.lbDateOfBirth.Text = "Date of birth:";
+            this.lbDateOfBirth.Text = "Ngày sinh:";
             // 
             // lbLastName
             // 
@@ -414,9 +408,9 @@
             this.lbLastName.ForeColor = System.Drawing.Color.White;
             this.lbLastName.Location = new System.Drawing.Point(34, 174);
             this.lbLastName.Name = "lbLastName";
-            this.lbLastName.Size = new System.Drawing.Size(122, 24);
+            this.lbLastName.Size = new System.Drawing.Size(165, 24);
             this.lbLastName.TabIndex = 9;
-            this.lbLastName.Text = "Last name:";
+            this.lbLastName.Text = "Họ và tên đệm:";
             // 
             // lbFirstName
             // 
@@ -426,9 +420,9 @@
             this.lbFirstName.ForeColor = System.Drawing.Color.White;
             this.lbFirstName.Location = new System.Drawing.Point(34, 144);
             this.lbFirstName.Name = "lbFirstName";
-            this.lbFirstName.Size = new System.Drawing.Size(117, 24);
+            this.lbFirstName.Size = new System.Drawing.Size(50, 24);
             this.lbFirstName.TabIndex = 8;
-            this.lbFirstName.Text = "First name:";
+            this.lbFirstName.Text = "Tên:";
             // 
             // lbTenTK
             // 
@@ -650,7 +644,6 @@
         private System.Windows.Forms.Label lbTenTK;
         private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.Label lbPosition;
-        private System.Windows.Forms.Timer tmrButon;
         private System.Windows.Forms.Panel pnProfile;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Label lbLastLogin;
