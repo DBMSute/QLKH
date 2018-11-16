@@ -152,6 +152,7 @@ namespace QuanLyKhoHang.GiaoDien
             lbDataInfoQuanLi.Text = dtgvWare[3, e.RowIndex].Value.ToString();
             lbDataInfoSLHang.Text = dtgvWare[5, e.RowIndex].Value.ToString();
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             btnWareSave.Focus();
@@ -254,7 +255,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void tbItemSearch_TextChanged(object sender, EventArgs e)
         {
-            BUS.SanPhamBUS.Instance.searchByKeyword(dtgvItem, tbItemSearch.Text, idkho);
+            BUS.SanPhamBUS.Instance.searchByKeyword(dtgvItem, tbItemSearch.Text.Trim(), idkho);
         }
 
         private void tbItemSearch_Enter(object sender, EventArgs e)
@@ -306,7 +307,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void tbWareSearch_TextChanged(object sender, EventArgs e)
         {
-            BUS.KhoBUS.Instance.searchByKeyword(dtgvWare, tbWareSearch.Text);
+            BUS.KhoBUS.Instance.searchByKeyword(dtgvWare, tbWareSearch.Text.Trim());
         }
 
         private void btnWareDel_Click(object sender, EventArgs e)
@@ -321,7 +322,7 @@ namespace QuanLyKhoHang.GiaoDien
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.Contains("REFERENCE") == true ? "Trong kho còn sản phẩm" : ex.Message, "Lỗi!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message.Contains("REFERENCE") == true ? "Trong kho còn sản phẩm" : ex.Message, "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 BUS.KhoBUS.Instance.loadData(dtgvWare);
             }
         }
@@ -362,7 +363,7 @@ namespace QuanLyKhoHang.GiaoDien
                 tbWareSearch.Text = "Tìm kiếm...";
                 BUS.KhoBUS.Instance.loadData(dtgvWare);
             }
-            }
+        }
 
         private void tbItemSearch_Leave(object sender, EventArgs e)
         {
@@ -394,7 +395,8 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void dtgvItem_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            btnItemSave.BackColor = Color.FromArgb(192, 0, 0);
+            btnWareSave.color = btnWareSave.BackColor = Color.FromArgb(192, 0, 0);
+            btnWareSave.colorActive = Color.Red;
         }
     }
 }

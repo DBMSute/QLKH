@@ -22,10 +22,11 @@ namespace QuanLyKhoHang.GiaoDien
         {
             if (dateTimePick.Value > DateTime.Now)
             {
-                MessageBox.Show("Invalid data!");
+                MessageBox.Show("Ngày không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             datetimepicked = dateTimePick.Value.ToString("d", new System.Globalization.CultureInfo("es-ES"));
+            
             this.Close();
         }
     }

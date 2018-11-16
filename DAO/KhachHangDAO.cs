@@ -18,10 +18,11 @@ namespace DAO
                 return instance;
             }
         }
+
         public List<KhachHang>loadData()
         {
-            List<KhachHang> lKh = new List<KhachHang>();
-            string str = "select * from KhachHang";
+            List<KhachHang> lKH = new List<KhachHang>();
+            string str = "SELECT * FROM VI_KhachHang_LoadData";
             DataTable data = DataConn.Instance.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -30,16 +31,34 @@ namespace DAO
                 string sdt = item["sdt"].ToString();
                 string dChi = item["dchi"].ToString();
                 KhachHang kh = new KhachHang(id, ten, sdt, dChi);
-                lKh.Add(kh);
+                lKH.Add(kh);
             }
-            return lKh;
+            return lKH;
         }
-        public List<KhachHang> Them()
+
+        public List<KhachHang> Insert()
         {
-            List<KhachHang> lKh = new List<KhachHang>();
-            KhachHang k = new KhachHang();
-            lKh.Add(k);
-            string str = "select * from KhachHang";
+            List<KhachHang> lKH = new List<KhachHang>();
+            KhachHang kh = new KhachHang();
+            lKH.Add(kh);
+            string str = "SELECT * FROM VI_KhachHang_LoadData";
+            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            foreach (DataRow item in data.Rows)
+            {
+                string id = item["id"].ToString();
+                string ten = item["ten"].ToString();
+                string sdt = item["sdt"].ToString();
+                string dChi = item["dchi"].ToString();
+                kh = new KhachHang(id, ten, sdt, dChi);
+                lKH.Add(kh);
+            }
+            return lKH;
+        }
+
+        public List<KhachHang> searchByKeyword(string keyword)
+        {
+            List<KhachHang> lKH = new List<KhachHang>();
+            string str = "SELECT * FROM dbo.FN_KhachHang_SearchByKeyword(N'" + keyword + "')";
             DataTable data = DataConn.Instance.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -48,46 +67,34 @@ namespace DAO
                 string sdt = item["sdt"].ToString();
                 string dChi = item["dchi"].ToString();
                 KhachHang kh = new KhachHang(id, ten, sdt, dChi);
-                lKh.Add(kh);
+                lKH.Add(kh);
             }
-            return lKh;
+            return lKH;
         }
-        public List<KhachHang> timKiem(string strTimKiem)
+
+        public void saveInsert(KhachHang kh)
         {
-            List<KhachHang> lKh = new List<KhachHang>();
-            string str = "select * from KhachHang where id like N'%" + strTimKiem.Trim() + "%' or ten like N'%" + strTimKiem.Trim()
-               + "%' or dchi like N'%" + strTimKiem.Trim() + "%'";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
-            foreach (DataRow item in data.Rows)
-            {
-                string id = item["id"].ToString();
-                string ten = item["ten"].ToString();
-                string sdt = item["sdt"].ToString();
-                string dChi = item["dchi"].ToString();
-                KhachHang kh = new KhachHang(id, ten, sdt, dChi);
-                lKh.Add(kh);
-            }
-            return lKh;
-        }
-        public void LuuThem(List<KhachHang> lKh)
-        {
-            string str = "exec sp_Insert_KhachHang @ten=N'"+lKh[0].ten+"',@sdt='"+lKh[0].soDT+
-                "',@dchi=N'"+lKh[0].diaChi+"'";
+            string str = "EXEC dbo.sp_Insert_KhachHang @ten = N'" + kh.TEN + "'," +
+                         "@sdt = '" + kh.SODT + "'," +
+                         "@dchi = N'" + kh.DIACHI + "'";
             DataConn.Instance.ExecuteQueryTable(str);
         }
-        public void LuuSua(List<KhachHang> lKh)
+
+        public void saveEdit(List<KhachHang> lKH)
         {
-            for (int i = 0; i < lKh.Count; i++)
+            for (int i = 0; i < lKH.Count; i++)
             {
-                string str = "exec sp_Update_KhachHang @id='" + lKh[i].id + "',@ten=N'" + lKh[i].ten + "',@sdt='" + lKh[i].soDT +
-                "',@dchi=N'" + lKh[i].diaChi + "'";
+                string str = "EXEC dbo.sp_Update_KhachHang @id = '" + lKH[i].ID + "', " +
+                             "@ten = N'" + lKH[i].TEN + "'," +
+                             "@sdt = '" + lKH[i].SODT + "'," +
+                             "@dchi = N'" + lKH[i].DIACHI + "'";
                 DataConn.Instance.ExecuteQueryTable(str);
             }
         }
-     
-      public void Xoa(string id)
+
+        public void Delete(string id)
         {
-            string str = "exec sp_Delete_KhachHang  @id='" + id + "'";
+            string str = "EXEC dbo.sp_Delete_KhachHang @id = '" + id + "'";
             DataConn.Instance.ExecuteQueryTable(str);
         }
     }

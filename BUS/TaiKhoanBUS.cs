@@ -52,8 +52,8 @@ namespace BUS
             diachi.Text = temp.DIACHI;
             lastlogin.Text = temp.LASTLOGIN;
             createdate.Text = temp.CREATEDAY;
-            pers.Text = (temp.PERS == 1) ? "admin" : (temp.PERS == 2) ? "manager" : "employeer";
-            tinhtrang.Text = (temp.TINHTRANG == 1) ? "Active" : "Banned";
+            pers.Text = temp.PERS == 1 ? "Quản trị tối cao" : (temp.PERS == 2 ? "Quản lý" : "Nhân viên");
+            tinhtrang.Text = temp.TINHTRANG == 1 ? "Đang hoạt động": "Bị khóa";
         }
 
         public Bitmap ByteToImage(byte[] blob) //Covert Byte to Image

@@ -9,7 +9,7 @@ namespace DTO
    public class KhachHang
     {
 
-        public string id, ten, soDT, diaChi;
+        private string id, ten, soDT, diaChi;
         public string ID
         {
             get { return id; }
@@ -34,18 +34,18 @@ namespace DTO
         {
 
         }
-        public KhachHang( string ten, string soDT, string diaChi)
+        public KhachHang(string ten, string soDT, string diaChi)
         {
-            this.ten = ten;
-            this.soDT = soDT;
-            this.diaChi = diaChi;
+            this.TEN = ten;
+            this.SODT = soDT;
+            this.DIACHI = diaChi;
         }
         public KhachHang(string id, string ten, string soDT, string diaChi)
         {
-            this.id = id;
-            this.ten = ten;
-            this.soDT = soDT;
-            this.diaChi = diaChi;
+            this.ID = id;
+            this.TEN = ten;
+            this.SODT = soDT;
+            this.DIACHI = diaChi;
         }
     }
 }

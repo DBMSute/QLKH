@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using DTO;
+
 namespace DAO
 {
     public class TaiKhoanDAO
@@ -57,8 +59,8 @@ namespace DAO
             }
             date = (DateTime)data.Rows[0]["createday"];
             tk.CREATEDAY = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
-            tk.TINHTRANG=Convert.ToInt32(data.Rows[0]["tinhtrang"]);
-            tk.PERS=Convert.ToInt32(data.Rows[0]["pers"]);
+            tk.TINHTRANG = Convert.ToInt32(data.Rows[0]["tinhtrang"]);
+            tk.PERS= Convert.ToInt32(data.Rows[0]["pers"]);
             return tk;
         }
 

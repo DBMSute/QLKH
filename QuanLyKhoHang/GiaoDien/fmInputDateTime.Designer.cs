@@ -34,7 +34,9 @@
             // 
             // dateTimePick
             // 
+            this.dateTimePick.CustomFormat = "dd-MM-yyyy";
             this.dateTimePick.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePick.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePick.Location = new System.Drawing.Point(12, 12);
             this.dateTimePick.Name = "dateTimePick";
             this.dateTimePick.Size = new System.Drawing.Size(360, 33);

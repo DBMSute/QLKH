@@ -9,8 +9,8 @@ namespace BUS
 {
    public class KhachHangBUS
     {
-       private static KhachHangBUS instance;
-       public static KhachHangBUS Instance
+        private static KhachHangBUS instance;
+        public static KhachHangBUS Instance
         {
             get
             {
@@ -18,80 +18,52 @@ namespace BUS
                 return instance;
             }
         }
-       public  void loadData(DataGridView dgv)
-       {
-           dgv.DataSource = DAO.KhachHangDAO.Instance.loadData();
-       }
-       public void timKiem(DataGridView dgv,string str)
-       {
-           dgv.DataSource = DAO.KhachHangDAO.Instance.timKiem(str);
-       }
-       public void Them(DataGridView dgv)
-       {
-           dgv.DataSource = DAO.KhachHangDAO.Instance.Them();
-       }
-       public void Xoa(DataGridView dt,string str)
-       {
-           try
-           {
-               int index = dt.CurrentCell.RowIndex;
-               string id = dt.Rows[index].Cells[0].Value.ToString();
-               DAO.KhachHangDAO.Instance.Xoa(id);
-           }
-           catch
-           {
-               MessageBox.Show("Không xóa được !");
-           }
-           finally
-           {
-               MessageBox.Show("Xóa thành công !");
-           }
-           timKiem(dt, str);
-       }
-       public void LuuThem(DataGridView dgv)
-       {
-           List<DTO.KhachHang> lKh = new List<DTO.KhachHang>();
-           try
-           {
-               foreach (DataGridViewRow dr in dgv.Rows)
-               {
-                   DTO.KhachHang kh = new DTO.KhachHang(dr.Cells[1].Value.ToString(), dr.Cells[2].Value.ToString(), dr.Cells[3].Value.ToString());
-                   lKh.Add(kh);
-               }
-               DAO.KhachHangDAO.Instance.LuuThem(lKh);
-           }
-           catch
-           {
-               MessageBox.Show("lỗi rồi !");
-           }
-           finally
-           {
-               MessageBox.Show(" Thêm thành công  !");
-           }
-       }
-       public void LuuSua(DataGridView dgv)
-       {
-           List<DTO.KhachHang> lKh = new List<DTO.KhachHang>();
-           try
-           {
-               foreach (DataGridViewRow dr in dgv.Rows)
-               {
-                   DTO.KhachHang kh = new DTO.KhachHang(dr.Cells[0].Value.ToString(), 
-                       dr.Cells[1].Value.ToString(),
-                       dr.Cells[2].Value.ToString(),
-                       dr.Cells[3].Value.ToString());
-                   lKh.Add(kh);
-               }
-               DAO.KhachHangDAO.Instance.LuuSua(lKh);
-           }
-           catch
-           {
-               MessageBox.Show("lỗi rồi !");
-           }
-           finally
-           {
-               MessageBox.Show(" Sửa thành công  !");
-           }
-       }
+
+        public void loadData(DataGridView dgv)
+        {
+            dgv.DataSource = DAO.KhachHangDAO.Instance.loadData();
+        }
+
+        public void searchByKeyword(DataGridView dgv, string keyword)
+        {
+            dgv.DataSource = DAO.KhachHangDAO.Instance.searchByKeyword(keyword);
+        }
+
+        public void Insert(DataGridView dgv)
+        {
+            dgv.DataSource = DAO.KhachHangDAO.Instance.Insert();
+        }
+
+        public void Delete(string id)
+        {
+            DAO.KhachHangDAO.Instance.Delete(id);
+        }
+
+        public void saveInsert(DataGridView dgv)
+        {
+            DTO.KhachHang kh = new DTO.KhachHang();
+            kh = new DTO.KhachHang(
+                    dgv.Rows[0].Cells[1].Value.ToString().Trim(),
+                    dgv.Rows[0].Cells[2].Value.ToString().Trim(),
+                    dgv.Rows[0].Cells[3].Value.ToString().Trim());
+            DAO.KhachHangDAO.Instance.saveInsert(kh);
+        }
+
+        public void saveEdit(DataGridView dgv)
+        {
+            List<DTO.KhachHang> lKH = new List<DTO.KhachHang>();
+            DTO.KhachHang kh = new DTO.KhachHang();
+
+            foreach (DataGridViewRow dr in dgv.Rows)
+            {
+                kh = new DTO.KhachHang(
+                    dr.Cells[0].Value.ToString().Trim(),
+                    dr.Cells[1].Value.ToString().Trim(),
+                    dr.Cells[2].Value.ToString().Trim(),
+                    dr.Cells[3].Value.ToString().Trim());
+                lKH.Add(kh);
+            }
+            DAO.KhachHangDAO.Instance.saveEdit(lKH);
+        }
     }
 }

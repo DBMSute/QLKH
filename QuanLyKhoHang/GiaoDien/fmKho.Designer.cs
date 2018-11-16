@@ -48,12 +48,6 @@
             this.pnMidL = new System.Windows.Forms.Panel();
             this.lbListKho = new System.Windows.Forms.Label();
             this.dtgvWare = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.MNG = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.GIOIHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONGHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbClock = new System.Windows.Forms.Label();
             this.tmrSlide = new System.Windows.Forms.Timer(this.components);
@@ -93,6 +87,12 @@
             this.printWare = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
+            this.SOLUONGHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOIHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MNG = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnMidR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
@@ -410,116 +410,6 @@
             this.dtgvWare.TabStop = false;
             this.dtgvWare.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellDoubleClick);
             this.dtgvWare.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellValueChanged);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã kho";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên kho";
-            this.TEN.Name = "TEN";
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.Items.AddRange(new object[] {
-            "An Giang",
-            "Bà Rịa - Vũng Tàu",
-            "Bắc Giang",
-            "Bắc Kạn",
-            "Bạc Liêu",
-            "Bắc Ninh",
-            "Bến Tre",
-            "Bình Định",
-            "Bình Dương",
-            "Bình Phước",
-            "Bình Thuận",
-            "Cà Mau",
-            "Cao Bằng",
-            "Đắk Lắk",
-            "Đắk Nông",
-            "Điện Biên",
-            "Đồng Nai",
-            "Đồng Tháp",
-            "Gia Lai",
-            "Hà Giang",
-            "Hà Nam",
-            "Hà Tĩnh",
-            "Hải Dương",
-            "Hậu Giang",
-            "Hòa Bình",
-            "Hưng Yên",
-            "Khánh Hòa",
-            "Kiên Giang",
-            "Kon Tum",
-            "Lai Châu",
-            "Lâm Đồng",
-            "Lạng Sơn",
-            "Lào Cai",
-            "Long An",
-            "Nam Định",
-            "Nghệ An",
-            "Ninh Bình",
-            "Ninh Thuận",
-            "Phú Thọ",
-            "Quảng Bình",
-            "Quảng Nam",
-            "Quảng Ngãi",
-            "Quảng Ninh",
-            "Quảng Trị",
-            "Sóc Trăng",
-            "Sơn La",
-            "Tây Ninh",
-            "Thái Bình",
-            "Thái Nguyên",
-            "Thanh Hóa",
-            "Thừa Thiên Huế",
-            "Tiền Giang",
-            "Trà Vinh",
-            "Tuyên Quang",
-            "Vĩnh Long",
-            "Vĩnh Phúc",
-            "Yên Bái",
-            "Phú Yên",
-            "Cần Thơ",
-            "Đà Nẵng",
-            "Hải Phòng",
-            "Hà Nội",
-            "Hồ Chí Minh"});
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DIACHI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.DIACHI.Width = 75;
-            // 
-            // MNG
-            // 
-            this.MNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MNG.DataPropertyName = "MNG";
-            this.MNG.HeaderText = "Quản lý";
-            this.MNG.Name = "MNG";
-            this.MNG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MNG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.MNG.Width = 83;
-            // 
-            // GIOIHAN
-            // 
-            this.GIOIHAN.DataPropertyName = "GIOIHAN";
-            this.GIOIHAN.HeaderText = "Sức chứa";
-            this.GIOIHAN.Name = "GIOIHAN";
-            // 
-            // SOLUONGHANG
-            // 
-            this.SOLUONGHANG.DataPropertyName = "SOLUONGHANG";
-            this.SOLUONGHANG.HeaderText = "Số lượng hàng";
-            this.SOLUONGHANG.Name = "SOLUONGHANG";
-            this.SOLUONGHANG.ReadOnly = true;
             // 
             // pnTop
             // 
@@ -992,6 +882,118 @@
             this.tmrClock.Interval = 1000;
             this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
+            // SOLUONGHANG
+            // 
+            this.SOLUONGHANG.DataPropertyName = "SOLUONGHANG";
+            this.SOLUONGHANG.HeaderText = "Số lượng hàng";
+            this.SOLUONGHANG.Name = "SOLUONGHANG";
+            this.SOLUONGHANG.ReadOnly = true;
+            // 
+            // GIOIHAN
+            // 
+            this.GIOIHAN.DataPropertyName = "GIOIHAN";
+            this.GIOIHAN.HeaderText = "Sức chứa";
+            this.GIOIHAN.Name = "GIOIHAN";
+            // 
+            // MNG
+            // 
+            this.MNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MNG.DataPropertyName = "MNG";
+            this.MNG.HeaderText = "Quản lý";
+            this.MNG.Name = "MNG";
+            this.MNG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MNG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.MNG.Width = 83;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Items.AddRange(new object[] {
+            "An Giang",
+            "Bà Rịa",
+            "Vũng Tàu",
+            "Bạc Liêu",
+            "Bắc Cạn",
+            "Bắc Giang",
+            "Bắc Ninh",
+            "Bến Tre",
+            "Bình Dương",
+            "Bình Định",
+            "Bình Phước",
+            "Bình Thuận",
+            "Cà Mau",
+            "Cao Bằng",
+            "Cần Thơ",
+            "Đà Nẵng",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Đồng Tháp",
+            "Điện Biên",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Nội",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hải Phòng",
+            "Hòa Bình",
+            "Hậu Giang",
+            "Hưng Yên",
+            "Hồ Chí Minh",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lào Cai",
+            "Lạng Sơn",
+            "Lâm Đồng",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Phú Yên",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái"});
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DIACHI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DIACHI.Width = 75;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên kho";
+            this.TEN.Name = "TEN";
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã kho";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
             // fmKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1076,12 +1078,6 @@
         private System.Windows.Forms.Label lbSearchSucChua;
         private Bunifu.Framework.UI.BunifuSwitch switchWareSucChuaSL;
         private System.Windows.Forms.NumericUpDown numWare;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
-        private System.Windows.Forms.DataGridViewComboBoxColumn DIACHI;
-        private System.Windows.Forms.DataGridViewComboBoxColumn MNG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIOIHAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGHANG;
         private System.Drawing.Printing.PrintDocument printWare;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
         private System.Windows.Forms.Label lbClock;
@@ -1094,5 +1090,11 @@
         private System.Windows.Forms.Label lbInfoQuanLiKho;
         private System.Windows.Forms.Label lbInfoDiaChiKho;
         private System.Windows.Forms.Label lbInfoTenKho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewComboBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewComboBoxColumn MNG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIOIHAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGHANG;
     }
 }

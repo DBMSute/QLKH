@@ -8,9 +8,10 @@ namespace DTO
 {
     public class TaiKhoan
     {
-        private string id, tenTk, passWd, hovatendem, ten, diachi, lastLogin, ngaySinh, createDay;
+        private string id, tenTk, passWd, hovatendem, ten, diachi, lastLogin, ngaySinh, createDay; 
         private int pers, tinhTrang;
         private byte[] avt;
+
         public string ID
         {
             get { return id; }
@@ -91,6 +92,16 @@ namespace DTO
             this.ID = id;
             this.PASSWD = passWd;
             this.AVT = avt;
+            this.HOVATENDEM = hovatendem;
+            this.TEN = ten;
+            this.NGAYSINH = ngaySinh;
+            this.DIACHI = diachi;
+            this.PERS = pers;
+            this.TINHTRANG = tinhTrang;
+        }
+        public TaiKhoan(string id, string hovatendem, string ten, string ngaySinh, string diachi, int pers, int tinhTrang)
+        {
+            this.ID = id;      
             this.HOVATENDEM = hovatendem;
             this.TEN = ten;
             this.NGAYSINH = ngaySinh;

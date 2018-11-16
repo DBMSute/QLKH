@@ -12,15 +12,29 @@ namespace QuanLyKhoHang.GiaoDien
 {
     public partial class fmKhachHang : Form
     {
+        private static bool flagSave = false;
         public fmKhachHang()
         {
             InitializeComponent();
-            BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+            loadData();
         }
-
-        private void btnback_Click(object sender, EventArgs e)
+        public void loadData()
         {
-
+            try
+            {
+                tmrClock.Start();
+                btnCusSave.color = btnCusSave.BackColor = Color.SeaGreen;
+                btnCusSave.colorActive = Color.MediumSeaGreen;
+                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void tmrClock_Tick(object sender, EventArgs e)
+        {
+            lbClock.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -28,15 +42,89 @@ namespace QuanLyKhoHang.GiaoDien
             Application.Exit();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void tbWareSearch_TextChanged(object sender, EventArgs e)
         {
-            BUS.KhachHangBUS.Instance.Them(dtgvCus);
+            BUS.KhachHangBUS.Instance.searchByKeyword(dtgvCus, tbCusSearch.Text.Trim());
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void tbCusSearch_Enter(object sender, EventArgs e)
         {
-            BUS.KhachHangBUS.Instance.LuuThem(dtgvCus);
-            BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+            if (tbCusSearch.Text == "Tìm kiếm...")
+                tbCusSearch.Text = "";
+        }
+
+        private void tbCusSearch_Leave(object sender, EventArgs e)
+        {
+            if (tbCusSearch.Text == "")
+            {
+                tbCusSearch.Text = "Tìm kiếm...";
+                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+            }
+        }
+
+        private void btnCusAdd_Click(object sender, EventArgs e)
+        {
+            BUS.KhachHangBUS.Instance.Insert(dtgvCus);
+            dtgvCus.CurrentCell = dtgvCus[1, 0];
+            flagSave = true;
+        }
+
+        private void btnCusDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Bạn có chắc muốn xóa dữ liệu này?", "Xóa dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+                    return;
+                BUS.KhachHangBUS.Instance.Delete(dtgvCus.CurrentRow.Cells[0].Value.ToString());
+                MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+            }
+        }
+
+        private void btnCusSave_Click(object sender, EventArgs e)
+        {
+            btnCusSave.Focus();
+            try
+            {
+                if (flagSave == true)
+                {
+                    BUS.KhachHangBUS.Instance.saveInsert(dtgvCus);
+                    BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                    MessageBox.Show("Đã lưu!", "Thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnCusSave.color = btnCusSave.BackColor = Color.SeaGreen;
+                    btnCusSave.colorActive = Color.MediumSeaGreen;
+                    flagSave = false;
+                }
+                else
+                {
+                    BUS.KhachHangBUS.Instance.saveEdit(dtgvCus);
+                    BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                    MessageBox.Show("Đã Sửa!", "Sửa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnCusSave.color = btnCusSave.BackColor = Color.SeaGreen;
+                    btnCusSave.colorActive = Color.MediumSeaGreen;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+            }
+        }
+
+        private void btnCusPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgvCus_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            btnCusSave.color = btnCusSave.BackColor = Color.FromArgb(192, 0, 0);
+            btnCusSave.colorActive = Color.Red;
         }
     }
 }
