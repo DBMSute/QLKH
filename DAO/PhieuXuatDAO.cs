@@ -9,7 +9,7 @@ namespace DAO
    public class PhieuXuatDAO
     {
         private static PhieuXuatDAO instance;
-        public static PhieuXuatDAO Instace
+        public static PhieuXuatDAO INSTANCE
         {
             get
             {

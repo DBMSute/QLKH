@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmNhaCC));
             this.pnTop = new System.Windows.Forms.Panel();
-            this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbClock = new System.Windows.Forms.Label();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbNhaCC = new System.Windows.Forms.Label();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.dtgvSup = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,49 +42,44 @@
             this.SODT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnMidR = new System.Windows.Forms.Panel();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.btnSave = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnPrint = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnDel = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnAdd = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.pnMidR = new System.Windows.Forms.Panel();
+            this.btnSupSave = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnSupPrint = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnSupDel = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnSupAdd = new Bunifu.Framework.UI.BunifuTileButton();
+            this.tbSupSearch = new System.Windows.Forms.TextBox();
+            this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.pnTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnMidL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSup)).BeginInit();
-            this.pnMidR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
+            this.pnMidR.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnTop
             // 
             this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnTop.Controls.Add(this.btnback);
+            this.pnTop.Controls.Add(this.lbClock);
             this.pnTop.Controls.Add(this.btnExit);
             this.pnTop.Controls.Add(this.lbNhaCC);
-            this.pnTop.Controls.Add(this.bunifuCircleProgressbar1);
             this.pnTop.Location = new System.Drawing.Point(0, 0);
             this.pnTop.Name = "pnTop";
             this.pnTop.Size = new System.Drawing.Size(1080, 100);
             this.pnTop.TabIndex = 0;
             // 
-            // btnback
+            // lbClock
             // 
-            this.btnback.BackColor = System.Drawing.Color.Transparent;
-            this.btnback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnback.Image = global::QuanLyKhoHang.Properties.Resources.back;
-            this.btnback.ImageActive = null;
-            this.btnback.Location = new System.Drawing.Point(12, 12);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(40, 40);
-            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnback.TabIndex = 3;
-            this.btnback.TabStop = false;
-            this.btnback.Zoom = 10;
+            this.lbClock.AutoSize = true;
+            this.lbClock.BackColor = System.Drawing.Color.Transparent;
+            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClock.ForeColor = System.Drawing.Color.White;
+            this.lbClock.Location = new System.Drawing.Point(951, 61);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(93, 33);
+            this.lbClock.TabIndex = 13;
+            this.lbClock.Text = "Clock";
             // 
             // btnExit
             // 
@@ -108,33 +103,11 @@
             this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
             this.lbNhaCC.ForeColor = System.Drawing.Color.White;
-            this.lbNhaCC.Location = new System.Drawing.Point(68, 4);
+            this.lbNhaCC.Location = new System.Drawing.Point(10, 0);
             this.lbNhaCC.Name = "lbNhaCC";
-            this.lbNhaCC.Size = new System.Drawing.Size(293, 94);
+            this.lbNhaCC.Size = new System.Drawing.Size(619, 94);
             this.lbNhaCC.TabIndex = 0;
-            this.lbNhaCC.Text = "Supply";
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 3;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 4;
-            this.bunifuCircleProgressbar1.LineThickness = 3;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(496, 0);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(7);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(100, 100);
-            this.bunifuCircleProgressbar1.TabIndex = 1;
-            this.bunifuCircleProgressbar1.Value = 25;
+            this.lbNhaCC.Text = "Nhà Cung Cấp";
             // 
             // pnMidL
             // 
@@ -163,6 +136,7 @@
             this.dtgvSup.Size = new System.Drawing.Size(721, 480);
             this.dtgvSup.TabIndex = 2;
             this.dtgvSup.TabStop = false;
+            this.dtgvSup.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvSup_CellValueChanged);
             // 
             // ID
             // 
@@ -203,127 +177,12 @@
             this.panel2.Size = new System.Drawing.Size(1080, 100);
             this.panel2.TabIndex = 1;
             // 
-            // pnMidR
-            // 
-            this.pnMidR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnMidR.Controls.Add(this.tbSearch);
-            this.pnMidR.Controls.Add(this.pbSearch);
-            this.pnMidR.Controls.Add(this.btnSave);
-            this.pnMidR.Controls.Add(this.btnPrint);
-            this.pnMidR.Controls.Add(this.btnDel);
-            this.pnMidR.Controls.Add(this.btnAdd);
-            this.pnMidR.Location = new System.Drawing.Point(757, 110);
-            this.pnMidR.Name = "pnMidR";
-            this.pnMidR.Size = new System.Drawing.Size(310, 500);
-            this.pnMidR.TabIndex = 2;
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.BackColor = System.Drawing.Color.SeaGreen;
-            this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSearch.Font = new System.Drawing.Font("Century Gothic", 24F);
-            this.tbSearch.ForeColor = System.Drawing.Color.White;
-            this.tbSearch.Location = new System.Drawing.Point(10, 10);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(244, 40);
-            this.tbSearch.TabIndex = 4;
-            this.tbSearch.Text = "Search...";
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.BackColor = System.Drawing.Color.SeaGreen;
-            this.pbSearch.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.search;
-            this.pbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSearch.Location = new System.Drawing.Point(260, 10);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(40, 40);
-            this.pbSearch.TabIndex = 5;
-            this.pbSearch.TabStop = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSave.color = System.Drawing.Color.SeaGreen;
-            this.btnSave.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::QuanLyKhoHang.Properties.Resources.save;
-            this.btnSave.ImagePosition = 25;
-            this.btnSave.ImageZoom = 40;
-            this.btnSave.LabelPosition = 51;
-            this.btnSave.LabelText = "Save";
-            this.btnSave.Location = new System.Drawing.Point(165, 342);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(135, 135);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnPrint.color = System.Drawing.Color.SeaGreen;
-            this.btnPrint.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
-            this.btnPrint.ImagePosition = 25;
-            this.btnPrint.ImageZoom = 40;
-            this.btnPrint.LabelPosition = 50;
-            this.btnPrint.LabelText = "Print";
-            this.btnPrint.Location = new System.Drawing.Point(10, 342);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(6);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(135, 135);
-            this.btnPrint.TabIndex = 2;
-            // 
-            // btnDel
-            // 
-            this.btnDel.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnDel.color = System.Drawing.Color.SeaGreen;
-            this.btnDel.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDel.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnDel.ForeColor = System.Drawing.Color.White;
-            this.btnDel.Image = global::QuanLyKhoHang.Properties.Resources.delete;
-            this.btnDel.ImagePosition = 25;
-            this.btnDel.ImageZoom = 40;
-            this.btnDel.LabelPosition = 50;
-            this.btnDel.LabelText = "Delete";
-            this.btnDel.Location = new System.Drawing.Point(165, 183);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(135, 135);
-            this.btnDel.TabIndex = 1;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnAdd.color = System.Drawing.Color.SeaGreen;
-            this.btnAdd.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
-            this.btnAdd.ImagePosition = 25;
-            this.btnAdd.ImageZoom = 40;
-            this.btnAdd.LabelPosition = 50;
-            this.btnAdd.LabelText = "Add";
-            this.btnAdd.Location = new System.Drawing.Point(10, 183);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(7);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(135, 135);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.panel2);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidR);
+            this.bunifuGradientPanel1.Controls.Add(this.panel2);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidL);
             this.bunifuGradientPanel1.Controls.Add(this.pnTop);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -336,6 +195,119 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(1080, 720);
             this.bunifuGradientPanel1.TabIndex = 8;
+            // 
+            // pnMidR
+            // 
+            this.pnMidR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMidR.Controls.Add(this.btnSupSave);
+            this.pnMidR.Controls.Add(this.btnSupPrint);
+            this.pnMidR.Controls.Add(this.btnSupDel);
+            this.pnMidR.Controls.Add(this.btnSupAdd);
+            this.pnMidR.Controls.Add(this.tbSupSearch);
+            this.pnMidR.Location = new System.Drawing.Point(757, 110);
+            this.pnMidR.Name = "pnMidR";
+            this.pnMidR.Size = new System.Drawing.Size(310, 500);
+            this.pnMidR.TabIndex = 7;
+            // 
+            // btnSupSave
+            // 
+            this.btnSupSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSupSave.color = System.Drawing.Color.SeaGreen;
+            this.btnSupSave.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnSupSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupSave.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnSupSave.ForeColor = System.Drawing.Color.White;
+            this.btnSupSave.Image = global::QuanLyKhoHang.Properties.Resources.save;
+            this.btnSupSave.ImagePosition = 25;
+            this.btnSupSave.ImageZoom = 40;
+            this.btnSupSave.LabelPosition = 51;
+            this.btnSupSave.LabelText = "Lưu";
+            this.btnSupSave.Location = new System.Drawing.Point(10, 341);
+            this.btnSupSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSupSave.Name = "btnSupSave";
+            this.btnSupSave.Size = new System.Drawing.Size(135, 135);
+            this.btnSupSave.TabIndex = 10;
+            this.btnSupSave.Click += new System.EventHandler(this.btnSupSave_Click);
+            // 
+            // btnSupPrint
+            // 
+            this.btnSupPrint.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSupPrint.color = System.Drawing.Color.SeaGreen;
+            this.btnSupPrint.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnSupPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupPrint.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnSupPrint.ForeColor = System.Drawing.Color.White;
+            this.btnSupPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
+            this.btnSupPrint.ImagePosition = 25;
+            this.btnSupPrint.ImageZoom = 40;
+            this.btnSupPrint.LabelPosition = 50;
+            this.btnSupPrint.LabelText = "In";
+            this.btnSupPrint.Location = new System.Drawing.Point(165, 341);
+            this.btnSupPrint.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSupPrint.Name = "btnSupPrint";
+            this.btnSupPrint.Size = new System.Drawing.Size(135, 135);
+            this.btnSupPrint.TabIndex = 9;
+            this.btnSupPrint.Click += new System.EventHandler(this.btnSupPrint_Click);
+            // 
+            // btnSupDel
+            // 
+            this.btnSupDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSupDel.color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSupDel.colorActive = System.Drawing.Color.Red;
+            this.btnSupDel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupDel.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnSupDel.ForeColor = System.Drawing.Color.White;
+            this.btnSupDel.Image = global::QuanLyKhoHang.Properties.Resources.delete;
+            this.btnSupDel.ImagePosition = 25;
+            this.btnSupDel.ImageZoom = 40;
+            this.btnSupDel.LabelPosition = 50;
+            this.btnSupDel.LabelText = "Xóa";
+            this.btnSupDel.Location = new System.Drawing.Point(165, 182);
+            this.btnSupDel.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSupDel.Name = "btnSupDel";
+            this.btnSupDel.Size = new System.Drawing.Size(135, 135);
+            this.btnSupDel.TabIndex = 8;
+            this.btnSupDel.Click += new System.EventHandler(this.btnSupDel_Click);
+            // 
+            // btnSupAdd
+            // 
+            this.btnSupAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSupAdd.color = System.Drawing.Color.SeaGreen;
+            this.btnSupAdd.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnSupAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupAdd.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnSupAdd.ForeColor = System.Drawing.Color.White;
+            this.btnSupAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
+            this.btnSupAdd.ImagePosition = 25;
+            this.btnSupAdd.ImageZoom = 40;
+            this.btnSupAdd.LabelPosition = 50;
+            this.btnSupAdd.LabelText = "Thêm";
+            this.btnSupAdd.Location = new System.Drawing.Point(10, 182);
+            this.btnSupAdd.Margin = new System.Windows.Forms.Padding(7);
+            this.btnSupAdd.Name = "btnSupAdd";
+            this.btnSupAdd.Size = new System.Drawing.Size(135, 135);
+            this.btnSupAdd.TabIndex = 7;
+            this.btnSupAdd.Click += new System.EventHandler(this.btnSupAdd_Click);
+            // 
+            // tbSupSearch
+            // 
+            this.tbSupSearch.BackColor = System.Drawing.Color.White;
+            this.tbSupSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSupSearch.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.tbSupSearch.ForeColor = System.Drawing.Color.SeaGreen;
+            this.tbSupSearch.Location = new System.Drawing.Point(10, 10);
+            this.tbSupSearch.Name = "tbSupSearch";
+            this.tbSupSearch.Size = new System.Drawing.Size(290, 40);
+            this.tbSupSearch.TabIndex = 99;
+            this.tbSupSearch.Text = "Tìm kiếm...";
+            this.tbSupSearch.TextChanged += new System.EventHandler(this.tbSupSearch_TextChanged);
+            this.tbSupSearch.Enter += new System.EventHandler(this.tbSupSearch_Enter);
+            this.tbSupSearch.Leave += new System.EventHandler(this.tbSupSearch_Leave);
+            // 
+            // tmrClock
+            // 
+            this.tmrClock.Interval = 1000;
+            this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
             // fmNhaCC
             // 
@@ -352,14 +324,12 @@
             this.Text = "fmNhaCC";
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.pnMidL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSup)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
             this.pnMidR.ResumeLayout(false);
             this.pnMidR.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
-            this.bunifuGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,16 +340,7 @@
         private System.Windows.Forms.Label lbNhaCC;
         private System.Windows.Forms.Panel pnMidL;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
-        private Bunifu.Framework.UI.BunifuImageButton btnback;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
-        private System.Windows.Forms.Panel pnMidR;
-        private Bunifu.Framework.UI.BunifuTileButton btnSave;
-        private Bunifu.Framework.UI.BunifuTileButton btnPrint;
-        private Bunifu.Framework.UI.BunifuTileButton btnDel;
-        private Bunifu.Framework.UI.BunifuTileButton btnAdd;
-        private System.Windows.Forms.PictureBox pbSearch;
-        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.DataGridView dtgvSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
@@ -387,5 +348,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SODT;
         private System.Windows.Forms.DataGridViewTextBoxColumn QGIA;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
+        private System.Windows.Forms.Panel pnMidR;
+        private Bunifu.Framework.UI.BunifuTileButton btnSupSave;
+        private Bunifu.Framework.UI.BunifuTileButton btnSupPrint;
+        private Bunifu.Framework.UI.BunifuTileButton btnSupDel;
+        private Bunifu.Framework.UI.BunifuTileButton btnSupAdd;
+        private System.Windows.Forms.TextBox tbSupSearch;
+        private System.Windows.Forms.Label lbClock;
+        private System.Windows.Forms.Timer tmrClock;
     }
 }

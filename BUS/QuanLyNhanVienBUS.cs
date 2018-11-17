@@ -20,7 +20,7 @@ namespace BUS
        public int Check(string tenTk,string pass)
        {
            return 1;
-          // return DAO.TaiKhoanDAO.Instance.Check(tenTk, pass);
+          // return DAO.TaiKhoanDAO.INSTANCE.Check(tenTk, pass);
        }
     }
 }

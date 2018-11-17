@@ -11,7 +11,7 @@ namespace DAO
     public class NhanVienDAO
     {
         private static NhanVienDAO instance;
-        public static NhanVienDAO Instance
+        public static NhanVienDAO INSTANCE
         {
             get
             {
@@ -25,7 +25,7 @@ namespace DAO
             List<TaiKhoan> lTK = new List<TaiKhoan>();
             DateTime date = new DateTime();
             string str = "SELECT * FROM dbo.VI_TaiKhoan_LoadDataExceptAdmin"; //gọi Function
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -71,7 +71,7 @@ namespace DAO
                          "@diachi = N'" + tk.DIACHI + "'," +
                          "@per = " + tk.PERS + "," +
                          "@tinhtrang = " + tk.TINHTRANG.ToString();
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public void saveEdit(List<TaiKhoan> lNV)
@@ -85,14 +85,14 @@ namespace DAO
                              "@diachi = N'" + lNV[i].DIACHI + "'," +
                              "@per = " + lNV[i].PERS + "," +
                              "@tinhtrang = " + lNV[i].TINHTRANG;
-                DataConn.Instance.ExecuteQueryTable(str);
+                DataConn.INSTANCE.ExecuteQueryTable(str);
             }
         }
 
         public void Delete(string id)
         {
             string str = "EXEC dbo.sp_Delete_TaiKhoan @id = '" + id + "'";
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public List<TaiKhoan> searchByKeyword(string keyword, int status)
@@ -100,7 +100,7 @@ namespace DAO
             DateTime date = new DateTime();
             List<TaiKhoan> lTK = new List<TaiKhoan>();
             string str = "SELECT * FROM dbo.FN_TaiKhoan_SearchByKeyword(N'" + keyword + "'," + status + ")";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();

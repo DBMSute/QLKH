@@ -10,7 +10,7 @@ namespace DAO
   public  class KhachHangDAO
     {
         private static KhachHangDAO instance;
-        public static KhachHangDAO Instance
+        public static KhachHangDAO INSTANCE
         {
             get
             {
@@ -23,7 +23,7 @@ namespace DAO
         {
             List<KhachHang> lKH = new List<KhachHang>();
             string str = "SELECT * FROM VI_KhachHang_LoadData";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -42,7 +42,7 @@ namespace DAO
             KhachHang kh = new KhachHang();
             lKH.Add(kh);
             string str = "SELECT * FROM VI_KhachHang_LoadData";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -59,7 +59,7 @@ namespace DAO
         {
             List<KhachHang> lKH = new List<KhachHang>();
             string str = "SELECT * FROM dbo.FN_KhachHang_SearchByKeyword(N'" + keyword + "')";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -77,7 +77,7 @@ namespace DAO
             string str = "EXEC dbo.sp_Insert_KhachHang @ten = N'" + kh.TEN + "'," +
                          "@sdt = '" + kh.SODT + "'," +
                          "@dchi = N'" + kh.DIACHI + "'";
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public void saveEdit(List<KhachHang> lKH)
@@ -88,14 +88,14 @@ namespace DAO
                              "@ten = N'" + lKH[i].TEN + "'," +
                              "@sdt = '" + lKH[i].SODT + "'," +
                              "@dchi = N'" + lKH[i].DIACHI + "'";
-                DataConn.Instance.ExecuteQueryTable(str);
+                DataConn.INSTANCE.ExecuteQueryTable(str);
             }
         }
 
         public void Delete(string id)
         {
             string str = "EXEC dbo.sp_Delete_KhachHang @id = '" + id + "'";
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
     }
 }

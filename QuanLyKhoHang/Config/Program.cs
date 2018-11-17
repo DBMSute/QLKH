@@ -16,7 +16,7 @@ namespace QuanLyKhoHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyKhoHang.GiaoDien.fmNhanVien());
+            Application.Run(new QuanLyKhoHang.GiaoDien.fmLoaiSanPham());
             //Application.Run(new QuanLyKhoHang.GiaoDien.fmNCC_TK_KH());
         }
     }

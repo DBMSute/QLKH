@@ -62,7 +62,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void loadData()
         {
-            BUS.TaiKhoanBUS.Instace.loadData(fmDangNhap.tentk, lbDataID, btnAVT, lbTenTK, lbDataLN, lbDataFN, lbDataDOB, lbDataAD, lbDataLG, lbDataCD, lbPosition, lbDataST);
+            BUS.TaiKhoanBUS.INSTANCE.loadData(fmDangNhap.tentk, lbDataID, btnAVT, lbTenTK, lbDataLN, lbDataFN, lbDataDOB, lbDataAD, lbDataLG, lbDataCD, lbPosition, lbDataST);
             if (btnAVT.Image == null)
             {
                 btnAVT.Image = QuanLyKhoHang.Properties.Resources.erroravt;
@@ -89,7 +89,7 @@ namespace QuanLyKhoHang.GiaoDien
 
                 if (ofdAVT.OpenFile() != null)
                 {
-                    BUS.TaiKhoanBUS.Instace.updateAvatar(lbDataID.Text, ofdAVT.FileName);
+                    BUS.TaiKhoanBUS.INSTANCE.updateAvatar(lbDataID.Text, ofdAVT.FileName);
                 }
             }
             catch (Exception ex)
@@ -135,7 +135,7 @@ namespace QuanLyKhoHang.GiaoDien
                 fm.ShowDialog();
                 if(fmInputPW.npw == null)
                     return;
-                BUS.TaiKhoanBUS.Instace.updatePW(lbDataID.Text, fmInputPW.opw, fmInputPW.npw);
+                BUS.TaiKhoanBUS.INSTANCE.updatePW(lbDataID.Text, fmInputPW.opw, fmInputPW.npw);
                 MessageBox.Show("Cập nhật mật khẩu thành công!", "Thay đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -151,7 +151,7 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 string temp = Interaction.InputBox("Input your first name...\nNote: Data must not null!", "Input", null);
                 if (temp == "") return;
-                BUS.TaiKhoanBUS.Instace.updateInfo(lbDataID.Text, lbDataLN.Text, temp, lbDataDOB.Text, lbDataAD.Text, lbPosition.Text, lbDataST.Text);
+                BUS.TaiKhoanBUS.INSTANCE.updateInfo(lbDataID.Text, lbDataLN.Text, temp, lbDataDOB.Text, lbDataAD.Text, lbPosition.Text, lbDataST.Text);
             }
             catch (Exception ex)
             {
@@ -165,7 +165,7 @@ namespace QuanLyKhoHang.GiaoDien
             try
             {
                 string temp = Interaction.InputBox("Input your last name...\nNote: Data must not null!", "Input", null);
-                BUS.TaiKhoanBUS.Instace.updateInfo(lbDataID.Text, temp, lbDataFN.Text, lbDataDOB.Text, lbDataAD.Text, lbPosition.Text, lbDataST.Text);
+                BUS.TaiKhoanBUS.INSTANCE.updateInfo(lbDataID.Text, temp, lbDataFN.Text, lbDataDOB.Text, lbDataAD.Text, lbPosition.Text, lbDataST.Text);
             }
             catch (Exception ex )
             {
@@ -180,7 +180,7 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 fmInputDateTime fm = new fmInputDateTime();
                 fm.ShowDialog();
-                BUS.TaiKhoanBUS.Instace.updateInfo(lbDataID.Text, lbDataLN.Text, lbDataFN.Text, fmInputDateTime.datetimepicked, lbDataAD.Text, lbPosition.Text, lbDataST.Text);
+                BUS.TaiKhoanBUS.INSTANCE.updateInfo(lbDataID.Text, lbDataLN.Text, lbDataFN.Text, fmInputDateTime.datetimepicked, lbDataAD.Text, lbPosition.Text, lbDataST.Text);
             }
             catch (Exception ex)
             {
@@ -195,7 +195,7 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 string temp = Interaction.InputBox("Input yours address..\nNote: Data must not null!", "Input", null);
                 if (temp == "") return;
-                BUS.TaiKhoanBUS.Instace.updateInfo(lbDataID.Text, lbDataLN.Text, lbDataFN.Text, lbDataDOB.Text, temp, lbPosition.Text, lbDataST.Text);
+                BUS.TaiKhoanBUS.INSTANCE.updateInfo(lbDataID.Text, lbDataLN.Text, lbDataFN.Text, lbDataDOB.Text, temp, lbPosition.Text, lbDataST.Text);
             }
             catch (Exception ex)
             {

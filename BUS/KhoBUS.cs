@@ -12,7 +12,7 @@ namespace BUS
     {
         private static KhoBUS instance;
         int index;
-        public static KhoBUS Instance
+        public static KhoBUS INSTANCE
         {
             get
             {
@@ -22,13 +22,13 @@ namespace BUS
         }
         public void loadData(DataGridView dt)
         {
-            dt.DataSource = DAO.KhoDAO.Instance.loadData();
+            dt.DataSource = DAO.KhoDAO.INSTANCE.loadData();
         }
 
         public List<string> loadDataMNG()
         {
             List<string> lMng = new List<string>();
-            foreach (DataRow dr in DAO.KhoDAO.Instance.loadDataMng().Rows)
+            foreach (DataRow dr in DAO.KhoDAO.INSTANCE.loadDataMng().Rows)
                 lMng.Add(dr[0].ToString());
             return lMng;
         }
@@ -41,7 +41,7 @@ namespace BUS
                     dgv.Rows[0].Cells[2].Value.ToString().Trim(),
                     dgv.Rows[0].Cells[3].Value.ToString().Trim(),
                     Convert.ToInt32(dgv.Rows[0].Cells[4].Value));
-            DAO.KhoDAO.Instance.saveInsert(k);
+            DAO.KhoDAO.INSTANCE.saveInsert(k);
         }
 
         public void saveEdit(DataGridView dgv)
@@ -59,29 +59,29 @@ namespace BUS
                     Convert.ToInt32(dr.Cells[4].Value));
                 lKho.Add(k);
             }
-            DAO.KhoDAO.Instance.saveEdit(lKho);
+            DAO.KhoDAO.INSTANCE.saveEdit(lKho);
         }
 
         public void Insert(DataGridView dgv)
         {
-            dgv.DataSource = DAO.KhoDAO.Instance.Insert();
+            dgv.DataSource = DAO.KhoDAO.INSTANCE.Insert();
         }
 
         public void Delete(string id)
         {
-            DAO.KhoDAO.Instance.Delete(id);
+            DAO.KhoDAO.INSTANCE.Delete(id);
         }
 
         public void searchByKeyword(DataGridView dgv, string keyword)
         {
-            dgv.DataSource = DAO.KhoDAO.Instance.searchByKeyword(keyword);
+            dgv.DataSource = DAO.KhoDAO.INSTANCE.searchByKeyword(keyword);
         }
 
         public void searchByNum(DataGridView dgv, int num, bool comp, bool type)
         {
             int compTemp = (comp == true) ? 1 : 0;
             int compType = (type == true) ? 1 : 0;
-            dgv.DataSource = DAO.KhoDAO.Instance.searchByNum(num, compTemp, compType);
+            dgv.DataSource = DAO.KhoDAO.INSTANCE.searchByNum(num, compTemp, compType);
         }
     }
 }

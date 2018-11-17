@@ -11,7 +11,7 @@ namespace DAO
     public class TaiKhoanDAO
     {
         private static TaiKhoanDAO instance;
-        public static TaiKhoanDAO Instance
+        public static TaiKhoanDAO INSTANCE
         {
             get
             {
@@ -23,13 +23,13 @@ namespace DAO
         public int CheckAccount(string tenTk, string passWd)
         {
             string str = "SELECT dbo.FN_TaiKhoan_CheckLogin('" + tenTk + "','" + passWd + "')";
-            return Convert.ToInt32(DataConn.Instance.ExecuteQueryScalar(str));
+            return Convert.ToInt32(DataConn.INSTANCE.ExecuteQueryScalar(str));
         }
 
         public void updateAvatar(string id, byte[] avt)
         {
             string str = "sp_Update_TaiKhoan_AVT";
-            DataConn.Instance.ExecuteQueryScalar(str, id , avt, "@avt");
+            DataConn.INSTANCE.ExecuteQueryScalar(str, id , avt, "@avt");
         }
 
         public DTO.TaiKhoan loadData(string tentk)
@@ -37,7 +37,7 @@ namespace DAO
             DTO.TaiKhoan tk = new DTO.TaiKhoan();
             DateTime date = new DateTime();
             string str = "SELECT * FROM dbo.FN_TaiKhoan_GetInfo('" + tentk + "')"; //gọi Function
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             tk.ID = data.Rows[0]["id"].ToString();
             tk.TENTK =data.Rows[0]["tentk"].ToString();
             tk.PASSWD =BitConverter.ToString((byte[]) data.Rows[0]["passwd"]);
@@ -67,7 +67,7 @@ namespace DAO
         public void updateLastLogin(string tentk)
         {
             string str = "EXEC dbo.sp_Update_LastLogin @tentk = '" + tentk + "'";
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public void updateInfo(string id, string hovatendem, string ten, string ngaysinh, string diachi, int pers, int tinhtrang)
@@ -80,7 +80,7 @@ namespace DAO
                             "@per = " + pers + "," +
                             "@tinhtrang = " + tinhtrang;
             
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public void updatePW(string id, string opw, string npw)
@@ -89,7 +89,7 @@ namespace DAO
                          "@opw = '" + opw + "'," +
                          "@npw = '" + npw + "'," +
                          "@id = '" + id + "'";
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
     }
 }

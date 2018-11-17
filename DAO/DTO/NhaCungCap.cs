@@ -8,7 +8,8 @@ namespace DTO
 {
    public class NhaCungCap
     {
-        public string id, ten, diaChi, soDT, qGia;
+        private string id, ten, diaChi, soDT, qGia;
+
         public string ID
         {
             get { return id; }

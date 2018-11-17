@@ -12,7 +12,7 @@ namespace BUS
     public class TaiKhoanBUS
     {
         private static TaiKhoanBUS instance;
-        public static TaiKhoanBUS Instace
+        public static TaiKhoanBUS INSTANCE
         {
             get
             {
@@ -23,19 +23,19 @@ namespace BUS
 
         public int checkAccount(string tenTk, string passwd)
         {
-            return DAO.TaiKhoanDAO.Instance.CheckAccount(tenTk, passwd);
+            return DAO.TaiKhoanDAO.INSTANCE.CheckAccount(tenTk, passwd);
 
         }
 
         public void updateAvatar(string id, string path)
         {         
             byte[] avt = File.ReadAllBytes(path);                      
-            DAO.TaiKhoanDAO.Instance.updateAvatar(id, avt);
+            DAO.TaiKhoanDAO.INSTANCE.updateAvatar(id, avt);
         }
 
         public void loadData(string tentk,Label id, PictureBox avt, Label tk, Label hovatendem, Label ten, Label ngaysinh, Label diachi, Label lastlogin, Label createdate, Label pers, Label tinhtrang)
         {
-            DTO.TaiKhoan temp = DAO.TaiKhoanDAO.Instance.loadData(tentk);
+            DTO.TaiKhoan temp = DAO.TaiKhoanDAO.INSTANCE.loadData(tentk);
             id.Text = temp.ID;
             try
             {
@@ -68,7 +68,7 @@ namespace BUS
 
         public void updateLastLogin(string tentk)
         {
-            DAO.TaiKhoanDAO.Instance.updateLastLogin(tentk);
+            DAO.TaiKhoanDAO.INSTANCE.updateLastLogin(tentk);
         }
 
         public void updateInfo(string id, string hovatendem, string ten, string ngaysinh, string diachi, string pers, string tinhtrang)
@@ -76,12 +76,12 @@ namespace BUS
             int tempPers, tempST;
             tempPers = (pers == "admin") ? 1 : (pers == "manager") ? 2 : 3;
             tempST = (tinhtrang == "Active") ? 1 : 0;
-            DAO.TaiKhoanDAO.Instance.updateInfo(id, hovatendem, ten, ngaysinh, diachi, tempPers, tempST);
+            DAO.TaiKhoanDAO.INSTANCE.updateInfo(id, hovatendem, ten, ngaysinh, diachi, tempPers, tempST);
         }
 
         public void updatePW(string id, string opw, string npw)
         {
-            DAO.TaiKhoanDAO.Instance.updatePW(id, opw, npw);
+            DAO.TaiKhoanDAO.INSTANCE.updatePW(id, opw, npw);
         }
     }
 }

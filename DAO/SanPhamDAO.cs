@@ -11,7 +11,7 @@ namespace DAO
     public class SanPhamDAO
     {
         private static SanPhamDAO instance;
-        public static SanPhamDAO Instace
+        public static SanPhamDAO INSTANCE
         {
             get
             {
@@ -24,7 +24,7 @@ namespace DAO
         {
             List<SanPham> lSanPham = new List<SanPham>();
             string str = "SELECT * FROM dbo.FN_Kho_GetItemByKho('" + idkho + "')";
-            DataTable data =  DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data =  DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -48,7 +48,7 @@ namespace DAO
             SanPham s = new SanPham();
             lSanPham.Add(s);
             string str = "SELECT * FROM dbo.FN_Kho_GetItemByKho('" + idkho + "')";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -73,7 +73,7 @@ namespace DAO
                          "@sl = " + sp.SOLUONG + "," +
                          "@dvtiente = N'" + sp.DONVITINH + "'," +
                          "@dongia = " + sp.DONGIA;
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public void saveEdit(List<SanPham> lSanPham)
@@ -88,21 +88,21 @@ namespace DAO
                              "@sl = " + lSanPham[i].SOLUONG + "," +
                              "@dvtiente = N'" + lSanPham[i].DONVITINH + "'," +
                              "@dongia = " + lSanPham[i].DONGIA;
-                DataConn.Instance.ExecuteQueryTable(str);
+                DataConn.INSTANCE.ExecuteQueryTable(str);
             }
         }
 
         public void Delete(string id)
         {
             string str = "EXEC dbo.sp_Delete_SanPham @id = '" + id + "'";
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public List<SanPham> searchByKeyword(string keyword, string idkho)
         {
             List<SanPham> lSanPham = new List<SanPham>();
             string str = "SELECT * FROM dbo.FN_SanPham_SearchByKeyword(N'" + keyword + "', '" + idkho + "')";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -123,7 +123,7 @@ namespace DAO
         {
             List<SanPham> lSanPham = new List<SanPham>();
             string str = "SELECT * FROM dbo.FN_SanPham_SearchByNum(" + num + ", " + comp + ", '" + idkho + "')";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();

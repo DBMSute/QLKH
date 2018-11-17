@@ -12,7 +12,7 @@ namespace DAO
     public class KhoDAO
     {
         private static KhoDAO instance;
-        public static KhoDAO Instance
+        public static KhoDAO INSTANCE
         {
             get
             {
@@ -24,7 +24,7 @@ namespace DAO
         {
             List<Kho> lKho = new List<Kho>();
             string str = "SELECT * FROM dbo.VI_Kho_LoadData";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -41,13 +41,13 @@ namespace DAO
         public DataTable loadDataMng()
         {
             string str = "SELECT * FROM dbo.FN_TaiKhoan_GetNameByPers(2)";
-            return DataConn.Instance.ExecuteQueryTable(str);
+            return DataConn.INSTANCE.ExecuteQueryTable(str);
         }
         public List<Kho> searchByKeyword(string keyword)
         {
             List<Kho> lKho = new List<Kho>();
             string str = "SELECT * FROM dbo.FN_Kho_SearchByKeyword(N'" + keyword + "')";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -68,7 +68,7 @@ namespace DAO
             if(type == 1)
             {
                 string str = "SELECT * FROM dbo.FN_Kho_SearchByLimite(" + num + "," + comp + ")";
-                DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+                DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
                 foreach (DataRow item in data.Rows)
                 {
                     string id = item["id"].ToString();
@@ -84,7 +84,7 @@ namespace DAO
             else
             {
                 string str = "SELECT * FROM dbo.FN_Kho_SearchByAmount(" + num + "," + comp + ")";
-                DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+                DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
                 foreach (DataRow item in data.Rows)
                 {
                     string id = item["id"].ToString();
@@ -106,7 +106,7 @@ namespace DAO
                          "@dchi = N'" + k.DIACHI + "'," +
                          "@mng = N'" + k.MNG + "'," +
                          "@gioihan = " + k.GIOIHAN;
-            DataConn.Instance.ExecuteQueryTable(str);
+            DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public void saveEdit(List<Kho> lKho)
@@ -119,7 +119,7 @@ namespace DAO
                              "@mng = N'" + lKho[i].MNG + "'," +
                              "@gioihan = " + lKho[i].GIOIHAN;
 
-                DataConn.Instance.ExecuteQueryTable(str);
+                DataConn.INSTANCE.ExecuteQueryTable(str);
             }
         }
 
@@ -129,7 +129,7 @@ namespace DAO
             Kho k = new Kho();
             lKho.Add(k);
             string str = "SELECT * FROM dbo.VI_Kho_LoadData";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
 
             foreach (DataRow item in data.Rows)
             {
@@ -148,7 +148,7 @@ namespace DAO
         public void Delete(string id)
        {
             string str = "EXEC dbo.sp_Delete_Kho @id = '" + id + "'";
-           DataConn.Instance.ExecuteQueryTable(str);
+           DataConn.INSTANCE.ExecuteQueryTable(str);
        }
     }
 

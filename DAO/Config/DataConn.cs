@@ -11,7 +11,7 @@ namespace DAO
     public class DataConn
     {
          private static DataConn instance;
-        public static DataConn Instance
+        public static DataConn INSTANCE
         {
             get
             {

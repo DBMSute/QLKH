@@ -10,7 +10,7 @@ namespace DAO
    public class NhaCungCapDAO
     {
         private static NhaCungCapDAO instance;
-        public static NhaCungCapDAO Instance
+        public static NhaCungCapDAO INSTANCE
         {
             get
             {
@@ -21,8 +21,8 @@ namespace DAO
         public List<DTO.NhaCungCap> loadData()
         {
             List<DTO.NhaCungCap> lNcc = new List<DTO.NhaCungCap>();
-            string str = "select * from VI_NhaCungCap_LoadData";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            string str = "SELECT * FROM VI_NhaCungCap_LoadData";
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -35,12 +35,11 @@ namespace DAO
             }
             return lNcc;
         }
-        public List<DTO.NhaCungCap> timKiem(string strTimKiem)
+        public List<DTO.NhaCungCap> searchByKeyword(string keyword)
         {
             List<DTO.NhaCungCap> lNcc = new List<DTO.NhaCungCap>();
-            string str = "select * from NhaCungCap where id like N'%" + strTimKiem.Trim() + "%' or ten like N'%" + strTimKiem.Trim()
-               + "%' or dchi like N'%" + strTimKiem.Trim() + "%'";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            string str = "SELECT * FROM dbo.FN_NhaCungCap_SearchByKeyword(N'" + keyword + "')";
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -53,13 +52,13 @@ namespace DAO
             }
             return lNcc;
         }
-       public List<DTO.NhaCungCap> Them()
+        public List<DTO.NhaCungCap> Insert()
         {
             List<DTO.NhaCungCap> lNcc = new List<DTO.NhaCungCap>();
             DTO.NhaCungCap n = new DTO.NhaCungCap();
             lNcc.Add(n);
-            string str = "select * from NhaCungCap";
-            DataTable data = DataConn.Instance.ExecuteQueryTable(str);
+            string str = "SELECT * FROM dbo.VI_NhaCungCap_LoadData";
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
                 string id = item["id"].ToString();
@@ -72,27 +71,33 @@ namespace DAO
             }
             return lNcc;
         }
-       public void LuuThem(List<DTO.NhaCungCap> lNcc)
+
+        public void saveInsert(DTO.NhaCungCap ncc)
+        {
+            string str = "EXEC sp_Insert_NhaCungCap @ten=N'" + ncc.TEN + "'," +
+                         "@dchi=N'" + ncc.DIACHI + "'," +
+                         "@sdt='" + ncc.SODT + "'," +
+                         "@qGia=N'" + ncc.QGIA + "'";
+            DataConn.INSTANCE.ExecuteQueryTable(str);
+        }
+
+        public void saveEdit(List<DTO.NhaCungCap> lNcc)
+        {
+            for (int i = 0; i < lNcc.Count; i++)
+            {
+                string str = "EXEC sp_Update_NhaCungCap @id='" + lNcc[i].ID + "'," +
+                             "@ten=N'" + lNcc[i].TEN + "'," +
+                             "@dchi=N'" + lNcc[i].DIACHI + "'," +
+                             "@sdt='" + lNcc[i].SODT + "'," +
+                             "@qGia=N'" + lNcc[i].QGIA + "'";
+                DataConn.INSTANCE.ExecuteQueryTable(str);
+            }
+        }
+
+       public void Delete(string id)
        {
-           string str = "exec sp_Insert_NhaCungCap @ten=N'" + lNcc[0].ten + "',@dchi=N'" + 
-               lNcc[0].diaChi + "',@sdt='" + lNcc[0].soDT +
-               "',@qGia=N'" + lNcc[0].qGia+"'";
-           DataConn.Instance.ExecuteQueryTable(str);
-       }
-       public void LuuSua(List<DTO.NhaCungCap> lNcc)
-       {
-           for(int i=0;i<lNcc.Count;i++)
-           {
-               string str = "exec sp_Update_NhaCungCap @id='" + lNcc[i].id + "' ,@ten=N'" + lNcc[i].ten + "',@dchi=N'" +
-               lNcc[i].diaChi + "',@sdt='" + lNcc[i].soDT +
-               "',@qGia=N'" + lNcc[i].qGia+"'";
-               DataConn.Instance.ExecuteQueryTable(str);
-           }
-       }
-       public void Xoa(string id)
-       {
-           string str = "exec sp_Delete_KhachHang  @id='" + id + "'";
-           DataConn.Instance.ExecuteQueryTable(str);
+           string str = "EXEC sp_Delete_KhachHang  @id='" + id + "'";
+           DataConn.INSTANCE.ExecuteQueryTable(str);
        }
     }
 }

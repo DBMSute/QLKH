@@ -11,7 +11,7 @@ namespace BUS
     public class NhanVienBUS
     {
         private static NhanVienBUS instance;
-        public static NhanVienBUS Instace
+        public static NhanVienBUS INSTANCE
         {
             get
             {
@@ -22,7 +22,7 @@ namespace BUS
 
         public void loadData(DataGridView dgv)
         {
-            dgv.DataSource = DAO.NhanVienDAO.Instance.loadData();
+            dgv.DataSource = DAO.NhanVienDAO.INSTANCE.loadData();
         }
 
         public void Insert(string tentk, string passWd, byte[] avt, string hovatendem, string ten, string ngaysinh, string diachi, int pers, int tinhtrang)
@@ -37,7 +37,7 @@ namespace BUS
             tk.DIACHI = diachi;
             tk.PERS = pers;
             tk.TINHTRANG = tinhtrang;
-            DAO.NhanVienDAO.Instance.Insert(tk);
+            DAO.NhanVienDAO.INSTANCE.Insert(tk);
         }
 
         public void saveEdit(DataGridView dgv)
@@ -57,17 +57,17 @@ namespace BUS
                     (int)dr.Cells[11].Value);
                 lNV.Add(tk);
             }
-            DAO.NhanVienDAO.Instance.saveEdit(lNV);
+            DAO.NhanVienDAO.INSTANCE.saveEdit(lNV);
         }
 
         public void Delete(string id)
         {
-            DAO.NhanVienDAO.Instance.Delete(id);
+            DAO.NhanVienDAO.INSTANCE.Delete(id);
         }
 
         public void searchByKeyword(DataGridView dgv, string keyword, int status)
         {
-            dgv.DataSource = DAO.NhanVienDAO.Instance.searchByKeyword(keyword, status);
+            dgv.DataSource = DAO.NhanVienDAO.INSTANCE.searchByKeyword(keyword, status);
         }
     }
 }

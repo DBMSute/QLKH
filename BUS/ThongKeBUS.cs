@@ -9,7 +9,7 @@ namespace BUS
    public class ThongKeBUS
     {
        private static ThongKeBUS instance;
-       public static ThongKeBUS Instace
+       public static ThongKeBUS INSTANCE
         {
             get
             {

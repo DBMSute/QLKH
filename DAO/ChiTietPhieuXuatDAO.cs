@@ -9,7 +9,7 @@ namespace DAO
    public class ChiTietPhieuXuatDAO
     {
         private static ChiTietPhieuXuatDAO instance;
-        public static ChiTietPhieuXuatDAO Instace
+        public static ChiTietPhieuXuatDAO INSTANCE
         {
             get
             {

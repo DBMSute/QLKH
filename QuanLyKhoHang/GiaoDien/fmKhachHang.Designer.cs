@@ -175,6 +175,8 @@
             // 
             // dtgvCus
             // 
+            this.dtgvCus.AllowUserToResizeColumns = false;
+            this.dtgvCus.AllowUserToResizeRows = false;
             this.dtgvCus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvCus.BackgroundColor = System.Drawing.Color.White;
             this.dtgvCus.BorderStyle = System.Windows.Forms.BorderStyle.None;

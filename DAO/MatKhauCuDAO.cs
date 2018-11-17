@@ -9,7 +9,7 @@ namespace DAO
    public class MatKhauCuDAO
     {
         private static MatKhauCuDAO instance;
-        public static MatKhauCuDAO Instace
+        public static MatKhauCuDAO INSTANCE
         {
             get
             {

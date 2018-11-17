@@ -39,7 +39,7 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 int tempPers = rbManager.Checked == true ? 2 : 3;
                 int tempTinhTrang = rbActive.Checked == true ? 1 : 0;
-                BUS.NhanVienBUS.Instace.Insert(tbTenTK.Text, tbPW.Text, null, tbLN.Text, tbFN.Text, dtimeDOB.Value.ToString(), tbADD.Text, tempPers, tempTinhTrang);
+                BUS.NhanVienBUS.INSTANCE.Insert(tbTenTK.Text, tbPW.Text, null, tbLN.Text, tbFN.Text, dtimeDOB.Value.ToString(), tbADD.Text, tempPers, tempTinhTrang);
                 this.Close();
             }
             catch(Exception ex)

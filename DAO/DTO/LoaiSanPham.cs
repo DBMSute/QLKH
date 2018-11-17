@@ -30,6 +30,11 @@ namespace DTO
             this.TEN = ten;
             this.MOTA = moTa;
         }
+        public LoaiSanPham(string ten, string moTa)
+        {
+            this.TEN = ten;
+            this.MOTA = moTa;
+        }
         public LoaiSanPham()
         {
 

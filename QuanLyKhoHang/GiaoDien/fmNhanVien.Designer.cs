@@ -61,30 +61,30 @@
             this.pnName = new System.Windows.Forms.Panel();
             this.switchTinhTrang = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.lbDataPosition = new System.Windows.Forms.Label();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.dtgvEmp = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.switchStatus = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.tbEmpSearch = new System.Windows.Forms.TextBox();
-            this.btnCusPrint = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnEmpChangePW = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnEmpSave = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnEmpAdd = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnEmpDel = new Bunifu.Framework.UI.BunifuTileButton();
             this.openAVT = new System.Windows.Forms.OpenFileDialog();
-            this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PERS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LASTLOGIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOVATENDEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AVT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.PASSWD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CREATEDAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbPosition = new System.Windows.Forms.ComboBox();
+            this.TENTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CREATEDAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PASSWD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AVT = new System.Windows.Forms.DataGridViewImageColumn();
+            this.HOVATENDEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LASTLOGIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -480,6 +480,21 @@
             this.lbDataPosition.Text = "NULL";
             this.lbDataPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cbPosition
+            // 
+            this.cbPosition.BackColor = System.Drawing.Color.SeaGreen;
+            this.cbPosition.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPosition.ForeColor = System.Drawing.Color.White;
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.Items.AddRange(new object[] {
+            "Quản lý",
+            "Nhân viên"});
+            this.cbPosition.Location = new System.Drawing.Point(88, 4);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(252, 41);
+            this.cbPosition.TabIndex = 5;
+            this.cbPosition.SelectedIndexChanged += new System.EventHandler(this.cbPosition_SelectedIndexChanged);
+            // 
             // pnMidL
             // 
             this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -523,7 +538,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.switchStatus);
             this.panel2.Controls.Add(this.tbEmpSearch);
-            this.panel2.Controls.Add(this.btnCusPrint);
+            this.panel2.Controls.Add(this.btnEmpChangePW);
             this.panel2.Controls.Add(this.btnEmpSave);
             this.panel2.Controls.Add(this.btnEmpAdd);
             this.panel2.Controls.Add(this.btnEmpDel);
@@ -574,24 +589,25 @@
             this.tbEmpSearch.Enter += new System.EventHandler(this.tbEmpSearch_Enter);
             this.tbEmpSearch.Leave += new System.EventHandler(this.tbEmpSearch_Leave);
             // 
-            // btnCusPrint
+            // btnEmpChangePW
             // 
-            this.btnCusPrint.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnCusPrint.color = System.Drawing.Color.SeaGreen;
-            this.btnCusPrint.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnCusPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCusPrint.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.btnCusPrint.ForeColor = System.Drawing.Color.White;
-            this.btnCusPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
-            this.btnCusPrint.ImagePosition = 10;
-            this.btnCusPrint.ImageZoom = 50;
-            this.btnCusPrint.LabelPosition = 30;
-            this.btnCusPrint.LabelText = "In";
-            this.btnCusPrint.Location = new System.Drawing.Point(656, 10);
-            this.btnCusPrint.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCusPrint.Name = "btnCusPrint";
-            this.btnCusPrint.Size = new System.Drawing.Size(85, 85);
-            this.btnCusPrint.TabIndex = 9;
+            this.btnEmpChangePW.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnEmpChangePW.color = System.Drawing.Color.SeaGreen;
+            this.btnEmpChangePW.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnEmpChangePW.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmpChangePW.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.btnEmpChangePW.ForeColor = System.Drawing.Color.White;
+            this.btnEmpChangePW.Image = global::QuanLyKhoHang.Properties.Resources.password;
+            this.btnEmpChangePW.ImagePosition = 10;
+            this.btnEmpChangePW.ImageZoom = 50;
+            this.btnEmpChangePW.LabelPosition = 30;
+            this.btnEmpChangePW.LabelText = "Đổi MK";
+            this.btnEmpChangePW.Location = new System.Drawing.Point(656, 10);
+            this.btnEmpChangePW.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEmpChangePW.Name = "btnEmpChangePW";
+            this.btnEmpChangePW.Size = new System.Drawing.Size(85, 85);
+            this.btnEmpChangePW.TabIndex = 9;
+            this.btnEmpChangePW.Click += new System.EventHandler(this.btnEmpChangePW_Click);
             // 
             // btnEmpSave
             // 
@@ -657,54 +673,33 @@
             // 
             this.openAVT.FileName = "openAVT";
             // 
-            // TINHTRANG
+            // ID
             // 
-            this.TINHTRANG.DataPropertyName = "TINHTRANG";
-            this.TINHTRANG.HeaderText = "Tình trạng";
-            this.TINHTRANG.Name = "TINHTRANG";
-            this.TINHTRANG.Visible = false;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã nhân viên";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // PERS
+            // TENTK
             // 
-            this.PERS.DataPropertyName = "PERS";
-            this.PERS.HeaderText = "Chức vụ";
-            this.PERS.Name = "PERS";
-            this.PERS.Visible = false;
+            this.TENTK.DataPropertyName = "TENTK";
+            this.TENTK.HeaderText = "Tên tài khoản";
+            this.TENTK.Name = "TENTK";
+            this.TENTK.ReadOnly = true;
             // 
-            // LASTLOGIN
+            // CREATEDAY
             // 
-            this.LASTLOGIN.DataPropertyName = "LASTLOGIN";
-            this.LASTLOGIN.HeaderText = "Lần đăng nhập cuối";
-            this.LASTLOGIN.Name = "LASTLOGIN";
-            this.LASTLOGIN.Visible = false;
+            this.CREATEDAY.DataPropertyName = "CREATEDAY";
+            this.CREATEDAY.HeaderText = "Ngày tạo tài khoản";
+            this.CREATEDAY.Name = "CREATEDAY";
+            this.CREATEDAY.ReadOnly = true;
             // 
-            // DIACHI
+            // PASSWD
             // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.Visible = false;
-            // 
-            // NGAYSINH
-            // 
-            this.NGAYSINH.DataPropertyName = "NGAYSINH";
-            this.NGAYSINH.HeaderText = "Ngày sinh";
-            this.NGAYSINH.Name = "NGAYSINH";
-            this.NGAYSINH.Visible = false;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên";
-            this.TEN.Name = "TEN";
-            this.TEN.Visible = false;
-            // 
-            // HOVATENDEM
-            // 
-            this.HOVATENDEM.DataPropertyName = "HOVATENDEM";
-            this.HOVATENDEM.HeaderText = "Họ và tên đệm";
-            this.HOVATENDEM.Name = "HOVATENDEM";
-            this.HOVATENDEM.Visible = false;
+            this.PASSWD.DataPropertyName = "PASSWD";
+            this.PASSWD.HeaderText = "Mật khẩu";
+            this.PASSWD.Name = "PASSWD";
+            this.PASSWD.Visible = false;
             // 
             // AVT
             // 
@@ -714,47 +709,54 @@
             this.AVT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.AVT.Visible = false;
             // 
-            // PASSWD
+            // HOVATENDEM
             // 
-            this.PASSWD.DataPropertyName = "PASSWD";
-            this.PASSWD.HeaderText = "Mật khẩu";
-            this.PASSWD.Name = "PASSWD";
-            this.PASSWD.Visible = false;
+            this.HOVATENDEM.DataPropertyName = "HOVATENDEM";
+            this.HOVATENDEM.HeaderText = "Họ và tên đệm";
+            this.HOVATENDEM.Name = "HOVATENDEM";
+            this.HOVATENDEM.Visible = false;
             // 
-            // CREATEDAY
+            // TEN
             // 
-            this.CREATEDAY.DataPropertyName = "CREATEDAY";
-            this.CREATEDAY.HeaderText = "Ngày tạo tài khoản";
-            this.CREATEDAY.Name = "CREATEDAY";
-            this.CREATEDAY.ReadOnly = true;
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên";
+            this.TEN.Name = "TEN";
+            this.TEN.Visible = false;
             // 
-            // TENTK
+            // NGAYSINH
             // 
-            this.TENTK.DataPropertyName = "TENTK";
-            this.TENTK.HeaderText = "Tên tài khoản";
-            this.TENTK.Name = "TENTK";
+            this.NGAYSINH.DataPropertyName = "NGAYSINH";
+            this.NGAYSINH.HeaderText = "Ngày sinh";
+            this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.Visible = false;
             // 
-            // ID
+            // DIACHI
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã nhân viên";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.Visible = false;
             // 
-            // cbPosition
+            // LASTLOGIN
             // 
-            this.cbPosition.BackColor = System.Drawing.Color.SeaGreen;
-            this.cbPosition.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPosition.ForeColor = System.Drawing.Color.White;
-            this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Items.AddRange(new object[] {
-            "Quản lý",
-            "Nhân viên"});
-            this.cbPosition.Location = new System.Drawing.Point(88, 4);
-            this.cbPosition.Name = "cbPosition";
-            this.cbPosition.Size = new System.Drawing.Size(252, 41);
-            this.cbPosition.TabIndex = 5;
-            this.cbPosition.SelectedIndexChanged += new System.EventHandler(this.cbPosition_SelectedIndexChanged);
+            this.LASTLOGIN.DataPropertyName = "LASTLOGIN";
+            this.LASTLOGIN.HeaderText = "Lần đăng nhập cuối";
+            this.LASTLOGIN.Name = "LASTLOGIN";
+            this.LASTLOGIN.Visible = false;
+            // 
+            // PERS
+            // 
+            this.PERS.DataPropertyName = "PERS";
+            this.PERS.HeaderText = "Chức vụ";
+            this.PERS.Name = "PERS";
+            this.PERS.Visible = false;
+            // 
+            // TINHTRANG
+            // 
+            this.TINHTRANG.DataPropertyName = "TINHTRANG";
+            this.TINHTRANG.HeaderText = "Tình trạng";
+            this.TINHTRANG.Name = "TINHTRANG";
+            this.TINHTRANG.Visible = false;
             // 
             // fmNhanVien
             // 
@@ -808,7 +810,7 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.Panel pnMidR;
         private Bunifu.Framework.UI.BunifuTileButton btnEmpSave;
-        private Bunifu.Framework.UI.BunifuTileButton btnCusPrint;
+        private Bunifu.Framework.UI.BunifuTileButton btnEmpChangePW;
         private Bunifu.Framework.UI.BunifuTileButton btnEmpDel;
         private Bunifu.Framework.UI.BunifuTileButton btnEmpAdd;
         private System.Windows.Forms.TextBox tbEmpSearch;

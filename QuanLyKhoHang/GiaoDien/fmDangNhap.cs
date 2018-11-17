@@ -31,17 +31,17 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (BUS.TaiKhoanBUS.Instace.checkAccount(tbACC.Text, tbPW.Text) == 2)
+            if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == 2)
             {
                 MessageBox.Show("Tài khoản đang bị khóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (BUS.TaiKhoanBUS.Instace.checkAccount(tbACC.Text, tbPW.Text) == 0)
+            if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == 0)
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (BUS.TaiKhoanBUS.Instace.checkAccount(tbACC.Text, tbPW.Text) == -1)
+            if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == -1)
             {
                 MessageBox.Show("Lỗi không xác định", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -59,7 +59,7 @@ namespace QuanLyKhoHang.GiaoDien
                 QuanLyKhoHang.Properties.Settings.Default.UserPassword = null;
                 QuanLyKhoHang.Properties.Settings.Default.Save();
             }
-            BUS.TaiKhoanBUS.Instace.updateLastLogin(tentk);
+            BUS.TaiKhoanBUS.INSTANCE.updateLastLogin(tentk);
             cpLoading.Visible = true;
             pnRight.Enabled = false;
             tmrLoading.Start();

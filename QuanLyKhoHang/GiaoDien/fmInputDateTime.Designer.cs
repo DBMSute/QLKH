@@ -48,11 +48,11 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(269, 61);
+            this.btnSubmit.Location = new System.Drawing.Point(254, 61);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(103, 38);
+            this.btnSubmit.Size = new System.Drawing.Size(118, 38);
             this.btnSubmit.TabIndex = 1;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "Xác nhận";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -67,7 +67,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fmInputDateTime";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Input";
+            this.Text = "Nhập ngày tháng";
             this.ResumeLayout(false);
 
         }

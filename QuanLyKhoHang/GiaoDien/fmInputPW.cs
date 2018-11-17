@@ -21,14 +21,9 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (tbNewPW.Text.Length < 8)
-            {
-                MessageBox.Show("Password must greater than 8 characters!", "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (tbNewPW.Text != tbCfmPW.Text)
             {
-                MessageBox.Show("Confirm password not like new password!", "Opps...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mật khẩu xác nhận không đúng!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             opw = tbOldPW.Text;

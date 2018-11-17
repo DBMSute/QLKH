@@ -25,7 +25,7 @@ namespace QuanLyKhoHang.GiaoDien
                 tmrClock.Start();
                 btnCusSave.color = btnCusSave.BackColor = Color.SeaGreen;
                 btnCusSave.colorActive = Color.MediumSeaGreen;
-                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                BUS.KhachHangBUS.INSTANCE.loadData(dtgvCus);
             }
             catch(Exception ex)
             {
@@ -44,7 +44,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void tbWareSearch_TextChanged(object sender, EventArgs e)
         {
-            BUS.KhachHangBUS.Instance.searchByKeyword(dtgvCus, tbCusSearch.Text.Trim());
+            BUS.KhachHangBUS.INSTANCE.searchByKeyword(dtgvCus, tbCusSearch.Text.Trim());
         }
 
         private void tbCusSearch_Enter(object sender, EventArgs e)
@@ -58,13 +58,13 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbCusSearch.Text == "")
             {
                 tbCusSearch.Text = "Tìm kiếm...";
-                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                BUS.KhachHangBUS.INSTANCE.loadData(dtgvCus);
             }
         }
 
         private void btnCusAdd_Click(object sender, EventArgs e)
         {
-            BUS.KhachHangBUS.Instance.Insert(dtgvCus);
+            BUS.KhachHangBUS.INSTANCE.Insert(dtgvCus);
             dtgvCus.CurrentCell = dtgvCus[1, 0];
             flagSave = true;
         }
@@ -75,14 +75,14 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 if (MessageBox.Show("Bạn có chắc muốn xóa dữ liệu này?", "Xóa dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
                     return;
-                BUS.KhachHangBUS.Instance.Delete(dtgvCus.CurrentRow.Cells[0].Value.ToString());
+                BUS.KhachHangBUS.INSTANCE.Delete(dtgvCus.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                BUS.KhachHangBUS.INSTANCE.loadData(dtgvCus);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message,"Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                BUS.KhachHangBUS.INSTANCE.loadData(dtgvCus);
             }
         }
 
@@ -91,10 +91,15 @@ namespace QuanLyKhoHang.GiaoDien
             btnCusSave.Focus();
             try
             {
+                if (btnCusSave.color == Color.SeaGreen)
+                {
+                    MessageBox.Show("Không có gì mới để lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (flagSave == true)
                 {
-                    BUS.KhachHangBUS.Instance.saveInsert(dtgvCus);
-                    BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                    BUS.KhachHangBUS.INSTANCE.saveInsert(dtgvCus);
+                    BUS.KhachHangBUS.INSTANCE.loadData(dtgvCus);
                     MessageBox.Show("Đã lưu!", "Thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnCusSave.color = btnCusSave.BackColor = Color.SeaGreen;
                     btnCusSave.colorActive = Color.MediumSeaGreen;
@@ -102,8 +107,8 @@ namespace QuanLyKhoHang.GiaoDien
                 }
                 else
                 {
-                    BUS.KhachHangBUS.Instance.saveEdit(dtgvCus);
-                    BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                    BUS.KhachHangBUS.INSTANCE.saveEdit(dtgvCus);
+                    BUS.KhachHangBUS.INSTANCE.loadData(dtgvCus);
                     MessageBox.Show("Đã Sửa!", "Sửa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnCusSave.color = btnCusSave.BackColor = Color.SeaGreen;
                     btnCusSave.colorActive = Color.MediumSeaGreen;
@@ -112,7 +117,9 @@ namespace QuanLyKhoHang.GiaoDien
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.KhachHangBUS.Instance.loadData(dtgvCus);
+                BUS.KhachHangBUS.INSTANCE.loadData(dtgvCus);
+                btnCusSave.color = btnCusSave.BackColor = Color.SeaGreen;
+                btnCusSave.colorActive = Color.MediumSeaGreen;
             }
         }
 

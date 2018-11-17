@@ -11,7 +11,7 @@ namespace BUS
     public class SanPhamBUS
     {
         private static SanPhamBUS instance;
-        public static SanPhamBUS Instance
+        public static SanPhamBUS INSTANCE
         {
             get
             {
@@ -22,12 +22,12 @@ namespace BUS
 
         public void loadData(DataGridView dgv, string id)
         {
-            dgv.DataSource = DAO.SanPhamDAO.Instace.loadData(id);
+            dgv.DataSource = DAO.SanPhamDAO.INSTANCE.loadData(id);
         }
 
         public void Insert(DataGridView dgv, string id)
         {
-            dgv.DataSource = DAO.SanPhamDAO.Instace.Insert(id);
+            dgv.DataSource = DAO.SanPhamDAO.INSTANCE.Insert(id);
         }
 
         public void saveInsert(DataGridView dgv, string idkho)
@@ -41,7 +41,7 @@ namespace BUS
                     Convert.ToDouble(dgv.Rows[0].Cells[6].Value),
                     dgv.Rows[0].Cells[5].Value.ToString().Trim());
 
-            DAO.SanPhamDAO.Instace.saveInsert(sp);
+            DAO.SanPhamDAO.INSTANCE.saveInsert(sp);
         }
 
         public void saveEdit(DataGridView dgv)
@@ -61,23 +61,23 @@ namespace BUS
                     dr.Cells[5].Value.ToString().Trim());
                 lSanPham.Add(sp);
             }
-            DAO.SanPhamDAO.Instace.saveEdit(lSanPham);
+            DAO.SanPhamDAO.INSTANCE.saveEdit(lSanPham);
         }
 
         public void Delete(string id)
         {
-            DAO.SanPhamDAO.Instace.Delete(id);
+            DAO.SanPhamDAO.INSTANCE.Delete(id);
         }
 
         public void searchByKeyword(DataGridView dgv, string keyword, string idkho)
         {
-            dgv.DataSource = DAO.SanPhamDAO.Instace.searchByKeyword(keyword, idkho);
+            dgv.DataSource = DAO.SanPhamDAO.INSTANCE.searchByKeyword(keyword, idkho);
         }
 
         public void searchByNum(DataGridView dgv, int num, bool comp, string idkho)
         {
             int compTemp = (comp == true) ? 1 : 0;
-            dgv.DataSource = DAO.SanPhamDAO.Instace.searchByNum(num, compTemp, idkho);
+            dgv.DataSource = DAO.SanPhamDAO.INSTANCE.searchByNum(num, compTemp, idkho);
         }
     }
 }

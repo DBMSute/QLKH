@@ -10,7 +10,7 @@ namespace BUS
    public class KhachHangBUS
     {
         private static KhachHangBUS instance;
-        public static KhachHangBUS Instance
+        public static KhachHangBUS INSTANCE
         {
             get
             {
@@ -21,22 +21,22 @@ namespace BUS
 
         public void loadData(DataGridView dgv)
         {
-            dgv.DataSource = DAO.KhachHangDAO.Instance.loadData();
+            dgv.DataSource = DAO.KhachHangDAO.INSTANCE.loadData();
         }
 
         public void searchByKeyword(DataGridView dgv, string keyword)
         {
-            dgv.DataSource = DAO.KhachHangDAO.Instance.searchByKeyword(keyword);
+            dgv.DataSource = DAO.KhachHangDAO.INSTANCE.searchByKeyword(keyword);
         }
 
         public void Insert(DataGridView dgv)
         {
-            dgv.DataSource = DAO.KhachHangDAO.Instance.Insert();
+            dgv.DataSource = DAO.KhachHangDAO.INSTANCE.Insert();
         }
 
         public void Delete(string id)
         {
-            DAO.KhachHangDAO.Instance.Delete(id);
+            DAO.KhachHangDAO.INSTANCE.Delete(id);
         }
 
         public void saveInsert(DataGridView dgv)
@@ -46,7 +46,7 @@ namespace BUS
                     dgv.Rows[0].Cells[1].Value.ToString().Trim(),
                     dgv.Rows[0].Cells[2].Value.ToString().Trim(),
                     dgv.Rows[0].Cells[3].Value.ToString().Trim());
-            DAO.KhachHangDAO.Instance.saveInsert(kh);
+            DAO.KhachHangDAO.INSTANCE.saveInsert(kh);
         }
 
         public void saveEdit(DataGridView dgv)
@@ -63,7 +63,7 @@ namespace BUS
                     dr.Cells[3].Value.ToString().Trim());
                 lKH.Add(kh);
             }
-            DAO.KhachHangDAO.Instance.saveEdit(lKH);
+            DAO.KhachHangDAO.INSTANCE.saveEdit(lKH);
         }
     }
 }
