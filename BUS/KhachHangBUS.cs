@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,14 @@ namespace BUS
         public void loadData(DataGridView dgv)
         {
             dgv.DataSource = DAO.KhachHangDAO.INSTANCE.loadData();
+        }
+
+        public List<string> loadDataTen()
+        {
+            List<string> lTen = new List<string>();
+            foreach (DTO.KhachHang kh in DAO.KhachHangDAO.INSTANCE.loadData())
+                lTen.Add(kh.TEN.ToString());
+            return lTen;
         }
 
         public void searchByKeyword(DataGridView dgv, string keyword)

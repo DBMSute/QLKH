@@ -11,7 +11,6 @@ namespace BUS
     public class KhoBUS
     {
         private static KhoBUS instance;
-        int index;
         public static KhoBUS INSTANCE
         {
             get
@@ -20,9 +19,9 @@ namespace BUS
                 return instance;
             }
         }
-        public void loadData(DataGridView dt)
+        public void loadData(DataGridView dgv)
         {
-            dt.DataSource = DAO.KhoDAO.INSTANCE.loadData();
+            dgv.DataSource = DAO.KhoDAO.INSTANCE.loadData();
         }
 
         public List<string> loadDataMNG()
@@ -83,5 +82,16 @@ namespace BUS
             int compType = (type == true) ? 1 : 0;
             dgv.DataSource = DAO.KhoDAO.INSTANCE.searchByNum(num, compTemp, compType);
         }
+
+        public List<string> loadDataTen()
+        {
+            List<string> lten = new List<string>();
+            foreach (DTO.Kho lkho in DAO.KhoDAO.INSTANCE.loadData())
+            {
+                lten.Add(lkho.TEN);
+            }
+            return lten;
+        }
+
     }
 }

@@ -41,6 +41,27 @@ namespace DAO
             return lSanPham;
         }
 
+        public List<SanPham> loadData()
+        {
+            List<SanPham> lSanPham = new List<SanPham>();
+            string str = "SELECT * FROM dbo.VI_SanPham_LoadData";
+            DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
+            foreach (DataRow item in data.Rows)
+            {
+                string id = item["id"].ToString();
+                string ten = item["ten"].ToString();
+                string lsp = item["lsp"].ToString();
+                string kho = item["kho"].ToString();
+                int soluong = (int)item["soluong"];
+                double dongia = Convert.ToDouble(item["dongia"]);
+                string dvtiente = item["dvitiente"].ToString();
+                string tinhtrang = (Convert.ToBoolean(item["tinhtrang"]) == true) ? "Còn hàng" : "Hết hàng";
+                SanPham sp = new SanPham(id, ten, lsp, kho, soluong, dongia, dvtiente, tinhtrang);
+                lSanPham.Add(sp);
+            }
+            return lSanPham;
+        }
+
 
         public List<SanPham> Insert(string idkho)
         {

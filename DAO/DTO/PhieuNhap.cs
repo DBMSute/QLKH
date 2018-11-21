@@ -32,6 +32,7 @@ namespace DTO
             this.NGAYGIO = ngayGio;
             this.TRANGTHAI = trangThai;
         }
+
         public PhieuNhap()
         {
 

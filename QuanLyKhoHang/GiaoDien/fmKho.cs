@@ -27,7 +27,7 @@ namespace QuanLyKhoHang.GiaoDien
         private void Init()
         {
             MNG.DataSource = BUS.KhoBUS.INSTANCE.loadDataMNG();
-            BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
+            BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
             pnMidL2.Location = new Point(-1190, 110);
             TENLOAI.DataSource = BUS.LoaiSanPhamBUS.INSTANCE.loadDataTen();
             btnWareSave.color = btnWareSave.BackColor = Color.SeaGreen;
@@ -36,21 +36,21 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void loadDataWare(DataGridViewCellEventArgs e)
         {
-            dtgvWare.Visible = false;
-            dtgvWare.Size = new Size(0, 0);
+            dtgvPN.Visible = false;
+            dtgvPN.Size = new Size(0, 0);
             tmrSlide.Start();
             dtgvItem.Visible = true;
-            lbKhoName.Text = dtgvWare.Rows[e.RowIndex].Cells[1].Value.ToString();
-            idkho = dtgvWare.Rows[e.RowIndex].Cells[0].Value.ToString();
-            BUS.SanPhamBUS.INSTANCE.loadData(dtgvItem, dtgvWare.Rows[e.RowIndex].Cells[0].Value.ToString());
-            cpbValue = Convert.ToInt32((int)dtgvWare.Rows[e.RowIndex].Cells[5].Value * 100 / (int)dtgvWare.Rows[e.RowIndex].Cells[4].Value);
+            lbKhoName.Text = dtgvPN.Rows[e.RowIndex].Cells[1].Value.ToString();
+            idkho = dtgvPN.Rows[e.RowIndex].Cells[0].Value.ToString();
+            BUS.SanPhamBUS.INSTANCE.loadData(dtgvItem, dtgvPN.Rows[e.RowIndex].Cells[0].Value.ToString());
+            cpbValue = Convert.ToInt32((int)dtgvPN.Rows[e.RowIndex].Cells[5].Value * 100 / (int)dtgvPN.Rows[e.RowIndex].Cells[4].Value);
         }
      
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            dtgvWare.CellDoubleClick -= dtgvWare_CellDoubleClick;
-            BUS.KhoBUS.INSTANCE.Insert(dtgvWare);
-            dtgvWare.CurrentCell = dtgvWare[1, 0];
+            dtgvPN.CellDoubleClick -= dtgvWare_CellDoubleClick;
+            BUS.KhoBUS.INSTANCE.Insert(dtgvPN);
+            dtgvPN.CurrentCell = dtgvPN[1, 0];
             flagSave = true;
         }
 
@@ -93,7 +93,7 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 if (pnMidL.Location.X == 10)
                 {
-                    dtgvWare.Size = new Size(721, 430);
+                    dtgvPN.Size = new Size(721, 430);
                     tmrSlide2.Stop();
                     return;
                 }
@@ -116,8 +116,8 @@ namespace QuanLyKhoHang.GiaoDien
             dtgvItem.Size = new Size(0, 0);
             tmrSlide2.Start();
             loadTongQuan(null);
-            dtgvWare.Visible = true;
-            BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
+            dtgvPN.Visible = true;
+            BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
             tbItemSearch.Text = "Tìm kiếm...";
             numItemSL.Value = 0;
         }
@@ -147,10 +147,10 @@ namespace QuanLyKhoHang.GiaoDien
                 return;
             }
             updateCPBValue();
-            lbDataInfoTenKho.Text = dtgvWare[1, e.RowIndex].Value.ToString();
-            lbDataInfoDiaChi.Text = dtgvWare[2, e.RowIndex].Value.ToString();
-            lbDataInfoQuanLi.Text = dtgvWare[3, e.RowIndex].Value.ToString();
-            lbDataInfoSLHang.Text = dtgvWare[5, e.RowIndex].Value.ToString();
+            lbDataInfoTenKho.Text = dtgvPN[1, e.RowIndex].Value.ToString();
+            lbDataInfoDiaChi.Text = dtgvPN[2, e.RowIndex].Value.ToString();
+            lbDataInfoQuanLi.Text = dtgvPN[3, e.RowIndex].Value.ToString();
+            lbDataInfoSLHang.Text = dtgvPN[5, e.RowIndex].Value.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -165,8 +165,8 @@ namespace QuanLyKhoHang.GiaoDien
                 }
                 if (flagSave == true)
                 {
-                    BUS.KhoBUS.INSTANCE.saveInsert(dtgvWare);
-                    BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
+                    BUS.KhoBUS.INSTANCE.saveInsert(dtgvPN);
+                    BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
                     MessageBox.Show("Đã lưu!", "Thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnWareSave.color = btnWareSave.BackColor = Color.SeaGreen;
                     btnWareSave.colorActive = Color.MediumSeaGreen;
@@ -174,8 +174,8 @@ namespace QuanLyKhoHang.GiaoDien
                 }
                 else
                 {
-                    BUS.KhoBUS.INSTANCE.saveEdit(dtgvWare);
-                    BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
+                    BUS.KhoBUS.INSTANCE.saveEdit(dtgvPN);
+                    BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
                     MessageBox.Show("Đã Sửa!", "Sửa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnWareSave.color = btnWareSave.BackColor = Color.SeaGreen;
                     btnWareSave.colorActive = Color.MediumSeaGreen;
@@ -184,16 +184,16 @@ namespace QuanLyKhoHang.GiaoDien
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
+                BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
                 btnWareSave.color = btnWareSave.BackColor = Color.SeaGreen;
                 btnWareSave.colorActive = Color.MediumSeaGreen;
             }
-            dtgvWare.CellDoubleClick += dtgvWare_CellDoubleClick;
+            dtgvPN.CellDoubleClick += dtgvWare_CellDoubleClick;
         }
 
         private void btnItemAdd_Click(object sender, EventArgs e)
         {
-            BUS.SanPhamBUS.INSTANCE.Insert(dtgvItem, dtgvWare.Rows[dtgvWare.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            BUS.SanPhamBUS.INSTANCE.Insert(dtgvItem, dtgvPN.Rows[dtgvPN.CurrentCell.RowIndex].Cells[0].Value.ToString());
             dtgvItem.CurrentCell = dtgvItem[1, 0];
             flagSave = true;
         }
@@ -236,8 +236,8 @@ namespace QuanLyKhoHang.GiaoDien
 
         public void updateCPBValue()
         {
-            BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
-            foreach (DataGridViewRow dr in dtgvWare.Rows)
+            BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
+            foreach (DataGridViewRow dr in dtgvPN.Rows)
                 if (dr.Cells[0].FormattedValue.ToString() == idkho)
                 {
                     cpbValue = Convert.ToInt32(dr.Cells[5].Value) * 100 / Convert.ToInt32(dr.Cells[4].Value);
@@ -317,7 +317,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void tbWareSearch_TextChanged(object sender, EventArgs e)
         {
-            BUS.KhoBUS.INSTANCE.searchByKeyword(dtgvWare, tbWareSearch.Text.Trim());
+            BUS.KhoBUS.INSTANCE.searchByKeyword(dtgvPN, tbWareSearch.Text.Trim());
         }
 
         private void btnWareDel_Click(object sender, EventArgs e)
@@ -326,38 +326,38 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 if (MessageBox.Show("Bạn có chắc muốn xóa dữ liệu này?", "Xóa dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
                     return;
-                BUS.KhoBUS.INSTANCE.Delete(dtgvWare.CurrentRow.Cells[0].Value.ToString());              
+                BUS.KhoBUS.INSTANCE.Delete(dtgvPN.CurrentRow.Cells[0].Value.ToString());              
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
+                BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.Contains("REFERENCE") == true ? "Trong kho còn sản phẩm!" : ex.Message, "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
+                BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
             }
         }
 
         private void btnWarePrint_Click(object sender, EventArgs e)
         {
-            bmp = new Bitmap(dtgvWare.Width, dtgvWare.Height);
-            dtgvWare.DrawToBitmap(bmp, new Rectangle(0, 0, dtgvWare.Width, dtgvWare.Height));
+            bmp = new Bitmap(dtgvPN.Width, dtgvPN.Height);
+            dtgvPN.DrawToBitmap(bmp, new Rectangle(0, 0, dtgvPN.Width, dtgvPN.Height));
             printWare.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1170);
             printPreviewDialog.ShowDialog();
         }
 
         private void numWare_ValueChanged(object sender, EventArgs e)
         {
-            BUS.KhoBUS.INSTANCE.searchByNum(dtgvWare, (int)numWare.Value, SwitchWareLonBe.Value, switchWareSucChuaSL.Value);
+            BUS.KhoBUS.INSTANCE.searchByNum(dtgvPN, (int)numWare.Value, SwitchWareLonBe.Value, switchWareSucChuaSL.Value);
         }
 
         private void SwitchWareLonBe_Click(object sender, EventArgs e)
         {
-            BUS.KhoBUS.INSTANCE.searchByNum(dtgvWare, (int)numWare.Value, SwitchWareLonBe.Value, switchWareSucChuaSL.Value);
+            BUS.KhoBUS.INSTANCE.searchByNum(dtgvPN, (int)numWare.Value, SwitchWareLonBe.Value, switchWareSucChuaSL.Value);
         }
 
         private void switchWareSucChuaSL_Click(object sender, EventArgs e)
         {
-            BUS.KhoBUS.INSTANCE.searchByNum(dtgvWare, (int)numWare.Value, SwitchWareLonBe.Value, switchWareSucChuaSL.Value);
+            BUS.KhoBUS.INSTANCE.searchByNum(dtgvPN, (int)numWare.Value, SwitchWareLonBe.Value, switchWareSucChuaSL.Value);
         }
 
         private void tbWareSearch_Enter(object sender, EventArgs e)
@@ -371,7 +371,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbWareSearch.Text == "")
             {
                 tbWareSearch.Text = "Tìm kiếm...";
-                BUS.KhoBUS.INSTANCE.loadData(dtgvWare);
+                BUS.KhoBUS.INSTANCE.loadData(dtgvPN);
             }
         }
 
@@ -387,9 +387,9 @@ namespace QuanLyKhoHang.GiaoDien
         private void printWare_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawString(lbListKho.Text.ToUpper(), new Font("Times New Roman", 20, FontStyle.Bold), Brushes.Black, (827 - lbListKho.Width) / 2, 100 );
-            e.Graphics.DrawString("Thời gian: "+ DateTime.Now.ToString("d", new System.Globalization.CultureInfo("es-ES")), new Font("Times New Roman", 13, FontStyle.Bold), Brushes.Black, (827 - dtgvWare.Width) / 2, 150);
-            e.Graphics.DrawString("Người in: " + fmQuanLy.sName, new Font("Times New Roman", 13, FontStyle.Bold), Brushes.Black, ((827 - dtgvWare.Width) / 2) + 500, 150);
-            e.Graphics.DrawImage(bmp, (827 - dtgvWare.Width) / 2, 300);
+            e.Graphics.DrawString("Thời gian: "+ DateTime.Now.ToString("d", new System.Globalization.CultureInfo("es-ES")), new Font("Times New Roman", 13, FontStyle.Bold), Brushes.Black, (827 - dtgvPN.Width) / 2, 150);
+            e.Graphics.DrawString("Người in: " + fmQuanLy.sName, new Font("Times New Roman", 13, FontStyle.Bold), Brushes.Black, ((827 - dtgvPN.Width) / 2) + 500, 150);
+            e.Graphics.DrawImage(bmp, (827 - dtgvPN.Width) / 2, 300);
         }
 
         private void tmrClock_Tick(object sender, EventArgs e)

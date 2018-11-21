@@ -6,48 +6,85 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-   public class ChiTietPhieuNhap
+    public class ChiTietPhieuNhap
     {
-        public string idpn, idsp, idncc, donGia, soLuong, tong;
+        private string idpn, tensp, tenncc, tenlsp, tenkho, dvtiente;
+        private int soLuong;
+        private double donGia, tong;
+
         public string IDPN
         {
             get { return idpn; }
             set { idpn = value; }
         }
-        public string IDSP
+        
+        public string TENSP
         {
-            get { return idsp; }
-            set { idsp = value; }
+            get { return tensp; }
+            set { tensp = value; }
         }
-        public string IDNCC
+        
+        public string TENNCC
         {
-            get { return idncc; }
-            set { idncc = value; }
+            get { return tenncc; }
+            set { tenncc = value; }
         }
-        public string DONGIA
+        public string TENLSP
+        {
+            get { return tenlsp; }
+            set { tenlsp = value; }
+        }
+        
+        public string TENKHO
+        {
+            get { return tenkho; }
+            set { tenkho = value; }
+        }
+        public double DONGIA
         {
             get { return donGia; }
             set { donGia = value; }
         }
-        public string SOLUONG
+        public int SOLUONG
         {
             get { return soLuong; }
             set { soLuong = value; }
         }
-        public string TONG
+        public double TONG
         {
             get { return tong; }
             set { tong = value; }
         }
-        public ChiTietPhieuNhap(string idpn, string idsp, string idncc, string donGia,
-            string soLuong, string tong)
+        public string DVTIENTE
         {
-            this.idpn = idpn;
-            this.idsp = idsp;
-            this.idncc = idncc;
-            this.donGia = donGia;
-            this.soLuong = soLuong;
-            this.tong = tong;
+            get { return dvtiente; }
+            set { dvtiente = value; }
+        }
+        public ChiTietPhieuNhap(string idpn, string tensp, string tenncc, string tenlsp, string tenkho, double donGia, int soLuong, double tong, string dvtiente)
+        {
+            this.IDPN = idpn;
+            this.TENSP = tensp;
+            this.TENNCC = tenncc;
+            this.TENLSP = tenlsp;
+            this.TENKHO = tenkho;
+            this.DONGIA = donGia;
+            this.SOLUONG = soLuong;
+            this.TONG = tong;
+            this.DVTIENTE = dvtiente;
+        }
+        public ChiTietPhieuNhap(string idpn, string tensp, string tenkho, string tenncc, double dongia, int soluong, string dvtiente)
+        {
+            this.IDPN = idpn;
+            this.TENSP = tensp;
+            this.TENKHO = tenkho;
+            this.TENNCC = tenncc;
+            this.DONGIA = dongia;
+            this.SOLUONG = soluong;
+            this.DVTIENTE = dvtiente;
+        }
+        public ChiTietPhieuNhap()
+        {
+
         }
     }
 }

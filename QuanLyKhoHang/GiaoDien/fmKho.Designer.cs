@@ -47,14 +47,21 @@
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.lbListKho = new System.Windows.Forms.Label();
-            this.dtgvWare = new System.Windows.Forms.DataGridView();
+            this.dtgvPN = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.MNG = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.GIOIHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONGHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbClock = new System.Windows.Forms.Label();
             this.tmrSlide = new System.Windows.Forms.Timer(this.components);
             this.pnMidL2 = new System.Windows.Forms.Panel();
+            this.numItemSL = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
-            this.numItemSL = new System.Windows.Forms.NumericUpDown();
             this.tbItemSearch = new System.Windows.Forms.TextBox();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnItemSave = new Bunifu.Framework.UI.BunifuImageButton();
@@ -87,18 +94,12 @@
             this.printWare = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
-            this.SOLUONGHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIOIHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MNG = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnMidR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnMidL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvWare)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPN)).BeginInit();
             this.pnTop.SuspendLayout();
             this.pnMidL2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).BeginInit();
@@ -369,7 +370,7 @@
             // 
             this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pnMidL.Controls.Add(this.lbListKho);
-            this.pnMidL.Controls.Add(this.dtgvWare);
+            this.pnMidL.Controls.Add(this.dtgvPN);
             this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnMidL.Location = new System.Drawing.Point(10, 110);
             this.pnMidL.Name = "pnMidL";
@@ -388,28 +389,140 @@
             this.lbListKho.TabIndex = 3;
             this.lbListKho.Text = "Danh sách kho";
             // 
-            // dtgvWare
+            // dtgvPN
             // 
-            this.dtgvWare.AllowUserToResizeColumns = false;
-            this.dtgvWare.AllowUserToResizeRows = false;
-            this.dtgvWare.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvWare.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvWare.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvWare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvWare.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvPN.AllowUserToResizeColumns = false;
+            this.dtgvPN.AllowUserToResizeRows = false;
+            this.dtgvPN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvPN.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvPN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.TEN,
             this.DIACHI,
             this.MNG,
             this.GIOIHAN,
             this.SOLUONGHANG});
-            this.dtgvWare.Location = new System.Drawing.Point(10, 60);
-            this.dtgvWare.Name = "dtgvWare";
-            this.dtgvWare.Size = new System.Drawing.Size(721, 430);
-            this.dtgvWare.TabIndex = 2;
-            this.dtgvWare.TabStop = false;
-            this.dtgvWare.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellDoubleClick);
-            this.dtgvWare.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellValueChanged);
+            this.dtgvPN.Location = new System.Drawing.Point(10, 60);
+            this.dtgvPN.Name = "dtgvPN";
+            this.dtgvPN.Size = new System.Drawing.Size(721, 430);
+            this.dtgvPN.TabIndex = 2;
+            this.dtgvPN.TabStop = false;
+            this.dtgvPN.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellDoubleClick);
+            this.dtgvPN.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellValueChanged);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã kho";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên kho";
+            this.TEN.Name = "TEN";
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Items.AddRange(new object[] {
+            "An Giang",
+            "Bà Rịa",
+            "Vũng Tàu",
+            "Bạc Liêu",
+            "Bắc Cạn",
+            "Bắc Giang",
+            "Bắc Ninh",
+            "Bến Tre",
+            "Bình Dương",
+            "Bình Định",
+            "Bình Phước",
+            "Bình Thuận",
+            "Cà Mau",
+            "Cao Bằng",
+            "Cần Thơ",
+            "Đà Nẵng",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Đồng Tháp",
+            "Điện Biên",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Nội",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hải Phòng",
+            "Hòa Bình",
+            "Hậu Giang",
+            "Hưng Yên",
+            "Hồ Chí Minh",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lào Cai",
+            "Lạng Sơn",
+            "Lâm Đồng",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Phú Yên",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái"});
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DIACHI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DIACHI.Width = 75;
+            // 
+            // MNG
+            // 
+            this.MNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MNG.DataPropertyName = "MNG";
+            this.MNG.HeaderText = "Quản lý";
+            this.MNG.Name = "MNG";
+            this.MNG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MNG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.MNG.Width = 83;
+            // 
+            // GIOIHAN
+            // 
+            this.GIOIHAN.DataPropertyName = "GIOIHAN";
+            this.GIOIHAN.HeaderText = "Sức chứa";
+            this.GIOIHAN.Name = "GIOIHAN";
+            // 
+            // SOLUONGHANG
+            // 
+            this.SOLUONGHANG.DataPropertyName = "SOLUONGHANG";
+            this.SOLUONGHANG.HeaderText = "Số lượng hàng";
+            this.SOLUONGHANG.Name = "SOLUONGHANG";
+            this.SOLUONGHANG.ReadOnly = true;
             // 
             // pnTop
             // 
@@ -443,9 +556,10 @@
             // pnMidL2
             // 
             this.pnMidL2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMidL2.Controls.Add(this.numItemSL);
+            this.pnMidL2.Controls.Add(this.label6);
             this.pnMidL2.Controls.Add(this.label1);
             this.pnMidL2.Controls.Add(this.switchItemOpe);
-            this.pnMidL2.Controls.Add(this.numItemSL);
             this.pnMidL2.Controls.Add(this.tbItemSearch);
             this.pnMidL2.Controls.Add(this.bunifuImageButton1);
             this.pnMidL2.Controls.Add(this.btnItemSave);
@@ -460,13 +574,41 @@
             this.pnMidL2.Size = new System.Drawing.Size(1060, 500);
             this.pnMidL2.TabIndex = 6;
             // 
+            // numItemSL
+            // 
+            this.numItemSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numItemSL.Font = new System.Drawing.Font("Century Gothic", 22F);
+            this.numItemSL.ForeColor = System.Drawing.Color.SeaGreen;
+            this.numItemSL.Location = new System.Drawing.Point(636, 11);
+            this.numItemSL.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numItemSL.Name = "numItemSL";
+            this.numItemSL.Size = new System.Drawing.Size(80, 39);
+            this.numItemSL.TabIndex = 10;
+            this.numItemSL.ValueChanged += new System.EventHandler(this.numItemSL_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(585, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 42);
+            this.label6.TabIndex = 103;
+            this.label6.Text = "SL:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label1.Location = new System.Drawing.Point(685, 11);
+            this.label1.Location = new System.Drawing.Point(725, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 13;
@@ -479,7 +621,7 @@
             this.switchItemOpe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.switchItemOpe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.switchItemOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemOpe.Location = new System.Drawing.Point(688, 32);
+            this.switchItemOpe.Location = new System.Drawing.Point(728, 32);
             this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4);
             this.switchItemOpe.Name = "switchItemOpe";
             this.switchItemOpe.Oncolor = System.Drawing.Color.SeaGreen;
@@ -490,29 +632,13 @@
             this.switchItemOpe.Value = true;
             this.switchItemOpe.Click += new System.EventHandler(this.switchItemOpe_Click);
             // 
-            // numItemSL
-            // 
-            this.numItemSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numItemSL.Font = new System.Drawing.Font("Century Gothic", 22F);
-            this.numItemSL.ForeColor = System.Drawing.Color.SeaGreen;
-            this.numItemSL.Location = new System.Drawing.Point(596, 11);
-            this.numItemSL.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numItemSL.Name = "numItemSL";
-            this.numItemSL.Size = new System.Drawing.Size(80, 39);
-            this.numItemSL.TabIndex = 10;
-            this.numItemSL.ValueChanged += new System.EventHandler(this.numItemSL_ValueChanged);
-            // 
             // tbItemSearch
             // 
             this.tbItemSearch.BackColor = System.Drawing.Color.White;
             this.tbItemSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbItemSearch.Font = new System.Drawing.Font("Century Gothic", 24F);
             this.tbItemSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.tbItemSearch.Location = new System.Drawing.Point(275, 11);
+            this.tbItemSearch.Location = new System.Drawing.Point(265, 11);
             this.tbItemSearch.Name = "tbItemSearch";
             this.tbItemSearch.Size = new System.Drawing.Size(300, 40);
             this.tbItemSearch.TabIndex = 99;
@@ -882,118 +1008,6 @@
             this.tmrClock.Interval = 1000;
             this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
-            // SOLUONGHANG
-            // 
-            this.SOLUONGHANG.DataPropertyName = "SOLUONGHANG";
-            this.SOLUONGHANG.HeaderText = "Số lượng hàng";
-            this.SOLUONGHANG.Name = "SOLUONGHANG";
-            this.SOLUONGHANG.ReadOnly = true;
-            // 
-            // GIOIHAN
-            // 
-            this.GIOIHAN.DataPropertyName = "GIOIHAN";
-            this.GIOIHAN.HeaderText = "Sức chứa";
-            this.GIOIHAN.Name = "GIOIHAN";
-            // 
-            // MNG
-            // 
-            this.MNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MNG.DataPropertyName = "MNG";
-            this.MNG.HeaderText = "Quản lý";
-            this.MNG.Name = "MNG";
-            this.MNG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MNG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.MNG.Width = 83;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.Items.AddRange(new object[] {
-            "An Giang",
-            "Bà Rịa",
-            "Vũng Tàu",
-            "Bạc Liêu",
-            "Bắc Cạn",
-            "Bắc Giang",
-            "Bắc Ninh",
-            "Bến Tre",
-            "Bình Dương",
-            "Bình Định",
-            "Bình Phước",
-            "Bình Thuận",
-            "Cà Mau",
-            "Cao Bằng",
-            "Cần Thơ",
-            "Đà Nẵng",
-            "Đắk Lắk",
-            "Đắk Nông",
-            "Đồng Nai",
-            "Đồng Tháp",
-            "Đồng Tháp",
-            "Điện Biên",
-            "Gia Lai",
-            "Hà Giang",
-            "Hà Nam",
-            "Hà Nội",
-            "Hà Tĩnh",
-            "Hải Dương",
-            "Hải Phòng",
-            "Hòa Bình",
-            "Hậu Giang",
-            "Hưng Yên",
-            "Hồ Chí Minh",
-            "Khánh Hòa",
-            "Kiên Giang",
-            "Kon Tum",
-            "Lai Châu",
-            "Lào Cai",
-            "Lạng Sơn",
-            "Lâm Đồng",
-            "Long An",
-            "Nam Định",
-            "Nghệ An",
-            "Ninh Bình",
-            "Ninh Thuận",
-            "Phú Thọ",
-            "Phú Yên",
-            "Quảng Bình",
-            "Quảng Nam",
-            "Quảng Ngãi",
-            "Quảng Ninh",
-            "Quảng Trị",
-            "Sóc Trăng",
-            "Sơn La",
-            "Tây Ninh",
-            "Thái Bình",
-            "Thái Nguyên",
-            "Thanh Hóa",
-            "Thừa Thiên Huế",
-            "Tiền Giang",
-            "Trà Vinh",
-            "Tuyên Quang",
-            "Vĩnh Long",
-            "Vĩnh Phúc",
-            "Yên Bái"});
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DIACHI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.DIACHI.Width = 75;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên kho";
-            this.TEN.Name = "TEN";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã kho";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
             // fmKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1014,7 +1028,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.pnMidL.ResumeLayout(false);
             this.pnMidL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvWare)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPN)).EndInit();
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
             this.pnMidL2.ResumeLayout(false);
@@ -1044,7 +1058,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btnback;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private System.Windows.Forms.Panel pnMidL;
-        private System.Windows.Forms.DataGridView dtgvWare;
+        private System.Windows.Forms.DataGridView dtgvPN;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Timer tmrSlide;
         private System.Windows.Forms.Panel pnMidL2;
@@ -1096,5 +1110,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn MNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOIHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGHANG;
+        private System.Windows.Forms.Label label6;
     }
 }

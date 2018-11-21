@@ -64,5 +64,14 @@ namespace BUS
             DAO.NhaCungCapDAO.INSTANCE.saveEdit(lncc);
         }
 
+        public List<string> loadDataTen()
+        {
+            List<string> lten = new List<string>();
+            foreach (DTO.NhaCungCap ncc in DAO.NhaCungCapDAO.INSTANCE.loadData())
+            {
+                lten.Add(ncc.TEN);
+            }
+            return lten;
+        }
     }
 }

@@ -79,5 +79,25 @@ namespace BUS
             int compTemp = (comp == true) ? 1 : 0;
             dgv.DataSource = DAO.SanPhamDAO.INSTANCE.searchByNum(num, compTemp, idkho);
         }
+
+        public List<string> loadDataTen(string idkho)
+        {
+            List<string> lten = new List<string>();
+            foreach (DTO.SanPham sp in DAO.SanPhamDAO.INSTANCE.loadData(idkho))
+            {
+                lten.Add(sp.TEN);
+            }
+            return lten;
+        }
+
+        public List<string> loadDataTen()
+        {
+            List<string> lten = new List<string>();
+            foreach (DTO.SanPham sp in DAO.SanPhamDAO.INSTANCE.loadData())
+            {
+                lten.Add(sp.TEN);
+            }
+            return lten;
+        }
     }
 }
