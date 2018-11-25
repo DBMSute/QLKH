@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmPhieuXuat));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvPX = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYGIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +55,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.switchItemPrice = new Bunifu.Framework.UI.BunifuSwitch();
             this.dtgvCTPX = new System.Windows.Forms.DataGridView();
+            this.IDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TENKHO = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TENKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TENLSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVTIENTE = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
             this.btnCTPXPrint = new Bunifu.Framework.UI.BunifuImageButton();
@@ -89,15 +98,6 @@
             this.tmrSlide = new System.Windows.Forms.Timer(this.components);
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.IDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TENKHO = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TENKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TENLSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVTIENTE = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPX)).BeginInit();
             this.pnMidR.SuspendLayout();
             this.pnMidL2.SuspendLayout();
@@ -435,7 +435,7 @@
             this.switchItemPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.switchItemPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.switchItemPrice.Location = new System.Drawing.Point(509, 32);
-            this.switchItemPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.switchItemPrice.Margin = new System.Windows.Forms.Padding(4);
             this.switchItemPrice.Name = "switchItemPrice";
             this.switchItemPrice.Oncolor = System.Drawing.Color.SeaGreen;
             this.switchItemPrice.Onoffcolor = System.Drawing.Color.DarkGray;
@@ -466,6 +466,94 @@
             this.dtgvCTPX.TabIndex = 0;
             this.dtgvCTPX.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCTPX_CellValueChanged);
             // 
+            // IDPN
+            // 
+            this.IDPN.DataPropertyName = "IDPN";
+            this.IDPN.HeaderText = "Mã PN";
+            this.IDPN.Name = "IDPN";
+            this.IDPN.ReadOnly = true;
+            this.IDPN.Visible = false;
+            // 
+            // TENSP
+            // 
+            this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.Name = "TENSP";
+            this.TENSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TENSP.Width = 118;
+            // 
+            // TENKHO
+            // 
+            this.TENKHO.DataPropertyName = "TENKHO";
+            this.TENKHO.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.TENKHO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENKHO.HeaderText = "Tên kho";
+            this.TENKHO.Name = "TENKHO";
+            this.TENKHO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENKHO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TENKH
+            // 
+            this.TENKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENKH.DataPropertyName = "TENKH";
+            this.TENKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.TENKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENKH.HeaderText = "Tên khách hàng";
+            this.TENKH.Name = "TENKH";
+            this.TENKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TENKH.Width = 127;
+            // 
+            // TENLSP
+            // 
+            this.TENLSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENLSP.DataPropertyName = "TENLSP";
+            dataGridViewCellStyle1.NullValue = "Auto Input";
+            this.TENLSP.DefaultCellStyle = dataGridViewCellStyle1;
+            this.TENLSP.HeaderText = "Tên loại sản phẩm";
+            this.TENLSP.Name = "TENLSP";
+            this.TENLSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENLSP.Width = 107;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            dataGridViewCellStyle2.NullValue = "Auto Input";
+            this.DONGIA.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.ReadOnly = true;
+            // 
+            // SL
+            // 
+            this.SL.DataPropertyName = "SOLUONG";
+            this.SL.HeaderText = "Số lượng";
+            this.SL.Name = "SL";
+            // 
+            // TONG
+            // 
+            this.TONG.DataPropertyName = "TONG";
+            this.TONG.HeaderText = "Tổng";
+            this.TONG.Name = "TONG";
+            this.TONG.ReadOnly = true;
+            // 
+            // DVTIENTE
+            // 
+            this.DVTIENTE.DataPropertyName = "DVTIENTE";
+            this.DVTIENTE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.DVTIENTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DVTIENTE.HeaderText = "Đơn vị";
+            this.DVTIENTE.Items.AddRange(new object[] {
+            "VND",
+            "EUR",
+            "USD"});
+            this.DVTIENTE.Name = "DVTIENTE";
+            this.DVTIENTE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DVTIENTE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -486,7 +574,7 @@
             this.switchItemOpe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.switchItemOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.switchItemOpe.Location = new System.Drawing.Point(723, 32);
-            this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4);
             this.switchItemOpe.Name = "switchItemOpe";
             this.switchItemOpe.Oncolor = System.Drawing.Color.SeaGreen;
             this.switchItemOpe.Onoffcolor = System.Drawing.Color.DarkGray;
@@ -779,11 +867,11 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.pnMidL2);
             this.bunifuGradientPanel1.Controls.Add(this.panel2);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidL);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidR);
             this.bunifuGradientPanel1.Controls.Add(this.pnTop);
-            this.bunifuGradientPanel1.Controls.Add(this.pnMidL2);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
@@ -904,94 +992,6 @@
             this.DragControl.Horizontal = true;
             this.DragControl.TargetControl = this.pnTop;
             this.DragControl.Vertical = true;
-            // 
-            // IDPN
-            // 
-            this.IDPN.DataPropertyName = "IDPN";
-            this.IDPN.HeaderText = "Mã PN";
-            this.IDPN.Name = "IDPN";
-            this.IDPN.ReadOnly = true;
-            this.IDPN.Visible = false;
-            // 
-            // TENSP
-            // 
-            this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENSP.DataPropertyName = "TENSP";
-            this.TENSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENSP.HeaderText = "Tên sản phẩm";
-            this.TENSP.Name = "TENSP";
-            this.TENSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TENSP.Width = 129;
-            // 
-            // TENKHO
-            // 
-            this.TENKHO.DataPropertyName = "TENKHO";
-            this.TENKHO.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.TENKHO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENKHO.HeaderText = "Tên kho";
-            this.TENKHO.Name = "TENKHO";
-            this.TENKHO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENKHO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TENKH
-            // 
-            this.TENKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENKH.DataPropertyName = "TENKH";
-            this.TENKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.TENKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENKH.HeaderText = "Tên khách hàng";
-            this.TENKH.Name = "TENKH";
-            this.TENKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TENKH.Width = 127;
-            // 
-            // TENLSP
-            // 
-            this.TENLSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENLSP.DataPropertyName = "TENLSP";
-            dataGridViewCellStyle3.NullValue = "Auto Input";
-            this.TENLSP.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TENLSP.HeaderText = "Tên loại sản phẩm";
-            this.TENLSP.Name = "TENLSP";
-            this.TENLSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENLSP.Width = 107;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            dataGridViewCellStyle4.NullValue = "Auto Input";
-            this.DONGIA.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.ReadOnly = true;
-            // 
-            // SL
-            // 
-            this.SL.DataPropertyName = "SOLUONG";
-            this.SL.HeaderText = "Số lượng";
-            this.SL.Name = "SL";
-            // 
-            // TONG
-            // 
-            this.TONG.DataPropertyName = "TONG";
-            this.TONG.HeaderText = "Tổng";
-            this.TONG.Name = "TONG";
-            this.TONG.ReadOnly = true;
-            // 
-            // DVTIENTE
-            // 
-            this.DVTIENTE.DataPropertyName = "DVTIENTE";
-            this.DVTIENTE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.DVTIENTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DVTIENTE.HeaderText = "Đơn vị";
-            this.DVTIENTE.Items.AddRange(new object[] {
-            "VND",
-            "EUR",
-            "USD"});
-            this.DVTIENTE.Name = "DVTIENTE";
-            this.DVTIENTE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DVTIENTE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // fmPhieuXuat
             // 

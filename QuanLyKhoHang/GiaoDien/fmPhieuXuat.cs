@@ -14,6 +14,7 @@ namespace QuanLyKhoHang.GiaoDien
     public partial class fmPhieuXuat : Form
     {
         private bool flagSave = false;
+        public static string tempCD = null;
         public fmPhieuXuat()
         {
             InitializeComponent();
@@ -108,7 +109,20 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnPXPrint_Click(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Mã phiếu", typeof(string));
+            dt.Columns.Add("Ngày tạo", typeof(string));
+            dt.Columns.Add("Trạng thái", typeof(string));
+            foreach (DataGridViewRow row in dtgvPX.Rows)
+            {
+                DataRow dr;
+                dr = dt.NewRow();
+                dr[0] = row.Cells[0].Value.ToString();
+                dr[1] = row.Cells[1].Value.ToString();
+                dr[2] = row.Cells[2].Value.ToString() == "1" ? "Xong" : "Chưa thanh toán";
+                dt.Rows.Add(dr);
+            }
+            new QuanLyKhoHang.Report.fmReport(dt, "DANH SÁCH PHIẾU XUẤT", "Poon Nguyễn").ShowDialog();
         }
 
         private void tbPXSearch_TextChanged(object sender, EventArgs e)
@@ -275,7 +289,28 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnCTPXPrint_Click(object sender, EventArgs e)
         {
-            
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Tên sản phẩm", typeof(string));
+            dt.Columns.Add("Kho", typeof(string));
+            dt.Columns.Add("Khách hàng", typeof(string));
+            dt.Columns.Add("Loại sản phẩm", typeof(string));
+            dt.Columns.Add("Đơn giá", typeof(string));
+            dt.Columns.Add("Số lượng", typeof(string));
+            dt.Columns.Add("Tổng", typeof(string));
+            foreach (DataGridViewRow row in dtgvCTPX.Rows)
+            {
+                DataRow dr;
+                dr = dt.NewRow();
+                dr[0] = row.Cells[1].Value.ToString();
+                dr[1] = row.Cells[4].Value.ToString();
+                dr[2] = row.Cells[2].Value.ToString();
+                dr[3] = row.Cells[3].Value.ToString();
+                dr[4] = row.Cells[5].Value.ToString();
+                dr[5] = row.Cells[6].Value.ToString();
+                dr[6] = row.Cells[7].Value.ToString() + " " + row.Cells[8].Value.ToString();
+                dt.Rows.Add(dr);
+            }
+            new QuanLyKhoHang.Report.fmReport(dt, "CHI TIẾT PHIẾU XUẤT " + lbPXName.Text.ToString(), "Poon Nguyễn").ShowDialog();
         }
 
         private void dtgvPX_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -283,6 +318,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (e.RowIndex >= 0)
             {
                 loadDataCTPX(e);
+                tempCD = dtgvPX.CurrentRow.Cells[1].Value.ToString();
                 return;
             }
             MessageBox.Show("Vui lòng chọn chính xác phiếu xuất muốn xem!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

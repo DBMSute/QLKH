@@ -47,7 +47,7 @@
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.lbListKho = new System.Windows.Forms.Label();
-            this.dtgvPN = new System.Windows.Forms.DataGridView();
+            this.dtgvKho = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHI = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -63,7 +63,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
             this.tbItemSearch = new System.Windows.Forms.TextBox();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnItemPrint = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnItemSave = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnItemDelete = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnItemAdd = new Bunifu.Framework.UI.BunifuImageButton();
@@ -91,19 +91,17 @@
             this.lbInfoSucChua = new System.Windows.Forms.Label();
             this.lbTongQuan = new System.Windows.Forms.Label();
             this.tmrCPB = new System.Windows.Forms.Timer(this.components);
-            this.printWare = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.pnMidR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnMidL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvKho)).BeginInit();
             this.pnTop.SuspendLayout();
             this.pnMidL2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnItemPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemAdd)).BeginInit();
@@ -370,7 +368,7 @@
             // 
             this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pnMidL.Controls.Add(this.lbListKho);
-            this.pnMidL.Controls.Add(this.dtgvPN);
+            this.pnMidL.Controls.Add(this.dtgvKho);
             this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnMidL.Location = new System.Drawing.Point(10, 110);
             this.pnMidL.Name = "pnMidL";
@@ -389,28 +387,28 @@
             this.lbListKho.TabIndex = 3;
             this.lbListKho.Text = "Danh sách kho";
             // 
-            // dtgvPN
+            // dtgvKho
             // 
-            this.dtgvPN.AllowUserToResizeColumns = false;
-            this.dtgvPN.AllowUserToResizeRows = false;
-            this.dtgvPN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvPN.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvPN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvPN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvKho.AllowUserToResizeColumns = false;
+            this.dtgvKho.AllowUserToResizeRows = false;
+            this.dtgvKho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvKho.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvKho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.TEN,
             this.DIACHI,
             this.MNG,
             this.GIOIHAN,
             this.SOLUONGHANG});
-            this.dtgvPN.Location = new System.Drawing.Point(10, 60);
-            this.dtgvPN.Name = "dtgvPN";
-            this.dtgvPN.Size = new System.Drawing.Size(721, 430);
-            this.dtgvPN.TabIndex = 2;
-            this.dtgvPN.TabStop = false;
-            this.dtgvPN.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellDoubleClick);
-            this.dtgvPN.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellValueChanged);
+            this.dtgvKho.Location = new System.Drawing.Point(10, 60);
+            this.dtgvKho.Name = "dtgvKho";
+            this.dtgvKho.Size = new System.Drawing.Size(721, 430);
+            this.dtgvKho.TabIndex = 2;
+            this.dtgvKho.TabStop = false;
+            this.dtgvKho.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellDoubleClick);
+            this.dtgvKho.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvWare_CellValueChanged);
             // 
             // ID
             // 
@@ -429,6 +427,7 @@
             // 
             this.DIACHI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DIACHI.HeaderText = "Địa chỉ";
             this.DIACHI.Items.AddRange(new object[] {
             "An Giang",
@@ -505,6 +504,7 @@
             // 
             this.MNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.MNG.DataPropertyName = "MNG";
+            this.MNG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MNG.HeaderText = "Quản lý";
             this.MNG.Name = "MNG";
             this.MNG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -561,7 +561,7 @@
             this.pnMidL2.Controls.Add(this.label1);
             this.pnMidL2.Controls.Add(this.switchItemOpe);
             this.pnMidL2.Controls.Add(this.tbItemSearch);
-            this.pnMidL2.Controls.Add(this.bunifuImageButton1);
+            this.pnMidL2.Controls.Add(this.btnItemPrint);
             this.pnMidL2.Controls.Add(this.btnItemSave);
             this.pnMidL2.Controls.Add(this.btnItemDelete);
             this.pnMidL2.Controls.Add(this.btnItemAdd);
@@ -647,19 +647,20 @@
             this.tbItemSearch.Enter += new System.EventHandler(this.tbItemSearch_Enter);
             this.tbItemSearch.Leave += new System.EventHandler(this.tbItemSearch_Leave);
             // 
-            // bunifuImageButton1
+            // btnItemPrint
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuImageButton1.Image = global::QuanLyKhoHang.Properties.Resources.print;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(1000, 10);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(40, 40);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 8;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btnItemPrint.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnItemPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnItemPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
+            this.btnItemPrint.ImageActive = null;
+            this.btnItemPrint.Location = new System.Drawing.Point(1000, 10);
+            this.btnItemPrint.Name = "btnItemPrint";
+            this.btnItemPrint.Size = new System.Drawing.Size(40, 40);
+            this.btnItemPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnItemPrint.TabIndex = 8;
+            this.btnItemPrint.TabStop = false;
+            this.btnItemPrint.Zoom = 10;
+            this.btnItemPrint.Click += new System.EventHandler(this.btnItemPrint_Click);
             // 
             // btnItemSave
             // 
@@ -819,11 +820,11 @@
             this.pnBackground.BackColor = System.Drawing.Color.Transparent;
             this.pnBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBackground.BackgroundImage")));
             this.pnBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnBackground.Controls.Add(this.pnMidL2);
             this.pnBackground.Controls.Add(this.pnTop);
+            this.pnBackground.Controls.Add(this.pnMidR);
             this.pnBackground.Controls.Add(this.pnMidL);
             this.pnBackground.Controls.Add(this.panel2);
-            this.pnBackground.Controls.Add(this.pnMidR);
-            this.pnBackground.Controls.Add(this.pnMidL2);
             this.pnBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnBackground.GradientBottomLeft = System.Drawing.Color.Navy;
             this.pnBackground.GradientBottomRight = System.Drawing.Color.SeaGreen;
@@ -859,7 +860,7 @@
             this.lbDataInfoSLHang.AutoSize = true;
             this.lbDataInfoSLHang.BackColor = System.Drawing.Color.Transparent;
             this.lbDataInfoSLHang.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.lbDataInfoSLHang.ForeColor = System.Drawing.Color.White;
+            this.lbDataInfoSLHang.ForeColor = System.Drawing.Color.Gold;
             this.lbDataInfoSLHang.Location = new System.Drawing.Point(929, 65);
             this.lbDataInfoSLHang.Name = "lbDataInfoSLHang";
             this.lbDataInfoSLHang.Size = new System.Drawing.Size(63, 25);
@@ -872,7 +873,7 @@
             this.lbDataInfoQuanLi.AutoSize = true;
             this.lbDataInfoQuanLi.BackColor = System.Drawing.Color.Transparent;
             this.lbDataInfoQuanLi.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.lbDataInfoQuanLi.ForeColor = System.Drawing.Color.White;
+            this.lbDataInfoQuanLi.ForeColor = System.Drawing.Color.Gold;
             this.lbDataInfoQuanLi.Location = new System.Drawing.Point(853, 14);
             this.lbDataInfoQuanLi.Name = "lbDataInfoQuanLi";
             this.lbDataInfoQuanLi.Size = new System.Drawing.Size(63, 25);
@@ -885,7 +886,7 @@
             this.lbDataInfoDiaChi.AutoSize = true;
             this.lbDataInfoDiaChi.BackColor = System.Drawing.Color.Transparent;
             this.lbDataInfoDiaChi.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.lbDataInfoDiaChi.ForeColor = System.Drawing.Color.White;
+            this.lbDataInfoDiaChi.ForeColor = System.Drawing.Color.Gold;
             this.lbDataInfoDiaChi.Location = new System.Drawing.Point(607, 65);
             this.lbDataInfoDiaChi.Name = "lbDataInfoDiaChi";
             this.lbDataInfoDiaChi.Size = new System.Drawing.Size(63, 25);
@@ -898,7 +899,7 @@
             this.lbDataInfoTenKho.AutoSize = true;
             this.lbDataInfoTenKho.BackColor = System.Drawing.Color.Transparent;
             this.lbDataInfoTenKho.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.lbDataInfoTenKho.ForeColor = System.Drawing.Color.White;
+            this.lbDataInfoTenKho.ForeColor = System.Drawing.Color.Gold;
             this.lbDataInfoTenKho.Location = new System.Drawing.Point(607, 14);
             this.lbDataInfoTenKho.Name = "lbDataInfoTenKho";
             this.lbDataInfoTenKho.Size = new System.Drawing.Size(63, 25);
@@ -927,9 +928,9 @@
             this.lbInfoQuanLiKho.ForeColor = System.Drawing.Color.White;
             this.lbInfoQuanLiKho.Location = new System.Drawing.Point(752, 10);
             this.lbInfoQuanLiKho.Name = "lbInfoQuanLiKho";
-            this.lbInfoQuanLiKho.Size = new System.Drawing.Size(95, 27);
+            this.lbInfoQuanLiKho.Size = new System.Drawing.Size(102, 27);
             this.lbInfoQuanLiKho.TabIndex = 6;
-            this.lbInfoQuanLiKho.Text = "Quản lí:";
+            this.lbInfoQuanLiKho.Text = "Quản lý:";
             this.lbInfoQuanLiKho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbInfoDiaChiKho
@@ -961,7 +962,7 @@
             // lbInfoSucChua
             // 
             this.lbInfoSucChua.BackColor = System.Drawing.Color.Transparent;
-            this.lbInfoSucChua.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfoSucChua.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoSucChua.ForeColor = System.Drawing.Color.White;
             this.lbInfoSucChua.Location = new System.Drawing.Point(200, 0);
             this.lbInfoSucChua.Name = "lbInfoSucChua";
@@ -986,22 +987,6 @@
             // 
             this.tmrCPB.Interval = 1;
             this.tmrCPB.Tick += new System.EventHandler(this.tmrCPB_Tick);
-            // 
-            // printWare
-            // 
-            this.printWare.DocumentName = "Danh sách kho";
-            this.printWare.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printWare_PrintPage);
-            // 
-            // printPreviewDialog
-            // 
-            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog.Document = this.printWare;
-            this.printPreviewDialog.Enabled = true;
-            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
-            this.printPreviewDialog.Name = "printPreviewDialog";
-            this.printPreviewDialog.Visible = false;
             // 
             // tmrClock
             // 
@@ -1028,13 +1013,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.pnMidL.ResumeLayout(false);
             this.pnMidL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvKho)).EndInit();
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
             this.pnMidL2.ResumeLayout(false);
             this.pnMidL2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnItemPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemAdd)).EndInit();
@@ -1058,7 +1043,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btnback;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private System.Windows.Forms.Panel pnMidL;
-        private System.Windows.Forms.DataGridView dtgvPN;
+        private System.Windows.Forms.DataGridView dtgvKho;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Timer tmrSlide;
         private System.Windows.Forms.Panel pnMidL2;
@@ -1071,7 +1056,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btnItemSave;
         private Bunifu.Framework.UI.BunifuImageButton btnItemDelete;
         private Bunifu.Framework.UI.BunifuImageButton btnItemAdd;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btnItemPrint;
         private System.Windows.Forms.TextBox tbItemSearch;
         private Bunifu.Framework.UI.BunifuSwitch switchItemOpe;
         private System.Windows.Forms.NumericUpDown numItemSL;
@@ -1092,8 +1077,6 @@
         private System.Windows.Forms.Label lbSearchSucChua;
         private Bunifu.Framework.UI.BunifuSwitch switchWareSucChuaSL;
         private System.Windows.Forms.NumericUpDown numWare;
-        private System.Drawing.Printing.PrintDocument printWare;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
         private System.Windows.Forms.Label lbClock;
         private System.Windows.Forms.Timer tmrClock;
         private System.Windows.Forms.Label lbDataInfoSLHang;
@@ -1104,12 +1087,12 @@
         private System.Windows.Forms.Label lbInfoQuanLiKho;
         private System.Windows.Forms.Label lbInfoDiaChiKho;
         private System.Windows.Forms.Label lbInfoTenKho;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewComboBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewComboBoxColumn MNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOIHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGHANG;
-        private System.Windows.Forms.Label label6;
     }
 }

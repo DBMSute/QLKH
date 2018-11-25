@@ -88,7 +88,24 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnSupPrint_Click(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Mã nhà CC", typeof(string));
+            dt.Columns.Add("Tên nhà CC", typeof(string));
+            dt.Columns.Add("Địa chỉ", typeof(string));
+            dt.Columns.Add("Số điện thoại", typeof(string));
+            dt.Columns.Add("Quốc gia", typeof(string));
+            foreach (DataGridViewRow row in dtgvSup.Rows)
+            {
+                DataRow dr;
+                dr = dt.NewRow();
+                dr[0] = row.Cells[0].Value.ToString();
+                dr[1] = row.Cells[1].Value.ToString();
+                dr[2] = row.Cells[2].Value.ToString();
+                dr[3] = row.Cells[3].Value.ToString();
+                dr[4] = row.Cells[4].Value.ToString();
+                dt.Rows.Add(dr);
+            }
+            new QuanLyKhoHang.Report.fmReport(dt, "DANH SÁCH NHÀ CUNG CẤP", "Poon Nguyễn").ShowDialog();
         }
 
         private void dtgvSup_CellValueChanged(object sender, DataGridViewCellEventArgs e)

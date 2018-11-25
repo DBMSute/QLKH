@@ -102,7 +102,20 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnLSPPrint_Click(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Mã loại", typeof(string));
+            dt.Columns.Add("Tên loại", typeof(string));
+            dt.Columns.Add("Mô tả", typeof(string));
+            foreach (DataGridViewRow row in dtgvLSP.Rows)
+            {
+                DataRow dr;
+                dr = dt.NewRow();
+                dr[0] = row.Cells[0].Value.ToString();
+                dr[1] = row.Cells[1].Value.ToString();
+                dr[2] = row.Cells[2].Value.ToString();
+                dt.Rows.Add(dr);
+            }
+            new QuanLyKhoHang.Report.fmReport(dt, "DANH SÁCH LOẠI SẢN PHẨM", "Poon Nguyễn").ShowDialog();
         }
 
         private void dtgvLSP_CellValueChanged(object sender, DataGridViewCellEventArgs e)

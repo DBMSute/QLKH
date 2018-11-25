@@ -78,15 +78,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.switchItemPrice = new Bunifu.Framework.UI.BunifuSwitch();
             this.dtgvCTPN = new System.Windows.Forms.DataGridView();
-            this.IDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TENKHO = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TENNCC = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TENLSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVTIENTE = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
             this.btnCTPNPrint = new Bunifu.Framework.UI.BunifuImageButton();
@@ -96,6 +87,15 @@
             this.lbPNName = new System.Windows.Forms.Label();
             this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
             this.tbCTPNSearch = new System.Windows.Forms.TextBox();
+            this.IDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TENKHO = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TENNCC = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TENLSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVTIENTE = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -189,11 +189,11 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.pnMidL2);
             this.bunifuGradientPanel1.Controls.Add(this.panel2);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidL);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidR);
             this.bunifuGradientPanel1.Controls.Add(this.pnTop);
-            this.bunifuGradientPanel1.Controls.Add(this.pnMidL2);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
@@ -770,90 +770,6 @@
             this.dtgvCTPN.TabIndex = 0;
             this.dtgvCTPN.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCTPN_CellValueChanged);
             // 
-            // IDPN
-            // 
-            this.IDPN.DataPropertyName = "IDPN";
-            this.IDPN.HeaderText = "Mã PN";
-            this.IDPN.Name = "IDPN";
-            this.IDPN.ReadOnly = true;
-            this.IDPN.Visible = false;
-            // 
-            // TENSP
-            // 
-            this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENSP.DataPropertyName = "TENSP";
-            this.TENSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENSP.HeaderText = "Tên sản phẩm";
-            this.TENSP.Name = "TENSP";
-            this.TENSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TENSP.Width = 118;
-            // 
-            // TENKHO
-            // 
-            this.TENKHO.DataPropertyName = "TENKHO";
-            this.TENKHO.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.TENKHO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENKHO.HeaderText = "Tên kho";
-            this.TENKHO.Name = "TENKHO";
-            this.TENKHO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENKHO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TENNCC
-            // 
-            this.TENNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENNCC.DataPropertyName = "TENNCC";
-            this.TENNCC.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.TENNCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENNCC.HeaderText = "Tên NCC";
-            this.TENNCC.Name = "TENNCC";
-            this.TENNCC.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENNCC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TENNCC.Width = 85;
-            // 
-            // TENLSP
-            // 
-            this.TENLSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENLSP.DataPropertyName = "TENLSP";
-            this.TENLSP.HeaderText = "Tên loại sản phẩm";
-            this.TENLSP.Name = "TENLSP";
-            this.TENLSP.ReadOnly = true;
-            this.TENLSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENLSP.Width = 107;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.Name = "DONGIA";
-            // 
-            // SL
-            // 
-            this.SL.DataPropertyName = "SOLUONG";
-            this.SL.HeaderText = "Số lượng";
-            this.SL.Name = "SL";
-            // 
-            // TONG
-            // 
-            this.TONG.DataPropertyName = "TONG";
-            this.TONG.HeaderText = "Tổng";
-            this.TONG.Name = "TONG";
-            this.TONG.ReadOnly = true;
-            // 
-            // DVTIENTE
-            // 
-            this.DVTIENTE.DataPropertyName = "DVTIENTE";
-            this.DVTIENTE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.DVTIENTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DVTIENTE.HeaderText = "Đơn vị";
-            this.DVTIENTE.Items.AddRange(new object[] {
-            "VND",
-            "EUR",
-            "USD"});
-            this.DVTIENTE.Name = "DVTIENTE";
-            this.DVTIENTE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DVTIENTE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -985,6 +901,90 @@
             this.tbCTPNSearch.Enter += new System.EventHandler(this.tbCTPNSearch_Enter);
             this.tbCTPNSearch.Leave += new System.EventHandler(this.tbCTPNSearch_Leave);
             // 
+            // IDPN
+            // 
+            this.IDPN.DataPropertyName = "IDPN";
+            this.IDPN.HeaderText = "Mã PN";
+            this.IDPN.Name = "IDPN";
+            this.IDPN.ReadOnly = true;
+            this.IDPN.Visible = false;
+            // 
+            // TENSP
+            // 
+            this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.Name = "TENSP";
+            this.TENSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TENSP.Width = 129;
+            // 
+            // TENKHO
+            // 
+            this.TENKHO.DataPropertyName = "TENKHO";
+            this.TENKHO.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.TENKHO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENKHO.HeaderText = "Tên kho";
+            this.TENKHO.Name = "TENKHO";
+            this.TENKHO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENKHO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TENNCC
+            // 
+            this.TENNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENNCC.DataPropertyName = "TENNCC";
+            this.TENNCC.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.TENNCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENNCC.HeaderText = "Tên NCC";
+            this.TENNCC.Name = "TENNCC";
+            this.TENNCC.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENNCC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TENNCC.Width = 92;
+            // 
+            // TENLSP
+            // 
+            this.TENLSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENLSP.DataPropertyName = "TENLSP";
+            this.TENLSP.HeaderText = "Loại sản phẩm";
+            this.TENLSP.Name = "TENLSP";
+            this.TENLSP.ReadOnly = true;
+            this.TENLSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENLSP.Width = 128;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.Name = "DONGIA";
+            // 
+            // SL
+            // 
+            this.SL.DataPropertyName = "SOLUONG";
+            this.SL.HeaderText = "Số lượng";
+            this.SL.Name = "SL";
+            // 
+            // TONG
+            // 
+            this.TONG.DataPropertyName = "TONG";
+            this.TONG.HeaderText = "Tổng";
+            this.TONG.Name = "TONG";
+            this.TONG.ReadOnly = true;
+            // 
+            // DVTIENTE
+            // 
+            this.DVTIENTE.DataPropertyName = "DVTIENTE";
+            this.DVTIENTE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.DVTIENTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DVTIENTE.HeaderText = "Đơn vị";
+            this.DVTIENTE.Items.AddRange(new object[] {
+            "VND",
+            "EUR",
+            "USD"});
+            this.DVTIENTE.Name = "DVTIENTE";
+            this.DVTIENTE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DVTIENTE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // fmPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1055,15 +1055,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btnback;
         private System.Windows.Forms.Timer tmrSlide;
         private System.Windows.Forms.Timer tmrSlide2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDPN;
-        private System.Windows.Forms.DataGridViewComboBoxColumn TENSP;
-        private System.Windows.Forms.DataGridViewComboBoxColumn TENKHO;
-        private System.Windows.Forms.DataGridViewComboBoxColumn TENNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENLSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TONG;
-        private System.Windows.Forms.DataGridViewComboBoxColumn DVTIENTE;
         private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbDataInfoNumKho;
@@ -1085,5 +1076,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYGIO;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TRANGTHAI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPN;
+        private System.Windows.Forms.DataGridViewComboBoxColumn TENSP;
+        private System.Windows.Forms.DataGridViewComboBoxColumn TENKHO;
+        private System.Windows.Forms.DataGridViewComboBoxColumn TENNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENLSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TONG;
+        private System.Windows.Forms.DataGridViewComboBoxColumn DVTIENTE;
     }
 }
