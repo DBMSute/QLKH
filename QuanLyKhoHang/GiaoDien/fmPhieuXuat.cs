@@ -29,7 +29,6 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 TENKHO.DataSource = BUS.KhoBUS.INSTANCE.loadDataTen();
                 TENKH.DataSource = BUS.KhachHangBUS.INSTANCE.loadDataTen();
-                TENSP.DataSource = BUS.SanPhamBUS.INSTANCE.loadDataTen();
                 tmrClock.Start();
                 BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
                 dtgvPX.CurrentCell = dtgvPX[0, 0];
@@ -70,7 +69,8 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            new fmQuanLy().Show();
         }
 
         private void btnPXAdd_Click(object sender, EventArgs e)
@@ -436,6 +436,16 @@ namespace QuanLyKhoHang.GiaoDien
             BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
             dtgvPX.CurrentCell = dtgvPX[0, 0];
             dtgvPX_CellClick(null, null);
+        }
+
+        private void dtgvCTPX_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dtgvCTPX.CurrentCell.ColumnIndex == 1)
+            { 
+                new QuanLyKhoHang.GiaoDien.fmInputSanPham(dtgvCTPX.CurrentRow.Cells[4].Value.ToString()).ShowDialog();
+                if (QuanLyKhoHang.GiaoDien.fmInputSanPham.sanpham == null) return;
+                dtgvCTPX.CurrentCell.Value = QuanLyKhoHang.GiaoDien.fmInputSanPham.sanpham;
+            }
         }
     }
 }

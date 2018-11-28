@@ -20,12 +20,12 @@ namespace BUS
             }
         }
 
-        public void loadData(DataGridView dgv)
+        public void loadData(DataGridView dgv, string idper)
         {
-            dgv.DataSource = DAO.NhanVienDAO.INSTANCE.loadData();
+            dgv.DataSource = DAO.NhanVienDAO.INSTANCE.loadData(idper);
         }
 
-        public void Insert(string tentk, string passWd, byte[] avt, string hovatendem, string ten, string ngaysinh, string diachi, int pers, int tinhtrang)
+        public void Insert(string tentk, string passWd, byte[] avt, string hovatendem, string ten, string ngaysinh, string diachi, int pers, int tinhtrang, string quanLy)
         {
             DTO.TaiKhoan tk = new DTO.TaiKhoan();
             tk.TENTK = tentk;
@@ -37,6 +37,7 @@ namespace BUS
             tk.DIACHI = diachi;
             tk.PERS = pers;
             tk.TINHTRANG = tinhtrang;
+            tk.QUANLY = quanLy;
             DAO.NhanVienDAO.INSTANCE.Insert(tk);
         }
 

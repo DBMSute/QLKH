@@ -70,7 +70,8 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            new fmQuanLy().Show();
         }
 
         private void btnPNAdd_Click(object sender, EventArgs e)

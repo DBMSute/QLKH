@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhoHang.GiaoDien
 {
-    partial class fmInputDateTime
+    partial class fmInputIP
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePick = new System.Windows.Forms.DateTimePicker();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.mtbIP = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // dateTimePick
-            // 
-            this.dateTimePick.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePick.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePick.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePick.Location = new System.Drawing.Point(12, 12);
-            this.dateTimePick.Name = "dateTimePick";
-            this.dateTimePick.Size = new System.Drawing.Size(360, 33);
-            this.dateTimePick.TabIndex = 0;
             // 
             // btnSubmit
             // 
@@ -48,35 +38,44 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(254, 61);
+            this.btnSubmit.Location = new System.Drawing.Point(242, 61);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(118, 38);
-            this.btnSubmit.TabIndex = 1;
+            this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Xác nhận";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // fmInputDateTime
+            // mtbIP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.mtbIP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbIP.Location = new System.Drawing.Point(20, 20);
+            this.mtbIP.Mask = "###.###.###.###";
+            this.mtbIP.Name = "mtbIP";
+            this.mtbIP.Size = new System.Drawing.Size(340, 33);
+            this.mtbIP.TabIndex = 3;
+            // 
+            // fmInputIP
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(384, 111);
+            this.Controls.Add(this.mtbIP);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.dateTimePick);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "fmInputDateTime";
+            this.Name = "fmInputIP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập ngày tháng";
+            this.Text = "Nhập IP server";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePick;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.MaskedTextBox mtbIP;
     }
 }

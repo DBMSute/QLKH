@@ -24,10 +24,9 @@ namespace QuanLyKhoHang.GiaoDien
         }
 
         private void Init()
-        {
+        {   
             MNG.DataSource = BUS.KhoBUS.INSTANCE.loadDataMNG();
-            BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
-            pnMidL2.Location = new Point(-1190, 110);
+            BUS.KhoBUS.INSTANCE.loadData(dtgvKho, QuanLyKhoHang.GiaoDien.fmQuanLy.sID);
             TENLOAI.DataSource = BUS.LoaiSanPhamBUS.INSTANCE.loadDataTen();
             btnWareSave.color = btnWareSave.BackColor = Color.SeaGreen;
             btnWareSave.colorActive = Color.MediumSeaGreen;
@@ -35,13 +34,9 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void loadDataWare(DataGridViewCellEventArgs e)
         {
-            dtgvKho.Visible = false;
-            dtgvKho.Size = new Size(0, 0);
             tmrSlide.Start();
-            dtgvItem.Visible = true;
             lbKhoName.Text = dtgvKho.Rows[e.RowIndex].Cells[1].Value.ToString();
             idkho = dtgvKho.Rows[e.RowIndex].Cells[0].Value.ToString();
-            BUS.SanPhamBUS.INSTANCE.loadData(dtgvItem, dtgvKho.Rows[e.RowIndex].Cells[0].Value.ToString());
             cpbValue = Convert.ToInt32((int)dtgvKho.Rows[e.RowIndex].Cells[5].Value * 100 / (int)dtgvKho.Rows[e.RowIndex].Cells[4].Value);
         }
      
@@ -55,68 +50,160 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-            //this.Hide();
-            //new fmQuanLy().Show();
+            this.Close();
+            new fmQuanLy().Show();
         }
 
         private void tmrSlide_Tick(object sender, EventArgs e)
         {
-            int X, Y;
-            if (pnMidL.Location.X <= -1190)
+            if (pnMidR.Location.X < 1160)
             {
-                if (pnMidL2.Location.X == 10)
+                pnMidR.Location = new Point(pnMidR.Location.X + 50, pnMidR.Location.Y);
+                return;
+            }
+            if(dtgvKho.Location.X > -890)
+            {
+                dtgvKho.Location = new Point(dtgvKho.Location.X - 100, dtgvKho.Location.Y);
+                return;
+            }
+            if (pnMidL.Size.Width <= 1040)
+            {
+                pnMidL.Size = new Size(pnMidL.Size.Width + 50, pnMidL.Size.Height);
+                if(pnMidL.Size.Width == 1040)
                 {
-                    dtgvItem.Size = new Size(1040, 430);                  
-                    tmrSlide.Stop();
+                    pnMidL.Size = new Size(1060, pnMidL.Size.Height);
                     return;
                 }
-                X = pnMidL2.Location.X;
-                Y = pnMidL2.Location.Y;
-                pnMidL2.Location = new Point(X + 200, Y); 
+                return;
             }
-            else
+            if(lbListKho.Location.Y > -30)
             {
-
-                X = pnMidL.Location.X;
-                Y = pnMidL.Location.Y;
-                pnMidL.Location = new Point(X - 200, Y);
-                pnMidR.Location = new Point(pnMidR.Location.X + 100, pnMidR.Location.Y);
+                lbListKho.Location = new Point(lbListKho.Location.X, lbListKho.Location.Y - 10);
+                return;
             }
+            if(dtgvItem.Location.X != 10)
+            {
+                dtgvItem.Location = new Point(dtgvItem.Location.X + 100, dtgvItem.Location.Y);
+                return;
+            }
+            if (btnback.Location.Y < 10 )
+            {
+                btnback.Location = new Point(btnback.Location.X, btnback.Location.Y + 10);
+                return;
+            }
+            if (lbKhoName.Location.Y < 10)
+            {
+                lbKhoName.Location = new Point(lbKhoName.Location.X, lbKhoName.Location.Y + 10);
+                return;
+            }
+            if (tbItemSearch.Location.Y < 10)
+            {
+                tbItemSearch.Location = new Point(tbItemSearch.Location.X, tbItemSearch.Location.Y + 10);
+                return;
+            }
+            if (lbSL.Location.Y < 10)
+            {
+                lbSL.Location = new Point(lbSL.Location.X, lbSL.Location.Y + 10);
+                return;
+            }
+            if (numItemSL.Location.Y < 10)
+            {
+                numItemSL.Location = new Point(numItemSL.Location.X, numItemSL.Location.Y + 10);
+                return;
+            }
+            if (switchItemOpe.Location.Y < 30)
+            {
+                switchItemOpe.Location = new Point(switchItemOpe.Location.X, switchItemOpe.Location.Y + 10);
+                return;
+            }
+            if (lbLonBe.Location.Y < 10)
+            {
+                lbLonBe.Location = new Point(lbLonBe.Location.X, lbLonBe.Location.Y + 10);
+                return;
+            }
+            BUS.SanPhamBUS.INSTANCE.loadData(dtgvItem, idkho);
+            tmrSlide.Stop();
         }
 
         private void tmrSlide2_Tick(object sender, EventArgs e)
         {
-            int X, Y;
-            if (pnMidL2.Location.X <= -1190)
+
+            if (dtgvItem.Location.X != -1090)
             {
-                if (pnMidL.Location.X == 10)
+                dtgvItem.Location = new Point(dtgvItem.Location.X - 100, dtgvItem.Location.Y);
+                return;
+            }
+            if (switchItemOpe.Location.Y > -40)
+            {
+                switchItemOpe.Location = new Point(switchItemOpe.Location.X, switchItemOpe.Location.Y - 10);
+                return;
+            }
+            if (lbLonBe.Location.Y > -40)
+            {
+                lbLonBe.Location = new Point(lbLonBe.Location.X, lbLonBe.Location.Y - 10);
+                return;
+            }
+            if (numItemSL.Location.Y > -40)
+            {
+                numItemSL.Location = new Point(numItemSL.Location.X, numItemSL.Location.Y - 10);
+                return;
+            }
+            if (lbSL.Location.Y > -40)
+            {
+                lbSL.Location = new Point(lbSL.Location.X, lbSL.Location.Y - 10);
+                return;
+            }
+            if (tbItemSearch.Location.Y > -40)
+            {
+                tbItemSearch.Location = new Point(tbItemSearch.Location.X, tbItemSearch.Location.Y - 10);
+                return;
+            }
+            if (lbKhoName.Location.Y > -40)
+            {
+                lbKhoName.Location = new Point(lbKhoName.Location.X, lbKhoName.Location.Y - 10);
+                return;
+            }
+            if (btnback.Location.Y > -40)
+            {
+                btnback.Location = new Point(btnback.Location.X, btnback.Location.Y - 10);
+                return;
+            }
+            if (pnMidL.Size.Width > 740)
+            {
+                pnMidL.Size = new Size(pnMidL.Size.Width - 50, pnMidL.Size.Height);
+                if (pnMidL.Size.Width == 760)
                 {
-                    dtgvKho.Size = new Size(721, 430);
-                    tmrSlide2.Stop();
+                    pnMidL.Size = new Size(740, pnMidL.Size.Height);
                     return;
                 }
-                X = pnMidL.Location.X;
-                Y = pnMidL.Location.Y;
-                pnMidL.Location = new Point(X + 200, Y);
-                pnMidR.Location = new Point(pnMidR.Location.X - 100, pnMidR.Location.Y);
-            }
-            else
+                return;
+            }                                          
+            
+            if (pnMidR.Location.X > 760)
             {
-                X = pnMidL2.Location.X;
-                Y = pnMidL2.Location.Y;
-                pnMidL2.Location = new Point(X - 200, Y);
+                pnMidR.Location = new Point(pnMidR.Location.X - 50, pnMidR.Location.Y);
+                return;
             }
+            if (dtgvKho.Location.X < 10)
+            {
+                dtgvKho.Location = new Point(dtgvKho.Location.X + 100, dtgvKho.Location.Y);
+                return;
+            }
+            
+            if (lbListKho.Location.Y < 10)
+            {
+                lbListKho.Location = new Point(lbListKho.Location.X, lbListKho.Location.Y + 10);
+                return;
+            }
+            
+            BUS.KhoBUS.INSTANCE.loadData(dtgvKho, fmQuanLy.sID);
+            tmrSlide2.Stop();
+            loadTongQuan(null);
         }
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            dtgvItem.Visible = false;
-            dtgvItem.Size = new Size(0, 0);
             tmrSlide2.Start();
-            loadTongQuan(null);
-            dtgvKho.Visible = true;
-            BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
             tbItemSearch.Text = "Tìm kiếm...";
             numItemSL.Value = 0;
         }
@@ -165,7 +252,7 @@ namespace QuanLyKhoHang.GiaoDien
                 if (flagSave == true)
                 {
                     BUS.KhoBUS.INSTANCE.saveInsert(dtgvKho);
-                    BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
+                    BUS.KhoBUS.INSTANCE.loadData(dtgvKho, QuanLyKhoHang.GiaoDien.fmQuanLy.sID);
                     MessageBox.Show("Đã lưu!", "Thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnWareSave.color = btnWareSave.BackColor = Color.SeaGreen;
                     btnWareSave.colorActive = Color.MediumSeaGreen;
@@ -174,16 +261,17 @@ namespace QuanLyKhoHang.GiaoDien
                 else
                 {
                     BUS.KhoBUS.INSTANCE.saveEdit(dtgvKho);
-                    BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
+                    BUS.KhoBUS.INSTANCE.loadData(dtgvKho, QuanLyKhoHang.GiaoDien.fmQuanLy.sID);
                     MessageBox.Show("Đã Sửa!", "Sửa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnWareSave.color = btnWareSave.BackColor = Color.SeaGreen;
                     btnWareSave.colorActive = Color.MediumSeaGreen;
+                    flagSave = true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
+                BUS.KhoBUS.INSTANCE.loadData(dtgvKho, QuanLyKhoHang.GiaoDien.fmQuanLy.sID);
                 btnWareSave.color = btnWareSave.BackColor = Color.SeaGreen;
                 btnWareSave.colorActive = Color.MediumSeaGreen;
             }
@@ -192,7 +280,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnItemAdd_Click(object sender, EventArgs e)
         {
-            BUS.SanPhamBUS.INSTANCE.Insert(dtgvItem, dtgvKho.Rows[dtgvKho.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            BUS.SanPhamBUS.INSTANCE.Insert(dtgvItem, idkho);
             dtgvItem.CurrentCell = dtgvItem[1, 0];
             flagSave = true;
         }
@@ -235,7 +323,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         public void updateCPBValue()
         {
-            BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
+            BUS.KhoBUS.INSTANCE.loadData(dtgvKho, QuanLyKhoHang.GiaoDien.fmQuanLy.sID);
             foreach (DataGridViewRow dr in dtgvKho.Rows)
                 if (dr.Cells[0].FormattedValue.ToString() == idkho)
                 {
@@ -257,7 +345,7 @@ namespace QuanLyKhoHang.GiaoDien
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Xóa sản phẩm thất bại!\n" + ex.Message, "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 BUS.SanPhamBUS.INSTANCE.loadData(dtgvItem, idkho);
             }
         }
@@ -327,12 +415,12 @@ namespace QuanLyKhoHang.GiaoDien
                     return;
                 BUS.KhoBUS.INSTANCE.Delete(dtgvKho.CurrentRow.Cells[0].Value.ToString());              
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
+                BUS.KhoBUS.INSTANCE.loadData(dtgvKho, QuanLyKhoHang.GiaoDien.fmQuanLy.sID);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.Contains("REFERENCE") == true ? "Trong kho còn sản phẩm!" : ex.Message, "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
+                BUS.KhoBUS.INSTANCE.loadData(dtgvKho, QuanLyKhoHang.GiaoDien.fmQuanLy.sID);
             }
         }
 
@@ -384,7 +472,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbWareSearch.Text == "")
             {
                 tbWareSearch.Text = "Tìm kiếm...";
-                BUS.KhoBUS.INSTANCE.loadData(dtgvKho);
+                BUS.KhoBUS.INSTANCE.loadData(dtgvKho, QuanLyKhoHang.GiaoDien.fmQuanLy.sID);
             }
         }
 
@@ -432,7 +520,7 @@ namespace QuanLyKhoHang.GiaoDien
                 dr[4] = row.Cells[6].Value.ToString() +" "+ row.Cells[5].Value.ToString();
                 dt.Rows.Add(dr);
             }
-            new QuanLyKhoHang.Report.fmReport(dt, "DANH SÁCH SẢN PHẨM " +lbKhoName.Text.ToString().ToUpper(), "Poon Nguyễn").ShowDialog();
+            new QuanLyKhoHang.Report.fmReport(dt, "DANH SÁCH SẢN PHẨM " +lbKhoName.Text.ToString().ToUpper(), QuanLyKhoHang.GiaoDien.fmQuanLy.sName).ShowDialog();
         }
     }
 }

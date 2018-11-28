@@ -39,7 +39,8 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            new fmQuanLy().Show();
         }
 
         private void tbWareSearch_TextChanged(object sender, EventArgs e)

@@ -20,11 +20,15 @@ namespace DAO
             }
         }
 
-        public List<TaiKhoan> loadData()
+        public List<TaiKhoan> loadData(string idper)
         {
             List<TaiKhoan> lTK = new List<TaiKhoan>();
             DateTime date = new DateTime();
-            string str = "SELECT * FROM dbo.VI_TaiKhoan_LoadDataExceptAdmin"; //gọi Function
+            string str = null;
+            if (idper == "TK000")
+                str = "SELECT * FROM dbo.VI_TaiKhoan_LoadDataExceptAdmin"; //gọi Function
+            else
+                str = "SELECT * FROM dbo.VI_TaiKhoan_LoadDataExceptAdmin WHERE quanly = '" + idper + "'";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -53,7 +57,8 @@ namespace DAO
                 string createdate = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
                 int tinhtrang = Convert.ToInt32(item["tinhtrang"]);
                 int pers = Convert.ToInt32(item["pers"]);
-                TaiKhoan tk = new TaiKhoan(id, tentk, pw, avt, hovatendem, ten, ngaysinh, diachi, lastlogin, createdate, pers, tinhtrang);
+                string quanly = item["quanly"].ToString();
+                TaiKhoan tk = new TaiKhoan(id, tentk, pw, avt, hovatendem, ten, ngaysinh, diachi, lastlogin, createdate, pers, tinhtrang, quanly);
                 lTK.Add(tk);
             }
             return lTK;
@@ -70,7 +75,8 @@ namespace DAO
                          "@ngaysinh = '" + tk.NGAYSINH + "'," +
                          "@diachi = N'" + tk.DIACHI + "'," +
                          "@per = " + tk.PERS + "," +
-                         "@tinhtrang = " + tk.TINHTRANG.ToString();
+                         "@tinhtrang = " + tk.TINHTRANG + "," +
+                         "@quanly = '" + tk.QUANLY + "'";
             DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
@@ -84,7 +90,8 @@ namespace DAO
                              "@ngaysinh = '" + lNV[i].NGAYSINH + "'," +
                              "@diachi = N'" + lNV[i].DIACHI + "'," +
                              "@per = " + lNV[i].PERS + "," +
-                             "@tinhtrang = " + lNV[i].TINHTRANG;
+                             "@tinhtrang = " + lNV[i].TINHTRANG + "," +
+                             "@quanly = '" + lNV[i].QUANLY + "'";
                 DataConn.INSTANCE.ExecuteQueryTable(str);
             }
         }
@@ -128,7 +135,8 @@ namespace DAO
                 string createdate = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
                 int tinhtrang = Convert.ToInt32(item["tinhtrang"]);
                 int pers = Convert.ToInt32(item["pers"]);
-                TaiKhoan tk = new TaiKhoan(id, tentk, pw, avt, hovatendem, ten, ngaysinh, diachi, lastlogin, createdate, pers, tinhtrang);
+                string quanly = item["pers"].ToString();
+                TaiKhoan tk = new TaiKhoan(id, tentk, pw, avt, hovatendem, ten, ngaysinh, diachi, lastlogin, createdate, pers, tinhtrang, quanly);
                 lTK.Add(tk);
             }
             return lTK;

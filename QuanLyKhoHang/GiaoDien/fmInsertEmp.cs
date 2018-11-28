@@ -16,6 +16,11 @@ namespace QuanLyKhoHang.GiaoDien
         public fmInsertEmp()
         {
             InitializeComponent();
+            if (fmQuanLy.sID != "TK000")
+            {
+                rbEmp.Checked = true;
+                rbManager.Enabled = false;
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -39,7 +44,7 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 int tempPers = rbManager.Checked == true ? 2 : 3;
                 int tempTinhTrang = rbActive.Checked == true ? 1 : 0;
-                BUS.NhanVienBUS.INSTANCE.Insert(tbTenTK.Text, tbPW.Text, null, tbLN.Text, tbFN.Text, dtimeDOB.Value.ToString(), tbADD.Text, tempPers, tempTinhTrang);
+                BUS.NhanVienBUS.INSTANCE.Insert(tbTenTK.Text, tbPW.Text, null, tbLN.Text, tbFN.Text, dtimeDOB.Value.ToString(), tbADD.Text, tempPers, tempTinhTrang, fmQuanLy.sID == "TK000" ? "NULL" : fmQuanLy.sID);
                 this.Close();
             }
             catch(Exception ex)

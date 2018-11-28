@@ -80,10 +80,10 @@ namespace BUS
             dgv.DataSource = DAO.SanPhamDAO.INSTANCE.searchByNum(num, compTemp, idkho);
         }
 
-        public List<string> loadDataTen(string idkho)
+        public List<string> loadDataTen(string tenkho)
         {
             List<string> lten = new List<string>();
-            foreach (DTO.SanPham sp in DAO.SanPhamDAO.INSTANCE.loadData(idkho))
+            foreach (DTO.SanPham sp in DAO.SanPhamDAO.INSTANCE.loadData(tenkho))
             {
                 lten.Add(sp.TEN);
             }

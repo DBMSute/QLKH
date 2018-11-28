@@ -8,7 +8,7 @@ namespace DTO
 {
     public class TaiKhoan
     {
-        private string id, tenTk, passWd, hovatendem, ten, diachi, lastLogin, ngaySinh, createDay; 
+        private string id, tenTk, passWd, hovatendem, ten, diachi, lastLogin, ngaySinh, createDay, quanLy; 
         private int pers, tinhTrang;
         private byte[] avt;
 
@@ -72,7 +72,12 @@ namespace DTO
             get { return tinhTrang; }
             set { tinhTrang = value; }
         }
-        public TaiKhoan(string id, string tenTk, string passWd, byte[]avt, string hovatendem, string ten, string ngaySinh, string diachi, string lastLogin, string createDay, int pers, int tinhTrang)
+        public string QUANLY
+        {
+            get { return quanLy; }
+            set { quanLy = value; }
+        }
+        public TaiKhoan(string id, string tenTk, string passWd, byte[]avt, string hovatendem, string ten, string ngaySinh, string diachi, string lastLogin, string createDay, int pers, int tinhTrang, string quanLy)
         {
             this.ID = id;
             this.TENTK = tenTk;
@@ -86,6 +91,7 @@ namespace DTO
             this.CREATEDAY = createDay;
             this.PERS = pers;
             this.TINHTRANG = tinhTrang;
+            this.QUANLY = quanLy;
         }
         public TaiKhoan(string id, string passWd, byte[] avt, string hovatendem, string ten, string ngaySinh, string diachi, int pers, int tinhTrang)
         {

@@ -35,6 +35,8 @@
             this.lbRemember = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cbRemember = new Bunifu.Framework.UI.BunifuCheckbox();
             this.pnRight = new System.Windows.Forms.Panel();
+            this.pbHide = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbCurIP = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnExit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -43,7 +45,9 @@
             this.tbACC = new System.Windows.Forms.TextBox();
             this.cpLoading = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.tmrLoading = new System.Windows.Forms.Timer(this.components);
+            this.cpbLoading2 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.pnRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +58,7 @@
             this.lb1.BackColor = System.Drawing.Color.Transparent;
             this.lb1.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.lb1.ForeColor = System.Drawing.Color.White;
-            this.lb1.Location = new System.Drawing.Point(175, 68);
+            this.lb1.Location = new System.Drawing.Point(206, 68);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(180, 23);
             this.lb1.TabIndex = 7;
@@ -101,6 +105,8 @@
             // pnRight
             // 
             this.pnRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnRight.Controls.Add(this.pbHide);
+            this.pnRight.Controls.Add(this.lbCurIP);
             this.pnRight.Controls.Add(this.btnExit);
             this.pnRight.Controls.Add(this.btnLogin);
             this.pnRight.Controls.Add(this.pictureBox2);
@@ -117,11 +123,37 @@
             this.pnRight.Size = new System.Drawing.Size(398, 447);
             this.pnRight.TabIndex = 7;
             // 
+            // pbHide
+            // 
+            this.pbHide.BackColor = System.Drawing.Color.Transparent;
+            this.pbHide.Image = global::QuanLyKhoHang.Properties.Resources.tongquan;
+            this.pbHide.ImageActive = null;
+            this.pbHide.Location = new System.Drawing.Point(353, 259);
+            this.pbHide.Name = "pbHide";
+            this.pbHide.Size = new System.Drawing.Size(33, 34);
+            this.pbHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHide.TabIndex = 14;
+            this.pbHide.TabStop = false;
+            this.pbHide.Zoom = 10;
+            this.pbHide.Click += new System.EventHandler(this.pbHide_Click);
+            // 
+            // lbCurIP
+            // 
+            this.lbCurIP.BackColor = System.Drawing.Color.Transparent;
+            this.lbCurIP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCurIP.ForeColor = System.Drawing.Color.White;
+            this.lbCurIP.Location = new System.Drawing.Point(218, 424);
+            this.lbCurIP.Name = "lbCurIP";
+            this.lbCurIP.Size = new System.Drawing.Size(180, 23);
+            this.lbCurIP.TabIndex = 13;
+            this.lbCurIP.Text = "Null";
+            this.lbCurIP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // btnExit
             // 
             this.btnExit.ActiveBorderThickness = 1;
             this.btnExit.ActiveCornerRadius = 1;
-            this.btnExit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.ActiveFillColor = System.Drawing.Color.Transparent;
             this.btnExit.ActiveForecolor = System.Drawing.Color.White;
             this.btnExit.ActiveLineColor = System.Drawing.Color.White;
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
@@ -132,7 +164,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.IdleBorderThickness = 1;
             this.btnExit.IdleCornerRadius = 1;
-            this.btnExit.IdleFillColor = System.Drawing.Color.Transparent;
+            this.btnExit.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.IdleForecolor = System.Drawing.Color.White;
             this.btnExit.IdleLineColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(207, 343);
@@ -147,7 +179,7 @@
             // 
             this.btnLogin.ActiveBorderThickness = 1;
             this.btnLogin.ActiveCornerRadius = 1;
-            this.btnLogin.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnLogin.ActiveFillColor = System.Drawing.Color.Transparent;
             this.btnLogin.ActiveForecolor = System.Drawing.Color.White;
             this.btnLogin.ActiveLineColor = System.Drawing.Color.White;
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
@@ -158,7 +190,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.IdleBorderThickness = 1;
             this.btnLogin.IdleCornerRadius = 1;
-            this.btnLogin.IdleFillColor = System.Drawing.Color.Transparent;
+            this.btnLogin.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogin.IdleForecolor = System.Drawing.Color.White;
             this.btnLogin.IdleLineColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(51, 343);
@@ -168,6 +200,7 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnLogin_KeyPress);
             // 
             // pictureBox2
             // 
@@ -238,6 +271,29 @@
             this.tmrLoading.Interval = 1;
             this.tmrLoading.Tick += new System.EventHandler(this.tmrLoading_Tick);
             // 
+            // cpbLoading2
+            // 
+            this.cpbLoading2.animated = true;
+            this.cpbLoading2.animationIterval = 5;
+            this.cpbLoading2.animationSpeed = 1;
+            this.cpbLoading2.BackColor = System.Drawing.Color.Transparent;
+            this.cpbLoading2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpbLoading2.BackgroundImage")));
+            this.cpbLoading2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.cpbLoading2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.cpbLoading2.LabelVisible = false;
+            this.cpbLoading2.LineProgressThickness = 20;
+            this.cpbLoading2.LineThickness = 20;
+            this.cpbLoading2.Location = new System.Drawing.Point(142, 125);
+            this.cpbLoading2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.cpbLoading2.MaxValue = 100;
+            this.cpbLoading2.Name = "cpbLoading2";
+            this.cpbLoading2.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.cpbLoading2.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.cpbLoading2.Size = new System.Drawing.Size(213, 213);
+            this.cpbLoading2.TabIndex = 9;
+            this.cpbLoading2.Value = 25;
+            this.cpbLoading2.Visible = false;
+            // 
             // fmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -247,14 +303,17 @@
             this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(904, 447);
+            this.Controls.Add(this.cpbLoading2);
             this.Controls.Add(this.cpLoading);
             this.Controls.Add(this.pnRight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fmDangNhap";
+            this.Text = "Đăng nhập";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fmDangNhap_KeyPress);
             this.pnRight.ResumeLayout(false);
             this.pnRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -275,5 +334,8 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
         private Bunifu.Framework.UI.BunifuCircleProgressbar cpLoading;
         private System.Windows.Forms.Timer tmrLoading;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbCurIP;
+        private Bunifu.Framework.UI.BunifuImageButton pbHide;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar cpbLoading2;
     }
 }

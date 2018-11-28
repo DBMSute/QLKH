@@ -30,6 +30,36 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmKho));
+            this.tmrSlide = new System.Windows.Forms.Timer(this.components);
+            this.tmrSlide2 = new System.Windows.Forms.Timer(this.components);
+            this.tmrCPB = new System.Windows.Forms.Timer(this.components);
+            this.tmrClock = new System.Windows.Forms.Timer(this.components);
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.pnBackground = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.numItemSL = new System.Windows.Forms.NumericUpDown();
+            this.lbSL = new System.Windows.Forms.Label();
+            this.lbLonBe = new System.Windows.Forms.Label();
+            this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
+            this.tbItemSearch = new System.Windows.Forms.TextBox();
+            this.btnItemPrint = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnItemSave = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnItemDelete = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnItemAdd = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbKhoName = new System.Windows.Forms.Label();
+            this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
+            this.dtgvItem = new System.Windows.Forms.DataGridView();
+            this.ID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENLOAI = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONVITINH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.lbClock = new System.Windows.Forms.Label();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbNhaCC = new System.Windows.Forms.Label();
             this.pnMidR = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.SwitchWareLonBe = new Bunifu.Framework.UI.BunifuSwitch();
@@ -41,10 +71,6 @@
             this.btnWarePrint = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnWareDel = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnWareAdd = new Bunifu.Framework.UI.BunifuTileButton();
-            this.lbNhaCC = new System.Windows.Forms.Label();
-            this.cpbSucChua = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.lbListKho = new System.Windows.Forms.Label();
             this.dtgvKho = new System.Windows.Forms.DataGridView();
@@ -54,31 +80,6 @@
             this.MNG = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.GIOIHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUONGHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.lbClock = new System.Windows.Forms.Label();
-            this.tmrSlide = new System.Windows.Forms.Timer(this.components);
-            this.pnMidL2 = new System.Windows.Forms.Panel();
-            this.numItemSL = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
-            this.tbItemSearch = new System.Windows.Forms.TextBox();
-            this.btnItemPrint = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnItemSave = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnItemDelete = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnItemAdd = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbKhoName = new System.Windows.Forms.Label();
-            this.dtgvItem = new System.Windows.Forms.DataGridView();
-            this.ID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENLOAI = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONVITINH = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tmrSlide2 = new System.Windows.Forms.Timer(this.components);
-            this.pnBackground = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbDataInfoSLHang = new System.Windows.Forms.Label();
             this.lbDataInfoQuanLi = new System.Windows.Forms.Label();
@@ -90,25 +91,373 @@
             this.lbInfoTenKho = new System.Windows.Forms.Label();
             this.lbInfoSucChua = new System.Windows.Forms.Label();
             this.lbTongQuan = new System.Windows.Forms.Label();
-            this.tmrCPB = new System.Windows.Forms.Timer(this.components);
-            this.tmrClock = new System.Windows.Forms.Timer(this.components);
-            this.pnMidR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numWare)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
-            this.pnMidL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvKho)).BeginInit();
-            this.pnTop.SuspendLayout();
-            this.pnMidL2.SuspendLayout();
+            this.cpbSucChua = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.pnBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvItem)).BeginInit();
-            this.pnBackground.SuspendLayout();
+            this.pnTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.pnMidR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numWare)).BeginInit();
+            this.pnMidL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvKho)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tmrSlide
+            // 
+            this.tmrSlide.Interval = 1;
+            this.tmrSlide.Tick += new System.EventHandler(this.tmrSlide_Tick);
+            // 
+            // tmrSlide2
+            // 
+            this.tmrSlide2.Interval = 1;
+            this.tmrSlide2.Tick += new System.EventHandler(this.tmrSlide2_Tick);
+            // 
+            // tmrCPB
+            // 
+            this.tmrCPB.Interval = 1;
+            this.tmrCPB.Tick += new System.EventHandler(this.tmrCPB_Tick);
+            // 
+            // tmrClock
+            // 
+            this.tmrClock.Interval = 1000;
+            this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.pnTop;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // pnBackground
+            // 
+            this.pnBackground.BackColor = System.Drawing.Color.Transparent;
+            this.pnBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBackground.BackgroundImage")));
+            this.pnBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnBackground.Controls.Add(this.pnTop);
+            this.pnBackground.Controls.Add(this.pnMidR);
+            this.pnBackground.Controls.Add(this.pnMidL);
+            this.pnBackground.Controls.Add(this.panel2);
+            this.pnBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnBackground.GradientBottomLeft = System.Drawing.Color.Navy;
+            this.pnBackground.GradientBottomRight = System.Drawing.Color.SeaGreen;
+            this.pnBackground.GradientTopLeft = System.Drawing.Color.SeaGreen;
+            this.pnBackground.GradientTopRight = System.Drawing.Color.Red;
+            this.pnBackground.Location = new System.Drawing.Point(0, 0);
+            this.pnBackground.Name = "pnBackground";
+            this.pnBackground.Quality = 20;
+            this.pnBackground.Size = new System.Drawing.Size(1080, 720);
+            this.pnBackground.TabIndex = 7;
+            // 
+            // numItemSL
+            // 
+            this.numItemSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numItemSL.Font = new System.Drawing.Font("Century Gothic", 22F);
+            this.numItemSL.ForeColor = System.Drawing.Color.SeaGreen;
+            this.numItemSL.Location = new System.Drawing.Point(636, -40);
+            this.numItemSL.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numItemSL.Name = "numItemSL";
+            this.numItemSL.Size = new System.Drawing.Size(80, 39);
+            this.numItemSL.TabIndex = 10;
+            this.numItemSL.ValueChanged += new System.EventHandler(this.numItemSL_ValueChanged);
+            // 
+            // lbSL
+            // 
+            this.lbSL.AutoSize = true;
+            this.lbSL.BackColor = System.Drawing.Color.Transparent;
+            this.lbSL.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSL.ForeColor = System.Drawing.Color.White;
+            this.lbSL.Location = new System.Drawing.Point(585, -40);
+            this.lbSL.Name = "lbSL";
+            this.lbSL.Size = new System.Drawing.Size(60, 42);
+            this.lbSL.TabIndex = 103;
+            this.lbSL.Text = "SL:";
+            // 
+            // lbLonBe
+            // 
+            this.lbLonBe.AutoSize = true;
+            this.lbLonBe.BackColor = System.Drawing.Color.Transparent;
+            this.lbLonBe.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLonBe.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbLonBe.Location = new System.Drawing.Point(725, -40);
+            this.lbLonBe.Name = "lbLonBe";
+            this.lbLonBe.Size = new System.Drawing.Size(59, 17);
+            this.lbLonBe.TabIndex = 13;
+            this.lbLonBe.Text = "Lớn / Bé";
+            // 
+            // switchItemOpe
+            // 
+            this.switchItemOpe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.switchItemOpe.BorderRadius = 5;
+            this.switchItemOpe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchItemOpe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchItemOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemOpe.Location = new System.Drawing.Point(725, -40);
+            this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4);
+            this.switchItemOpe.Name = "switchItemOpe";
+            this.switchItemOpe.Oncolor = System.Drawing.Color.SeaGreen;
+            this.switchItemOpe.Onoffcolor = System.Drawing.Color.DarkGray;
+            this.switchItemOpe.Size = new System.Drawing.Size(51, 19);
+            this.switchItemOpe.TabIndex = 12;
+            this.switchItemOpe.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemOpe.Value = true;
+            this.switchItemOpe.Click += new System.EventHandler(this.switchItemOpe_Click);
+            // 
+            // tbItemSearch
+            // 
+            this.tbItemSearch.BackColor = System.Drawing.Color.White;
+            this.tbItemSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbItemSearch.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.tbItemSearch.ForeColor = System.Drawing.Color.SeaGreen;
+            this.tbItemSearch.Location = new System.Drawing.Point(265, -40);
+            this.tbItemSearch.Name = "tbItemSearch";
+            this.tbItemSearch.Size = new System.Drawing.Size(300, 40);
+            this.tbItemSearch.TabIndex = 99;
+            this.tbItemSearch.Text = "Tìm kiếm...";
+            this.tbItemSearch.TextChanged += new System.EventHandler(this.tbItemSearch_TextChanged);
+            this.tbItemSearch.Enter += new System.EventHandler(this.tbItemSearch_Enter);
+            this.tbItemSearch.Leave += new System.EventHandler(this.tbItemSearch_Leave);
+            // 
+            // btnItemPrint
+            // 
+            this.btnItemPrint.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnItemPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnItemPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
+            this.btnItemPrint.ImageActive = null;
+            this.btnItemPrint.Location = new System.Drawing.Point(1010, 10);
+            this.btnItemPrint.Name = "btnItemPrint";
+            this.btnItemPrint.Size = new System.Drawing.Size(40, 40);
+            this.btnItemPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnItemPrint.TabIndex = 8;
+            this.btnItemPrint.TabStop = false;
+            this.btnItemPrint.Zoom = 10;
+            this.btnItemPrint.Click += new System.EventHandler(this.btnItemPrint_Click);
+            // 
+            // btnItemSave
+            // 
+            this.btnItemSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnItemSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnItemSave.Image = global::QuanLyKhoHang.Properties.Resources.save;
+            this.btnItemSave.ImageActive = null;
+            this.btnItemSave.Location = new System.Drawing.Point(960, 10);
+            this.btnItemSave.Name = "btnItemSave";
+            this.btnItemSave.Size = new System.Drawing.Size(40, 40);
+            this.btnItemSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnItemSave.TabIndex = 7;
+            this.btnItemSave.TabStop = false;
+            this.btnItemSave.Zoom = 10;
+            this.btnItemSave.Click += new System.EventHandler(this.btnItemSave_Click);
+            // 
+            // btnItemDelete
+            // 
+            this.btnItemDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnItemDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnItemDelete.Image = global::QuanLyKhoHang.Properties.Resources.delete;
+            this.btnItemDelete.ImageActive = null;
+            this.btnItemDelete.Location = new System.Drawing.Point(910, 10);
+            this.btnItemDelete.Name = "btnItemDelete";
+            this.btnItemDelete.Size = new System.Drawing.Size(40, 40);
+            this.btnItemDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnItemDelete.TabIndex = 6;
+            this.btnItemDelete.TabStop = false;
+            this.btnItemDelete.Zoom = 10;
+            this.btnItemDelete.Click += new System.EventHandler(this.btnItemDelete_Click);
+            // 
+            // btnItemAdd
+            // 
+            this.btnItemAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnItemAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnItemAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
+            this.btnItemAdd.ImageActive = null;
+            this.btnItemAdd.Location = new System.Drawing.Point(860, 10);
+            this.btnItemAdd.Name = "btnItemAdd";
+            this.btnItemAdd.Size = new System.Drawing.Size(40, 40);
+            this.btnItemAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnItemAdd.TabIndex = 5;
+            this.btnItemAdd.TabStop = false;
+            this.btnItemAdd.Zoom = 10;
+            this.btnItemAdd.Click += new System.EventHandler(this.btnItemAdd_Click);
+            // 
+            // lbKhoName
+            // 
+            this.lbKhoName.AutoSize = true;
+            this.lbKhoName.BackColor = System.Drawing.Color.Transparent;
+            this.lbKhoName.Font = new System.Drawing.Font("Century Gothic", 25F);
+            this.lbKhoName.ForeColor = System.Drawing.Color.White;
+            this.lbKhoName.Location = new System.Drawing.Point(56, -40);
+            this.lbKhoName.Name = "lbKhoName";
+            this.lbKhoName.Size = new System.Drawing.Size(75, 40);
+            this.lbKhoName.TabIndex = 4;
+            this.lbKhoName.Text = "Null";
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.Color.Transparent;
+            this.btnback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnback.Image = global::QuanLyKhoHang.Properties.Resources.back;
+            this.btnback.ImageActive = null;
+            this.btnback.Location = new System.Drawing.Point(10, -40);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(40, 40);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnback.TabIndex = 3;
+            this.btnback.TabStop = false;
+            this.btnback.Zoom = 10;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
+            // dtgvItem
+            // 
+            this.dtgvItem.AllowUserToResizeRows = false;
+            this.dtgvItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvItem.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID2,
+            this.TENSP,
+            this.TENLOAI,
+            this.KHO,
+            this.SOLUONG,
+            this.DONGIA,
+            this.DONVITINH,
+            this.TINHTRANG});
+            this.dtgvItem.Location = new System.Drawing.Point(-1090, 60);
+            this.dtgvItem.Name = "dtgvItem";
+            this.dtgvItem.Size = new System.Drawing.Size(1040, 430);
+            this.dtgvItem.TabIndex = 2;
+            this.dtgvItem.TabStop = false;
+            this.dtgvItem.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvItem_CellValueChanged);
+            // 
+            // ID2
+            // 
+            this.ID2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ID2.DataPropertyName = "ID";
+            this.ID2.HeaderText = "ID";
+            this.ID2.Name = "ID2";
+            this.ID2.ReadOnly = true;
+            this.ID2.Width = 49;
+            // 
+            // TENSP
+            // 
+            this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENSP.DataPropertyName = "TEN";
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.Name = "TENSP";
+            this.TENSP.Width = 129;
+            // 
+            // TENLOAI
+            // 
+            this.TENLOAI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENLOAI.DataPropertyName = "TENLOAI";
+            this.TENLOAI.HeaderText = "Loại sản phẩm";
+            this.TENLOAI.Name = "TENLOAI";
+            this.TENLOAI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENLOAI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TENLOAI.Width = 128;
+            // 
+            // KHO
+            // 
+            this.KHO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.KHO.DataPropertyName = "IDKHO";
+            this.KHO.HeaderText = "Kho";
+            this.KHO.Name = "KHO";
+            this.KHO.Visible = false;
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.Name = "SOLUONG";
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.Name = "DONGIA";
+            // 
+            // DONVITINH
+            // 
+            this.DONVITINH.DataPropertyName = "DONVITINH";
+            this.DONVITINH.HeaderText = "Đơn vị";
+            this.DONVITINH.Items.AddRange(new object[] {
+            "VND",
+            "USD",
+            "EUR"});
+            this.DONVITINH.Name = "DONVITINH";
+            this.DONVITINH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DONVITINH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TINHTRANG
+            // 
+            this.TINHTRANG.DataPropertyName = "TINHTRANG";
+            this.TINHTRANG.HeaderText = "Tình trạng";
+            this.TINHTRANG.Name = "TINHTRANG";
+            this.TINHTRANG.ReadOnly = true;
+            this.TINHTRANG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TINHTRANG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // pnTop
+            // 
+            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnTop.Controls.Add(this.lbClock);
+            this.pnTop.Controls.Add(this.btnExit);
+            this.pnTop.Controls.Add(this.lbNhaCC);
+            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(1080, 100);
+            this.pnTop.TabIndex = 3;
+            // 
+            // lbClock
+            // 
+            this.lbClock.AutoSize = true;
+            this.lbClock.BackColor = System.Drawing.Color.Transparent;
+            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClock.ForeColor = System.Drawing.Color.White;
+            this.lbClock.Location = new System.Drawing.Point(951, 61);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(93, 33);
+            this.lbClock.TabIndex = 11;
+            this.lbClock.Text = "Clock";
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(1028, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lbNhaCC
+            // 
+            this.lbNhaCC.AutoSize = true;
+            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
+            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
+            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
+            this.lbNhaCC.Location = new System.Drawing.Point(1, 0);
+            this.lbNhaCC.Name = "lbNhaCC";
+            this.lbNhaCC.Size = new System.Drawing.Size(210, 94);
+            this.lbNhaCC.TabIndex = 0;
+            this.lbNhaCC.Text = "KHO";
             // 
             // pnMidR
             // 
@@ -123,7 +472,7 @@
             this.pnMidR.Controls.Add(this.btnWarePrint);
             this.pnMidR.Controls.Add(this.btnWareDel);
             this.pnMidR.Controls.Add(this.btnWareAdd);
-            this.pnMidR.Location = new System.Drawing.Point(757, 110);
+            this.pnMidR.Location = new System.Drawing.Point(760, 110);
             this.pnMidR.Name = "pnMidR";
             this.pnMidR.Size = new System.Drawing.Size(310, 500);
             this.pnMidR.TabIndex = 6;
@@ -299,76 +648,23 @@
             this.btnWareAdd.TabIndex = 0;
             this.btnWareAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lbNhaCC
-            // 
-            this.lbNhaCC.AutoSize = true;
-            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
-            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
-            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
-            this.lbNhaCC.Location = new System.Drawing.Point(1, 0);
-            this.lbNhaCC.Name = "lbNhaCC";
-            this.lbNhaCC.Size = new System.Drawing.Size(210, 94);
-            this.lbNhaCC.TabIndex = 0;
-            this.lbNhaCC.Text = "KHO";
-            // 
-            // cpbSucChua
-            // 
-            this.cpbSucChua.animated = false;
-            this.cpbSucChua.animationIterval = 1;
-            this.cpbSucChua.animationSpeed = 1;
-            this.cpbSucChua.BackColor = System.Drawing.Color.Transparent;
-            this.cpbSucChua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpbSucChua.BackgroundImage")));
-            this.cpbSucChua.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cpbSucChua.ForeColor = System.Drawing.Color.White;
-            this.cpbSucChua.LabelVisible = true;
-            this.cpbSucChua.LineProgressThickness = 10;
-            this.cpbSucChua.LineThickness = 10;
-            this.cpbSucChua.Location = new System.Drawing.Point(330, 0);
-            this.cpbSucChua.Margin = new System.Windows.Forms.Padding(7);
-            this.cpbSucChua.MaxValue = 100;
-            this.cpbSucChua.Name = "cpbSucChua";
-            this.cpbSucChua.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.cpbSucChua.ProgressColor = System.Drawing.Color.MediumSeaGreen;
-            this.cpbSucChua.Size = new System.Drawing.Size(100, 100);
-            this.cpbSucChua.TabIndex = 1;
-            this.cpbSucChua.Value = 0;
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.Color.Transparent;
-            this.btnback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnback.Image = global::QuanLyKhoHang.Properties.Resources.back;
-            this.btnback.ImageActive = null;
-            this.btnback.Location = new System.Drawing.Point(10, 10);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(40, 40);
-            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnback.TabIndex = 3;
-            this.btnback.TabStop = false;
-            this.btnback.Zoom = 10;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1028, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // pnMidL
             // 
             this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnMidL.Controls.Add(this.lbListKho);
             this.pnMidL.Controls.Add(this.dtgvKho);
+            this.pnMidL.Controls.Add(this.btnItemPrint);
+            this.pnMidL.Controls.Add(this.switchItemOpe);
+            this.pnMidL.Controls.Add(this.btnItemSave);
+            this.pnMidL.Controls.Add(this.lbLonBe);
+            this.pnMidL.Controls.Add(this.btnItemDelete);
+            this.pnMidL.Controls.Add(this.numItemSL);
+            this.pnMidL.Controls.Add(this.btnItemAdd);
+            this.pnMidL.Controls.Add(this.lbListKho);
+            this.pnMidL.Controls.Add(this.lbSL);
+            this.pnMidL.Controls.Add(this.dtgvItem);
+            this.pnMidL.Controls.Add(this.tbItemSearch);
+            this.pnMidL.Controls.Add(this.lbKhoName);
+            this.pnMidL.Controls.Add(this.btnback);
             this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnMidL.Location = new System.Drawing.Point(10, 110);
             this.pnMidL.Name = "pnMidL";
@@ -381,7 +677,7 @@
             this.lbListKho.BackColor = System.Drawing.Color.Transparent;
             this.lbListKho.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.lbListKho.ForeColor = System.Drawing.Color.White;
-            this.lbListKho.Location = new System.Drawing.Point(276, 10);
+            this.lbListKho.Location = new System.Drawing.Point(275, 10);
             this.lbListKho.Name = "lbListKho";
             this.lbListKho.Size = new System.Drawing.Size(208, 33);
             this.lbListKho.TabIndex = 3;
@@ -523,318 +819,6 @@
             this.SOLUONGHANG.HeaderText = "Số lượng hàng";
             this.SOLUONGHANG.Name = "SOLUONGHANG";
             this.SOLUONGHANG.ReadOnly = true;
-            // 
-            // pnTop
-            // 
-            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnTop.Controls.Add(this.lbClock);
-            this.pnTop.Controls.Add(this.btnExit);
-            this.pnTop.Controls.Add(this.lbNhaCC);
-            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1080, 100);
-            this.pnTop.TabIndex = 3;
-            // 
-            // lbClock
-            // 
-            this.lbClock.AutoSize = true;
-            this.lbClock.BackColor = System.Drawing.Color.Transparent;
-            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClock.ForeColor = System.Drawing.Color.White;
-            this.lbClock.Location = new System.Drawing.Point(951, 61);
-            this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(93, 33);
-            this.lbClock.TabIndex = 11;
-            this.lbClock.Text = "Clock";
-            // 
-            // tmrSlide
-            // 
-            this.tmrSlide.Interval = 1;
-            this.tmrSlide.Tick += new System.EventHandler(this.tmrSlide_Tick);
-            // 
-            // pnMidL2
-            // 
-            this.pnMidL2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnMidL2.Controls.Add(this.numItemSL);
-            this.pnMidL2.Controls.Add(this.label6);
-            this.pnMidL2.Controls.Add(this.label1);
-            this.pnMidL2.Controls.Add(this.switchItemOpe);
-            this.pnMidL2.Controls.Add(this.tbItemSearch);
-            this.pnMidL2.Controls.Add(this.btnItemPrint);
-            this.pnMidL2.Controls.Add(this.btnItemSave);
-            this.pnMidL2.Controls.Add(this.btnItemDelete);
-            this.pnMidL2.Controls.Add(this.btnItemAdd);
-            this.pnMidL2.Controls.Add(this.lbKhoName);
-            this.pnMidL2.Controls.Add(this.btnback);
-            this.pnMidL2.Controls.Add(this.dtgvItem);
-            this.pnMidL2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnMidL2.Location = new System.Drawing.Point(14, 10);
-            this.pnMidL2.Name = "pnMidL2";
-            this.pnMidL2.Size = new System.Drawing.Size(1060, 500);
-            this.pnMidL2.TabIndex = 6;
-            // 
-            // numItemSL
-            // 
-            this.numItemSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numItemSL.Font = new System.Drawing.Font("Century Gothic", 22F);
-            this.numItemSL.ForeColor = System.Drawing.Color.SeaGreen;
-            this.numItemSL.Location = new System.Drawing.Point(636, 11);
-            this.numItemSL.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numItemSL.Name = "numItemSL";
-            this.numItemSL.Size = new System.Drawing.Size(80, 39);
-            this.numItemSL.TabIndex = 10;
-            this.numItemSL.ValueChanged += new System.EventHandler(this.numItemSL_ValueChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(585, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 42);
-            this.label6.TabIndex = 103;
-            this.label6.Text = "SL:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label1.Location = new System.Drawing.Point(725, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Lớn / Bé";
-            // 
-            // switchItemOpe
-            // 
-            this.switchItemOpe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.switchItemOpe.BorderRadius = 5;
-            this.switchItemOpe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchItemOpe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchItemOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemOpe.Location = new System.Drawing.Point(728, 32);
-            this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4);
-            this.switchItemOpe.Name = "switchItemOpe";
-            this.switchItemOpe.Oncolor = System.Drawing.Color.SeaGreen;
-            this.switchItemOpe.Onoffcolor = System.Drawing.Color.DarkGray;
-            this.switchItemOpe.Size = new System.Drawing.Size(51, 19);
-            this.switchItemOpe.TabIndex = 12;
-            this.switchItemOpe.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemOpe.Value = true;
-            this.switchItemOpe.Click += new System.EventHandler(this.switchItemOpe_Click);
-            // 
-            // tbItemSearch
-            // 
-            this.tbItemSearch.BackColor = System.Drawing.Color.White;
-            this.tbItemSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbItemSearch.Font = new System.Drawing.Font("Century Gothic", 24F);
-            this.tbItemSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.tbItemSearch.Location = new System.Drawing.Point(265, 11);
-            this.tbItemSearch.Name = "tbItemSearch";
-            this.tbItemSearch.Size = new System.Drawing.Size(300, 40);
-            this.tbItemSearch.TabIndex = 99;
-            this.tbItemSearch.Text = "Tìm kiếm...";
-            this.tbItemSearch.TextChanged += new System.EventHandler(this.tbItemSearch_TextChanged);
-            this.tbItemSearch.Enter += new System.EventHandler(this.tbItemSearch_Enter);
-            this.tbItemSearch.Leave += new System.EventHandler(this.tbItemSearch_Leave);
-            // 
-            // btnItemPrint
-            // 
-            this.btnItemPrint.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnItemPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnItemPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
-            this.btnItemPrint.ImageActive = null;
-            this.btnItemPrint.Location = new System.Drawing.Point(1000, 10);
-            this.btnItemPrint.Name = "btnItemPrint";
-            this.btnItemPrint.Size = new System.Drawing.Size(40, 40);
-            this.btnItemPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnItemPrint.TabIndex = 8;
-            this.btnItemPrint.TabStop = false;
-            this.btnItemPrint.Zoom = 10;
-            this.btnItemPrint.Click += new System.EventHandler(this.btnItemPrint_Click);
-            // 
-            // btnItemSave
-            // 
-            this.btnItemSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnItemSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnItemSave.Image = global::QuanLyKhoHang.Properties.Resources.save;
-            this.btnItemSave.ImageActive = null;
-            this.btnItemSave.Location = new System.Drawing.Point(950, 10);
-            this.btnItemSave.Name = "btnItemSave";
-            this.btnItemSave.Size = new System.Drawing.Size(40, 40);
-            this.btnItemSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnItemSave.TabIndex = 7;
-            this.btnItemSave.TabStop = false;
-            this.btnItemSave.Zoom = 10;
-            this.btnItemSave.Click += new System.EventHandler(this.btnItemSave_Click);
-            // 
-            // btnItemDelete
-            // 
-            this.btnItemDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnItemDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnItemDelete.Image = global::QuanLyKhoHang.Properties.Resources.delete;
-            this.btnItemDelete.ImageActive = null;
-            this.btnItemDelete.Location = new System.Drawing.Point(900, 10);
-            this.btnItemDelete.Name = "btnItemDelete";
-            this.btnItemDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnItemDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnItemDelete.TabIndex = 6;
-            this.btnItemDelete.TabStop = false;
-            this.btnItemDelete.Zoom = 10;
-            this.btnItemDelete.Click += new System.EventHandler(this.btnItemDelete_Click);
-            // 
-            // btnItemAdd
-            // 
-            this.btnItemAdd.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnItemAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnItemAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
-            this.btnItemAdd.ImageActive = null;
-            this.btnItemAdd.Location = new System.Drawing.Point(850, 10);
-            this.btnItemAdd.Name = "btnItemAdd";
-            this.btnItemAdd.Size = new System.Drawing.Size(40, 40);
-            this.btnItemAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnItemAdd.TabIndex = 5;
-            this.btnItemAdd.TabStop = false;
-            this.btnItemAdd.Zoom = 10;
-            this.btnItemAdd.Click += new System.EventHandler(this.btnItemAdd_Click);
-            // 
-            // lbKhoName
-            // 
-            this.lbKhoName.AutoSize = true;
-            this.lbKhoName.BackColor = System.Drawing.Color.Transparent;
-            this.lbKhoName.Font = new System.Drawing.Font("Century Gothic", 25F);
-            this.lbKhoName.ForeColor = System.Drawing.Color.White;
-            this.lbKhoName.Location = new System.Drawing.Point(56, 10);
-            this.lbKhoName.Name = "lbKhoName";
-            this.lbKhoName.Size = new System.Drawing.Size(75, 40);
-            this.lbKhoName.TabIndex = 4;
-            this.lbKhoName.Text = "Null";
-            // 
-            // dtgvItem
-            // 
-            this.dtgvItem.AllowUserToResizeRows = false;
-            this.dtgvItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvItem.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID2,
-            this.TENSP,
-            this.TENLOAI,
-            this.KHO,
-            this.SOLUONG,
-            this.DONGIA,
-            this.DONVITINH,
-            this.TINHTRANG});
-            this.dtgvItem.Location = new System.Drawing.Point(10, 60);
-            this.dtgvItem.Name = "dtgvItem";
-            this.dtgvItem.Size = new System.Drawing.Size(10, 10);
-            this.dtgvItem.TabIndex = 2;
-            this.dtgvItem.TabStop = false;
-            this.dtgvItem.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvItem_CellValueChanged);
-            // 
-            // ID2
-            // 
-            this.ID2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ID2.DataPropertyName = "ID";
-            this.ID2.HeaderText = "ID";
-            this.ID2.Name = "ID2";
-            this.ID2.ReadOnly = true;
-            this.ID2.Width = 49;
-            // 
-            // TENSP
-            // 
-            this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENSP.DataPropertyName = "TEN";
-            this.TENSP.HeaderText = "Tên sản phẩm";
-            this.TENSP.Name = "TENSP";
-            this.TENSP.Width = 129;
-            // 
-            // TENLOAI
-            // 
-            this.TENLOAI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENLOAI.DataPropertyName = "TENLOAI";
-            this.TENLOAI.HeaderText = "Loại sản phẩm";
-            this.TENLOAI.Name = "TENLOAI";
-            this.TENLOAI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENLOAI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TENLOAI.Width = 128;
-            // 
-            // KHO
-            // 
-            this.KHO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.KHO.DataPropertyName = "IDKHO";
-            this.KHO.HeaderText = "Kho";
-            this.KHO.Name = "KHO";
-            this.KHO.Visible = false;
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.DataPropertyName = "SOLUONG";
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.Name = "SOLUONG";
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.Name = "DONGIA";
-            // 
-            // DONVITINH
-            // 
-            this.DONVITINH.DataPropertyName = "DONVITINH";
-            this.DONVITINH.HeaderText = "Đơn vị";
-            this.DONVITINH.Items.AddRange(new object[] {
-            "VND",
-            "USD",
-            "EUR"});
-            this.DONVITINH.Name = "DONVITINH";
-            this.DONVITINH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DONVITINH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TINHTRANG
-            // 
-            this.TINHTRANG.DataPropertyName = "TINHTRANG";
-            this.TINHTRANG.HeaderText = "Tình trạng";
-            this.TINHTRANG.Name = "TINHTRANG";
-            this.TINHTRANG.ReadOnly = true;
-            this.TINHTRANG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TINHTRANG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // tmrSlide2
-            // 
-            this.tmrSlide2.Interval = 1;
-            this.tmrSlide2.Tick += new System.EventHandler(this.tmrSlide2_Tick);
-            // 
-            // pnBackground
-            // 
-            this.pnBackground.BackColor = System.Drawing.Color.Transparent;
-            this.pnBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBackground.BackgroundImage")));
-            this.pnBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnBackground.Controls.Add(this.pnMidL2);
-            this.pnBackground.Controls.Add(this.pnTop);
-            this.pnBackground.Controls.Add(this.pnMidR);
-            this.pnBackground.Controls.Add(this.pnMidL);
-            this.pnBackground.Controls.Add(this.panel2);
-            this.pnBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBackground.GradientBottomLeft = System.Drawing.Color.Navy;
-            this.pnBackground.GradientBottomRight = System.Drawing.Color.SeaGreen;
-            this.pnBackground.GradientTopLeft = System.Drawing.Color.SeaGreen;
-            this.pnBackground.GradientTopRight = System.Drawing.Color.Red;
-            this.pnBackground.Location = new System.Drawing.Point(0, 0);
-            this.pnBackground.Name = "pnBackground";
-            this.pnBackground.Quality = 20;
-            this.pnBackground.Size = new System.Drawing.Size(1080, 720);
-            this.pnBackground.TabIndex = 7;
             // 
             // panel2
             // 
@@ -983,20 +967,32 @@
             this.lbTongQuan.Text = "TỔNG QUAN";
             this.lbTongQuan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tmrCPB
+            // cpbSucChua
             // 
-            this.tmrCPB.Interval = 1;
-            this.tmrCPB.Tick += new System.EventHandler(this.tmrCPB_Tick);
-            // 
-            // tmrClock
-            // 
-            this.tmrClock.Interval = 1000;
-            this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
+            this.cpbSucChua.animated = false;
+            this.cpbSucChua.animationIterval = 1;
+            this.cpbSucChua.animationSpeed = 1;
+            this.cpbSucChua.BackColor = System.Drawing.Color.Transparent;
+            this.cpbSucChua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpbSucChua.BackgroundImage")));
+            this.cpbSucChua.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpbSucChua.ForeColor = System.Drawing.Color.White;
+            this.cpbSucChua.LabelVisible = true;
+            this.cpbSucChua.LineProgressThickness = 10;
+            this.cpbSucChua.LineThickness = 10;
+            this.cpbSucChua.Location = new System.Drawing.Point(330, 0);
+            this.cpbSucChua.Margin = new System.Windows.Forms.Padding(7);
+            this.cpbSucChua.MaxValue = 100;
+            this.cpbSucChua.Name = "cpbSucChua";
+            this.cpbSucChua.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.cpbSucChua.ProgressColor = System.Drawing.Color.MediumSeaGreen;
+            this.cpbSucChua.Size = new System.Drawing.Size(100, 100);
+            this.cpbSucChua.TabIndex = 1;
+            this.cpbSucChua.Value = 0;
             // 
             // fmKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -1006,25 +1002,23 @@
             this.Name = "fmKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmKhoHang";
-            this.pnMidR.ResumeLayout(false);
-            this.pnMidR.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numWare)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
-            this.pnMidL.ResumeLayout(false);
-            this.pnMidL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvKho)).EndInit();
-            this.pnTop.ResumeLayout(false);
-            this.pnTop.PerformLayout();
-            this.pnMidL2.ResumeLayout(false);
-            this.pnMidL2.PerformLayout();
+            this.pnBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnItemAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvItem)).EndInit();
-            this.pnBackground.ResumeLayout(false);
+            this.pnTop.ResumeLayout(false);
+            this.pnTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            this.pnMidR.ResumeLayout(false);
+            this.pnMidR.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numWare)).EndInit();
+            this.pnMidL.ResumeLayout(false);
+            this.pnMidL.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvKho)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -1046,7 +1040,6 @@
         private System.Windows.Forms.DataGridView dtgvKho;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Timer tmrSlide;
-        private System.Windows.Forms.Panel pnMidL2;
         private System.Windows.Forms.DataGridView dtgvItem;
         private System.Windows.Forms.Timer tmrSlide2;
         private Bunifu.Framework.UI.BunifuGradientPanel pnBackground;
@@ -1060,7 +1053,7 @@
         private System.Windows.Forms.TextBox tbItemSearch;
         private Bunifu.Framework.UI.BunifuSwitch switchItemOpe;
         private System.Windows.Forms.NumericUpDown numItemSL;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbLonBe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
         private System.Windows.Forms.DataGridViewComboBoxColumn TENLOAI;
@@ -1087,12 +1080,13 @@
         private System.Windows.Forms.Label lbInfoQuanLiKho;
         private System.Windows.Forms.Label lbInfoDiaChiKho;
         private System.Windows.Forms.Label lbInfoTenKho;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbSL;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewComboBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewComboBoxColumn MNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOIHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGHANG;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

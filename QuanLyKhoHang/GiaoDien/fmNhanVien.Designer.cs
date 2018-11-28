@@ -64,15 +64,6 @@
             this.cbPosition = new System.Windows.Forms.ComboBox();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.dtgvEmp = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.switchStatus = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.tbEmpSearch = new System.Windows.Forms.TextBox();
-            this.btnEmpChangePW = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnEmpSave = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnEmpAdd = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnEmpDel = new Bunifu.Framework.UI.BunifuTileButton();
-            this.openAVT = new System.Windows.Forms.OpenFileDialog();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CREATEDAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +76,16 @@
             this.LASTLOGIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PERS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANLY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.switchStatus = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.tbEmpSearch = new System.Windows.Forms.TextBox();
+            this.btnEmpChangePW = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnEmpSave = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnEmpAdd = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnEmpDel = new Bunifu.Framework.UI.BunifuTileButton();
+            this.openAVT = new System.Windows.Forms.OpenFileDialog();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -523,7 +524,8 @@
             this.DIACHI,
             this.LASTLOGIN,
             this.PERS,
-            this.TINHTRANG});
+            this.TINHTRANG,
+            this.QUANLY});
             this.dtgvEmp.Location = new System.Drawing.Point(10, 10);
             this.dtgvEmp.Name = "dtgvEmp";
             this.dtgvEmp.Size = new System.Drawing.Size(721, 480);
@@ -531,6 +533,97 @@
             this.dtgvEmp.TabStop = false;
             this.dtgvEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvEmp_CellClick);
             this.dtgvEmp.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvEmp_CellValueChanged);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã nhân viên";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // TENTK
+            // 
+            this.TENTK.DataPropertyName = "TENTK";
+            this.TENTK.HeaderText = "Tên tài khoản";
+            this.TENTK.Name = "TENTK";
+            this.TENTK.ReadOnly = true;
+            // 
+            // CREATEDAY
+            // 
+            this.CREATEDAY.DataPropertyName = "CREATEDAY";
+            this.CREATEDAY.HeaderText = "Ngày tạo tài khoản";
+            this.CREATEDAY.Name = "CREATEDAY";
+            this.CREATEDAY.ReadOnly = true;
+            // 
+            // PASSWD
+            // 
+            this.PASSWD.DataPropertyName = "PASSWD";
+            this.PASSWD.HeaderText = "Mật khẩu";
+            this.PASSWD.Name = "PASSWD";
+            this.PASSWD.Visible = false;
+            // 
+            // AVT
+            // 
+            this.AVT.DataPropertyName = "AVT";
+            this.AVT.HeaderText = "Avatar";
+            this.AVT.Name = "AVT";
+            this.AVT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.AVT.Visible = false;
+            // 
+            // HOVATENDEM
+            // 
+            this.HOVATENDEM.DataPropertyName = "HOVATENDEM";
+            this.HOVATENDEM.HeaderText = "Họ và tên đệm";
+            this.HOVATENDEM.Name = "HOVATENDEM";
+            this.HOVATENDEM.Visible = false;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên";
+            this.TEN.Name = "TEN";
+            this.TEN.Visible = false;
+            // 
+            // NGAYSINH
+            // 
+            this.NGAYSINH.DataPropertyName = "NGAYSINH";
+            this.NGAYSINH.HeaderText = "Ngày sinh";
+            this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.Visible = false;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.Visible = false;
+            // 
+            // LASTLOGIN
+            // 
+            this.LASTLOGIN.DataPropertyName = "LASTLOGIN";
+            this.LASTLOGIN.HeaderText = "Lần đăng nhập cuối";
+            this.LASTLOGIN.Name = "LASTLOGIN";
+            this.LASTLOGIN.Visible = false;
+            // 
+            // PERS
+            // 
+            this.PERS.DataPropertyName = "PERS";
+            this.PERS.HeaderText = "Chức vụ";
+            this.PERS.Name = "PERS";
+            this.PERS.Visible = false;
+            // 
+            // TINHTRANG
+            // 
+            this.TINHTRANG.DataPropertyName = "TINHTRANG";
+            this.TINHTRANG.HeaderText = "Tình trạng";
+            this.TINHTRANG.Name = "TINHTRANG";
+            this.TINHTRANG.Visible = false;
+            // 
+            // QUANLY
+            // 
+            this.QUANLY.DataPropertyName = "QUANLY";
+            this.QUANLY.HeaderText = "Quản lý";
+            this.QUANLY.Name = "QUANLY";
             // 
             // panel2
             // 
@@ -551,13 +644,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(67, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 21);
+            this.label1.Size = new System.Drawing.Size(236, 20);
             this.label1.TabIndex = 101;
-            this.label1.Text = "Tình trạng (Hoạt động | Bị Khóa)";
+            this.label1.Text = "Tình trạng (Hoạt động | Bị khóa)";
             // 
             // switchStatus
             // 
@@ -673,96 +766,11 @@
             // 
             this.openAVT.FileName = "openAVT";
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã nhân viên";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // TENTK
-            // 
-            this.TENTK.DataPropertyName = "TENTK";
-            this.TENTK.HeaderText = "Tên tài khoản";
-            this.TENTK.Name = "TENTK";
-            this.TENTK.ReadOnly = true;
-            // 
-            // CREATEDAY
-            // 
-            this.CREATEDAY.DataPropertyName = "CREATEDAY";
-            this.CREATEDAY.HeaderText = "Ngày tạo tài khoản";
-            this.CREATEDAY.Name = "CREATEDAY";
-            this.CREATEDAY.ReadOnly = true;
-            // 
-            // PASSWD
-            // 
-            this.PASSWD.DataPropertyName = "PASSWD";
-            this.PASSWD.HeaderText = "Mật khẩu";
-            this.PASSWD.Name = "PASSWD";
-            this.PASSWD.Visible = false;
-            // 
-            // AVT
-            // 
-            this.AVT.DataPropertyName = "AVT";
-            this.AVT.HeaderText = "Avatar";
-            this.AVT.Name = "AVT";
-            this.AVT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.AVT.Visible = false;
-            // 
-            // HOVATENDEM
-            // 
-            this.HOVATENDEM.DataPropertyName = "HOVATENDEM";
-            this.HOVATENDEM.HeaderText = "Họ và tên đệm";
-            this.HOVATENDEM.Name = "HOVATENDEM";
-            this.HOVATENDEM.Visible = false;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên";
-            this.TEN.Name = "TEN";
-            this.TEN.Visible = false;
-            // 
-            // NGAYSINH
-            // 
-            this.NGAYSINH.DataPropertyName = "NGAYSINH";
-            this.NGAYSINH.HeaderText = "Ngày sinh";
-            this.NGAYSINH.Name = "NGAYSINH";
-            this.NGAYSINH.Visible = false;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.Visible = false;
-            // 
-            // LASTLOGIN
-            // 
-            this.LASTLOGIN.DataPropertyName = "LASTLOGIN";
-            this.LASTLOGIN.HeaderText = "Lần đăng nhập cuối";
-            this.LASTLOGIN.Name = "LASTLOGIN";
-            this.LASTLOGIN.Visible = false;
-            // 
-            // PERS
-            // 
-            this.PERS.DataPropertyName = "PERS";
-            this.PERS.HeaderText = "Chức vụ";
-            this.PERS.Name = "PERS";
-            this.PERS.Visible = false;
-            // 
-            // TINHTRANG
-            // 
-            this.TINHTRANG.DataPropertyName = "TINHTRANG";
-            this.TINHTRANG.HeaderText = "Tình trạng";
-            this.TINHTRANG.Name = "TINHTRANG";
-            this.TINHTRANG.Visible = false;
-            // 
             // fmNhanVien
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 720);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -856,5 +864,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LASTLOGIN;
         private System.Windows.Forms.DataGridViewTextBoxColumn PERS;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANLY;
     }
 }

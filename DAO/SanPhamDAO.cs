@@ -20,10 +20,10 @@ namespace DAO
             }
         }
 
-        public List<SanPham> loadData(string idkho)
+        public List<SanPham> loadData(string tenkho)
         {
             List<SanPham> lSanPham = new List<SanPham>();
-            string str = "SELECT * FROM dbo.FN_Kho_GetItemByKho('" + idkho + "')";
+            string str = "SELECT * FROM dbo.FN_Kho_GetItemByKho('" + tenkho + "')";
             DataTable data =  DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {

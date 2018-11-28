@@ -19,9 +19,9 @@ namespace BUS
                 return instance;
             }
         }
-        public void loadData(DataGridView dgv)
+        public void loadData(DataGridView dgv, string id)
         {
-            dgv.DataSource = DAO.KhoDAO.INSTANCE.loadData();
+            dgv.DataSource = DAO.KhoDAO.INSTANCE.loadData(id);
         }
 
         public List<string> loadDataMNG()
@@ -86,7 +86,7 @@ namespace BUS
         public List<string> loadDataTen()
         {
             List<string> lten = new List<string>();
-            foreach (DTO.Kho lkho in DAO.KhoDAO.INSTANCE.loadData())
+            foreach (DTO.Kho lkho in DAO.KhoDAO.INSTANCE.loadData("TK000"))
             {
                 lten.Add(lkho.TEN);
             }

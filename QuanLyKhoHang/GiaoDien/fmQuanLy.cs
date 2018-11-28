@@ -15,7 +15,8 @@ namespace QuanLyKhoHang.GiaoDien
     public partial class fmQuanLy : Form
     {
         public static string sName = null;
-
+        public static string sID = null;
+        
         public fmQuanLy()
         {
             InitializeComponent();
@@ -23,39 +24,62 @@ namespace QuanLyKhoHang.GiaoDien
             pnProfile.Size = new Size(lbTenTK.Size.Width + 120, 97);
             btnExtend.Location = new Point(pnProfile.Size.Width - btnExtend.Size.Width, pnProfile.Size.Height - btnExtend.Size.Height);
             sName = lbDataLN.Text + " " + lbDataFN.Text;
+            sID = lbDataID.Text;
+            if (lbPosition.Text == "Quản trị tối cao")
+            {
+                return;
+            }
+            else if(lbPosition.Text == "Quản lý")
+            {
+                btnAna.Enabled = false;
+                btnCus.Enabled = false;
+                btnSup.Enabled = false;
+            }
+            else
+            {
+                btnAna.Enabled = false;
+                btnCus.Enabled = false;
+                btnSup.Enabled = false;
+                btnKho.Enabled = false;
+                btnEmp.Enabled = false;
+            }
         }
 
         private void btnKho_Click(object sender, EventArgs e)
         {
             
             new fmKho().Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCus_Click(object sender, EventArgs e)
         {
-
+            new fmKhachHang().Show();
+            this.Hide();
         }
 
         private void btnEmp_Click(object sender, EventArgs e)
         {
-
+            new fmNhanVien().Show();
+            this.Hide();
         }
 
         private void btnSup_Click(object sender, EventArgs e)
         {
-  
+            new fmNhaCC().Show();
+            this.Hide();
         }
 
         private void btnAna_Click(object sender, EventArgs e)
         {
-      
+            new fmThongKe().Show();
+            this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             new fmDangNhap().Show();
-            this.Hide();
+            this.Close();
         }
 
 
@@ -94,7 +118,7 @@ namespace QuanLyKhoHang.GiaoDien
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.Contains("Index was outside")?"Cập nhật Avatar thất bại!":ex.Message, "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             loadData();
         }
@@ -129,19 +153,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                fmInputPW fm = new fmInputPW();
-                fm.ShowDialog();
-                if(fmInputPW.npw == null)
-                    return;
-                BUS.TaiKhoanBUS.INSTANCE.updatePW(lbDataID.Text, fmInputPW.opw, fmInputPW.npw);
-                MessageBox.Show("Cập nhật mật khẩu thành công!", "Thay đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            new fmInputPW(lbDataID.Text).ShowDialog(); 
             loadData();
         }
 
@@ -149,7 +161,7 @@ namespace QuanLyKhoHang.GiaoDien
         {
             try
             {
-                string temp = Interaction.InputBox("Input your first name...\nNote: Data must not null!", "Input", null);
+                string temp = Interaction.InputBox("Nhập tên của bạn...\nChú ý: Dữ liệu không được rỗng!", "Đổi tên", null);
                 if (temp == "") return;
                 BUS.TaiKhoanBUS.INSTANCE.updateInfo(lbDataID.Text, lbDataLN.Text, temp, lbDataDOB.Text, lbDataAD.Text, lbPosition.Text, lbDataST.Text);
             }
@@ -164,7 +176,7 @@ namespace QuanLyKhoHang.GiaoDien
         {
             try
             {
-                string temp = Interaction.InputBox("Input your last name...\nNote: Data must not null!", "Input", null);
+                string temp = Interaction.InputBox("Nhập họ và tên đệm của bạn...\nChú ý: Dữ liệu không được rỗng!", "Đổi họ và tên đệm", null);
                 BUS.TaiKhoanBUS.INSTANCE.updateInfo(lbDataID.Text, temp, lbDataFN.Text, lbDataDOB.Text, lbDataAD.Text, lbPosition.Text, lbDataST.Text);
             }
             catch (Exception ex )
@@ -193,7 +205,7 @@ namespace QuanLyKhoHang.GiaoDien
         {
             try
             {
-                string temp = Interaction.InputBox("Input yours address..\nNote: Data must not null!", "Input", null);
+                string temp = Interaction.InputBox("Nhập địa chỉ...\nChú ý: Dữ liệu không được rỗng", "Đổi địa chỉ", null);
                 if (temp == "") return;
                 BUS.TaiKhoanBUS.INSTANCE.updateInfo(lbDataID.Text, lbDataLN.Text, lbDataFN.Text, lbDataDOB.Text, temp, lbPosition.Text, lbDataST.Text);
             }
@@ -202,6 +214,18 @@ namespace QuanLyKhoHang.GiaoDien
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             loadData();
+        }
+
+        private void btnInput_Click(object sender, EventArgs e)
+        {
+            new fmPhieuNhap().Show();
+            this.Close();
+        }
+
+        private void btnOutput_Click(object sender, EventArgs e)
+        {
+            new fmPhieuXuat().Show();
+            this.Close();
         }
     }
 }

@@ -12,23 +12,34 @@ namespace QuanLyKhoHang.GiaoDien
 {
     public partial class fmInputPW : Form
     {
-        public static string opw = null;
-        public static string npw = null;
-        public fmInputPW()
+        private string id = null;
+        public fmInputPW(string temp)
         {
             InitializeComponent();
+            id = temp;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (tbNewPW.Text != tbCfmPW.Text)
+            try
             {
-                MessageBox.Show("Mật khẩu xác nhận không đúng!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (tbNewPW.Text != tbCfmPW.Text)
+                {
+                    MessageBox.Show("Mật khẩu xác nhận không đúng!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if(tbNewPW.Text == string.Empty)
+                {
+                    MessageBox.Show("Mật khẩu không được rỗng!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                BUS.TaiKhoanBUS.INSTANCE.updatePW(id, tbOldPW.Text, tbNewPW.Text);
+                MessageBox.Show("Cập nhật mật khẩu thành công!", "Thay đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            opw = tbOldPW.Text;
-            npw = tbNewPW.Text;
-            this.Close();
         }
     }
 }

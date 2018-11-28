@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Environment;
 
 namespace QuanLyKhoHang.GiaoDien
 {
@@ -18,6 +20,22 @@ namespace QuanLyKhoHang.GiaoDien
             InitializeComponent();
             tbACC.Text = QuanLyKhoHang.Properties.Settings.Default.UserName;
             tbPW.Text = QuanLyKhoHang.Properties.Settings.Default.UserPassword;
+            lbCurIP.Text = QuanLyKhoHang.Properties.Settings.Default.Server;
+            BUS.DangNhapBUS.INSTANCE.setIP(lbCurIP.Text);
+            cpbLoading2.Visible = true;
+            try
+            {
+                File.Copy("CenturyGothic.TTF",
+                 Path.Combine(Environment.GetFolderPath(SpecialFolder.Windows), "Fonts", "CenturyGothic.TTF"));
+                Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts");
+                key.SetValue("My Font Description", "CenturyGothic.TTF");
+                key.Close();
+                this.Refresh();
+            }
+            catch (Exception)
+            {
+                return;
+            }
 
         }
 
@@ -25,45 +43,60 @@ namespace QuanLyKhoHang.GiaoDien
         {
             QuanLyKhoHang.Properties.Settings.Default.UserName = null;
             QuanLyKhoHang.Properties.Settings.Default.UserPassword = null;
+            //QuanLyKhoHang.Properties.Settings.Default.Server = null;
             QuanLyKhoHang.Properties.Settings.Default.Save();
             Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == 2)
+            try
             {
-                MessageBox.Show("Tài khoản đang bị khóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == 0)
+                if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == 2)
+                {
+                    MessageBox.Show("Tài khoản đang bị khóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == 0)
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == -1)
+                {
+                    MessageBox.Show("Lỗi không xác định", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                tentk = tbACC.Text;
+                if (cbRemember.Checked == true)
+                {
+                    QuanLyKhoHang.Properties.Settings.Default.UserName = tbACC.Text;
+                    QuanLyKhoHang.Properties.Settings.Default.UserPassword = tbPW.Text;
+                    QuanLyKhoHang.Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    QuanLyKhoHang.Properties.Settings.Default.UserName = null;
+                    QuanLyKhoHang.Properties.Settings.Default.UserPassword = null;
+                    QuanLyKhoHang.Properties.Settings.Default.Save();
+                }
+                BUS.TaiKhoanBUS.INSTANCE.updateLastLogin(tentk);
+                cpbLoading2.Visible = false;
+                cpLoading.Visible = true;
+                tmrLoading.Start();
+                pnRight.Enabled = false;
+            }catch(Exception)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (MessageBox.Show("Kết nối máy chủ thất bại!\nBạn có muốn tìm kiếm IP server?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+                    == DialogResult.Yes)
+                    new fmScanIP().ShowDialog();
+                if (fmScanIP.flag == false)
+                {
+                    MessageBox.Show("Không tìm thấy IP server!\nVui lòng cài đặt bằng tay.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    new fmInputIP().ShowDialog();
+                }
+                lbCurIP.Text = QuanLyKhoHang.Properties.Settings.Default.Server;
             }
-            if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == -1)
-            {
-                MessageBox.Show("Lỗi không xác định", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            tentk = tbACC.Text;
-            if (cbRemember.Checked == true)
-            {
-                QuanLyKhoHang.Properties.Settings.Default.UserName = tbACC.Text;
-                QuanLyKhoHang.Properties.Settings.Default.UserPassword = tbPW.Text;
-                QuanLyKhoHang.Properties.Settings.Default.Save();
-            }
-            else
-            {
-                QuanLyKhoHang.Properties.Settings.Default.UserName = null;
-                QuanLyKhoHang.Properties.Settings.Default.UserPassword = null;
-                QuanLyKhoHang.Properties.Settings.Default.Save();
-            }
-            BUS.TaiKhoanBUS.INSTANCE.updateLastLogin(tentk);
-            cpLoading.Visible = true;
-            pnRight.Enabled = false;
-            tmrLoading.Start();
-          
         }
 
         private void tmrLoading_Tick(object sender, EventArgs e)
@@ -77,9 +110,35 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 tmrLoading.Stop();
                 new fmQuanLy().Show();
-
                 this.Hide();
             }
+        }
+
+        private void pbHide_Click(object sender, EventArgs e)
+        {
+            if (tbPW.PasswordChar == '●')
+            {
+                tbPW.PasswordChar = '\0';
+                pbHide.Image = QuanLyKhoHang.Properties.Resources.eyeclose;
+            }
+            else
+            {
+                tbPW.PasswordChar = '●';
+                pbHide.Image = QuanLyKhoHang.Properties.Resources.tongquan;
+            }
+            tbPW.Refresh();
+        }
+
+        private void btnLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString() == "\r")
+                btnLogin_Click(null, null);
+        }
+
+        private void fmDangNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString() == "\r")
+                btnLogin_Click(null, null);
         }
     }
 }

@@ -69,11 +69,23 @@
     <Compile Include="GiaoDien\fmInputDateTime.Designer.cs">
       <DependentUpon>fmInputDateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDien\fmInputIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmInputIP.Designer.cs">
+      <DependentUpon>fmInputIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\fmInputPW.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GiaoDien\fmInputPW.Designer.cs">
       <DependentUpon>fmInputPW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien\fmInputSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmInputSanPham.Designer.cs">
+      <DependentUpon>fmInputSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaoDien\fmInsertEmp.cs">
       <SubType>Form</SubType>
@@ -129,6 +141,12 @@
     </Compile>
     <Compile Include="GiaoDien\fmQuanLy.Designer.cs">
       <DependentUpon>fmQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien\fmScanIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\fmScanIP.Designer.cs">
+      <DependentUpon>fmScanIP.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaoDien\fmThongKe.cs">
       <SubType>Form</SubType>
@@ -205,8 +223,14 @@
     <EmbeddedResource Include="GiaoDien\fmInputDateTime.resx">
       <DependentUpon>fmInputDateTime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmInputIP.resx">
+      <DependentUpon>fmInputIP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmInputPW.resx">
       <DependentUpon>fmInputPW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmInputSanPham.resx">
+      <DependentUpon>fmInputSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmInsertEmp.resx">
       <DependentUpon>fmInsertEmp.cs</DependentUpon>
@@ -234,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmQuanLy.resx">
       <DependentUpon>fmQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\fmScanIP.resx">
+      <DependentUpon>fmScanIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\fmThongKe.resx">
       <DependentUpon>fmThongKe.cs</DependentUpon>
@@ -382,6 +409,30 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tongquan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeclose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\input.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

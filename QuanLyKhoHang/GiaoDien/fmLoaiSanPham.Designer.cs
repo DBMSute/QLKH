@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmLoaiSanPham));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmLoaiSanPham));
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.lbClock = new System.Windows.Forms.Label();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbLSP = new System.Windows.Forms.Label();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.dtgvLSP = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnMidR = new System.Windows.Forms.Panel();
@@ -46,9 +49,7 @@
             this.btnLSPAdd = new Bunifu.Framework.UI.BunifuTileButton();
             this.tbLSPSearch = new System.Windows.Forms.TextBox();
             this.pnTop = new System.Windows.Forms.Panel();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.pnMidL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLSP)).BeginInit();
@@ -133,6 +134,27 @@
             this.dtgvLSP.TabStop = false;
             this.dtgvLSP.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLSP_CellValueChanged);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã loại sản phẩm";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên loại";
+            this.TEN.Name = "TEN";
+            // 
+            // MOTA
+            // 
+            this.MOTA.DataPropertyName = "MOTA";
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MOTA.DefaultCellStyle = dataGridViewCellStyle1;
+            this.MOTA.HeaderText = "Mô tả";
+            this.MOTA.Name = "MOTA";
+            // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
@@ -149,7 +171,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1080, 720);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1080, 722);
             this.bunifuGradientPanel1.TabIndex = 8;
             // 
             // panel2
@@ -279,32 +301,18 @@
             this.pnTop.Size = new System.Drawing.Size(1080, 100);
             this.pnTop.TabIndex = 3;
             // 
-            // ID
+            // bunifuDragControl1
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã loại sản phẩm";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên loại";
-            this.TEN.Name = "TEN";
-            // 
-            // MOTA
-            // 
-            this.MOTA.DataPropertyName = "MOTA";
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MOTA.DefaultCellStyle = dataGridViewCellStyle1;
-            this.MOTA.HeaderText = "Mô tả";
-            this.MOTA.Name = "MOTA";
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.pnTop;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // fmLoaiSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 720);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1080, 722);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -344,5 +352,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn MOTA;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

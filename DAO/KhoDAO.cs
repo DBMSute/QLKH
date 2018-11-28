@@ -20,10 +20,14 @@ namespace DAO
                 return instance;
             }
         }
-        public List<Kho> loadData()
+        public List<Kho> loadData(string idEmp)
         {
             List<Kho> lKho = new List<Kho>();
-            string str = "SELECT * FROM dbo.VI_Kho_LoadData";
+            string str;
+            if (idEmp == "TK000")
+                str = "SELECT * FROM dbo.VI_Kho_LoadData";
+            else
+                str = "SELECT * FROM dbo.VI_Kho_LoadData WHERE dbo.VI_Kho_LoadData.manager = '" + idEmp.Trim() + "'";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {

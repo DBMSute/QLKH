@@ -19,7 +19,7 @@ namespace DAO
                 return instance;
             }
         }
-        public string connStr = @"Data Source=localhost;Initial Catalog=FinalProject;Integrated Security=True";
+        private static string connStr = " ";
         //public string connStr = @"Server=tcp:c601.database.windows.net,1433;
         //                        Initial Catalog=FinalProject;
         //                        Persist Security Info=False;
@@ -28,7 +28,29 @@ namespace DAO
         //                        Encrypt=True;
         //                        TrustServerCertificate=False;
         //                        Connection Timeout=300;";
-                                
+        public void setIP(string ip)
+        {
+            connStr = @"Data Source="+ip+ ",1433; Initial Catalog=FinalProject; User ID = datnt; Password = 123456; Connect Timeout=7";
+        }     
+        
+        public bool IsServerConnected()
+        {
+            using (SqlConnection connection = new SqlConnection(connStr))
+            {
+                try
+                {
+                    connection.Open();
+                    connection.Close();
+                    return true;
+                }
+                catch (SqlException)
+                {
+                    connection.Close();
+                    return false;
+                }
+            }
+        }
+
         public DataTable ExecuteQueryTable(string QuerySql)
         {
             DataTable data = new DataTable();

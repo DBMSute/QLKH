@@ -20,23 +20,25 @@ namespace QuanLyKhoHang.GiaoDien
         {
             InitializeComponent();
 
-            BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp);
+            BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
             tmrClock.Start();
             loadData(0);
             btnEmpSave.color = Color.SeaGreen;
             btnEmpSave.colorActive = Color.MediumSeaGreen;
+            if(fmQuanLy.sID!="TK000") cbPosition.Enabled = false;
         }
 
         public void loadData(int row)
         {
-            BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp);
+            BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
             dtgvEmp.CurrentCell = dtgvEmp[0, row];
             dtgvEmp_CellClick(null, null);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            new fmQuanLy().Show();
         }
 
         private void dtgvEmp_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -59,7 +61,7 @@ namespace QuanLyKhoHang.GiaoDien
         private void btnEmpAdd_Click(object sender, EventArgs e)
         {
             new fmInsertEmp().ShowDialog();
-            BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp);
+            BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
         }
 
         private void btnEmpDel_Click(object sender, EventArgs e)
@@ -70,13 +72,13 @@ namespace QuanLyKhoHang.GiaoDien
                     return;
                 BUS.NhanVienBUS.INSTANCE.Delete(dtgvEmp.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp);
+                BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
                 loadData(0);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.Contains("REFERENCE") == true ? "Tài khoản đang quản lý một kho nào đó!" : ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp);
+                BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
             }
         }
 
@@ -174,7 +176,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbEmpSearch.Text == "")
             {
                 tbEmpSearch.Text = "Tìm kiếm...";
-                BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp);
+                BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
             }
         }
 
@@ -204,10 +206,7 @@ namespace QuanLyKhoHang.GiaoDien
         {
             try
             {
-                new fmInputPW().ShowDialog();
-                if (fmInputPW.npw == null) return;
-                BUS.TaiKhoanBUS.INSTANCE.updatePW(dtgvEmp.CurrentRow.Cells[0].Value.ToString(), fmInputPW.opw, fmInputPW.npw);
-                MessageBox.Show("Đổi mật khẩu thành công!", "Đổi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new fmInputPW(dtgvEmp.CurrentRow.Cells[0].Value.ToString()).ShowDialog();
                 dtgvEmp_CellClick(null, null);
             }
             catch(Exception ex)

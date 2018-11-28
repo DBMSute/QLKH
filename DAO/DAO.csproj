@@ -49,7 +49,6 @@
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\Kho.cs" />
     <Compile Include="DTO\LoaiSanPham.cs" />
-    <Compile Include="DTO\MatKhauCu.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\PhieuNhap.cs" />
     <Compile Include="DTO\PhieuXuat.cs" />
@@ -67,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamDAO.cs" />
     <Compile Include="TaiKhoanDAO.cs" />
+    <Compile Include="ThongKeDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
