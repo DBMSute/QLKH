@@ -19,13 +19,13 @@ namespace QuanLyKhoHang.GiaoDien
         public fmNhanVien()
         {
             InitializeComponent();
-
+            QUANLY.DataSource = BUS.NhanVienBUS.INSTANCE.loadIdMng();
             BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
             tmrClock.Start();
-            loadData(0);
+            if(dtgvEmp.Rows.Count > 0) loadData(0);
             btnEmpSave.color = Color.SeaGreen;
-            btnEmpSave.colorActive = Color.MediumSeaGreen;
-            if(fmQuanLy.sID!="TK000") cbPosition.Enabled = false;
+            btnEmpSave.colorActive = Color.MediumSeaGreen;         
+            if(fmQuanLy.sID != "TK000") cbPosition.Enabled = false;
         }
 
         public void loadData(int row)
@@ -47,7 +47,7 @@ namespace QuanLyKhoHang.GiaoDien
             lbDataLN.Text = dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[4].Value.ToString();
             lbDataDOB.Text = dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[8].Value.ToString();
             lbDataADD.Text = dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[6].Value.ToString();
-            lbDataLG.Text = dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            lbDataLG.Text = dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[7].Value.ToString(); 
             pnAVT.BackgroundImage = (byte[])dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[3].Value == null ? QuanLyKhoHang.Properties.Resources.erroravt : Image.FromStream(new MemoryStream((byte[])dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[3].Value));
             lbDataPosition.Text = (int)dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[10].Value == 1 ? "Quản trị tối cao" : ((int)dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[10].Value == 2 ? "Quản lý" : "Nhân viên");
             switchTinhTrang.Value = (int)dtgvEmp.Rows[dtgvEmp.CurrentCell.RowIndex].Cells[11].Value == 1 ? true : false;
@@ -62,6 +62,7 @@ namespace QuanLyKhoHang.GiaoDien
         {
             new fmInsertEmp().ShowDialog();
             BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
+            this.Refresh();
         }
 
         private void btnEmpDel_Click(object sender, EventArgs e)
@@ -97,9 +98,12 @@ namespace QuanLyKhoHang.GiaoDien
                 MessageBox.Show("Lưu thành công!", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnEmpSave.color = Color.SeaGreen;
                 btnEmpSave.colorActive = Color.MediumSeaGreen;
+                QUANLY.Items.Clear();
+                QUANLY.DataSource = BUS.NhanVienBUS.INSTANCE.loadIdMng();
             }   catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Lỗi", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                BUS.NhanVienBUS.INSTANCE.loadData(dtgvEmp, fmQuanLy.sID);
             }
         }
 
@@ -212,6 +216,15 @@ namespace QuanLyKhoHang.GiaoDien
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dtgvEmp_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(fmQuanLy.sID != "TK000" && dtgvEmp.CurrentCell.ColumnIndex == 12)
+            {
+                MessageBox.Show("Bạn không có quyền thực hiện thao tác này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loadData(0);
             }
         }
     }

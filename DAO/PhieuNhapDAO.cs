@@ -20,11 +20,15 @@ namespace DAO
             }
         }
 
-        public List<PhieuNhap> loadData()
+        public List<PhieuNhap> loadData(string idEmp)
         {
             List<PhieuNhap> lPN = new List<PhieuNhap>();
             DateTime date = new DateTime();
-            string str = "SELECT * FROM dbo.VI_PhieuNhap_LoadData";
+            string str;
+            if (idEmp == "TK000")
+                str = "SELECT * FROM dbo.VI_PhieuNhap_LoadData";
+            else
+                str = "SELECT * FROM dbo.VI_PhieuNhap_LoadData WHERE taikhoan = '" + idEmp + "'";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -32,15 +36,16 @@ namespace DAO
                 date = (DateTime)item["ngaygio"];
                 string ngaygio = date.ToString("G", new System.Globalization.CultureInfo("es-ES"));
                 int trangthai = Convert.ToInt32(item["trangthai"]);
-                PhieuNhap pn = new PhieuNhap(id, ngaygio, trangthai);
+                string taikhoan = item["taikhoan"].ToString();
+                PhieuNhap pn = new PhieuNhap(id, ngaygio, trangthai, taikhoan);
                 lPN.Add(pn);
             }
             return lPN;
         }
 
-        public void Insert()
+        public void Insert(string idEmp)
         {
-            string str = "EXEC dbo.sp_Insert_PhieuNhap";
+            string str = "EXEC dbo.sp_Insert_PhieuNhap @idtk = '" + idEmp + "'";
             DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
@@ -56,7 +61,8 @@ namespace DAO
                 date = (DateTime)item["ngaygio"];
                 string ngaygio = date.ToString("G", new System.Globalization.CultureInfo("es-ES"));
                 int trangthai = Convert.ToInt32(item["trangthai"]);
-                PhieuNhap pn = new PhieuNhap(id, ngaygio, trangthai);
+                string taikhoan = item["taikhoan"].ToString();
+                PhieuNhap pn = new PhieuNhap(id, ngaygio, trangthai, taikhoan);
                 lPN.Add(pn);
             }
             return lPN;
@@ -74,7 +80,8 @@ namespace DAO
                 date = (DateTime)item["ngaygio"];
                 string ngaygio = date.ToString("G", new System.Globalization.CultureInfo("es-ES"));
                 int trangthai = Convert.ToInt32(item["trangthai"]);
-                PhieuNhap pn = new PhieuNhap(id, ngaygio, trangthai);
+                string taikhoan = item["taikhoan"].ToString();
+                PhieuNhap pn = new PhieuNhap(id, ngaygio, trangthai, taikhoan);
                 lPN.Add(pn);
             }
             return lPN;
@@ -92,7 +99,8 @@ namespace DAO
                 date = (DateTime)item["ngaygio"];
                 string ngaygio = date.ToString("G", new System.Globalization.CultureInfo("es-ES"));
                 int trangthai = Convert.ToInt32(item["trangthai"]);
-                PhieuNhap pn = new PhieuNhap(id, ngaygio, trangthai);
+                string taikhoan = item["taikhoan"].ToString();
+                PhieuNhap pn = new PhieuNhap(id, ngaygio, trangthai, taikhoan);
                 lPN.Add(pn);
             }
             return lPN;

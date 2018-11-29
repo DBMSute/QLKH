@@ -19,9 +19,9 @@ namespace BUS
             }
         }
 
-        public void loadData(DataGridView dgv)
+        public void loadData(DataGridView dgv, string idEmp)
         {
-            dgv.DataSource = DAO.PhieuNhapDAO.INSTANCE.loadData();
+            dgv.DataSource = DAO.PhieuNhapDAO.INSTANCE.loadData(idEmp);
         }
 
         public void searchByKeyword(DataGridView dgv, string keyword)
@@ -44,9 +44,9 @@ namespace BUS
             DAO.PhieuNhapDAO.INSTANCE.Delete(id);
         }
 
-        public void Insert()
+        public void Insert(string idEmp)
         { 
-            DAO.PhieuNhapDAO.INSTANCE.Insert();
+            DAO.PhieuNhapDAO.INSTANCE.Insert(idEmp);
         }
 
         public void saveEdit(string id, int trangthai)

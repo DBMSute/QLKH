@@ -16,9 +16,9 @@ namespace QuanLyKhoHang.GiaoDien
         private bool flagSave = false;
         public static string tempCD = null;
         public fmPhieuNhap()
-        { 
+        {
             InitializeComponent();
-            pnMidL2.Location = new Point(-1190, 110);            
+            pnMidL2.Location = new Point(-1190, 110);
             Init();
             tmrClock.Start();
         }
@@ -27,16 +27,19 @@ namespace QuanLyKhoHang.GiaoDien
         {
             try
             {
-                TENKHO.DataSource = BUS.KhoBUS.INSTANCE.loadDataTen();
+                TENKHO.DataSource = BUS.KhoBUS.INSTANCE.loadDataTen(fmQuanLy.sID);
                 TENNCC.DataSource = BUS.NhaCungCapBUS.INSTANCE.loadDataTen();
-                TENSP.DataSource = BUS.SanPhamBUS.INSTANCE.loadDataTen();
+                TENLSP.DataSource = BUS.LoaiSanPhamBUS.INSTANCE.loadDataTen();
                 tmrClock.Start();
-                BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN);
-                dtgvPN.CurrentCell = dtgvPN[0, 0];
-                dtgvPN_CellClick(null, null);
+                BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
+                if (dtgvPN.Rows.Count > 0)
+                {
+                    dtgvPN.CurrentCell = dtgvPN[0, 0];
+                    dtgvPN_CellClick(null, null);
+                }
             }
             catch (Exception ex)
-            {   
+            {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -77,9 +80,9 @@ namespace QuanLyKhoHang.GiaoDien
         private void btnPNAdd_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Mọi dữ liệu được tạo tự động.\nBạn có chắc muốn thêm phiếu nhập này?", "Thêm dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
-                    return;
-            BUS.PhieuNhapBUS.INSTANCE.Insert();
-            BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN);
+                return;
+            BUS.PhieuNhapBUS.INSTANCE.Insert(fmQuanLy.sID);
+            BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             dtgvPN.CurrentCell = dtgvPN[0, Convert.ToInt32((dtgvPN.RowCount-1).ToString())];
             dtgvPN_CellClick(null, null);
         }
@@ -92,12 +95,12 @@ namespace QuanLyKhoHang.GiaoDien
                     return;
                 BUS.PhieuNhapBUS.INSTANCE.Delete(dtgvPN.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN);
+                BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN);
+                BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             }
         }
 
@@ -135,7 +138,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbPNSearch.Text == "")
             {
                 tbPNSearch.Text = "Tìm kiếm...";
-                BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN);
+                BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             }
         }
 
@@ -240,6 +243,7 @@ namespace QuanLyKhoHang.GiaoDien
                 BUS.ChiTietPhieuNhapBUS.INSTANCE.Delete(lbPNName.Text, dtgvCTPN.CurrentRow.Cells[1].Value.ToString());
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
+                loadTongQuan(dtgvCTPN);
             }
             catch (Exception ex)
             {
@@ -264,12 +268,14 @@ namespace QuanLyKhoHang.GiaoDien
                     BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
                     MessageBox.Show("Đã lưu!", "Thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnCPTNSave.BackColor = Color.SeaGreen;
+                    loadTongQuan(dtgvCTPN);
                 }
                 else
                 {
                     MessageBox.Show("Sửa dữ liệu không khả dụng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
                     btnCPTNSave.BackColor = Color.SeaGreen;
+                    loadTongQuan(dtgvCTPN);
                 }
             }
             catch (Exception ex)
@@ -310,6 +316,9 @@ namespace QuanLyKhoHang.GiaoDien
         private void dtgvCTPN_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             btnCPTNSave.BackColor = Color.FromArgb(192, 0, 0);
+            if (flagSave == true)
+                if ((e.ColumnIndex == 5 && dtgvCTPN.CurrentRow.Cells[6].Value.ToString() != "0") || (e.ColumnIndex == 6 && dtgvCTPN.CurrentRow.Cells[5].Value.ToString() != "0"))
+                    dtgvCTPN.CurrentRow.Cells[7].Value = Convert.ToInt32(dtgvCTPN.CurrentRow.Cells[6].Value.ToString()) * Convert.ToDecimal(dtgvCTPN.CurrentRow.Cells[5].Value.ToString());
         }
 
         private void dtgvPN_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -334,14 +343,14 @@ namespace QuanLyKhoHang.GiaoDien
                 "Chú ý: Một khi đã thanh toán thành công thì không thể phục hồi!", "Thanh toán phiếu nhập", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
                 return;
             BUS.PhieuNhapBUS.INSTANCE.saveEdit(dtgvPN.CurrentRow.Cells[0].Value.ToString(), 1);
-            BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN);
+            BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             dtgvPN.CurrentCell = dtgvPN[0, 0];
             dtgvPN_CellClick(null, null);
         }
 
         private void btnPNReload_Click(object sender, EventArgs e)
         {
-            BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN);
+            BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             dtgvPN.CurrentCell = dtgvPN[0, 0];
             dtgvPN_CellClick(null, null);
 

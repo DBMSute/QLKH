@@ -20,10 +20,14 @@ namespace DAO
             }
         }
 
-        public List<ChiTietPhieuXuat> loadData(string id)
+        public List<ChiTietPhieuXuat> loadData(string idpx, string idEmp)
         {
             List<ChiTietPhieuXuat> lCTPX = new List<ChiTietPhieuXuat>();
-            string str = "SELECT * FROM dbo.VI_ChiTietPhieuXuat_LoadData WHERE idpx = '" + id + "'";
+            string str;
+            if (idEmp == "TK000")
+                str = "SELECT * FROM dbo.VI_ChiTietPhieuXuat_LoadData WHERE idpx = '" + idpx + "'";
+            else
+                str = "SELECT * FROM dbo.FN_ChiTietPhieuXuat_LoadDataByIdTk('" + idEmp + "') WHERE idpx ='" + idpx + "'";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -145,7 +149,7 @@ namespace DAO
         public void Delete(string idpn, string tensp)
         {
             string str = "EXEC dbo.sp_Delete_CTPX @idpx = '" + idpn + "'," +
-                         "@tensp = '" + tensp + "'";
+                         "@tensp = N'" + tensp + "'";
             DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 

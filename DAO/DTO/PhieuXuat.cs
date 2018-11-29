@@ -8,7 +8,7 @@ namespace DTO
 {
    public class PhieuXuat
     {
-        private string id, ngayGio;
+        private string id, ngayGio, taiKhoan;
         private int trangThai;
 
         public string ID
@@ -26,11 +26,17 @@ namespace DTO
             get { return trangThai; }
             set { trangThai = value; }
         }
-        public PhieuXuat(string id, string ngayGio, int trangThai)
+        public string TAIKHOAN
+        {
+            get { return taiKhoan; }
+            set { taiKhoan = value; }
+        }
+        public PhieuXuat(string id, string ngayGio, int trangThai,string taiKhoan)
         {
             this.ID = id;
             this.NGAYGIO = ngayGio;
             this.TRANGTHAI = trangThai;
+            this.TAIKHOAN = taiKhoan;
         }
 
         public PhieuXuat()

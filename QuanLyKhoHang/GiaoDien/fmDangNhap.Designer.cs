@@ -45,11 +45,12 @@
             this.tbACC = new System.Windows.Forms.TextBox();
             this.cpLoading = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.tmrLoading = new System.Windows.Forms.Timer(this.components);
-            this.cpbLoading2 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.PbLoading = new System.Windows.Forms.PictureBox();
             this.pnRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // lb1
@@ -271,28 +272,17 @@
             this.tmrLoading.Interval = 1;
             this.tmrLoading.Tick += new System.EventHandler(this.tmrLoading_Tick);
             // 
-            // cpbLoading2
+            // PbLoading
             // 
-            this.cpbLoading2.animated = true;
-            this.cpbLoading2.animationIterval = 5;
-            this.cpbLoading2.animationSpeed = 1;
-            this.cpbLoading2.BackColor = System.Drawing.Color.Transparent;
-            this.cpbLoading2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpbLoading2.BackgroundImage")));
-            this.cpbLoading2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.cpbLoading2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.cpbLoading2.LabelVisible = false;
-            this.cpbLoading2.LineProgressThickness = 20;
-            this.cpbLoading2.LineThickness = 20;
-            this.cpbLoading2.Location = new System.Drawing.Point(142, 125);
-            this.cpbLoading2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.cpbLoading2.MaxValue = 100;
-            this.cpbLoading2.Name = "cpbLoading2";
-            this.cpbLoading2.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.cpbLoading2.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.cpbLoading2.Size = new System.Drawing.Size(213, 213);
-            this.cpbLoading2.TabIndex = 9;
-            this.cpbLoading2.Value = 25;
-            this.cpbLoading2.Visible = false;
+            this.PbLoading.BackColor = System.Drawing.Color.Transparent;
+            this.PbLoading.Image = global::QuanLyKhoHang.Properties.Resources.loading_12;
+            this.PbLoading.Location = new System.Drawing.Point(44, 68);
+            this.PbLoading.Name = "PbLoading";
+            this.PbLoading.Size = new System.Drawing.Size(400, 300);
+            this.PbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PbLoading.TabIndex = 10;
+            this.PbLoading.TabStop = false;
+            this.PbLoading.Visible = false;
             // 
             // fmDangNhap
             // 
@@ -303,7 +293,7 @@
             this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(904, 447);
-            this.Controls.Add(this.cpbLoading2);
+            this.Controls.Add(this.PbLoading);
             this.Controls.Add(this.cpLoading);
             this.Controls.Add(this.pnRight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -316,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbHide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,6 +327,6 @@
         private System.Windows.Forms.Timer tmrLoading;
         private Bunifu.Framework.UI.BunifuCustomLabel lbCurIP;
         private Bunifu.Framework.UI.BunifuImageButton pbHide;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar cpbLoading2;
+        private System.Windows.Forms.PictureBox PbLoading;
     }
 }

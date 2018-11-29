@@ -27,16 +27,15 @@ namespace QuanLyKhoHang.GiaoDien
         {
             try
             {
-                TENKHO.DataSource = BUS.KhoBUS.INSTANCE.loadDataTen();
+                TENKHO.DataSource = BUS.KhoBUS.INSTANCE.loadDataTen(fmQuanLy.sID);
                 TENKH.DataSource = BUS.KhachHangBUS.INSTANCE.loadDataTen();
                 tmrClock.Start();
-                BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
+                BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
                 dtgvPX.CurrentCell = dtgvPX[0, 0];
                 dtgvPX_CellClick(null, null);
             }
             catch (Exception)
             {
-                MessageBox.Show("Dữ liệu rỗng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -47,7 +46,7 @@ namespace QuanLyKhoHang.GiaoDien
             tmrSlide.Start();
             dtgvCTPX.Visible = true;
             lbPXName.Text = dtgvPX.Rows[e.RowIndex].Cells[0].Value.ToString();
-            BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text);
+            BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text, fmQuanLy.sID);
             flagSave = false;
             lbPX.Text = "Chi Tiết Phiếu Xuất";
             btnCPTXSave.BackColor = Color.SeaGreen;
@@ -77,8 +76,8 @@ namespace QuanLyKhoHang.GiaoDien
         {
             if (MessageBox.Show("Mọi dữ liệu được tạo tự động.\nBạn có chắc muốn thêm phiếu nhập này?", "Thêm dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
                 return;
-            BUS.PhieuXuatBUS.INSTANCE.Insert();
-            BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
+            BUS.PhieuXuatBUS.INSTANCE.Insert(fmQuanLy.sID);
+            BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             dtgvPX.CurrentCell = dtgvPX[0, Convert.ToInt32((dtgvPX.RowCount - 1).ToString())];
             dtgvPX_CellClick(null, null);
         }
@@ -91,18 +90,18 @@ namespace QuanLyKhoHang.GiaoDien
                     return;
                 BUS.PhieuXuatBUS.INSTANCE.Delete(dtgvPX.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
+                BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
+                BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             }
         }
 
         private void btnPXReload_Click(object sender, EventArgs e)
         {
-            BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
+            BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             dtgvPX.CurrentCell = dtgvPX[0, 0];
             dtgvPX_CellClick(null, null);
         }
@@ -147,7 +146,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void dtgvPX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, dtgvPX.CurrentRow.Cells[0].Value.ToString());
+            BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text, fmQuanLy.sID);
             loadTongQuan(dtgvCTPX);
             if (dtgvPX.CurrentRow.Cells[2].Value.ToString() == "1")
             {
@@ -172,7 +171,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbPXSearch.Text == "")
             {
                 tbPXSearch.Text = "Tìm kiếm...";
-                BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
+                BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             }
         }
 
@@ -245,7 +244,7 @@ namespace QuanLyKhoHang.GiaoDien
                     return;
                 BUS.ChiTietPhieuXuatBUS.INSTANCE.Delete(lbPXName.Text, dtgvCTPX.CurrentRow.Cells[1].Value.ToString());
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text);
+                BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text, fmQuanLy.sID);
             }
             catch (Exception ex)
             {
@@ -267,14 +266,14 @@ namespace QuanLyKhoHang.GiaoDien
                 if (flagSave == true)
                 {
                     BUS.ChiTietPhieuXuatBUS.INSTANCE.saveInsert(dtgvCTPX, lbPXName.Text);
-                    BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text);
+                    BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text, fmQuanLy.sID);
                     MessageBox.Show("Đã lưu!", "Thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnCPTXSave.BackColor = Color.SeaGreen;
                 }
                 else
                 {
                     MessageBox.Show("Sửa dữ liệu không khả dụng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text);
+                    BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text, fmQuanLy.sID);
                     btnCPTXSave.BackColor = Color.SeaGreen;
                 }
             }
@@ -418,7 +417,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbCTPXSearch.Text == "")
             {
                 tbCTPXSearch.Text = "Tìm kiếm...";
-                BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text);
+                BUS.ChiTietPhieuXuatBUS.INSTANCE.loadData(dtgvCTPX, lbPXName.Text, fmQuanLy.sID);
             }
         }
 
@@ -433,14 +432,14 @@ namespace QuanLyKhoHang.GiaoDien
                 "Chú ý: Một khi đã thanh toán thành công thì không thể phục hồi!", "Thanh toán phiếu xuất", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
                 return;
             BUS.PhieuXuatBUS.INSTANCE.saveEdit(dtgvPX.CurrentRow.Cells[0].Value.ToString(), 1);
-            BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX);
+            BUS.PhieuXuatBUS.INSTANCE.loadData(dtgvPX, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             dtgvPX.CurrentCell = dtgvPX[0, 0];
             dtgvPX_CellClick(null, null);
         }
 
         private void dtgvCTPX_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dtgvCTPX.CurrentCell.ColumnIndex == 1)
+            if (dtgvCTPX.CurrentCell.ColumnIndex == 1 && btnDone.Enabled == true)
             { 
                 new QuanLyKhoHang.GiaoDien.fmInputSanPham(dtgvCTPX.CurrentRow.Cells[4].Value.ToString()).ShowDialog();
                 if (QuanLyKhoHang.GiaoDien.fmInputSanPham.sanpham == null) return;

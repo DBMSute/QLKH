@@ -19,9 +19,9 @@ namespace BUS
             }
         }
 
-        public void loadData(DataGridView dgv, string id)
+        public void loadData(DataGridView dgv, string idpx, string idEmp)
         {
-            dgv.DataSource = DAO.ChiTietPhieuXuatDAO.INSTANCE.loadData(id);
+            dgv.DataSource = DAO.ChiTietPhieuXuatDAO.INSTANCE.loadData(idpx, idEmp);
         }
 
         public void saveInsert(DataGridView dgv, string idpn)

@@ -30,6 +30,7 @@ namespace BUS
             ctpn = new DTO.ChiTietPhieuNhap(
                     idpn,
                     dgv.Rows[0].Cells[1].Value.ToString().Trim(),
+                    dgv.Rows[0].Cells[3].Value.ToString().Trim(),
                     dgv.Rows[0].Cells[4].Value.ToString().Trim(),
                     dgv.Rows[0].Cells[2].Value.ToString().Trim(),
                     Convert.ToDouble(dgv.Rows[0].Cells[5].Value),

@@ -27,7 +27,7 @@ namespace DAO
             if (idEmp == "TK000")
                 str = "SELECT * FROM dbo.VI_Kho_LoadData";
             else
-                str = "SELECT * FROM dbo.VI_Kho_LoadData WHERE dbo.VI_Kho_LoadData.manager = '" + idEmp.Trim() + "'";
+                str = "SELECT * FROM dbo.FN_Kho_GetKhoOfMng('" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {

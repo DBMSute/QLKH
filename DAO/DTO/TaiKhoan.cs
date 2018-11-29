@@ -8,7 +8,7 @@ namespace DTO
 {
     public class TaiKhoan
     {
-        private string id, tenTk, passWd, hovatendem, ten, diachi, lastLogin, ngaySinh, createDay, quanLy; 
+        private string id, tenTk, passWd, hovatendem, ten, diachi, lastLogin, ngaySinh, createDay, quanLy, tenQuanLy; 
         private int pers, tinhTrang;
         private byte[] avt;
 
@@ -77,7 +77,12 @@ namespace DTO
             get { return quanLy; }
             set { quanLy = value; }
         }
-        public TaiKhoan(string id, string tenTk, string passWd, byte[]avt, string hovatendem, string ten, string ngaySinh, string diachi, string lastLogin, string createDay, int pers, int tinhTrang, string quanLy)
+        public string TENQUANLY
+        {
+            get { return tenQuanLy; }
+            set { tenQuanLy = value; }
+        }
+        public TaiKhoan(string id, string tenTk, string passWd, byte[]avt, string hovatendem, string ten, string ngaySinh, string diachi, string lastLogin, string createDay, int pers, int tinhTrang, string quanLy, string tenQuanLy)
         {
             this.ID = id;
             this.TENTK = tenTk;
@@ -92,6 +97,7 @@ namespace DTO
             this.PERS = pers;
             this.TINHTRANG = tinhTrang;
             this.QUANLY = quanLy;
+            this.TENQUANLY = tenQuanLy;
         }
         public TaiKhoan(string id, string passWd, byte[] avt, string hovatendem, string ten, string ngaySinh, string diachi, int pers, int tinhTrang)
         {
@@ -105,7 +111,7 @@ namespace DTO
             this.PERS = pers;
             this.TINHTRANG = tinhTrang;
         }
-        public TaiKhoan(string id, string hovatendem, string ten, string ngaySinh, string diachi, int pers, int tinhTrang)
+        public TaiKhoan(string id, string hovatendem, string ten, string ngaySinh, string diachi, int pers, int tinhTrang, string quanLy)
         {
             this.ID = id;      
             this.HOVATENDEM = hovatendem;
@@ -114,6 +120,24 @@ namespace DTO
             this.DIACHI = diachi;
             this.PERS = pers;
             this.TINHTRANG = tinhTrang;
+            this.QUANLY = quanLy;
+            this.TENQUANLY = tenQuanLy;
+        }
+        public TaiKhoan(string id, string tenTk, string passWd, byte[] avt, string hovatendem, string ten, string ngaySinh, string diachi, string lastLogin, string createDay, int pers, int tinhTrang, string quanLy)
+        {
+            this.ID = id;
+            this.TENTK = tenTk;
+            this.PASSWD = passWd;
+            this.AVT = avt;
+            this.HOVATENDEM = hovatendem;
+            this.TEN = ten;
+            this.NGAYSINH = ngaySinh;
+            this.DIACHI = diachi;
+            this.LASTLOGIN = lastLogin;
+            this.CREATEDAY = createDay;
+            this.PERS = pers;
+            this.TINHTRANG = tinhTrang;
+            this.QUANLY = quanLy;
         }
         public TaiKhoan()
         {

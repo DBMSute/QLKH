@@ -166,15 +166,15 @@
             // 
             // lbClock
             // 
-            this.lbClock.AutoSize = true;
             this.lbClock.BackColor = System.Drawing.Color.Transparent;
             this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbClock.ForeColor = System.Drawing.Color.White;
-            this.lbClock.Location = new System.Drawing.Point(951, 61);
+            this.lbClock.Location = new System.Drawing.Point(670, 55);
             this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(93, 33);
+            this.lbClock.Size = new System.Drawing.Size(400, 33);
             this.lbClock.TabIndex = 13;
             this.lbClock.Text = "Clock";
+            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnExit
             // 
@@ -265,6 +265,7 @@
             // chartRank
             // 
             this.chartRank.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea1.AxisY.LabelStyle.Format = "{0:0,}K";
             chartArea1.Name = "ChartArea1";
             this.chartRank.ChartAreas.Add(chartArea1);
             legend1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,6 +275,7 @@
             this.chartRank.Location = new System.Drawing.Point(-1090, 50);
             this.chartRank.Name = "chartRank";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series1.IsValueShownAsLabel = true;
             series1.IsVisibleInLegend = false;
             series1.IsXValueIndexed = true;
@@ -443,6 +445,7 @@
             // chartThongKe
             // 
             this.chartThongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea2.AxisY.LabelStyle.Format = "{0:0,}K";
             chartArea2.Name = "ChartArea1";
             this.chartThongKe.ChartAreas.Add(chartArea2);
             legend2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -533,7 +536,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnDoanhSo;
         private Bunifu.Framework.UI.BunifuDragControl DragControl;
         private System.Windows.Forms.Panel pnTop;
-        private System.Windows.Forms.Label lbClock;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private System.Windows.Forms.Label lbNhaCC;
         private System.Windows.Forms.Timer tmrClock;
@@ -551,5 +553,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnTongQuan;
         private Bunifu.Framework.UI.BunifuTileButton btnRank;
         private System.Windows.Forms.Timer tmrSlide;
+        private System.Windows.Forms.Label lbClock;
     }
 }

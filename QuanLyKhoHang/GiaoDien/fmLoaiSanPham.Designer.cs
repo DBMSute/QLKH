@@ -29,17 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmLoaiSanPham));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
-            this.lbClock = new System.Windows.Forms.Label();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbLSP = new System.Windows.Forms.Label();
-            this.pnMidL = new System.Windows.Forms.Panel();
-            this.dtgvLSP = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnMidR = new System.Windows.Forms.Panel();
@@ -49,13 +44,20 @@
             this.btnLSPAdd = new Bunifu.Framework.UI.BunifuTileButton();
             this.tbLSPSearch = new System.Windows.Forms.TextBox();
             this.pnTop = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
-            this.pnMidL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvLSP)).BeginInit();
+            this.lbClock = new System.Windows.Forms.Label();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbLSP = new System.Windows.Forms.Label();
+            this.pnMidL = new System.Windows.Forms.Panel();
+            this.dtgvLSP = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuGradientPanel1.SuspendLayout();
             this.pnMidR.SuspendLayout();
             this.pnTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.pnMidL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLSP)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrClock
@@ -63,97 +65,12 @@
             this.tmrClock.Interval = 1000;
             this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
-            // lbClock
+            // bunifuDragControl1
             // 
-            this.lbClock.AutoSize = true;
-            this.lbClock.BackColor = System.Drawing.Color.Transparent;
-            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClock.ForeColor = System.Drawing.Color.White;
-            this.lbClock.Location = new System.Drawing.Point(951, 61);
-            this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(93, 33);
-            this.lbClock.TabIndex = 12;
-            this.lbClock.Text = "Clock";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1028, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lbLSP
-            // 
-            this.lbLSP.AutoSize = true;
-            this.lbLSP.BackColor = System.Drawing.Color.Transparent;
-            this.lbLSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbLSP.Font = new System.Drawing.Font("Century Gothic", 59F);
-            this.lbLSP.ForeColor = System.Drawing.Color.White;
-            this.lbLSP.Location = new System.Drawing.Point(10, 0);
-            this.lbLSP.Name = "lbLSP";
-            this.lbLSP.Size = new System.Drawing.Size(577, 94);
-            this.lbLSP.TabIndex = 0;
-            this.lbLSP.Text = "Loại Sản Phẩm";
-            // 
-            // pnMidL
-            // 
-            this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnMidL.Controls.Add(this.dtgvLSP);
-            this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnMidL.Location = new System.Drawing.Point(10, 110);
-            this.pnMidL.Name = "pnMidL";
-            this.pnMidL.Size = new System.Drawing.Size(740, 500);
-            this.pnMidL.TabIndex = 5;
-            // 
-            // dtgvLSP
-            // 
-            this.dtgvLSP.AllowUserToResizeColumns = false;
-            this.dtgvLSP.AllowUserToResizeRows = false;
-            this.dtgvLSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvLSP.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgvLSP.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvLSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvLSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvLSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.TEN,
-            this.MOTA});
-            this.dtgvLSP.Location = new System.Drawing.Point(10, 10);
-            this.dtgvLSP.Name = "dtgvLSP";
-            this.dtgvLSP.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvLSP.Size = new System.Drawing.Size(721, 480);
-            this.dtgvLSP.TabIndex = 2;
-            this.dtgvLSP.TabStop = false;
-            this.dtgvLSP.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLSP_CellValueChanged);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã loại sản phẩm";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên loại";
-            this.TEN.Name = "TEN";
-            // 
-            // MOTA
-            // 
-            this.MOTA.DataPropertyName = "MOTA";
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MOTA.DefaultCellStyle = dataGridViewCellStyle1;
-            this.MOTA.HeaderText = "Mô tả";
-            this.MOTA.Name = "MOTA";
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.pnTop;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // bunifuGradientPanel1
             // 
@@ -301,12 +218,102 @@
             this.pnTop.Size = new System.Drawing.Size(1080, 100);
             this.pnTop.TabIndex = 3;
             // 
-            // bunifuDragControl1
+            // lbClock
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.pnTop;
-            this.bunifuDragControl1.Vertical = true;
+            this.lbClock.BackColor = System.Drawing.Color.Transparent;
+            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClock.ForeColor = System.Drawing.Color.White;
+            this.lbClock.Location = new System.Drawing.Point(667, 61);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(400, 33);
+            this.lbClock.TabIndex = 13;
+            this.lbClock.Text = "Clock";
+            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(1028, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lbLSP
+            // 
+            this.lbLSP.AutoSize = true;
+            this.lbLSP.BackColor = System.Drawing.Color.Transparent;
+            this.lbLSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbLSP.Font = new System.Drawing.Font("Century Gothic", 59F);
+            this.lbLSP.ForeColor = System.Drawing.Color.White;
+            this.lbLSP.Location = new System.Drawing.Point(10, 0);
+            this.lbLSP.Name = "lbLSP";
+            this.lbLSP.Size = new System.Drawing.Size(577, 94);
+            this.lbLSP.TabIndex = 0;
+            this.lbLSP.Text = "Loại Sản Phẩm";
+            // 
+            // pnMidL
+            // 
+            this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMidL.Controls.Add(this.dtgvLSP);
+            this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnMidL.Location = new System.Drawing.Point(10, 110);
+            this.pnMidL.Name = "pnMidL";
+            this.pnMidL.Size = new System.Drawing.Size(740, 500);
+            this.pnMidL.TabIndex = 5;
+            // 
+            // dtgvLSP
+            // 
+            this.dtgvLSP.AllowUserToResizeColumns = false;
+            this.dtgvLSP.AllowUserToResizeRows = false;
+            this.dtgvLSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvLSP.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgvLSP.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvLSP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvLSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvLSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TEN,
+            this.MOTA});
+            this.dtgvLSP.Location = new System.Drawing.Point(10, 10);
+            this.dtgvLSP.Name = "dtgvLSP";
+            this.dtgvLSP.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvLSP.Size = new System.Drawing.Size(721, 480);
+            this.dtgvLSP.TabIndex = 2;
+            this.dtgvLSP.TabStop = false;
+            this.dtgvLSP.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLSP_CellValueChanged);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ID.HeaderText = "Mã loại sản phẩm";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.TEN.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TEN.HeaderText = "Tên loại";
+            this.TEN.Name = "TEN";
+            // 
+            // MOTA
+            // 
+            this.MOTA.DataPropertyName = "MOTA";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MOTA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.MOTA.HeaderText = "Mô tả";
+            this.MOTA.Name = "MOTA";
             // 
             // fmLoaiSanPham
             // 
@@ -319,15 +326,15 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fmLoaiSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fmLoaiSanPham";
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
-            this.pnMidL.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvLSP)).EndInit();
+            this.Text = "Loại Sản Phẩm";
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.pnMidR.ResumeLayout(false);
             this.pnMidR.PerformLayout();
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            this.pnMidL.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLSP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,7 +342,6 @@
         #endregion
 
         private System.Windows.Forms.Timer tmrClock;
-        private System.Windows.Forms.Label lbClock;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private System.Windows.Forms.Label lbLSP;
         private System.Windows.Forms.Panel pnMidL;
@@ -349,9 +355,10 @@
         private Bunifu.Framework.UI.BunifuTileButton btnLSPAdd;
         private System.Windows.Forms.TextBox tbLSPSearch;
         private System.Windows.Forms.Panel pnTop;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn MOTA;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Label lbClock;
     }
 }

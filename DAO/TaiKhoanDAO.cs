@@ -39,28 +39,30 @@ namespace DAO
             string str = "SELECT * FROM dbo.FN_TaiKhoan_GetInfo('" + tentk + "')"; //gọi Function
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             tk.ID = data.Rows[0]["id"].ToString();
-            tk.TENTK =data.Rows[0]["tentk"].ToString();
-            tk.PASSWD =BitConverter.ToString((byte[]) data.Rows[0]["passwd"]);
+            tk.TENTK = data.Rows[0]["tentk"].ToString();
+            tk.PASSWD = BitConverter.ToString((byte[])data.Rows[0]["passwd"]);
             if (data.Rows[0]["avt"].ToString() == "")
                 tk.AVT = null;
             else
                 tk.AVT = (byte[])data.Rows[0]["avt"];
-            tk.HOVATENDEM=data.Rows[0]["hovatendem"].ToString();
-            tk.TEN=data.Rows[0]["ten"].ToString();
+            tk.HOVATENDEM = data.Rows[0]["hovatendem"].ToString();
+            tk.TEN = data.Rows[0]["ten"].ToString();
             date = (DateTime)data.Rows[0]["ngaysinh"];
             tk.NGAYSINH = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
-            tk.DIACHI=data.Rows[0]["diachi"].ToString();
+            tk.DIACHI = data.Rows[0]["diachi"].ToString();
             if (data.Rows[0]["lastlogin"].ToString() == "")
                 tk.LASTLOGIN = "";
             else
             {
-               date = (DateTime)data.Rows[0]["lastlogin"];
-                tk.LASTLOGIN = date.ToString("G",new System.Globalization.CultureInfo("es-ES"));
+                date = (DateTime)data.Rows[0]["lastlogin"];
+                tk.LASTLOGIN = date.ToString("G", new System.Globalization.CultureInfo("es-ES"));
             }
             date = (DateTime)data.Rows[0]["createday"];
             tk.CREATEDAY = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
             tk.TINHTRANG = Convert.ToInt32(data.Rows[0]["tinhtrang"]);
-            tk.PERS= Convert.ToInt32(data.Rows[0]["pers"]);
+            tk.PERS = Convert.ToInt32(data.Rows[0]["pers"]);
+            tk.QUANLY = data.Rows[0]["quanly"].ToString();
+            tk.TENQUANLY = data.Rows[0]["tenquanly"].ToString();
             return tk;
         }
 

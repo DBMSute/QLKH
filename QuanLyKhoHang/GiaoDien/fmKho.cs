@@ -15,12 +15,14 @@ namespace QuanLyKhoHang.GiaoDien
         public bool flagSave = false; //true - lưu add, false - lưu sửa
         private string idkho = null;
         private int cpbValue = 0;
+        private int row = -1;
 
         public fmKho()
         {
             InitializeComponent();
             Init();
             tmrClock.Start();
+            if (fmQuanLy.sID != "TK000") btnWareAdd.Enabled = false;
         }
 
         private void Init()
@@ -122,6 +124,7 @@ namespace QuanLyKhoHang.GiaoDien
                 return;
             }
             BUS.SanPhamBUS.INSTANCE.loadData(dtgvItem, idkho);
+            loadTongQuan(row);
             tmrSlide.Stop();
         }
 
@@ -158,7 +161,7 @@ namespace QuanLyKhoHang.GiaoDien
                 tbItemSearch.Location = new Point(tbItemSearch.Location.X, tbItemSearch.Location.Y - 10);
                 return;
             }
-            if (lbKhoName.Location.Y > -40)
+            if (lbKhoName.Location.Y > -60)
             {
                 lbKhoName.Location = new Point(lbKhoName.Location.X, lbKhoName.Location.Y - 10);
                 return;
@@ -195,10 +198,9 @@ namespace QuanLyKhoHang.GiaoDien
                 lbListKho.Location = new Point(lbListKho.Location.X, lbListKho.Location.Y + 10);
                 return;
             }
-            
+            loadTongQuan(-1);
             BUS.KhoBUS.INSTANCE.loadData(dtgvKho, fmQuanLy.sID);
             tmrSlide2.Stop();
-            loadTongQuan(null);
         }
 
         private void btnback_Click(object sender, EventArgs e)
@@ -214,15 +216,15 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 loadDataWare(e);
                 btnItemSave.BackColor = Color.SeaGreen;
-                loadTongQuan(e);
+                row = e.RowIndex;
                 return;
             }
             MessageBox.Show("Vui lòng chọn chính xác kho muốn xem!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void loadTongQuan(DataGridViewCellEventArgs e)
+        private void loadTongQuan(int row)
         {
-            if(e == null)
+            if (row < 0) 
             {
                 cpbValue = 0;
                 tmrCPB.Start();
@@ -233,10 +235,10 @@ namespace QuanLyKhoHang.GiaoDien
                 return;
             }
             updateCPBValue();
-            lbDataInfoTenKho.Text = dtgvKho[1, e.RowIndex].Value.ToString();
-            lbDataInfoDiaChi.Text = dtgvKho[2, e.RowIndex].Value.ToString();
-            lbDataInfoQuanLi.Text = dtgvKho[3, e.RowIndex].Value.ToString();
-            lbDataInfoSLHang.Text = dtgvKho[5, e.RowIndex].Value.ToString();
+            lbDataInfoTenKho.Text = dtgvKho.Rows[row].Cells[1].Value.ToString();
+            lbDataInfoDiaChi.Text = dtgvKho.Rows[row].Cells[2].Value.ToString();
+            lbDataInfoQuanLi.Text = dtgvKho.Rows[row].Cells[3].Value.ToString();
+            lbDataInfoSLHang.Text = dtgvKho.Rows[row].Cells[5].Value.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmScanIP));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbNof = new System.Windows.Forms.RichTextBox();
             this.btnScan = new System.Windows.Forms.Button();
@@ -36,9 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.mtbSubnet = new System.Windows.Forms.MaskedTextBox();
             this.mtbIP = new System.Windows.Forms.MaskedTextBox();
-            this.switchAuto = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnTestConn = new System.Windows.Forms.Button();
+            this.btnShowIP = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,9 +44,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.lbNof);
-            this.panel1.Location = new System.Drawing.Point(12, 150);
+            this.panel1.Location = new System.Drawing.Point(12, 172);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 200);
+            this.panel1.Size = new System.Drawing.Size(460, 277);
             this.panel1.TabIndex = 0;
             // 
             // lbNof
@@ -60,7 +58,7 @@
             this.lbNof.Location = new System.Drawing.Point(12, 12);
             this.lbNof.Name = "lbNof";
             this.lbNof.ReadOnly = true;
-            this.lbNof.Size = new System.Drawing.Size(337, 177);
+            this.lbNof.Size = new System.Drawing.Size(435, 250);
             this.lbNof.TabIndex = 4;
             this.lbNof.Text = "Chưa có danh sách IP...";
             // 
@@ -70,11 +68,11 @@
             this.btnScan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScan.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScan.ForeColor = System.Drawing.Color.White;
-            this.btnScan.Location = new System.Drawing.Point(254, 106);
+            this.btnScan.Location = new System.Drawing.Point(338, 106);
             this.btnScan.Name = "btnScan";
-            this.btnScan.Size = new System.Drawing.Size(118, 38);
+            this.btnScan.Size = new System.Drawing.Size(130, 60);
             this.btnScan.TabIndex = 3;
-            this.btnScan.Text = "Lấy DS IP";
+            this.btnScan.Text = "Lấy DS IP khả dụng";
             this.btnScan.UseVisualStyleBackColor = false;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
             // 
@@ -114,9 +112,10 @@
             this.mtbSubnet.Mask = "###.###.###.###";
             this.mtbSubnet.Name = "mtbSubnet";
             this.mtbSubnet.ReadOnly = true;
-            this.mtbSubnet.Size = new System.Drawing.Size(207, 25);
+            this.mtbSubnet.Size = new System.Drawing.Size(307, 25);
             this.mtbSubnet.TabIndex = 26;
             this.mtbSubnet.Text = "2552552550";
+            this.mtbSubnet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mtbIP
             // 
@@ -127,37 +126,11 @@
             this.mtbIP.Location = new System.Drawing.Point(165, 19);
             this.mtbIP.Mask = "###.###.###.###";
             this.mtbIP.Name = "mtbIP";
-            this.mtbIP.Size = new System.Drawing.Size(207, 25);
+            this.mtbIP.Size = new System.Drawing.Size(307, 25);
             this.mtbIP.TabIndex = 24;
             this.mtbIP.Text = "1921680  1";
+            this.mtbIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbIP.Leave += new System.EventHandler(this.mtbIP_Leave);
-            // 
-            // switchAuto
-            // 
-            this.switchAuto.BackColor = System.Drawing.Color.Transparent;
-            this.switchAuto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchAuto.BackgroundImage")));
-            this.switchAuto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchAuto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchAuto.Location = new System.Drawing.Point(213, 124);
-            this.switchAuto.Name = "switchAuto";
-            this.switchAuto.OffColor = System.Drawing.Color.Gray;
-            this.switchAuto.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
-            this.switchAuto.Size = new System.Drawing.Size(35, 20);
-            this.switchAuto.TabIndex = 27;
-            this.switchAuto.Value = false;
-            this.switchAuto.OnValueChange += new System.EventHandler(this.switchAuto_OnValueChange);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(210, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 17);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Auto";
             // 
             // btnTestConn
             // 
@@ -167,21 +140,35 @@
             this.btnTestConn.ForeColor = System.Drawing.Color.White;
             this.btnTestConn.Location = new System.Drawing.Point(12, 106);
             this.btnTestConn.Name = "btnTestConn";
-            this.btnTestConn.Size = new System.Drawing.Size(118, 38);
+            this.btnTestConn.Size = new System.Drawing.Size(130, 60);
             this.btnTestConn.TabIndex = 29;
-            this.btnTestConn.Text = "Kết nối thử";
+            this.btnTestConn.Text = "Kết nối thử server";
             this.btnTestConn.UseVisualStyleBackColor = false;
             this.btnTestConn.Click += new System.EventHandler(this.btnTestConn_Click);
+            // 
+            // btnShowIP
+            // 
+            this.btnShowIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnShowIP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowIP.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowIP.ForeColor = System.Drawing.Color.White;
+            this.btnShowIP.Location = new System.Drawing.Point(202, 106);
+            this.btnShowIP.Name = "btnShowIP";
+            this.btnShowIP.Size = new System.Drawing.Size(130, 60);
+            this.btnShowIP.TabIndex = 30;
+            this.btnShowIP.Text = "Xem IP hiện tại";
+            this.btnShowIP.UseVisualStyleBackColor = false;
+            this.btnShowIP.Click += new System.EventHandler(this.btnShowIP_Click);
             // 
             // fmScanIP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.btnShowIP);
             this.Controls.Add(this.btnTestConn);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.switchAuto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mtbSubnet);
             this.Controls.Add(this.label1);
@@ -209,8 +196,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox mtbSubnet;
         private System.Windows.Forms.MaskedTextBox mtbIP;
-        private Bunifu.Framework.UI.BunifuiOSSwitch switchAuto;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTestConn;
+        private System.Windows.Forms.Button btnShowIP;
     }
 }

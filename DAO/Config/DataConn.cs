@@ -30,7 +30,7 @@ namespace DAO
         //                        Connection Timeout=300;";
         public void setIP(string ip)
         {
-            connStr = @"Data Source="+ip+ ",1433; Initial Catalog=FinalProject; User ID = datnt; Password = 123456; Connect Timeout=7";
+            connStr = @"Data Source="+ip+ ",1433; Initial Catalog=FinalProject; User ID = datnt; Password = 123456; Connect Timeout=1";
         }     
         
         public bool IsServerConnected()

@@ -72,10 +72,11 @@ namespace DTO
             this.TONG = tong;
             this.DVTIENTE = dvtiente;
         }
-        public ChiTietPhieuNhap(string idpn, string tensp, string tenkho, string tenncc, double dongia, int soluong, string dvtiente)
+        public ChiTietPhieuNhap(string idpn, string tensp, string tenloai, string tenkho, string tenncc, double dongia, int soluong, string dvtiente)
         {
             this.IDPN = idpn;
             this.TENSP = tensp;
+            this.TENLSP = tenloai;
             this.TENKHO = tenkho;
             this.TENNCC = tenncc;
             this.DONGIA = dongia;

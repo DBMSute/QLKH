@@ -34,27 +34,7 @@ namespace QuanLyKhoHang.GiaoDien
                 if (flagChart == true)
                 {
                     btnError.Visible = false;
-                    double max = 0;
-                    if (dtUSD.Rows.Count > 0)
-                    {
-                        max = Convert.ToDouble(dtUSD.Rows[0][1]);
-                        foreach (DataRow dr in dtUSD.Rows)
-                            if (max < Convert.ToDouble(dr[1])) max = Convert.ToDouble(dr[1]);
-                    }
-                    if (dtEUR.Rows.Count > 0)
-                    {
-                        max = Convert.ToDouble(dtEUR.Rows[0][1]);
-                        foreach (DataRow dr in dtEUR.Rows)
-                            if (max < Convert.ToDouble(dr[1])) max = Convert.ToDouble(dr[1]);
-                    }
-                    if (dtVND.Rows.Count > 0)
-                    {
-                        max = Convert.ToDouble(dtVND.Rows[0][1]);
-                        foreach (DataRow dr in dtVND.Rows)
-                            if (max < Convert.ToDouble(dr[1])) max = Convert.ToDouble(dr[1]);
-                    }
-                    if (max == 0) throw new Exception();
-                    if (chartThongKe.ChartAreas[0].AxisY.Maximum < max) chartThongKe.ChartAreas[0].AxisY.Maximum = (Convert.ToInt32((max.ToString().Substring(0, 1))) + 1) * Math.Pow(10, Convert.ToInt32(max.ToString().Length) - 1);
+                   
                     chartThongKe.Series.Clear();
                     chartThongKe.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
                     chartThongKe.ChartAreas[0].AxisY.MajorGrid.Enabled = true;
@@ -148,28 +128,7 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 chartRank.ResetAutoValues();
                 btnError.Visible = false;
-                double max = 0;
-                if (dtUSD.Rows.Count > 0)
-                {
-                    max = Convert.ToDouble(dtUSD.Rows[0][2]);
-                    foreach (DataRow dr in dtUSD.Rows)
-                        if (max < Convert.ToDouble(dr[2])) max = Convert.ToDouble(dr[2]);
-                }
-                if (dtEUR.Rows.Count > 0)
-                {
-                    max = Convert.ToDouble(dtEUR.Rows[0][2]);
-                    foreach (DataRow dr in dtEUR.Rows)
-                        if (max < Convert.ToDouble(dr[2])) max = Convert.ToDouble(dr[2]);
-                }
-                if (dtVND.Rows.Count > 0)
-                {
-                    max = Convert.ToDouble(dtVND.Rows[0][2]);
-                    foreach (DataRow dr in dtVND.Rows)
-                        if (max < Convert.ToDouble(dr[2])) max = Convert.ToDouble(dr[2]);
-                }
-                if (max == 0) throw new Exception();
-                if (chartRank.ChartAreas[0].AxisX.Maximum < max) chartRank.ChartAreas[0].AxisX.Maximum = (Convert.ToInt32((max.ToString().Substring(0, 1))) + 1) * Math.Pow(10, Convert.ToInt32(max.ToString().Length) - 1);
-                chartRank.Series.Clear();
+                
                 chartRank.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
                 chartRank.ChartAreas[0].AxisY.MajorGrid.Enabled = true;
                 chartRank.Series.Add(new Series());
@@ -239,14 +198,12 @@ namespace QuanLyKhoHang.GiaoDien
         {
             if (flagChart == true)
             {
-                chartThongKe.ChartAreas[0].AxisY.Maximum = 0;
                 displayChartThongKe(BUS.ThongKeBUS.INSTANCE.chartDoanhSo("VND", 0, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhSo("USD", 0, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhSo("EUR", 0, isLast, typeSum));
             }
             else
             {
-                chartThongKe.ChartAreas[0].AxisY.Maximum = 0;
                 displayChartThongKe(BUS.ThongKeBUS.INSTANCE.chartDoanhThu("VND", 0, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhThu("USD", 0, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhThu("EUR", 0, isLast, typeSum));
@@ -257,14 +214,13 @@ namespace QuanLyKhoHang.GiaoDien
         {
             if (flagChart == true)
             {
-                chartThongKe.ChartAreas[0].AxisY.Maximum = 0;
+
                 displayChartThongKe(BUS.ThongKeBUS.INSTANCE.chartDoanhSo("VND", 1, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhSo("USD", 1, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhSo("EUR", 1, isLast, typeSum));
             }
             else
             {
-                chartThongKe.ChartAreas[0].AxisY.Maximum = 0;
                 displayChartThongKe(BUS.ThongKeBUS.INSTANCE.chartDoanhThu("VND", 1, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhThu("USD", 1, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhThu("EUR", 1, isLast, typeSum));
@@ -275,14 +231,12 @@ namespace QuanLyKhoHang.GiaoDien
         {
             if (flagChart == true)
             {
-                chartThongKe.ChartAreas[0].AxisY.Maximum = 0;
                 displayChartThongKe(BUS.ThongKeBUS.INSTANCE.chartDoanhSo("VND", 2, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhSo("USD", 2, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhSo("EUR", 2, isLast, typeSum));
             }
             else
             {
-                chartThongKe.ChartAreas[0].AxisY.Maximum = 0;
                 displayChartThongKe(BUS.ThongKeBUS.INSTANCE.chartDoanhThu("VND", 2, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhThu("USD", 2, isLast, typeSum),
                     BUS.ThongKeBUS.INSTANCE.chartDoanhThu("EUR", 2, isLast, typeSum));

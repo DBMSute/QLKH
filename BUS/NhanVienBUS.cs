@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace BUS
         public void loadData(DataGridView dgv, string idper)
         {
             dgv.DataSource = DAO.NhanVienDAO.INSTANCE.loadData(idper);
+        }
+
+        public List<string> loadIdMng()
+        {
+            List<string> lMng = new List<string>();
+            foreach (DataRow dr in DAO.KhoDAO.INSTANCE.loadDataMng().Rows)
+                lMng.Add(dr[1].ToString());
+            return lMng;
         }
 
         public void Insert(string tentk, string passWd, byte[] avt, string hovatendem, string ten, string ngaysinh, string diachi, int pers, int tinhtrang, string quanLy)
@@ -55,7 +64,8 @@ namespace BUS
                     dr.Cells[7].Value.ToString().Trim(),
                     dr.Cells[6].Value.ToString().Trim(),
                     (int)dr.Cells[10].Value,
-                    (int)dr.Cells[11].Value);
+                    (int)dr.Cells[11].Value,
+                    dr.Cells[12].Value.ToString().Trim());
                 lNV.Add(tk);
             }
             DAO.NhanVienDAO.INSTANCE.saveEdit(lNV);

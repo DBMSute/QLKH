@@ -33,7 +33,7 @@ namespace BUS
             DAO.TaiKhoanDAO.INSTANCE.updateAvatar(id, avt);
         }
 
-        public void loadData(string tentk,Label id, PictureBox avt, Label tk, Label hovatendem, Label ten, Label ngaysinh, Label diachi, Label lastlogin, Label createdate, Label pers, Label tinhtrang)
+        public void loadData(string tentk,Label id, PictureBox avt, Label tk, Label hovatendem, Label ten, Label ngaysinh, Label diachi, Label lastlogin, Label createdate, Label pers, Label tinhtrang, Label idQuanLy, Label tenQuanLy)
         {
             DTO.TaiKhoan temp = DAO.TaiKhoanDAO.INSTANCE.loadData(tentk);
             id.Text = temp.ID;
@@ -54,6 +54,8 @@ namespace BUS
             createdate.Text = temp.CREATEDAY;
             pers.Text = temp.PERS == 1 ? "Quản trị tối cao" : (temp.PERS == 2 ? "Quản lý" : "Nhân viên");
             tinhtrang.Text = temp.TINHTRANG == 1 ? "Đang hoạt động": "Bị khóa";
+            idQuanLy.Text = temp.QUANLY;
+            tenQuanLy.Text = temp.TENQUANLY;
         }
 
         public Bitmap ByteToImage(byte[] blob) //Covert Byte to Image

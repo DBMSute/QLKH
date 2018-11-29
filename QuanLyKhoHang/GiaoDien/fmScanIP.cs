@@ -23,13 +23,8 @@ namespace QuanLyKhoHang.GiaoDien
             InitializeComponent();
             mtbIP.ValidatingType = typeof(IPAddress);
             mtbSubnet.ValidatingType = typeof(IPAddress);
-            if(QuanLyKhoHang.Properties.Settings.Default.Server == "" || QuanLyKhoHang.Properties.Settings.Default.Server == null) return;
-            string[] temp = QuanLyKhoHang.Properties.Settings.Default.Server.Split('.');
-            string temp2 = temp[2].Length == 3 ? temp[2] : temp[2]+=new string(' ',3 - temp[2].Length);         
-            mtbIP.Text = string.Concat(temp[0].Length == 3 ? temp[0] : temp[0] += new string(' ', 3 - temp[0].Length),
-                temp[1].Length == 3 ? temp[1] : temp[1] += new string(' ', 3 - temp[1].Length), 
-                temp[2].Length == 3 ? temp[2] : temp[2] += new string(' ', 3 - temp[2].Length), 
-                temp[3].Length == 3 ? temp[3] : temp[3] += new string(' ', 3 - temp[3].Length), ' ');
+            btnTestConn.Enabled = false;
+            btnShowIP_Click(null, null);
         }
 
         private List<string> GetIpAddressFromHostName()
@@ -69,14 +64,13 @@ namespace QuanLyKhoHang.GiaoDien
         private void btnScan_Click(object sender, EventArgs e)
         {
             lIPs = new List<string>();
-            if (switchAuto.Value == true)        
-                lIPs = GetIpAddressFromHostName();           
-            else
-                GetIPCanPing();
+            GetIPCanPing();
             MessageBox.Show("Hoàn thành!", "Lấy danh sách IP khả dụng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(lIPs.Count > 0)
+                btnTestConn.Enabled = true;
         }
 
-        private void WaitNSeconds(int seconds)         //đợi trong seconds giây
+        public static void WaitNSeconds(int seconds)         //đợi trong seconds giây
         {
             if (seconds < 1) return;
             DateTime desired = DateTime.Now.AddSeconds(seconds);
@@ -108,7 +102,7 @@ namespace QuanLyKhoHang.GiaoDien
                     Ping p = new Ping();
                     p.PingCompleted += new PingCompletedEventHandler(p_PingCompleted);
                     string temp = (mtbIP.Text.Trim().Substring(0, mtbIP.Text.Trim().LastIndexOf('.')+1) + i).Replace(" ",String.Empty);
-                    p.SendAsync(temp, 100, temp);                  
+                    p.SendAsync(temp, 100, temp);
                 }
             }
             if(mtbSubnet.Text.Split('0').Length - 1 == 2)
@@ -140,7 +134,6 @@ namespace QuanLyKhoHang.GiaoDien
                     }
                 }
             }
-            Console.WriteLine("Aaa");
         }
 
         private void mtbIP_Leave(object sender, EventArgs e)
@@ -153,19 +146,6 @@ namespace QuanLyKhoHang.GiaoDien
                 mtbSubnet.Text = "2552552550";
         }
 
-        private void switchAuto_OnValueChange(object sender, EventArgs e)
-        {
-            if (switchAuto.Value == true)
-            {
-                mtbIP.Enabled = false;
-                mtbSubnet.Enabled = false;
-            }
-            else
-            {
-                mtbIP.Enabled = true;
-                mtbSubnet.Enabled = true;
-            }
-        }
 
         private void btnTestConn_Click(object sender, EventArgs e)
         {
@@ -173,12 +153,26 @@ namespace QuanLyKhoHang.GiaoDien
             if (flag == true) {
                 if (MessageBox.Show("Thành công!\nBạn có muốn trở về giao diện đăng nhập?", "Kết nối thử", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     this.Close();
-                btnTestConn.Enabled = false;
             }
             else
                 MessageBox.Show("Không có địa chỉ IP nào kết nối thành công!", "Kết nối thử", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
+        private void btnShowIP_Click(object sender, EventArgs e)
+        {
+            lbNof.Text = "DANH SÁCH IP CỦA MÁY THEO INTERFACE:\n";
+            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                foreach (UnicastIPAddressInformation ip in nic.GetIPProperties().UnicastAddresses)
+                {
+                    if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                    {
+                        lbNof.Text = lbNof.Text + "-> " + nic.Name + ": " + ip.Address.ToString() + "\n";
+                    }
+
+                }
+            }
+        }
     }
 }

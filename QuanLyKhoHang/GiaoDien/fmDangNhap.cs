@@ -22,7 +22,6 @@ namespace QuanLyKhoHang.GiaoDien
             tbPW.Text = QuanLyKhoHang.Properties.Settings.Default.UserPassword;
             lbCurIP.Text = QuanLyKhoHang.Properties.Settings.Default.Server;
             BUS.DangNhapBUS.INSTANCE.setIP(lbCurIP.Text);
-            cpbLoading2.Visible = true;
             try
             {
                 File.Copy("CenturyGothic.TTF",
@@ -50,21 +49,26 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            PbLoading.Visible = true;
+            fmScanIP.WaitNSeconds(2);
             try
             {
                 if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == 2)
                 {
                     MessageBox.Show("Tài khoản đang bị khóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    PbLoading.Visible = false;
                     return;
                 }
                 if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == 0)
                 {
                     MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    PbLoading.Visible = false;
                     return;
                 }
                 if (BUS.TaiKhoanBUS.INSTANCE.checkAccount(tbACC.Text, tbPW.Text) == -1)
                 {
                     MessageBox.Show("Lỗi không xác định", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    PbLoading.Visible = false;
                     return;
                 }
                 tentk = tbACC.Text;
@@ -81,12 +85,13 @@ namespace QuanLyKhoHang.GiaoDien
                     QuanLyKhoHang.Properties.Settings.Default.Save();
                 }
                 BUS.TaiKhoanBUS.INSTANCE.updateLastLogin(tentk);
-                cpbLoading2.Visible = false;
                 cpLoading.Visible = true;
                 tmrLoading.Start();
+                PbLoading.Visible = false;
                 pnRight.Enabled = false;
             }catch(Exception)
             {
+                PbLoading.Visible = false;
                 if (MessageBox.Show("Kết nối máy chủ thất bại!\nBạn có muốn tìm kiếm IP server?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
                     == DialogResult.Yes)
                     new fmScanIP().ShowDialog();

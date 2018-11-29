@@ -83,7 +83,7 @@ namespace BUS
         public List<string> loadDataTen(string tenkho)
         {
             List<string> lten = new List<string>();
-            foreach (DTO.SanPham sp in DAO.SanPhamDAO.INSTANCE.loadData(tenkho))
+            foreach (DTO.SanPham sp in DAO.SanPhamDAO.INSTANCE.loadDataByName(tenkho))
             {
                 lten.Add(sp.TEN);
             }

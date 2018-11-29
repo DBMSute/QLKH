@@ -43,7 +43,7 @@ namespace DAO
                 string hovatendem = item["hovatendem"].ToString();
                 string ten = item["ten"].ToString();
                 date = (DateTime)item["ngaysinh"];
-                string ngaysinh = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
+                string ngaysinh = date.ToString("d", new System.Globalization.CultureInfo("en-US"));
                 string diachi = item["diachi"].ToString();
                 string lastlogin;
                 if (item["lastlogin"].ToString() == "")
@@ -51,10 +51,10 @@ namespace DAO
                 else
                 {
                     date = (DateTime)item["lastlogin"];
-                    lastlogin = date.ToString("G", new System.Globalization.CultureInfo("es-ES"));
+                    lastlogin = date.ToString("G", new System.Globalization.CultureInfo("en-US"));
                 }
                 date = (DateTime)item["createday"];
-                string createdate = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
+                string createdate = date.ToString("d", new System.Globalization.CultureInfo("en-US"));
                 int tinhtrang = Convert.ToInt32(item["tinhtrang"]);
                 int pers = Convert.ToInt32(item["pers"]);
                 string quanly = item["quanly"].ToString();
@@ -76,7 +76,7 @@ namespace DAO
                          "@diachi = N'" + tk.DIACHI + "'," +
                          "@per = " + tk.PERS + "," +
                          "@tinhtrang = " + tk.TINHTRANG + "," +
-                         "@quanly = '" + tk.QUANLY + "'";
+                         "@quanly = " + tk.QUANLY;
             DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
@@ -135,7 +135,7 @@ namespace DAO
                 string createdate = date.ToString("d", new System.Globalization.CultureInfo("es-ES"));
                 int tinhtrang = Convert.ToInt32(item["tinhtrang"]);
                 int pers = Convert.ToInt32(item["pers"]);
-                string quanly = item["pers"].ToString();
+                string quanly = item["quanly"].ToString();
                 TaiKhoan tk = new TaiKhoan(id, tentk, pw, avt, hovatendem, ten, ngaysinh, diachi, lastlogin, createdate, pers, tinhtrang, quanly);
                 lTK.Add(tk);
             }

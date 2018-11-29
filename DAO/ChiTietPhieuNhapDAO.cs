@@ -112,6 +112,7 @@ namespace DAO
         {
             string str = "EXEC dbo.sp_Insert_CTPN @idpn = '" + ctpn.IDPN + "'," +
                          "@tensp = N'" + ctpn.TENSP + "'," +
+                         "@tenloai = N'" + ctpn.TENLSP + "'," +
                          "@tenkho = N'" + ctpn.TENKHO + "'," +
                          "@tenncc = N'" + ctpn.TENNCC + "'," +
                          "@dongia = " + ctpn.DONGIA + "," +
@@ -147,7 +148,7 @@ namespace DAO
         public void Delete(string idpn, string tensp)
         {
             string str = "EXEC dbo.sp_Delete_CTPN @idpn = '" + idpn + "'," +
-                         "@tensp = '" + tensp + "'";
+                         "@tensp = N'" + tensp + "'";
             DataConn.INSTANCE.ExecuteQueryTable(str);
         }
     }

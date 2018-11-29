@@ -83,10 +83,10 @@ namespace BUS
             dgv.DataSource = DAO.KhoDAO.INSTANCE.searchByNum(num, compTemp, compType);
         }
 
-        public List<string> loadDataTen()
+        public List<string> loadDataTen(string idEmp)
         {
             List<string> lten = new List<string>();
-            foreach (DTO.Kho lkho in DAO.KhoDAO.INSTANCE.loadData("TK000"))
+            foreach (DTO.Kho lkho in DAO.KhoDAO.INSTANCE.loadData(idEmp))
             {
                 lten.Add(lkho.TEN);
             }
