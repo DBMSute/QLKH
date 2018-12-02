@@ -17,8 +17,7 @@ namespace QuanLyKhoHang.GiaoDien
         public static string tempCD = null;
         public fmPhieuNhap()
         {
-            InitializeComponent();
-            pnMidL2.Location = new Point(-1190, 110);
+            InitializeComponent();           
             Init();
             tmrClock.Start();
         }
@@ -27,7 +26,7 @@ namespace QuanLyKhoHang.GiaoDien
         {
             try
             {
-                TENKHO.DataSource = BUS.KhoBUS.INSTANCE.loadDataTen(fmQuanLy.sID);
+                TENKHO.DataSource = BUS.KhoBUS.INSTANCE.loadDataTen(fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
                 TENNCC.DataSource = BUS.NhaCungCapBUS.INSTANCE.loadDataTen();
                 TENLSP.DataSource = BUS.LoaiSanPhamBUS.INSTANCE.loadDataTen();
                 tmrClock.Start();
@@ -46,12 +45,9 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void loadDataCTPN(DataGridViewCellEventArgs e)
         {
-            dtgvPN.Visible = false;
-            dtgvPN.Size = new Size(0, 0);
             tmrSlide.Start();
-            dtgvCTPN.Visible = true;
             lbPNName.Text = dtgvPN.Rows[e.RowIndex].Cells[0].Value.ToString();
-            BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
+            BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             flagSave = false;
             lbPN.Text = "Chi Tiết Phiếu Nhập";
             btnCPTNSave.BackColor = Color.SeaGreen;
@@ -83,7 +79,7 @@ namespace QuanLyKhoHang.GiaoDien
                 return;
             BUS.PhieuNhapBUS.INSTANCE.Insert(fmQuanLy.sID);
             BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
-            dtgvPN.CurrentCell = dtgvPN[0, Convert.ToInt32((dtgvPN.RowCount-1).ToString())];
+            dtgvPN.CurrentCell = dtgvPN[0, Convert.ToInt32((dtgvPN.RowCount - 1).ToString())];
             dtgvPN_CellClick(null, null);
         }
 
@@ -124,7 +120,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void tbPNSearch_TextChanged(object sender, EventArgs e)
         {
-            BUS.PhieuNhapBUS.INSTANCE.searchByKeyword(dtgvPN, tbPNSearch.Text.Trim());
+            BUS.PhieuNhapBUS.INSTANCE.searchByKeyword(dtgvPN, tbPNSearch.Text.Trim(), fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
         }
 
         private void tbPNSearch_Enter(object sender, EventArgs e)
@@ -144,23 +140,24 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void switchStatus_OnValueChange(object sender, EventArgs e)
         {
-            BUS.PhieuNhapBUS.INSTANCE.searchByStatus(dtgvPN, Convert.ToInt32(switchStatus.Value));
+            BUS.PhieuNhapBUS.INSTANCE.searchByStatus(dtgvPN, Convert.ToInt32(switchStatus.Value), fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
         }
 
         private void dtpkFinish_ValueChanged(object sender, EventArgs e)
         {
-            BUS.PhieuNhapBUS.INSTANCE.searchByBetweenDate(dtgvPN, dtpkStart.Value.ToString().Trim(), dtpkFinish.Value.ToString().Trim());
+            BUS.PhieuNhapBUS.INSTANCE.searchByBetweenDate(dtgvPN, dtpkStart.Value.ToString().Trim(), dtpkFinish.Value.ToString().Trim(), fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
         }
 
         private void dtpkStart_ValueChanged(object sender, EventArgs e)
         {
-            BUS.PhieuNhapBUS.INSTANCE.searchByBetweenDate(dtgvPN, dtpkStart.Value.ToString().Trim(), dtpkFinish.Value.ToString().Trim());
+            BUS.PhieuNhapBUS.INSTANCE.searchByBetweenDate(dtgvPN, dtpkStart.Value.ToString().Trim(), dtpkFinish.Value.ToString().Trim(), fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
         }
 
         private void dtgvPN_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
+                this.Enabled = false;
                 loadDataCTPN(e);
                 tempCD = dtgvPN.CurrentRow.Cells[1].Value.ToString();
                 return;
@@ -170,59 +167,185 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void tmrSlide_Tick(object sender, EventArgs e)
         {
-            int X, Y;
-            if (pnMidL.Location.X <= -1190)
+            if (pnMidR.Location.X < 1160)
             {
-                if (pnMidL2.Location.X == 10)
+                pnMidR.Location = new Point(pnMidR.Location.X + 50, pnMidR.Location.Y);
+                return;
+            }
+            if (dtgvPN.Location.X > -890)
+            {
+                dtgvPN.Location = new Point(dtgvPN.Location.X - 100, dtgvPN.Location.Y);
+                return;
+            }
+            if (pnMidL.Size.Width <= 1040)
+            {
+                pnMidL.Size = new Size(pnMidL.Size.Width + 50, pnMidL.Size.Height);
+                if (pnMidL.Size.Width == 1040)
                 {
-                    dtgvCTPN.Size = new Size(1040, 430);
-                    tmrSlide.Stop();
+                    pnMidL.Size = new Size(1060, pnMidL.Size.Height);
                     return;
                 }
-                X = pnMidL2.Location.X;
-                Y = pnMidL2.Location.Y;
-                pnMidL2.Location = new Point(X + 200, Y);
+                return;
             }
-            else
+            if (lbListPN.Location.Y > -40)
             {
-
-                X = pnMidL.Location.X;
-                Y = pnMidL.Location.Y;
-                pnMidL.Location = new Point(X - 200, Y);
-                pnMidR.Location = new Point(pnMidR.Location.X + 100, pnMidR.Location.Y);
+                lbListPN.Location = new Point(lbListPN.Location.X, lbListPN.Location.Y - 10);
+                return;
             }
+            if(btnDone.Location.Y > -40)
+            {
+                btnDone.Location = new Point(btnDone.Location.X, btnDone.Location.Y - 10);
+                return;
+            }
+            if (dtgvCTPN.Location.X != 10)
+            {
+                dtgvCTPN.Location = new Point(dtgvCTPN.Location.X + 100, dtgvCTPN.Location.Y);
+                return;
+            }
+            if (btnback.Location.Y < 10)
+            {
+                btnback.Location = new Point(btnback.Location.X, btnback.Location.Y + 10);
+                return;
+            }
+            if (lbPNName.Location.Y < 10)
+            {
+                lbPNName.Location = new Point(lbPNName.Location.X, lbPNName.Location.Y + 10);
+                return;
+            }
+            if (tbCTPNSearch.Location.Y < 10)
+            {
+                tbCTPNSearch.Location = new Point(tbCTPNSearch.Location.X, tbCTPNSearch.Location.Y + 10);
+                return;
+            }
+            if (switchItemPrice.Location.Y < 30)
+            {
+                switchItemPrice.Location = new Point(switchItemPrice.Location.X, switchItemPrice.Location.Y + 10);
+                return;
+            }
+            if (lbGiaTri.Location.Y < 10)
+            {
+                lbGiaTri.Location = new Point(lbGiaTri.Location.X, lbGiaTri.Location.Y + 10);
+                return;
+            }     
+            if (lbSL.Location.Y < 10)
+            {
+                lbSL.Location = new Point(lbSL.Location.X, lbSL.Location.Y + 10);
+                return;
+            }
+            if (numItemSL.Location.Y < 10)
+            {
+                numItemSL.Location = new Point(numItemSL.Location.X, numItemSL.Location.Y + 10);
+                return;
+            }
+            if (switchItemOpe.Location.Y < 30)
+            {
+                switchItemOpe.Location = new Point(switchItemOpe.Location.X, switchItemOpe.Location.Y + 10);
+                return;
+            }
+            if (lbLonBe.Location.Y < 10)
+            {
+                lbLonBe.Location = new Point(lbLonBe.Location.X, lbLonBe.Location.Y + 10);
+                return;
+            }       
+            BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
+            tmrSlide.Stop();
+            this.Enabled = true;
         }
 
         private void tmrSlide2_Tick(object sender, EventArgs e)
         {
-            int X, Y;
-            if (pnMidL2.Location.X <= -1190)
+            if (dtgvCTPN.Location.X != -1090)
             {
-                if (pnMidL.Location.X == 10)
+                dtgvCTPN.Location = new Point(dtgvCTPN.Location.X - 100, dtgvCTPN.Location.Y);
+                return;
+            }
+            if (switchItemOpe.Location.Y > -40)
+            {
+                switchItemOpe.Location = new Point(switchItemOpe.Location.X, switchItemOpe.Location.Y - 10);
+                return;
+            }
+            if (lbLonBe.Location.Y > -40)
+            {
+                lbLonBe.Location = new Point(lbLonBe.Location.X, lbLonBe.Location.Y - 10);
+                return;
+            }
+            if (numItemSL.Location.Y > -40)
+            {
+                numItemSL.Location = new Point(numItemSL.Location.X, numItemSL.Location.Y - 10);
+                return;
+            }
+            if (lbSL.Location.Y > -40)
+            {
+                lbSL.Location = new Point(lbSL.Location.X, lbSL.Location.Y - 10);
+                return;
+            }
+            if (lbGiaTri.Location.Y > -40)
+            {
+                lbGiaTri.Location = new Point(lbGiaTri.Location.X, lbGiaTri.Location.Y - 10);
+                return;
+            }
+            if (switchItemPrice.Location.Y > -30)
+            {
+                switchItemPrice.Location = new Point(switchItemPrice.Location.X, switchItemPrice.Location.Y - 10);
+                return;
+            }
+            if (tbCTPNSearch.Location.Y > -40)
+            {
+                tbCTPNSearch.Location = new Point(tbCTPNSearch.Location.X, tbCTPNSearch.Location.Y - 10);
+                return;
+            }
+            
+            if (lbPNName.Location.Y > -60)
+            {
+                lbPNName.Location = new Point(lbPNName.Location.X, lbPNName.Location.Y - 10);
+                return;
+            }
+            if (btnback.Location.Y > -40)
+            {
+                btnback.Location = new Point(btnback.Location.X, btnback.Location.Y - 10);
+                return;
+            }
+            if (pnMidL.Size.Width > 740)
+            {
+                pnMidL.Size = new Size(pnMidL.Size.Width - 50, pnMidL.Size.Height);
+                if (pnMidL.Size.Width == 760)
                 {
-                    dtgvPN.Size = new Size(721, 430);
-                    tmrSlide2.Stop();
+                    pnMidL.Size = new Size(740, pnMidL.Size.Height);
                     return;
                 }
-                X = pnMidL.Location.X;
-                Y = pnMidL.Location.Y;
-                pnMidL.Location = new Point(X + 200, Y);
-                pnMidR.Location = new Point(pnMidR.Location.X - 100, pnMidR.Location.Y);
+                return;
             }
-            else
+
+            if (pnMidR.Location.X > 760)
             {
-                X = pnMidL2.Location.X;
-                Y = pnMidL2.Location.Y;
-                pnMidL2.Location = new Point(X - 200, Y);
+                pnMidR.Location = new Point(pnMidR.Location.X - 50, pnMidR.Location.Y);
+                return;
             }
+            if (dtgvPN.Location.X < 10)
+            {
+                dtgvPN.Location = new Point(dtgvPN.Location.X + 100, dtgvPN.Location.Y);
+                return;
+            }
+
+            if (lbListPN.Location.Y < 10)
+            {
+                lbListPN.Location = new Point(lbListPN.Location.X, lbListPN.Location.Y + 10);
+                return;
+            }
+            if (btnDone.Location.Y < 10)
+            {
+                btnDone.Location = new Point(btnDone.Location.X, btnDone.Location.Y + 10);
+                return;
+            }
+            BUS.PhieuNhapBUS.INSTANCE.loadData(dtgvPN, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
+            tmrSlide2.Stop();
+            this.Enabled = true;
         }
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            dtgvCTPN.Visible = false;
-            dtgvCTPN.Size = new Size(0, 0);
+            this.Enabled = false;
             tmrSlide2.Start();
-            dtgvPN.Visible = true;
             lbPN.Text = "Phiếu Nhập";
             Init();
         }
@@ -242,7 +365,7 @@ namespace QuanLyKhoHang.GiaoDien
                     return;
                 BUS.ChiTietPhieuNhapBUS.INSTANCE.Delete(lbPNName.Text, dtgvCTPN.CurrentRow.Cells[1].Value.ToString());
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
+                BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
                 loadTongQuan(dtgvCTPN);
             }
             catch (Exception ex)
@@ -265,7 +388,7 @@ namespace QuanLyKhoHang.GiaoDien
                 if (flagSave == true)
                 {
                     BUS.ChiTietPhieuNhapBUS.INSTANCE.saveInsert(dtgvCTPN, lbPNName.Text);
-                    BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
+                    BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
                     MessageBox.Show("Đã lưu!", "Thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnCPTNSave.BackColor = Color.SeaGreen;
                     loadTongQuan(dtgvCTPN);
@@ -273,7 +396,7 @@ namespace QuanLyKhoHang.GiaoDien
                 else
                 {
                     MessageBox.Show("Sửa dữ liệu không khả dụng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
+                    BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
                     btnCPTNSave.BackColor = Color.SeaGreen;
                     loadTongQuan(dtgvCTPN);
                 }
@@ -282,7 +405,7 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 MessageBox.Show(ex.Message.Contains("Object reference") == true ? "Dữ liệu thêm vào không được rỗng!" :(
                     ex.Message.Contains("PRIMARY KEY") == true ? "Dữ liệu thêm vào đã tồn tại!" : ex.Message), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
+                BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
                 btnCPTNSave.BackColor = Color.SeaGreen;
             }
         }
@@ -323,7 +446,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void dtgvPN_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, dtgvPN.CurrentRow.Cells[0].Value.ToString());
+            BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, dtgvPN.CurrentRow.Cells[0].Value.ToString(), fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             loadTongQuan(dtgvCTPN);
             if (dtgvPN.CurrentRow.Cells[2].Value.ToString() == "1")
             {
@@ -403,9 +526,9 @@ namespace QuanLyKhoHang.GiaoDien
             try
             {
                 if (switchItemPrice.Value == false)
-                    BUS.ChiTietPhieuNhapBUS.INSTANCE.searchByKeyword(dtgvCTPN, tbCTPNSearch.Text);
+                    BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
                 else
-                    BUS.ChiTietPhieuNhapBUS.INSTANCE.searchByPrice(dtgvCTPN, tbCTPNSearch.Text != "" ? Convert.ToInt32(tbCTPNSearch.Text) : 0);
+                    BUS.ChiTietPhieuNhapBUS.INSTANCE.searchByPrice(dtgvCTPN, lbPNName.Text, tbCTPNSearch.Text != "" ? Convert.ToInt32(tbCTPNSearch.Text) : 0, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             }
             catch ( Exception)
             {
@@ -424,18 +547,40 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbCTPNSearch.Text == "")
             {
                 tbCTPNSearch.Text = "Tìm kiếm...";
-                BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text);
+                BUS.ChiTietPhieuNhapBUS.INSTANCE.loadData(dtgvCTPN, lbPNName.Text, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
             }
         }
 
         private void numItemSL_ValueChanged(object sender, EventArgs e)
         {
-            BUS.ChiTietPhieuNhapBUS.INSTANCE.searchByAmount(dtgvCTPN, (int)numItemSL.Value, switchItemOpe.Value);
+            BUS.ChiTietPhieuNhapBUS.INSTANCE.searchByAmount(dtgvCTPN, lbPNName.Text, (int)numItemSL.Value, switchItemOpe.Value, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
         }
 
         private void tmrClock_Tick(object sender, EventArgs e)
         {
             lbClock.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void switchItemOpe_Click(object sender, EventArgs e)
+        {
+            if(switchItemOpe.Value == true)
+            BUS.ChiTietPhieuNhapBUS.INSTANCE.searchByAmount(dtgvCTPN, lbPNName.Text, (int)numItemSL.Value, switchItemOpe.Value, fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
+        }
+
+        private void switchItemPrice_Click(object sender, EventArgs e)
+        {
+            if (switchItemPrice.Value == true)
+                try
+                {
+                    int n = 0;
+                    BUS.ChiTietPhieuNhapBUS.INSTANCE.searchByPrice(dtgvCTPN, lbPNName.Text, int.TryParse(tbCTPNSearch.Text, out n) ? n : throw new Exception(), fmQuanLy.sPosition == "Quản trị tối cao" || fmQuanLy.sPosition == "Quản lý" ? fmQuanLy.sID : fmQuanLy.sIDQuanLy);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Từ khóa tìm kiếm không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    switchItemPrice.Value = false;
+                    tbCTPNSearch.Focus();
+                }
         }
     }
 }

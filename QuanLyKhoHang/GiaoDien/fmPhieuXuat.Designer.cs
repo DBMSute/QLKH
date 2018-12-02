@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmPhieuXuat));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,9 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tmrSlide2 = new System.Windows.Forms.Timer(this.components);
             this.tmrSlide = new System.Windows.Forms.Timer(this.components);
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
@@ -48,6 +48,7 @@
             this.pnTop = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbPX = new System.Windows.Forms.Label();
+            this.lbClock = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbDataInfoNumLSP = new System.Windows.Forms.Label();
@@ -64,36 +65,24 @@
             this.lbInfoTong = new System.Windows.Forms.Label();
             this.lbTongQuan = new System.Windows.Forms.Label();
             this.pnMidL = new System.Windows.Forms.Panel();
-            this.btnDone = new System.Windows.Forms.Button();
-            this.lbListPX = new System.Windows.Forms.Label();
-            this.dtgvPX = new System.Windows.Forms.DataGridView();
-            this.pnMidR = new System.Windows.Forms.Panel();
-            this.btnPXPrint = new Bunifu.Framework.UI.BunifuTileButton();
-            this.dtpkFinish = new System.Windows.Forms.DateTimePicker();
-            this.btnPXReload = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnPXAdd = new Bunifu.Framework.UI.BunifuTileButton();
-            this.dtpkStart = new System.Windows.Forms.DateTimePicker();
-            this.btnPXDel = new Bunifu.Framework.UI.BunifuTileButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.switchStatus = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.tbPXSearch = new System.Windows.Forms.TextBox();
-            this.pnMidL2 = new System.Windows.Forms.Panel();
-            this.numItemSL = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.switchItemPrice = new Bunifu.Framework.UI.BunifuSwitch();
-            this.dtgvCTPX = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
             this.btnCTPXPrint = new Bunifu.Framework.UI.BunifuImageButton();
+            this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
             this.btnCPTXSave = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbLonBe = new System.Windows.Forms.Label();
             this.btnCTPXDelete = new Bunifu.Framework.UI.BunifuImageButton();
+            this.numItemSL = new System.Windows.Forms.NumericUpDown();
             this.btnCTPXAdd = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbPXName = new System.Windows.Forms.Label();
-            this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
-            this.tbCTPXSearch = new System.Windows.Forms.TextBox();
+            this.btnDone = new System.Windows.Forms.Button();
+            this.lbSL = new System.Windows.Forms.Label();
+            this.lbListPX = new System.Windows.Forms.Label();
+            this.switchItemPrice = new Bunifu.Framework.UI.BunifuSwitch();
+            this.lbGiaTri = new System.Windows.Forms.Label();
+            this.dtgvPX = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYGIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAIKHOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRANGTHAI = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dtgvCTPX = new System.Windows.Forms.DataGridView();
             this.IDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENKHO = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.TENSP = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -103,26 +92,35 @@
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DVTIENTE = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.TONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbClock = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYGIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TAIKHOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRANGTHAI = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbPXName = new System.Windows.Forms.Label();
+            this.tbCTPXSearch = new System.Windows.Forms.TextBox();
+            this.pnMidR = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnPXPrint = new Bunifu.Framework.UI.BunifuTileButton();
+            this.dtpkFinish = new System.Windows.Forms.DateTimePicker();
+            this.btnPXReload = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnPXAdd = new Bunifu.Framework.UI.BunifuTileButton();
+            this.dtpkStart = new System.Windows.Forms.DateTimePicker();
+            this.btnPXDel = new Bunifu.Framework.UI.BunifuTileButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.switchStatus = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.tbPXSearch = new System.Windows.Forms.TextBox();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnMidL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPX)).BeginInit();
-            this.pnMidR.SuspendLayout();
-            this.pnMidL2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCTPX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPXPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCPTXSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPXDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPXAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCTPX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            this.pnMidR.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrSlide2
@@ -185,6 +183,18 @@
             this.lbPX.TabIndex = 0;
             this.lbPX.Text = "Phiếu Xuất";
             // 
+            // lbClock
+            // 
+            this.lbClock.BackColor = System.Drawing.Color.Transparent;
+            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClock.ForeColor = System.Drawing.Color.White;
+            this.lbClock.Location = new System.Drawing.Point(668, 61);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(400, 33);
+            this.lbClock.TabIndex = 13;
+            this.lbClock.Text = "Clock";
+            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
@@ -193,7 +203,6 @@
             this.bunifuGradientPanel1.Controls.Add(this.pnMidL);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidR);
             this.bunifuGradientPanel1.Controls.Add(this.pnTop);
-            this.bunifuGradientPanel1.Controls.Add(this.pnMidL2);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
@@ -397,14 +406,134 @@
             // pnMidL
             // 
             this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMidL.Controls.Add(this.btnCTPXPrint);
+            this.pnMidL.Controls.Add(this.switchItemOpe);
+            this.pnMidL.Controls.Add(this.btnCPTXSave);
+            this.pnMidL.Controls.Add(this.lbLonBe);
+            this.pnMidL.Controls.Add(this.btnCTPXDelete);
+            this.pnMidL.Controls.Add(this.numItemSL);
+            this.pnMidL.Controls.Add(this.btnCTPXAdd);
             this.pnMidL.Controls.Add(this.btnDone);
+            this.pnMidL.Controls.Add(this.lbSL);
             this.pnMidL.Controls.Add(this.lbListPX);
+            this.pnMidL.Controls.Add(this.switchItemPrice);
+            this.pnMidL.Controls.Add(this.lbGiaTri);
             this.pnMidL.Controls.Add(this.dtgvPX);
+            this.pnMidL.Controls.Add(this.dtgvCTPX);
+            this.pnMidL.Controls.Add(this.btnback);
+            this.pnMidL.Controls.Add(this.lbPXName);
+            this.pnMidL.Controls.Add(this.tbCTPXSearch);
             this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnMidL.Location = new System.Drawing.Point(10, 110);
             this.pnMidL.Name = "pnMidL";
             this.pnMidL.Size = new System.Drawing.Size(740, 500);
             this.pnMidL.TabIndex = 8;
+            // 
+            // btnCTPXPrint
+            // 
+            this.btnCTPXPrint.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCTPXPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCTPXPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
+            this.btnCTPXPrint.ImageActive = null;
+            this.btnCTPXPrint.Location = new System.Drawing.Point(1000, 10);
+            this.btnCTPXPrint.Name = "btnCTPXPrint";
+            this.btnCTPXPrint.Size = new System.Drawing.Size(40, 40);
+            this.btnCTPXPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCTPXPrint.TabIndex = 8;
+            this.btnCTPXPrint.TabStop = false;
+            this.btnCTPXPrint.Zoom = 10;
+            this.btnCTPXPrint.Click += new System.EventHandler(this.btnCTPXPrint_Click);
+            // 
+            // switchItemOpe
+            // 
+            this.switchItemOpe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.switchItemOpe.BorderRadius = 5;
+            this.switchItemOpe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchItemOpe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchItemOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemOpe.Location = new System.Drawing.Point(750, -30);
+            this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4);
+            this.switchItemOpe.Name = "switchItemOpe";
+            this.switchItemOpe.Oncolor = System.Drawing.Color.SeaGreen;
+            this.switchItemOpe.Onoffcolor = System.Drawing.Color.DarkGray;
+            this.switchItemOpe.Size = new System.Drawing.Size(51, 19);
+            this.switchItemOpe.TabIndex = 12;
+            this.switchItemOpe.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemOpe.Value = false;
+            this.switchItemOpe.Click += new System.EventHandler(this.switchItemOpe_Click);
+            // 
+            // btnCPTXSave
+            // 
+            this.btnCPTXSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCPTXSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCPTXSave.Image = global::QuanLyKhoHang.Properties.Resources.save;
+            this.btnCPTXSave.ImageActive = null;
+            this.btnCPTXSave.Location = new System.Drawing.Point(950, 10);
+            this.btnCPTXSave.Name = "btnCPTXSave";
+            this.btnCPTXSave.Size = new System.Drawing.Size(40, 40);
+            this.btnCPTXSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCPTXSave.TabIndex = 7;
+            this.btnCPTXSave.TabStop = false;
+            this.btnCPTXSave.Zoom = 10;
+            this.btnCPTXSave.Click += new System.EventHandler(this.btnCPTXSave_Click);
+            // 
+            // lbLonBe
+            // 
+            this.lbLonBe.AutoSize = true;
+            this.lbLonBe.BackColor = System.Drawing.Color.Transparent;
+            this.lbLonBe.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLonBe.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbLonBe.Location = new System.Drawing.Point(750, -40);
+            this.lbLonBe.Name = "lbLonBe";
+            this.lbLonBe.Size = new System.Drawing.Size(59, 17);
+            this.lbLonBe.TabIndex = 13;
+            this.lbLonBe.Text = "Lớn / Bé";
+            // 
+            // btnCTPXDelete
+            // 
+            this.btnCTPXDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCTPXDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCTPXDelete.Image = global::QuanLyKhoHang.Properties.Resources.delete;
+            this.btnCTPXDelete.ImageActive = null;
+            this.btnCTPXDelete.Location = new System.Drawing.Point(900, 10);
+            this.btnCTPXDelete.Name = "btnCTPXDelete";
+            this.btnCTPXDelete.Size = new System.Drawing.Size(40, 40);
+            this.btnCTPXDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCTPXDelete.TabIndex = 6;
+            this.btnCTPXDelete.TabStop = false;
+            this.btnCTPXDelete.Zoom = 10;
+            this.btnCTPXDelete.Click += new System.EventHandler(this.btnCTPXDelete_Click);
+            // 
+            // numItemSL
+            // 
+            this.numItemSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numItemSL.Font = new System.Drawing.Font("Century Gothic", 22F);
+            this.numItemSL.ForeColor = System.Drawing.Color.SeaGreen;
+            this.numItemSL.Location = new System.Drawing.Point(660, -40);
+            this.numItemSL.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numItemSL.Name = "numItemSL";
+            this.numItemSL.Size = new System.Drawing.Size(80, 39);
+            this.numItemSL.TabIndex = 10;
+            this.numItemSL.ValueChanged += new System.EventHandler(this.numItemSL_ValueChanged);
+            // 
+            // btnCTPXAdd
+            // 
+            this.btnCTPXAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCTPXAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCTPXAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
+            this.btnCTPXAdd.ImageActive = null;
+            this.btnCTPXAdd.Location = new System.Drawing.Point(850, 10);
+            this.btnCTPXAdd.Name = "btnCTPXAdd";
+            this.btnCTPXAdd.Size = new System.Drawing.Size(40, 40);
+            this.btnCTPXAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCTPXAdd.TabIndex = 5;
+            this.btnCTPXAdd.TabStop = false;
+            this.btnCTPXAdd.Zoom = 10;
+            this.btnCTPXAdd.Click += new System.EventHandler(this.btnCTPXAdd_Click);
             // 
             // btnDone
             // 
@@ -420,6 +549,18 @@
             this.btnDone.UseVisualStyleBackColor = false;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
+            // lbSL
+            // 
+            this.lbSL.AutoSize = true;
+            this.lbSL.BackColor = System.Drawing.Color.Transparent;
+            this.lbSL.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSL.ForeColor = System.Drawing.Color.White;
+            this.lbSL.Location = new System.Drawing.Point(600, -40);
+            this.lbSL.Name = "lbSL";
+            this.lbSL.Size = new System.Drawing.Size(60, 42);
+            this.lbSL.TabIndex = 102;
+            this.lbSL.Text = "SL:";
+            // 
             // lbListPX
             // 
             this.lbListPX.BackColor = System.Drawing.Color.Transparent;
@@ -431,6 +572,36 @@
             this.lbListPX.TabIndex = 3;
             this.lbListPX.Text = "Danh sách phiếu xuất";
             this.lbListPX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // switchItemPrice
+            // 
+            this.switchItemPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.switchItemPrice.BorderRadius = 5;
+            this.switchItemPrice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchItemPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchItemPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemPrice.Location = new System.Drawing.Point(530, -30);
+            this.switchItemPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.switchItemPrice.Name = "switchItemPrice";
+            this.switchItemPrice.Oncolor = System.Drawing.Color.SeaGreen;
+            this.switchItemPrice.Onoffcolor = System.Drawing.Color.DarkGray;
+            this.switchItemPrice.Size = new System.Drawing.Size(51, 19);
+            this.switchItemPrice.TabIndex = 100;
+            this.switchItemPrice.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemPrice.Value = false;
+            this.switchItemPrice.Click += new System.EventHandler(this.switchItemPrice_Click);
+            // 
+            // lbGiaTri
+            // 
+            this.lbGiaTri.AutoSize = true;
+            this.lbGiaTri.BackColor = System.Drawing.Color.Transparent;
+            this.lbGiaTri.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGiaTri.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbGiaTri.Location = new System.Drawing.Point(530, -40);
+            this.lbGiaTri.Name = "lbGiaTri";
+            this.lbGiaTri.Size = new System.Drawing.Size(47, 17);
+            this.lbGiaTri.TabIndex = 101;
+            this.lbGiaTri.Text = "Giá trị";
             // 
             // dtgvPX
             // 
@@ -451,18 +622,237 @@
             this.dtgvPX.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPX_CellClick);
             this.dtgvPX.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPX_CellDoubleClick);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ID.HeaderText = "Mã phiếu xuất";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // NGAYGIO
+            // 
+            this.NGAYGIO.DataPropertyName = "NGAYGIO";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.NGAYGIO.DefaultCellStyle = dataGridViewCellStyle2;
+            this.NGAYGIO.HeaderText = "Ngày tạo";
+            this.NGAYGIO.Name = "NGAYGIO";
+            this.NGAYGIO.ReadOnly = true;
+            // 
+            // TAIKHOAN
+            // 
+            this.TAIKHOAN.DataPropertyName = "TAIKHOAN";
+            this.TAIKHOAN.HeaderText = "Mã tài khoản tạo";
+            this.TAIKHOAN.Name = "TAIKHOAN";
+            this.TAIKHOAN.ReadOnly = true;
+            // 
+            // TRANGTHAI
+            // 
+            this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = false;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.TRANGTHAI.DefaultCellStyle = dataGridViewCellStyle3;
+            this.TRANGTHAI.FalseValue = "0";
+            this.TRANGTHAI.HeaderText = "Trạng thái";
+            this.TRANGTHAI.Name = "TRANGTHAI";
+            this.TRANGTHAI.ReadOnly = true;
+            this.TRANGTHAI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TRANGTHAI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TRANGTHAI.TrueValue = "1";
+            // 
+            // dtgvCTPX
+            // 
+            this.dtgvCTPX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvCTPX.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvCTPX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCTPX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPN,
+            this.TENKHO,
+            this.TENSP,
+            this.TENKH,
+            this.TENLSP,
+            this.DONGIA,
+            this.SL,
+            this.DVTIENTE,
+            this.TONG});
+            this.dtgvCTPX.Location = new System.Drawing.Point(-1090, 60);
+            this.dtgvCTPX.Name = "dtgvCTPX";
+            this.dtgvCTPX.Size = new System.Drawing.Size(1040, 430);
+            this.dtgvCTPX.TabIndex = 0;
+            this.dtgvCTPX.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgvCTPX_CellMouseClick);
+            this.dtgvCTPX.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCTPX_CellValueChanged);
+            // 
+            // IDPN
+            // 
+            this.IDPN.DataPropertyName = "IDPN";
+            this.IDPN.HeaderText = "Mã PN";
+            this.IDPN.Name = "IDPN";
+            this.IDPN.ReadOnly = true;
+            this.IDPN.Visible = false;
+            // 
+            // TENKHO
+            // 
+            this.TENKHO.DataPropertyName = "TENKHO";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.TENKHO.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TENKHO.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.TENKHO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENKHO.HeaderText = "Tên kho";
+            this.TENKHO.Name = "TENKHO";
+            this.TENKHO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENKHO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TENSP
+            // 
+            this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENSP.DataPropertyName = "TENSP";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.TENSP.DefaultCellStyle = dataGridViewCellStyle5;
+            this.TENSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.Name = "TENSP";
+            this.TENSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TENSP.Width = 118;
+            // 
+            // TENKH
+            // 
+            this.TENKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENKH.DataPropertyName = "TENKH";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.TENKH.DefaultCellStyle = dataGridViewCellStyle6;
+            this.TENKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.TENKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TENKH.HeaderText = "Tên khách hàng";
+            this.TENKH.Name = "TENKH";
+            this.TENKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TENKH.Width = 127;
+            // 
+            // TENLSP
+            // 
+            this.TENLSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TENLSP.DataPropertyName = "TENLSP";
+            dataGridViewCellStyle7.NullValue = "Auto";
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.TENLSP.DefaultCellStyle = dataGridViewCellStyle7;
+            this.TENLSP.HeaderText = "Tên loại sản phẩm";
+            this.TENLSP.Name = "TENLSP";
+            this.TENLSP.ReadOnly = true;
+            this.TENLSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENLSP.Width = 107;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            dataGridViewCellStyle8.NullValue = "Auto";
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.DONGIA.DefaultCellStyle = dataGridViewCellStyle8;
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.ReadOnly = true;
+            // 
+            // SL
+            // 
+            this.SL.DataPropertyName = "SOLUONG";
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.SL.DefaultCellStyle = dataGridViewCellStyle9;
+            this.SL.HeaderText = "Số lượng";
+            this.SL.Name = "SL";
+            // 
+            // DVTIENTE
+            // 
+            this.DVTIENTE.DataPropertyName = "DVTIENTE";
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.DVTIENTE.DefaultCellStyle = dataGridViewCellStyle10;
+            this.DVTIENTE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.DVTIENTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DVTIENTE.HeaderText = "Đơn vị";
+            this.DVTIENTE.Items.AddRange(new object[] {
+            "VND",
+            "EUR",
+            "USD"});
+            this.DVTIENTE.Name = "DVTIENTE";
+            this.DVTIENTE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DVTIENTE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TONG
+            // 
+            this.TONG.DataPropertyName = "TONG";
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.TONG.DefaultCellStyle = dataGridViewCellStyle11;
+            this.TONG.HeaderText = "Tổng";
+            this.TONG.Name = "TONG";
+            this.TONG.ReadOnly = true;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.Color.Transparent;
+            this.btnback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnback.Image = global::QuanLyKhoHang.Properties.Resources.back;
+            this.btnback.ImageActive = null;
+            this.btnback.Location = new System.Drawing.Point(10, -40);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(40, 40);
+            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnback.TabIndex = 3;
+            this.btnback.TabStop = false;
+            this.btnback.Zoom = 10;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
+            // lbPXName
+            // 
+            this.lbPXName.AutoSize = true;
+            this.lbPXName.BackColor = System.Drawing.Color.Transparent;
+            this.lbPXName.Font = new System.Drawing.Font("Century Gothic", 25F);
+            this.lbPXName.ForeColor = System.Drawing.Color.White;
+            this.lbPXName.Location = new System.Drawing.Point(56, -60);
+            this.lbPXName.Name = "lbPXName";
+            this.lbPXName.Size = new System.Drawing.Size(75, 40);
+            this.lbPXName.TabIndex = 4;
+            this.lbPXName.Text = "Null";
+            // 
+            // tbCTPXSearch
+            // 
+            this.tbCTPXSearch.BackColor = System.Drawing.Color.White;
+            this.tbCTPXSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCTPXSearch.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.tbCTPXSearch.ForeColor = System.Drawing.Color.SeaGreen;
+            this.tbCTPXSearch.Location = new System.Drawing.Point(265, -40);
+            this.tbCTPXSearch.Name = "tbCTPXSearch";
+            this.tbCTPXSearch.Size = new System.Drawing.Size(250, 40);
+            this.tbCTPXSearch.TabIndex = 99;
+            this.tbCTPXSearch.Text = "Tìm kiếm...";
+            this.tbCTPXSearch.TextChanged += new System.EventHandler(this.tbCTPXSearch_TextChanged);
+            this.tbCTPXSearch.Enter += new System.EventHandler(this.tbCTPXSearch_Enter);
+            this.tbCTPXSearch.Leave += new System.EventHandler(this.tbCTPXSearch_Leave);
+            // 
             // pnMidR
             // 
             this.pnMidR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMidR.Controls.Add(this.label3);
+            this.pnMidR.Controls.Add(this.label2);
             this.pnMidR.Controls.Add(this.btnPXPrint);
             this.pnMidR.Controls.Add(this.dtpkFinish);
             this.pnMidR.Controls.Add(this.btnPXReload);
             this.pnMidR.Controls.Add(this.btnPXAdd);
             this.pnMidR.Controls.Add(this.dtpkStart);
             this.pnMidR.Controls.Add(this.btnPXDel);
-            this.pnMidR.Controls.Add(this.label3);
             this.pnMidR.Controls.Add(this.label1);
-            this.pnMidR.Controls.Add(this.label2);
             this.pnMidR.Controls.Add(this.switchStatus);
             this.pnMidR.Controls.Add(this.tbPXSearch);
             this.pnMidR.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -470,6 +860,32 @@
             this.pnMidR.Name = "pnMidR";
             this.pnMidR.Size = new System.Drawing.Size(310, 500);
             this.pnMidR.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(7, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.TabIndex = 105;
+            this.label3.Text = "Kết thúc";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(7, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 23);
+            this.label2.TabIndex = 104;
+            this.label2.Text = "Bắt đầu";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnPXPrint
             // 
@@ -575,19 +991,6 @@
             this.btnPXDel.TabIndex = 8;
             this.btnPXDel.Click += new System.EventHandler(this.btnPXDel_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(7, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
-            this.label3.TabIndex = 105;
-            this.label3.Text = "Kết thúc";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -600,19 +1003,6 @@
             this.label1.TabIndex = 101;
             this.label1.Text = "Đã thanh toán";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 23);
-            this.label2.TabIndex = 104;
-            this.label2.Text = "Bắt đầu";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // switchStatus
             // 
@@ -645,412 +1035,9 @@
             this.tbPXSearch.Enter += new System.EventHandler(this.tbPXSearch_Enter);
             this.tbPXSearch.Leave += new System.EventHandler(this.tbPXSearch_Leave);
             // 
-            // pnMidL2
-            // 
-            this.pnMidL2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnMidL2.Controls.Add(this.numItemSL);
-            this.pnMidL2.Controls.Add(this.label6);
-            this.pnMidL2.Controls.Add(this.label5);
-            this.pnMidL2.Controls.Add(this.switchItemPrice);
-            this.pnMidL2.Controls.Add(this.dtgvCTPX);
-            this.pnMidL2.Controls.Add(this.label4);
-            this.pnMidL2.Controls.Add(this.switchItemOpe);
-            this.pnMidL2.Controls.Add(this.btnCTPXPrint);
-            this.pnMidL2.Controls.Add(this.btnCPTXSave);
-            this.pnMidL2.Controls.Add(this.btnCTPXDelete);
-            this.pnMidL2.Controls.Add(this.btnCTPXAdd);
-            this.pnMidL2.Controls.Add(this.lbPXName);
-            this.pnMidL2.Controls.Add(this.btnback);
-            this.pnMidL2.Controls.Add(this.tbCTPXSearch);
-            this.pnMidL2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnMidL2.Location = new System.Drawing.Point(26, 106);
-            this.pnMidL2.Name = "pnMidL2";
-            this.pnMidL2.Size = new System.Drawing.Size(1060, 500);
-            this.pnMidL2.TabIndex = 9;
-            // 
-            // numItemSL
-            // 
-            this.numItemSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numItemSL.Font = new System.Drawing.Font("Century Gothic", 22F);
-            this.numItemSL.ForeColor = System.Drawing.Color.SeaGreen;
-            this.numItemSL.Location = new System.Drawing.Point(631, 11);
-            this.numItemSL.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numItemSL.Name = "numItemSL";
-            this.numItemSL.Size = new System.Drawing.Size(80, 39);
-            this.numItemSL.TabIndex = 10;
-            this.numItemSL.ValueChanged += new System.EventHandler(this.numItemSL_ValueChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(579, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 42);
-            this.label6.TabIndex = 102;
-            this.label6.Text = "SL:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label5.Location = new System.Drawing.Point(506, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
-            this.label5.TabIndex = 101;
-            this.label5.Text = "Giá trị";
-            // 
-            // switchItemPrice
-            // 
-            this.switchItemPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.switchItemPrice.BorderRadius = 5;
-            this.switchItemPrice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchItemPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchItemPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemPrice.Location = new System.Drawing.Point(509, 32);
-            this.switchItemPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.switchItemPrice.Name = "switchItemPrice";
-            this.switchItemPrice.Oncolor = System.Drawing.Color.SeaGreen;
-            this.switchItemPrice.Onoffcolor = System.Drawing.Color.DarkGray;
-            this.switchItemPrice.Size = new System.Drawing.Size(51, 19);
-            this.switchItemPrice.TabIndex = 100;
-            this.switchItemPrice.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemPrice.Value = false;
-            this.switchItemPrice.Click += new System.EventHandler(this.switchItemPrice_Click);
-            // 
-            // dtgvCTPX
-            // 
-            this.dtgvCTPX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvCTPX.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvCTPX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCTPX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPN,
-            this.TENKHO,
-            this.TENSP,
-            this.TENKH,
-            this.TENLSP,
-            this.DONGIA,
-            this.SL,
-            this.DVTIENTE,
-            this.TONG});
-            this.dtgvCTPX.Location = new System.Drawing.Point(10, 60);
-            this.dtgvCTPX.Name = "dtgvCTPX";
-            this.dtgvCTPX.Size = new System.Drawing.Size(1040, 430);
-            this.dtgvCTPX.TabIndex = 0;
-            this.dtgvCTPX.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgvCTPX_CellMouseClick);
-            this.dtgvCTPX.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCTPX_CellValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label4.Location = new System.Drawing.Point(720, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Lớn / Bé";
-            // 
-            // switchItemOpe
-            // 
-            this.switchItemOpe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.switchItemOpe.BorderRadius = 5;
-            this.switchItemOpe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchItemOpe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchItemOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemOpe.Location = new System.Drawing.Point(723, 32);
-            this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4);
-            this.switchItemOpe.Name = "switchItemOpe";
-            this.switchItemOpe.Oncolor = System.Drawing.Color.SeaGreen;
-            this.switchItemOpe.Onoffcolor = System.Drawing.Color.DarkGray;
-            this.switchItemOpe.Size = new System.Drawing.Size(51, 19);
-            this.switchItemOpe.TabIndex = 12;
-            this.switchItemOpe.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemOpe.Value = false;
-            this.switchItemOpe.Click += new System.EventHandler(this.switchItemOpe_Click);
-            // 
-            // btnCTPXPrint
-            // 
-            this.btnCTPXPrint.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnCTPXPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCTPXPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
-            this.btnCTPXPrint.ImageActive = null;
-            this.btnCTPXPrint.Location = new System.Drawing.Point(1000, 10);
-            this.btnCTPXPrint.Name = "btnCTPXPrint";
-            this.btnCTPXPrint.Size = new System.Drawing.Size(40, 40);
-            this.btnCTPXPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCTPXPrint.TabIndex = 8;
-            this.btnCTPXPrint.TabStop = false;
-            this.btnCTPXPrint.Zoom = 10;
-            this.btnCTPXPrint.Click += new System.EventHandler(this.btnCTPXPrint_Click);
-            // 
-            // btnCPTXSave
-            // 
-            this.btnCPTXSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnCPTXSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCPTXSave.Image = global::QuanLyKhoHang.Properties.Resources.save;
-            this.btnCPTXSave.ImageActive = null;
-            this.btnCPTXSave.Location = new System.Drawing.Point(950, 10);
-            this.btnCPTXSave.Name = "btnCPTXSave";
-            this.btnCPTXSave.Size = new System.Drawing.Size(40, 40);
-            this.btnCPTXSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCPTXSave.TabIndex = 7;
-            this.btnCPTXSave.TabStop = false;
-            this.btnCPTXSave.Zoom = 10;
-            this.btnCPTXSave.Click += new System.EventHandler(this.btnCPTXSave_Click);
-            // 
-            // btnCTPXDelete
-            // 
-            this.btnCTPXDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCTPXDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCTPXDelete.Image = global::QuanLyKhoHang.Properties.Resources.delete;
-            this.btnCTPXDelete.ImageActive = null;
-            this.btnCTPXDelete.Location = new System.Drawing.Point(900, 10);
-            this.btnCTPXDelete.Name = "btnCTPXDelete";
-            this.btnCTPXDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnCTPXDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCTPXDelete.TabIndex = 6;
-            this.btnCTPXDelete.TabStop = false;
-            this.btnCTPXDelete.Zoom = 10;
-            this.btnCTPXDelete.Click += new System.EventHandler(this.btnCTPXDelete_Click);
-            // 
-            // btnCTPXAdd
-            // 
-            this.btnCTPXAdd.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnCTPXAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCTPXAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
-            this.btnCTPXAdd.ImageActive = null;
-            this.btnCTPXAdd.Location = new System.Drawing.Point(850, 10);
-            this.btnCTPXAdd.Name = "btnCTPXAdd";
-            this.btnCTPXAdd.Size = new System.Drawing.Size(40, 40);
-            this.btnCTPXAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCTPXAdd.TabIndex = 5;
-            this.btnCTPXAdd.TabStop = false;
-            this.btnCTPXAdd.Zoom = 10;
-            this.btnCTPXAdd.Click += new System.EventHandler(this.btnCTPXAdd_Click);
-            // 
-            // lbPXName
-            // 
-            this.lbPXName.AutoSize = true;
-            this.lbPXName.BackColor = System.Drawing.Color.Transparent;
-            this.lbPXName.Font = new System.Drawing.Font("Century Gothic", 25F);
-            this.lbPXName.ForeColor = System.Drawing.Color.White;
-            this.lbPXName.Location = new System.Drawing.Point(56, 10);
-            this.lbPXName.Name = "lbPXName";
-            this.lbPXName.Size = new System.Drawing.Size(75, 40);
-            this.lbPXName.TabIndex = 4;
-            this.lbPXName.Text = "Null";
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.Color.Transparent;
-            this.btnback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnback.Image = global::QuanLyKhoHang.Properties.Resources.back;
-            this.btnback.ImageActive = null;
-            this.btnback.Location = new System.Drawing.Point(10, 10);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(40, 40);
-            this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnback.TabIndex = 3;
-            this.btnback.TabStop = false;
-            this.btnback.Zoom = 10;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
-            // tbCTPXSearch
-            // 
-            this.tbCTPXSearch.BackColor = System.Drawing.Color.White;
-            this.tbCTPXSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbCTPXSearch.Font = new System.Drawing.Font("Century Gothic", 24F);
-            this.tbCTPXSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.tbCTPXSearch.Location = new System.Drawing.Point(250, 11);
-            this.tbCTPXSearch.Name = "tbCTPXSearch";
-            this.tbCTPXSearch.Size = new System.Drawing.Size(250, 40);
-            this.tbCTPXSearch.TabIndex = 99;
-            this.tbCTPXSearch.Text = "Tìm kiếm...";
-            this.tbCTPXSearch.TextChanged += new System.EventHandler(this.tbCTPXSearch_TextChanged);
-            this.tbCTPXSearch.Enter += new System.EventHandler(this.tbCTPXSearch_Enter);
-            this.tbCTPXSearch.Leave += new System.EventHandler(this.tbCTPXSearch_Leave);
-            // 
-            // IDPN
-            // 
-            this.IDPN.DataPropertyName = "IDPN";
-            this.IDPN.HeaderText = "Mã PN";
-            this.IDPN.Name = "IDPN";
-            this.IDPN.ReadOnly = true;
-            this.IDPN.Visible = false;
-            // 
-            // TENKHO
-            // 
-            this.TENKHO.DataPropertyName = "TENKHO";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.TENKHO.DefaultCellStyle = dataGridViewCellStyle4;
-            this.TENKHO.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.TENKHO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENKHO.HeaderText = "Tên kho";
-            this.TENKHO.Name = "TENKHO";
-            this.TENKHO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENKHO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TENSP
-            // 
-            this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENSP.DataPropertyName = "TENSP";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.TENSP.DefaultCellStyle = dataGridViewCellStyle5;
-            this.TENSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENSP.HeaderText = "Tên sản phẩm";
-            this.TENSP.Name = "TENSP";
-            this.TENSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TENSP.Width = 129;
-            // 
-            // TENKH
-            // 
-            this.TENKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENKH.DataPropertyName = "TENKH";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.TENKH.DefaultCellStyle = dataGridViewCellStyle6;
-            this.TENKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.TENKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TENKH.HeaderText = "Tên khách hàng";
-            this.TENKH.Name = "TENKH";
-            this.TENKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TENKH.Width = 127;
-            // 
-            // TENLSP
-            // 
-            this.TENLSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENLSP.DataPropertyName = "TENLSP";
-            dataGridViewCellStyle7.NullValue = "Auto";
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.TENLSP.DefaultCellStyle = dataGridViewCellStyle7;
-            this.TENLSP.HeaderText = "Tên loại sản phẩm";
-            this.TENLSP.Name = "TENLSP";
-            this.TENLSP.ReadOnly = true;
-            this.TENLSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TENLSP.Width = 107;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            dataGridViewCellStyle8.NullValue = "Auto";
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.DONGIA.DefaultCellStyle = dataGridViewCellStyle8;
-            this.DONGIA.HeaderText = "Đơn giá";
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.ReadOnly = true;
-            // 
-            // SL
-            // 
-            this.SL.DataPropertyName = "SOLUONG";
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.SL.DefaultCellStyle = dataGridViewCellStyle9;
-            this.SL.HeaderText = "Số lượng";
-            this.SL.Name = "SL";
-            // 
-            // DVTIENTE
-            // 
-            this.DVTIENTE.DataPropertyName = "DVTIENTE";
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.DVTIENTE.DefaultCellStyle = dataGridViewCellStyle10;
-            this.DVTIENTE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.DVTIENTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DVTIENTE.HeaderText = "Đơn vị";
-            this.DVTIENTE.Items.AddRange(new object[] {
-            "VND",
-            "EUR",
-            "USD"});
-            this.DVTIENTE.Name = "DVTIENTE";
-            this.DVTIENTE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DVTIENTE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TONG
-            // 
-            this.TONG.DataPropertyName = "TONG";
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            this.TONG.DefaultCellStyle = dataGridViewCellStyle11;
-            this.TONG.HeaderText = "Tổng";
-            this.TONG.Name = "TONG";
-            this.TONG.ReadOnly = true;
-            // 
-            // lbClock
-            // 
-            this.lbClock.BackColor = System.Drawing.Color.Transparent;
-            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClock.ForeColor = System.Drawing.Color.White;
-            this.lbClock.Location = new System.Drawing.Point(668, 61);
-            this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(400, 33);
-            this.lbClock.TabIndex = 13;
-            this.lbClock.Text = "Clock";
-            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ID.HeaderText = "Mã phiếu xuất";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // NGAYGIO
-            // 
-            this.NGAYGIO.DataPropertyName = "NGAYGIO";
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.NGAYGIO.DefaultCellStyle = dataGridViewCellStyle2;
-            this.NGAYGIO.HeaderText = "Ngày tạo";
-            this.NGAYGIO.Name = "NGAYGIO";
-            this.NGAYGIO.ReadOnly = true;
-            // 
-            // TAIKHOAN
-            // 
-            this.TAIKHOAN.DataPropertyName = "TAIKHOAN";
-            this.TAIKHOAN.HeaderText = "Mã tài khoản tạo";
-            this.TAIKHOAN.Name = "TAIKHOAN";
-            this.TAIKHOAN.ReadOnly = true;
-            // 
-            // TRANGTHAI
-            // 
-            this.TRANGTHAI.DataPropertyName = "TRANGTHAI";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = false;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.TRANGTHAI.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TRANGTHAI.FalseValue = "0";
-            this.TRANGTHAI.HeaderText = "Trạng thái";
-            this.TRANGTHAI.Name = "TRANGTHAI";
-            this.TRANGTHAI.ReadOnly = true;
-            this.TRANGTHAI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TRANGTHAI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TRANGTHAI.TrueValue = "1";
-            // 
             // fmPhieuXuat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1080, 720);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1064,18 +1051,17 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnMidL.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPX)).EndInit();
-            this.pnMidR.ResumeLayout(false);
-            this.pnMidR.PerformLayout();
-            this.pnMidL2.ResumeLayout(false);
-            this.pnMidL2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCTPX)).EndInit();
+            this.pnMidL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPXPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCPTXSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPXDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPXAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCTPX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            this.pnMidR.ResumeLayout(false);
+            this.pnMidR.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1096,13 +1082,12 @@
         private Bunifu.Framework.UI.BunifuiOSSwitch switchStatus;
         private System.Windows.Forms.TextBox tbPXSearch;
         private System.Windows.Forms.Label lbPXName;
-        private System.Windows.Forms.Panel pnMidL2;
         private System.Windows.Forms.NumericUpDown numItemSL;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbSL;
+        private System.Windows.Forms.Label lbGiaTri;
         private Bunifu.Framework.UI.BunifuSwitch switchItemPrice;
         private System.Windows.Forms.DataGridView dtgvCTPX;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbLonBe;
         private Bunifu.Framework.UI.BunifuSwitch switchItemOpe;
         private Bunifu.Framework.UI.BunifuImageButton btnCTPXPrint;
         private Bunifu.Framework.UI.BunifuImageButton btnCPTXSave;

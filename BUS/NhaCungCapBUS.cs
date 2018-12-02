@@ -42,7 +42,7 @@ namespace BUS
             DAO.NhaCungCapDAO.INSTANCE.saveInsert(ncc);
         }
 
-        public void Delete(DataGridView dgv, string id)
+        public void Delete(string id)
         {
             DAO.NhaCungCapDAO.INSTANCE.Delete(id);
         }

@@ -24,19 +24,19 @@ namespace BUS
             dgv.DataSource = DAO.PhieuXuatDAO.INSTANCE.loadData(idEmp);
         }
 
-        public void searchByKeyword(DataGridView dgv, string keyword)
+        public void searchByKeyword(DataGridView dgv, string keyword, string idEmp)
         {
-            dgv.DataSource = DAO.PhieuXuatDAO.INSTANCE.searchByKeyword(keyword);
+            dgv.DataSource = DAO.PhieuXuatDAO.INSTANCE.searchByKeyword(keyword, idEmp);
         }
 
-        public void searchByStatus(DataGridView dgv, int status)
+        public void searchByStatus(DataGridView dgv, int status, string idEmp)
         {
-            dgv.DataSource = DAO.PhieuXuatDAO.INSTANCE.searchByStatus(status);
+            dgv.DataSource = DAO.PhieuXuatDAO.INSTANCE.searchByStatus(status, idEmp);
         }
 
-        public void searchByBetweenDate(DataGridView dgv, string start, string finish)
+        public void searchByBetweenDate(DataGridView dgv, string start, string finish, string idEmp)
         {
-            dgv.DataSource = DAO.PhieuXuatDAO.INSTANCE.searchByBetweenDate(start, finish);
+            dgv.DataSource = DAO.PhieuXuatDAO.INSTANCE.searchByBetweenDate(start, finish, idEmp);
         }
 
         public void Delete(string id)

@@ -24,7 +24,7 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnSupAdd_Click(object sender, EventArgs e)
         {
-            BUS.KhachHangBUS.INSTANCE.Insert(dtgvSup);
+            BUS.NhaCungCapBUS.INSTANCE.Insert(dtgvSup);
             dtgvSup.CurrentCell = dtgvSup[1, 0];
             flagSave = true;
         }
@@ -41,14 +41,14 @@ namespace QuanLyKhoHang.GiaoDien
             {
                 if (MessageBox.Show("Bạn có chắc muốn xóa dữ liệu này?", "Xóa dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
                     return;
-                BUS.KhachHangBUS.INSTANCE.Delete(dtgvSup.CurrentRow.Cells[0].Value.ToString());
+                BUS.NhaCungCapBUS.INSTANCE.Delete(dtgvSup.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("Đã xóa!", "Xóa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                BUS.KhachHangBUS.INSTANCE.loadData(dtgvSup);
+                BUS.NhaCungCapBUS.INSTANCE.loadData(dtgvSup);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.KhachHangBUS.INSTANCE.loadData(dtgvSup);
+                BUS.NhaCungCapBUS.INSTANCE.loadData(dtgvSup);
             }
         }
 
@@ -64,8 +64,8 @@ namespace QuanLyKhoHang.GiaoDien
                 }
                 if (flagSave == true)
                 {
-                    BUS.KhachHangBUS.INSTANCE.saveInsert(dtgvSup);
-                    BUS.KhachHangBUS.INSTANCE.loadData(dtgvSup);
+                    BUS.NhaCungCapBUS.INSTANCE.saveInsert(dtgvSup);
+                    BUS.NhaCungCapBUS.INSTANCE.loadData(dtgvSup);
                     MessageBox.Show("Đã lưu!", "Thêm dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnSupSave.color = dtgvSup.BackColor = Color.SeaGreen;
                     btnSupSave.colorActive = Color.MediumSeaGreen;
@@ -73,8 +73,8 @@ namespace QuanLyKhoHang.GiaoDien
                 }
                 else
                 {
-                    BUS.KhachHangBUS.INSTANCE.saveEdit(dtgvSup);
-                    BUS.KhachHangBUS.INSTANCE.loadData(dtgvSup);
+                    BUS.NhaCungCapBUS.INSTANCE.saveEdit(dtgvSup);
+                    BUS.NhaCungCapBUS.INSTANCE.loadData(dtgvSup);
                     MessageBox.Show("Đã Sửa!", "Sửa dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnSupSave.color = btnSupSave.BackColor = Color.SeaGreen;
                     btnSupSave.colorActive = Color.MediumSeaGreen;
@@ -83,7 +83,7 @@ namespace QuanLyKhoHang.GiaoDien
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BUS.KhachHangBUS.INSTANCE.loadData(dtgvSup);
+                BUS.NhaCungCapBUS.INSTANCE.loadData(dtgvSup);
             }
         }
 
@@ -131,7 +131,7 @@ namespace QuanLyKhoHang.GiaoDien
             if (tbSupSearch.Text == "")
             {
                 tbSupSearch.Text = "Tìm kiếm...";
-                BUS.KhachHangBUS.INSTANCE.loadData(dtgvSup);
+                BUS.NhaCungCapBUS.INSTANCE.loadData(dtgvSup);
             }
         }
 

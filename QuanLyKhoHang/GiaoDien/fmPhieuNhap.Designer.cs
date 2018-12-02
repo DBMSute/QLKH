@@ -42,6 +42,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbPN = new System.Windows.Forms.Label();
+            this.lbClock = new System.Windows.Forms.Label();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.tmrSlide = new System.Windows.Forms.Timer(this.components);
             this.tmrSlide2 = new System.Windows.Forms.Timer(this.components);
@@ -61,34 +65,23 @@
             this.lbInfoTong = new System.Windows.Forms.Label();
             this.lbTongQuan = new System.Windows.Forms.Label();
             this.pnMidL = new System.Windows.Forms.Panel();
+            this.btnCTPNPrint = new Bunifu.Framework.UI.BunifuImageButton();
+            this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
+            this.btnCPTNSave = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbLonBe = new System.Windows.Forms.Label();
+            this.btnCTPNDelete = new Bunifu.Framework.UI.BunifuImageButton();
+            this.numItemSL = new System.Windows.Forms.NumericUpDown();
+            this.btnCTPNAdd = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbSL = new System.Windows.Forms.Label();
             this.btnDone = new System.Windows.Forms.Button();
             this.lbListPN = new System.Windows.Forms.Label();
+            this.lbGiaTri = new System.Windows.Forms.Label();
+            this.switchItemPrice = new Bunifu.Framework.UI.BunifuSwitch();
             this.dtgvPN = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYGIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TAIKHOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRANGTHAI = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.pnMidR = new System.Windows.Forms.Panel();
-            this.btnPNPrint = new Bunifu.Framework.UI.BunifuTileButton();
-            this.dtpkFinish = new System.Windows.Forms.DateTimePicker();
-            this.btnPNReload = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnPNAdd = new Bunifu.Framework.UI.BunifuTileButton();
-            this.dtpkStart = new System.Windows.Forms.DateTimePicker();
-            this.btnPNDel = new Bunifu.Framework.UI.BunifuTileButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.switchStatus = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.tbPNSearch = new System.Windows.Forms.TextBox();
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbPN = new System.Windows.Forms.Label();
-            this.lbClock = new System.Windows.Forms.Label();
-            this.pnMidL2 = new System.Windows.Forms.Panel();
-            this.numItemSL = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.switchItemPrice = new Bunifu.Framework.UI.BunifuSwitch();
             this.dtgvCTPN = new System.Windows.Forms.DataGridView();
             this.IDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,30 +92,35 @@
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DVTIENTE = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.TONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.switchItemOpe = new Bunifu.Framework.UI.BunifuSwitch();
-            this.btnCTPNPrint = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCPTNSave = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCTPNDelete = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCTPNAdd = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbPNName = new System.Windows.Forms.Label();
             this.btnback = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbPNName = new System.Windows.Forms.Label();
             this.tbCTPNSearch = new System.Windows.Forms.TextBox();
+            this.pnMidR = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnPNPrint = new Bunifu.Framework.UI.BunifuTileButton();
+            this.dtpkFinish = new System.Windows.Forms.DateTimePicker();
+            this.btnPNReload = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnPNAdd = new Bunifu.Framework.UI.BunifuTileButton();
+            this.dtpkStart = new System.Windows.Forms.DateTimePicker();
+            this.btnPNDel = new Bunifu.Framework.UI.BunifuTileButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.switchStatus = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.tbPNSearch = new System.Windows.Forms.TextBox();
+            this.pnTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnMidL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPN)).BeginInit();
-            this.pnMidR.SuspendLayout();
-            this.pnTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
-            this.pnMidL2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPNPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCPTNSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPNDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPNAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
+            this.pnMidR.SuspendLayout();
             this.SuspendLayout();
             // 
             // DragControl
@@ -131,6 +129,57 @@
             this.DragControl.Horizontal = true;
             this.DragControl.TargetControl = this.pnTop;
             this.DragControl.Vertical = true;
+            // 
+            // pnTop
+            // 
+            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnTop.Controls.Add(this.btnExit);
+            this.pnTop.Controls.Add(this.lbPN);
+            this.pnTop.Controls.Add(this.lbClock);
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(1080, 100);
+            this.pnTop.TabIndex = 3;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(1028, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lbPN
+            // 
+            this.lbPN.AutoSize = true;
+            this.lbPN.BackColor = System.Drawing.Color.Transparent;
+            this.lbPN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbPN.Font = new System.Drawing.Font("Century Gothic", 59F);
+            this.lbPN.ForeColor = System.Drawing.Color.White;
+            this.lbPN.Location = new System.Drawing.Point(10, 0);
+            this.lbPN.Name = "lbPN";
+            this.lbPN.Size = new System.Drawing.Size(469, 94);
+            this.lbPN.TabIndex = 0;
+            this.lbPN.Text = "Phiếu Nhập";
+            // 
+            // lbClock
+            // 
+            this.lbClock.BackColor = System.Drawing.Color.Transparent;
+            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClock.ForeColor = System.Drawing.Color.White;
+            this.lbClock.Location = new System.Drawing.Point(668, 61);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(400, 33);
+            this.lbClock.TabIndex = 13;
+            this.lbClock.Text = "Clock";
+            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tmrClock
             // 
@@ -154,7 +203,6 @@
             this.bunifuGradientPanel1.Controls.Add(this.pnMidL);
             this.bunifuGradientPanel1.Controls.Add(this.pnMidR);
             this.bunifuGradientPanel1.Controls.Add(this.pnTop);
-            this.bunifuGradientPanel1.Controls.Add(this.pnMidL2);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.Navy;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.SeaGreen;
@@ -358,14 +406,146 @@
             // pnMidL
             // 
             this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMidL.Controls.Add(this.btnCTPNPrint);
+            this.pnMidL.Controls.Add(this.switchItemOpe);
+            this.pnMidL.Controls.Add(this.btnCPTNSave);
+            this.pnMidL.Controls.Add(this.lbLonBe);
+            this.pnMidL.Controls.Add(this.btnCTPNDelete);
+            this.pnMidL.Controls.Add(this.numItemSL);
+            this.pnMidL.Controls.Add(this.btnCTPNAdd);
+            this.pnMidL.Controls.Add(this.lbSL);
             this.pnMidL.Controls.Add(this.btnDone);
             this.pnMidL.Controls.Add(this.lbListPN);
+            this.pnMidL.Controls.Add(this.lbGiaTri);
+            this.pnMidL.Controls.Add(this.switchItemPrice);
             this.pnMidL.Controls.Add(this.dtgvPN);
+            this.pnMidL.Controls.Add(this.dtgvCTPN);
+            this.pnMidL.Controls.Add(this.btnback);
+            this.pnMidL.Controls.Add(this.lbPNName);
+            this.pnMidL.Controls.Add(this.tbCTPNSearch);
             this.pnMidL.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnMidL.Location = new System.Drawing.Point(10, 110);
             this.pnMidL.Name = "pnMidL";
             this.pnMidL.Size = new System.Drawing.Size(740, 500);
             this.pnMidL.TabIndex = 8;
+            // 
+            // btnCTPNPrint
+            // 
+            this.btnCTPNPrint.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCTPNPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCTPNPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
+            this.btnCTPNPrint.ImageActive = null;
+            this.btnCTPNPrint.Location = new System.Drawing.Point(1000, 10);
+            this.btnCTPNPrint.Name = "btnCTPNPrint";
+            this.btnCTPNPrint.Size = new System.Drawing.Size(40, 40);
+            this.btnCTPNPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCTPNPrint.TabIndex = 8;
+            this.btnCTPNPrint.TabStop = false;
+            this.btnCTPNPrint.Zoom = 10;
+            this.btnCTPNPrint.Click += new System.EventHandler(this.btnCTPNPrint_Click);
+            // 
+            // switchItemOpe
+            // 
+            this.switchItemOpe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.switchItemOpe.BorderRadius = 5;
+            this.switchItemOpe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchItemOpe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchItemOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemOpe.Location = new System.Drawing.Point(750, -30);
+            this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4);
+            this.switchItemOpe.Name = "switchItemOpe";
+            this.switchItemOpe.Oncolor = System.Drawing.Color.SeaGreen;
+            this.switchItemOpe.Onoffcolor = System.Drawing.Color.DarkGray;
+            this.switchItemOpe.Size = new System.Drawing.Size(51, 19);
+            this.switchItemOpe.TabIndex = 12;
+            this.switchItemOpe.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemOpe.Value = false;
+            this.switchItemOpe.Click += new System.EventHandler(this.switchItemOpe_Click);
+            // 
+            // btnCPTNSave
+            // 
+            this.btnCPTNSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCPTNSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCPTNSave.Image = global::QuanLyKhoHang.Properties.Resources.save;
+            this.btnCPTNSave.ImageActive = null;
+            this.btnCPTNSave.Location = new System.Drawing.Point(950, 10);
+            this.btnCPTNSave.Name = "btnCPTNSave";
+            this.btnCPTNSave.Size = new System.Drawing.Size(40, 40);
+            this.btnCPTNSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCPTNSave.TabIndex = 7;
+            this.btnCPTNSave.TabStop = false;
+            this.btnCPTNSave.Zoom = 10;
+            this.btnCPTNSave.Click += new System.EventHandler(this.btnCPTNSave_Click);
+            // 
+            // lbLonBe
+            // 
+            this.lbLonBe.AutoSize = true;
+            this.lbLonBe.BackColor = System.Drawing.Color.Transparent;
+            this.lbLonBe.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLonBe.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbLonBe.Location = new System.Drawing.Point(750, -40);
+            this.lbLonBe.Name = "lbLonBe";
+            this.lbLonBe.Size = new System.Drawing.Size(59, 17);
+            this.lbLonBe.TabIndex = 13;
+            this.lbLonBe.Text = "Lớn / Bé";
+            // 
+            // btnCTPNDelete
+            // 
+            this.btnCTPNDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCTPNDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCTPNDelete.Image = global::QuanLyKhoHang.Properties.Resources.delete;
+            this.btnCTPNDelete.ImageActive = null;
+            this.btnCTPNDelete.Location = new System.Drawing.Point(900, 10);
+            this.btnCTPNDelete.Name = "btnCTPNDelete";
+            this.btnCTPNDelete.Size = new System.Drawing.Size(40, 40);
+            this.btnCTPNDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCTPNDelete.TabIndex = 6;
+            this.btnCTPNDelete.TabStop = false;
+            this.btnCTPNDelete.Zoom = 10;
+            this.btnCTPNDelete.Click += new System.EventHandler(this.btnCTPNDelete_Click);
+            // 
+            // numItemSL
+            // 
+            this.numItemSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numItemSL.Font = new System.Drawing.Font("Century Gothic", 22F);
+            this.numItemSL.ForeColor = System.Drawing.Color.SeaGreen;
+            this.numItemSL.Location = new System.Drawing.Point(660, -40);
+            this.numItemSL.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numItemSL.Name = "numItemSL";
+            this.numItemSL.Size = new System.Drawing.Size(80, 39);
+            this.numItemSL.TabIndex = 10;
+            this.numItemSL.ValueChanged += new System.EventHandler(this.numItemSL_ValueChanged);
+            // 
+            // btnCTPNAdd
+            // 
+            this.btnCTPNAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCTPNAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCTPNAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
+            this.btnCTPNAdd.ImageActive = null;
+            this.btnCTPNAdd.Location = new System.Drawing.Point(850, 10);
+            this.btnCTPNAdd.Name = "btnCTPNAdd";
+            this.btnCTPNAdd.Size = new System.Drawing.Size(40, 40);
+            this.btnCTPNAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCTPNAdd.TabIndex = 5;
+            this.btnCTPNAdd.TabStop = false;
+            this.btnCTPNAdd.Zoom = 10;
+            this.btnCTPNAdd.Click += new System.EventHandler(this.btnCTPNAdd_Click);
+            // 
+            // lbSL
+            // 
+            this.lbSL.AutoSize = true;
+            this.lbSL.BackColor = System.Drawing.Color.Transparent;
+            this.lbSL.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSL.ForeColor = System.Drawing.Color.White;
+            this.lbSL.Location = new System.Drawing.Point(600, -40);
+            this.lbSL.Name = "lbSL";
+            this.lbSL.Size = new System.Drawing.Size(60, 42);
+            this.lbSL.TabIndex = 102;
+            this.lbSL.Text = "SL:";
             // 
             // btnDone
             // 
@@ -392,6 +572,36 @@
             this.lbListPN.TabIndex = 3;
             this.lbListPN.Text = "Danh sách phiếu nhập";
             this.lbListPN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbGiaTri
+            // 
+            this.lbGiaTri.AutoSize = true;
+            this.lbGiaTri.BackColor = System.Drawing.Color.Transparent;
+            this.lbGiaTri.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGiaTri.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbGiaTri.Location = new System.Drawing.Point(530, -40);
+            this.lbGiaTri.Name = "lbGiaTri";
+            this.lbGiaTri.Size = new System.Drawing.Size(47, 17);
+            this.lbGiaTri.TabIndex = 101;
+            this.lbGiaTri.Text = "Giá trị";
+            // 
+            // switchItemPrice
+            // 
+            this.switchItemPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.switchItemPrice.BorderRadius = 5;
+            this.switchItemPrice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchItemPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchItemPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemPrice.Location = new System.Drawing.Point(530, -30);
+            this.switchItemPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.switchItemPrice.Name = "switchItemPrice";
+            this.switchItemPrice.Oncolor = System.Drawing.Color.SeaGreen;
+            this.switchItemPrice.Onoffcolor = System.Drawing.Color.DarkGray;
+            this.switchItemPrice.Size = new System.Drawing.Size(51, 19);
+            this.switchItemPrice.TabIndex = 100;
+            this.switchItemPrice.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.switchItemPrice.Value = false;
+            this.switchItemPrice.Click += new System.EventHandler(this.switchItemPrice_Click);
             // 
             // dtgvPN
             // 
@@ -452,331 +662,6 @@
             this.TRANGTHAI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.TRANGTHAI.TrueValue = "1";
             // 
-            // pnMidR
-            // 
-            this.pnMidR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnMidR.Controls.Add(this.btnPNPrint);
-            this.pnMidR.Controls.Add(this.dtpkFinish);
-            this.pnMidR.Controls.Add(this.btnPNReload);
-            this.pnMidR.Controls.Add(this.btnPNAdd);
-            this.pnMidR.Controls.Add(this.dtpkStart);
-            this.pnMidR.Controls.Add(this.btnPNDel);
-            this.pnMidR.Controls.Add(this.label3);
-            this.pnMidR.Controls.Add(this.label1);
-            this.pnMidR.Controls.Add(this.label2);
-            this.pnMidR.Controls.Add(this.switchStatus);
-            this.pnMidR.Controls.Add(this.tbPNSearch);
-            this.pnMidR.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnMidR.Location = new System.Drawing.Point(757, 110);
-            this.pnMidR.Name = "pnMidR";
-            this.pnMidR.Size = new System.Drawing.Size(310, 500);
-            this.pnMidR.TabIndex = 7;
-            // 
-            // btnPNPrint
-            // 
-            this.btnPNPrint.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnPNPrint.color = System.Drawing.Color.SeaGreen;
-            this.btnPNPrint.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnPNPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPNPrint.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPNPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPNPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
-            this.btnPNPrint.ImagePosition = 20;
-            this.btnPNPrint.ImageZoom = 40;
-            this.btnPNPrint.LabelPosition = 50;
-            this.btnPNPrint.LabelText = "In";
-            this.btnPNPrint.Location = new System.Drawing.Point(165, 342);
-            this.btnPNPrint.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.btnPNPrint.Name = "btnPNPrint";
-            this.btnPNPrint.Size = new System.Drawing.Size(135, 135);
-            this.btnPNPrint.TabIndex = 9;
-            this.btnPNPrint.Click += new System.EventHandler(this.btnPNPrint_Click);
-            // 
-            // dtpkFinish
-            // 
-            this.dtpkFinish.CalendarFont = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkFinish.CustomFormat = "dd/MM/yyyy";
-            this.dtpkFinish.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpkFinish.Location = new System.Drawing.Point(110, 116);
-            this.dtpkFinish.Name = "dtpkFinish";
-            this.dtpkFinish.Size = new System.Drawing.Size(190, 31);
-            this.dtpkFinish.TabIndex = 106;
-            this.dtpkFinish.ValueChanged += new System.EventHandler(this.dtpkFinish_ValueChanged);
-            // 
-            // btnPNReload
-            // 
-            this.btnPNReload.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnPNReload.color = System.Drawing.Color.SeaGreen;
-            this.btnPNReload.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnPNReload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPNReload.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPNReload.ForeColor = System.Drawing.Color.White;
-            this.btnPNReload.Image = global::QuanLyKhoHang.Properties.Resources.reload;
-            this.btnPNReload.ImagePosition = 20;
-            this.btnPNReload.ImageZoom = 40;
-            this.btnPNReload.LabelPosition = 50;
-            this.btnPNReload.LabelText = "Tải lại";
-            this.btnPNReload.Location = new System.Drawing.Point(11, 342);
-            this.btnPNReload.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.btnPNReload.Name = "btnPNReload";
-            this.btnPNReload.Size = new System.Drawing.Size(135, 135);
-            this.btnPNReload.TabIndex = 10;
-            this.btnPNReload.Click += new System.EventHandler(this.btnPNReload_Click);
-            // 
-            // btnPNAdd
-            // 
-            this.btnPNAdd.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnPNAdd.color = System.Drawing.Color.SeaGreen;
-            this.btnPNAdd.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnPNAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPNAdd.Font = new System.Drawing.Font("Century Gothic", 17.75F);
-            this.btnPNAdd.ForeColor = System.Drawing.Color.White;
-            this.btnPNAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
-            this.btnPNAdd.ImagePosition = 25;
-            this.btnPNAdd.ImageZoom = 40;
-            this.btnPNAdd.LabelPosition = 50;
-            this.btnPNAdd.LabelText = "Thêm";
-            this.btnPNAdd.Location = new System.Drawing.Point(10, 183);
-            this.btnPNAdd.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.btnPNAdd.Name = "btnPNAdd";
-            this.btnPNAdd.Size = new System.Drawing.Size(135, 135);
-            this.btnPNAdd.TabIndex = 7;
-            this.btnPNAdd.Click += new System.EventHandler(this.btnPNAdd_Click);
-            // 
-            // dtpkStart
-            // 
-            this.dtpkStart.CalendarFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkStart.CustomFormat = "dd/MM/yyyy";
-            this.dtpkStart.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpkStart.Location = new System.Drawing.Point(110, 75);
-            this.dtpkStart.Name = "dtpkStart";
-            this.dtpkStart.Size = new System.Drawing.Size(190, 31);
-            this.dtpkStart.TabIndex = 102;
-            this.dtpkStart.ValueChanged += new System.EventHandler(this.dtpkStart_ValueChanged);
-            // 
-            // btnPNDel
-            // 
-            this.btnPNDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnPNDel.color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnPNDel.colorActive = System.Drawing.Color.Red;
-            this.btnPNDel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPNDel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPNDel.ForeColor = System.Drawing.Color.White;
-            this.btnPNDel.Image = global::QuanLyKhoHang.Properties.Resources.delete;
-            this.btnPNDel.ImagePosition = 20;
-            this.btnPNDel.ImageZoom = 40;
-            this.btnPNDel.LabelPosition = 50;
-            this.btnPNDel.LabelText = "Xóa";
-            this.btnPNDel.Location = new System.Drawing.Point(165, 183);
-            this.btnPNDel.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.btnPNDel.Name = "btnPNDel";
-            this.btnPNDel.Size = new System.Drawing.Size(135, 135);
-            this.btnPNDel.TabIndex = 8;
-            this.btnPNDel.Click += new System.EventHandler(this.btnPNDel_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(7, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
-            this.label3.TabIndex = 105;
-            this.label3.Text = "Kết thúc";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(152, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 22);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "Đã thanh toán";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 23);
-            this.label2.TabIndex = 104;
-            this.label2.Text = "Bắt đầu";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // switchStatus
-            // 
-            this.switchStatus.BackColor = System.Drawing.Color.Transparent;
-            this.switchStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchStatus.BackgroundImage")));
-            this.switchStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchStatus.Location = new System.Drawing.Point(110, 49);
-            this.switchStatus.Name = "switchStatus";
-            this.switchStatus.OffColor = System.Drawing.Color.Gray;
-            this.switchStatus.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
-            this.switchStatus.Size = new System.Drawing.Size(35, 20);
-            this.switchStatus.TabIndex = 100;
-            this.switchStatus.Value = true;
-            this.switchStatus.OnValueChange += new System.EventHandler(this.switchStatus_OnValueChange);
-            // 
-            // tbPNSearch
-            // 
-            this.tbPNSearch.BackColor = System.Drawing.Color.White;
-            this.tbPNSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbPNSearch.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPNSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.tbPNSearch.Location = new System.Drawing.Point(10, 10);
-            this.tbPNSearch.Name = "tbPNSearch";
-            this.tbPNSearch.Size = new System.Drawing.Size(290, 34);
-            this.tbPNSearch.TabIndex = 99;
-            this.tbPNSearch.Text = "Tìm kiếm...";
-            this.tbPNSearch.TextChanged += new System.EventHandler(this.tbPNSearch_TextChanged);
-            this.tbPNSearch.Enter += new System.EventHandler(this.tbPNSearch_Enter);
-            this.tbPNSearch.Leave += new System.EventHandler(this.tbPNSearch_Leave);
-            // 
-            // pnTop
-            // 
-            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnTop.Controls.Add(this.btnExit);
-            this.pnTop.Controls.Add(this.lbPN);
-            this.pnTop.Controls.Add(this.lbClock);
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1080, 100);
-            this.pnTop.TabIndex = 3;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1028, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lbPN
-            // 
-            this.lbPN.AutoSize = true;
-            this.lbPN.BackColor = System.Drawing.Color.Transparent;
-            this.lbPN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbPN.Font = new System.Drawing.Font("Century Gothic", 59F);
-            this.lbPN.ForeColor = System.Drawing.Color.White;
-            this.lbPN.Location = new System.Drawing.Point(10, 0);
-            this.lbPN.Name = "lbPN";
-            this.lbPN.Size = new System.Drawing.Size(469, 94);
-            this.lbPN.TabIndex = 0;
-            this.lbPN.Text = "Phiếu Nhập";
-            // 
-            // lbClock
-            // 
-            this.lbClock.BackColor = System.Drawing.Color.Transparent;
-            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClock.ForeColor = System.Drawing.Color.White;
-            this.lbClock.Location = new System.Drawing.Point(668, 61);
-            this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(400, 33);
-            this.lbClock.TabIndex = 13;
-            this.lbClock.Text = "Clock";
-            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnMidL2
-            // 
-            this.pnMidL2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnMidL2.Controls.Add(this.numItemSL);
-            this.pnMidL2.Controls.Add(this.label6);
-            this.pnMidL2.Controls.Add(this.label5);
-            this.pnMidL2.Controls.Add(this.switchItemPrice);
-            this.pnMidL2.Controls.Add(this.dtgvCTPN);
-            this.pnMidL2.Controls.Add(this.label4);
-            this.pnMidL2.Controls.Add(this.switchItemOpe);
-            this.pnMidL2.Controls.Add(this.btnCTPNPrint);
-            this.pnMidL2.Controls.Add(this.btnCPTNSave);
-            this.pnMidL2.Controls.Add(this.btnCTPNDelete);
-            this.pnMidL2.Controls.Add(this.btnCTPNAdd);
-            this.pnMidL2.Controls.Add(this.lbPNName);
-            this.pnMidL2.Controls.Add(this.btnback);
-            this.pnMidL2.Controls.Add(this.tbCTPNSearch);
-            this.pnMidL2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnMidL2.Location = new System.Drawing.Point(26, 106);
-            this.pnMidL2.Name = "pnMidL2";
-            this.pnMidL2.Size = new System.Drawing.Size(1060, 500);
-            this.pnMidL2.TabIndex = 9;
-            // 
-            // numItemSL
-            // 
-            this.numItemSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numItemSL.Font = new System.Drawing.Font("Century Gothic", 22F);
-            this.numItemSL.ForeColor = System.Drawing.Color.SeaGreen;
-            this.numItemSL.Location = new System.Drawing.Point(631, 11);
-            this.numItemSL.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numItemSL.Name = "numItemSL";
-            this.numItemSL.Size = new System.Drawing.Size(80, 39);
-            this.numItemSL.TabIndex = 10;
-            this.numItemSL.ValueChanged += new System.EventHandler(this.numItemSL_ValueChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(579, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 42);
-            this.label6.TabIndex = 102;
-            this.label6.Text = "SL:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label5.Location = new System.Drawing.Point(506, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
-            this.label5.TabIndex = 101;
-            this.label5.Text = "Giá trị";
-            // 
-            // switchItemPrice
-            // 
-            this.switchItemPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.switchItemPrice.BorderRadius = 5;
-            this.switchItemPrice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchItemPrice.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchItemPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemPrice.Location = new System.Drawing.Point(509, 32);
-            this.switchItemPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.switchItemPrice.Name = "switchItemPrice";
-            this.switchItemPrice.Oncolor = System.Drawing.Color.SeaGreen;
-            this.switchItemPrice.Onoffcolor = System.Drawing.Color.DarkGray;
-            this.switchItemPrice.Size = new System.Drawing.Size(51, 19);
-            this.switchItemPrice.TabIndex = 100;
-            this.switchItemPrice.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemPrice.Value = false;
-            // 
             // dtgvCTPN
             // 
             this.dtgvCTPN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -792,7 +677,7 @@
             this.SL,
             this.DVTIENTE,
             this.TONG});
-            this.dtgvCTPN.Location = new System.Drawing.Point(10, 60);
+            this.dtgvCTPN.Location = new System.Drawing.Point(-1090, 60);
             this.dtgvCTPN.Name = "dtgvCTPN";
             this.dtgvCTPN.Size = new System.Drawing.Size(1040, 430);
             this.dtgvCTPN.TabIndex = 0;
@@ -899,114 +784,13 @@
             this.TONG.Name = "TONG";
             this.TONG.ReadOnly = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label4.Location = new System.Drawing.Point(720, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Lớn / Bé";
-            // 
-            // switchItemOpe
-            // 
-            this.switchItemOpe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.switchItemOpe.BorderRadius = 5;
-            this.switchItemOpe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchItemOpe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchItemOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemOpe.Location = new System.Drawing.Point(723, 32);
-            this.switchItemOpe.Margin = new System.Windows.Forms.Padding(4);
-            this.switchItemOpe.Name = "switchItemOpe";
-            this.switchItemOpe.Oncolor = System.Drawing.Color.SeaGreen;
-            this.switchItemOpe.Onoffcolor = System.Drawing.Color.DarkGray;
-            this.switchItemOpe.Size = new System.Drawing.Size(51, 19);
-            this.switchItemOpe.TabIndex = 12;
-            this.switchItemOpe.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.switchItemOpe.Value = false;
-            // 
-            // btnCTPNPrint
-            // 
-            this.btnCTPNPrint.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnCTPNPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCTPNPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
-            this.btnCTPNPrint.ImageActive = null;
-            this.btnCTPNPrint.Location = new System.Drawing.Point(1000, 10);
-            this.btnCTPNPrint.Name = "btnCTPNPrint";
-            this.btnCTPNPrint.Size = new System.Drawing.Size(40, 40);
-            this.btnCTPNPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCTPNPrint.TabIndex = 8;
-            this.btnCTPNPrint.TabStop = false;
-            this.btnCTPNPrint.Zoom = 10;
-            this.btnCTPNPrint.Click += new System.EventHandler(this.btnCTPNPrint_Click);
-            // 
-            // btnCPTNSave
-            // 
-            this.btnCPTNSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnCPTNSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCPTNSave.Image = global::QuanLyKhoHang.Properties.Resources.save;
-            this.btnCPTNSave.ImageActive = null;
-            this.btnCPTNSave.Location = new System.Drawing.Point(950, 10);
-            this.btnCPTNSave.Name = "btnCPTNSave";
-            this.btnCPTNSave.Size = new System.Drawing.Size(40, 40);
-            this.btnCPTNSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCPTNSave.TabIndex = 7;
-            this.btnCPTNSave.TabStop = false;
-            this.btnCPTNSave.Zoom = 10;
-            this.btnCPTNSave.Click += new System.EventHandler(this.btnCPTNSave_Click);
-            // 
-            // btnCTPNDelete
-            // 
-            this.btnCTPNDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCTPNDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCTPNDelete.Image = global::QuanLyKhoHang.Properties.Resources.delete;
-            this.btnCTPNDelete.ImageActive = null;
-            this.btnCTPNDelete.Location = new System.Drawing.Point(900, 10);
-            this.btnCTPNDelete.Name = "btnCTPNDelete";
-            this.btnCTPNDelete.Size = new System.Drawing.Size(40, 40);
-            this.btnCTPNDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCTPNDelete.TabIndex = 6;
-            this.btnCTPNDelete.TabStop = false;
-            this.btnCTPNDelete.Zoom = 10;
-            this.btnCTPNDelete.Click += new System.EventHandler(this.btnCTPNDelete_Click);
-            // 
-            // btnCTPNAdd
-            // 
-            this.btnCTPNAdd.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnCTPNAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCTPNAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
-            this.btnCTPNAdd.ImageActive = null;
-            this.btnCTPNAdd.Location = new System.Drawing.Point(850, 10);
-            this.btnCTPNAdd.Name = "btnCTPNAdd";
-            this.btnCTPNAdd.Size = new System.Drawing.Size(40, 40);
-            this.btnCTPNAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCTPNAdd.TabIndex = 5;
-            this.btnCTPNAdd.TabStop = false;
-            this.btnCTPNAdd.Zoom = 10;
-            this.btnCTPNAdd.Click += new System.EventHandler(this.btnCTPNAdd_Click);
-            // 
-            // lbPNName
-            // 
-            this.lbPNName.AutoSize = true;
-            this.lbPNName.BackColor = System.Drawing.Color.Transparent;
-            this.lbPNName.Font = new System.Drawing.Font("Century Gothic", 25F);
-            this.lbPNName.ForeColor = System.Drawing.Color.White;
-            this.lbPNName.Location = new System.Drawing.Point(56, 10);
-            this.lbPNName.Name = "lbPNName";
-            this.lbPNName.Size = new System.Drawing.Size(75, 40);
-            this.lbPNName.TabIndex = 4;
-            this.lbPNName.Text = "Null";
-            // 
             // btnback
             // 
             this.btnback.BackColor = System.Drawing.Color.Transparent;
             this.btnback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnback.Image = global::QuanLyKhoHang.Properties.Resources.back;
             this.btnback.ImageActive = null;
-            this.btnback.Location = new System.Drawing.Point(10, 10);
+            this.btnback.Location = new System.Drawing.Point(10, -40);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(40, 40);
             this.btnback.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1015,13 +799,25 @@
             this.btnback.Zoom = 10;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
+            // lbPNName
+            // 
+            this.lbPNName.AutoSize = true;
+            this.lbPNName.BackColor = System.Drawing.Color.Transparent;
+            this.lbPNName.Font = new System.Drawing.Font("Century Gothic", 25F);
+            this.lbPNName.ForeColor = System.Drawing.Color.White;
+            this.lbPNName.Location = new System.Drawing.Point(56, -60);
+            this.lbPNName.Name = "lbPNName";
+            this.lbPNName.Size = new System.Drawing.Size(75, 40);
+            this.lbPNName.TabIndex = 4;
+            this.lbPNName.Text = "Null";
+            // 
             // tbCTPNSearch
             // 
             this.tbCTPNSearch.BackColor = System.Drawing.Color.White;
             this.tbCTPNSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCTPNSearch.Font = new System.Drawing.Font("Century Gothic", 24F);
             this.tbCTPNSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.tbCTPNSearch.Location = new System.Drawing.Point(250, 11);
+            this.tbCTPNSearch.Location = new System.Drawing.Point(265, -40);
             this.tbCTPNSearch.Name = "tbCTPNSearch";
             this.tbCTPNSearch.Size = new System.Drawing.Size(250, 40);
             this.tbCTPNSearch.TabIndex = 99;
@@ -1030,35 +826,227 @@
             this.tbCTPNSearch.Enter += new System.EventHandler(this.tbCTPNSearch_Enter);
             this.tbCTPNSearch.Leave += new System.EventHandler(this.tbCTPNSearch_Leave);
             // 
+            // pnMidR
+            // 
+            this.pnMidR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnMidR.Controls.Add(this.label3);
+            this.pnMidR.Controls.Add(this.label2);
+            this.pnMidR.Controls.Add(this.btnPNPrint);
+            this.pnMidR.Controls.Add(this.dtpkFinish);
+            this.pnMidR.Controls.Add(this.btnPNReload);
+            this.pnMidR.Controls.Add(this.btnPNAdd);
+            this.pnMidR.Controls.Add(this.dtpkStart);
+            this.pnMidR.Controls.Add(this.btnPNDel);
+            this.pnMidR.Controls.Add(this.label1);
+            this.pnMidR.Controls.Add(this.switchStatus);
+            this.pnMidR.Controls.Add(this.tbPNSearch);
+            this.pnMidR.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnMidR.Location = new System.Drawing.Point(757, 110);
+            this.pnMidR.Name = "pnMidR";
+            this.pnMidR.Size = new System.Drawing.Size(310, 500);
+            this.pnMidR.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(7, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.TabIndex = 105;
+            this.label3.Text = "Kết thúc";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(7, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 23);
+            this.label2.TabIndex = 104;
+            this.label2.Text = "Bắt đầu";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnPNPrint
+            // 
+            this.btnPNPrint.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnPNPrint.color = System.Drawing.Color.SeaGreen;
+            this.btnPNPrint.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnPNPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPNPrint.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPNPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPNPrint.Image = global::QuanLyKhoHang.Properties.Resources.print;
+            this.btnPNPrint.ImagePosition = 20;
+            this.btnPNPrint.ImageZoom = 40;
+            this.btnPNPrint.LabelPosition = 50;
+            this.btnPNPrint.LabelText = "In";
+            this.btnPNPrint.Location = new System.Drawing.Point(165, 342);
+            this.btnPNPrint.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnPNPrint.Name = "btnPNPrint";
+            this.btnPNPrint.Size = new System.Drawing.Size(135, 135);
+            this.btnPNPrint.TabIndex = 9;
+            this.btnPNPrint.Click += new System.EventHandler(this.btnPNPrint_Click);
+            // 
+            // dtpkFinish
+            // 
+            this.dtpkFinish.CalendarFont = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkFinish.CustomFormat = "dd/MM/yyyy";
+            this.dtpkFinish.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpkFinish.Location = new System.Drawing.Point(110, 116);
+            this.dtpkFinish.Name = "dtpkFinish";
+            this.dtpkFinish.Size = new System.Drawing.Size(190, 31);
+            this.dtpkFinish.TabIndex = 106;
+            this.dtpkFinish.ValueChanged += new System.EventHandler(this.dtpkFinish_ValueChanged);
+            // 
+            // btnPNReload
+            // 
+            this.btnPNReload.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnPNReload.color = System.Drawing.Color.SeaGreen;
+            this.btnPNReload.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnPNReload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPNReload.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPNReload.ForeColor = System.Drawing.Color.White;
+            this.btnPNReload.Image = global::QuanLyKhoHang.Properties.Resources.reload;
+            this.btnPNReload.ImagePosition = 20;
+            this.btnPNReload.ImageZoom = 40;
+            this.btnPNReload.LabelPosition = 50;
+            this.btnPNReload.LabelText = "Tải lại";
+            this.btnPNReload.Location = new System.Drawing.Point(11, 342);
+            this.btnPNReload.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnPNReload.Name = "btnPNReload";
+            this.btnPNReload.Size = new System.Drawing.Size(135, 135);
+            this.btnPNReload.TabIndex = 10;
+            this.btnPNReload.Click += new System.EventHandler(this.btnPNReload_Click);
+            // 
+            // btnPNAdd
+            // 
+            this.btnPNAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnPNAdd.color = System.Drawing.Color.SeaGreen;
+            this.btnPNAdd.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnPNAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPNAdd.Font = new System.Drawing.Font("Century Gothic", 17.75F);
+            this.btnPNAdd.ForeColor = System.Drawing.Color.White;
+            this.btnPNAdd.Image = global::QuanLyKhoHang.Properties.Resources.add;
+            this.btnPNAdd.ImagePosition = 25;
+            this.btnPNAdd.ImageZoom = 40;
+            this.btnPNAdd.LabelPosition = 50;
+            this.btnPNAdd.LabelText = "Thêm";
+            this.btnPNAdd.Location = new System.Drawing.Point(10, 183);
+            this.btnPNAdd.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnPNAdd.Name = "btnPNAdd";
+            this.btnPNAdd.Size = new System.Drawing.Size(135, 135);
+            this.btnPNAdd.TabIndex = 7;
+            this.btnPNAdd.Click += new System.EventHandler(this.btnPNAdd_Click);
+            // 
+            // dtpkStart
+            // 
+            this.dtpkStart.CalendarFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkStart.CustomFormat = "dd/MM/yyyy";
+            this.dtpkStart.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpkStart.Location = new System.Drawing.Point(110, 75);
+            this.dtpkStart.Name = "dtpkStart";
+            this.dtpkStart.Size = new System.Drawing.Size(190, 31);
+            this.dtpkStart.TabIndex = 102;
+            this.dtpkStart.ValueChanged += new System.EventHandler(this.dtpkStart_ValueChanged);
+            // 
+            // btnPNDel
+            // 
+            this.btnPNDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPNDel.color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPNDel.colorActive = System.Drawing.Color.Red;
+            this.btnPNDel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPNDel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPNDel.ForeColor = System.Drawing.Color.White;
+            this.btnPNDel.Image = global::QuanLyKhoHang.Properties.Resources.delete;
+            this.btnPNDel.ImagePosition = 20;
+            this.btnPNDel.ImageZoom = 40;
+            this.btnPNDel.LabelPosition = 50;
+            this.btnPNDel.LabelText = "Xóa";
+            this.btnPNDel.Location = new System.Drawing.Point(165, 183);
+            this.btnPNDel.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnPNDel.Name = "btnPNDel";
+            this.btnPNDel.Size = new System.Drawing.Size(135, 135);
+            this.btnPNDel.TabIndex = 8;
+            this.btnPNDel.Click += new System.EventHandler(this.btnPNDel_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(152, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 22);
+            this.label1.TabIndex = 101;
+            this.label1.Text = "Đã thanh toán";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // switchStatus
+            // 
+            this.switchStatus.BackColor = System.Drawing.Color.Transparent;
+            this.switchStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchStatus.BackgroundImage")));
+            this.switchStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchStatus.Location = new System.Drawing.Point(110, 49);
+            this.switchStatus.Name = "switchStatus";
+            this.switchStatus.OffColor = System.Drawing.Color.Gray;
+            this.switchStatus.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
+            this.switchStatus.Size = new System.Drawing.Size(35, 20);
+            this.switchStatus.TabIndex = 100;
+            this.switchStatus.Value = true;
+            this.switchStatus.OnValueChange += new System.EventHandler(this.switchStatus_OnValueChange);
+            // 
+            // tbPNSearch
+            // 
+            this.tbPNSearch.BackColor = System.Drawing.Color.White;
+            this.tbPNSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPNSearch.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPNSearch.ForeColor = System.Drawing.Color.SeaGreen;
+            this.tbPNSearch.Location = new System.Drawing.Point(10, 10);
+            this.tbPNSearch.Name = "tbPNSearch";
+            this.tbPNSearch.Size = new System.Drawing.Size(290, 34);
+            this.tbPNSearch.TabIndex = 99;
+            this.tbPNSearch.Text = "Tìm kiếm...";
+            this.tbPNSearch.TextChanged += new System.EventHandler(this.tbPNSearch_TextChanged);
+            this.tbPNSearch.Enter += new System.EventHandler(this.tbPNSearch_Enter);
+            this.tbPNSearch.Leave += new System.EventHandler(this.tbPNSearch_Leave);
+            // 
             // fmPhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1080, 720);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmPhieuNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu Nhập";
+            this.pnTop.ResumeLayout(false);
+            this.pnTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnMidL.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPN)).EndInit();
-            this.pnMidR.ResumeLayout(false);
-            this.pnMidR.PerformLayout();
-            this.pnTop.ResumeLayout(false);
-            this.pnTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
-            this.pnMidL2.ResumeLayout(false);
-            this.pnMidL2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCTPN)).EndInit();
+            this.pnMidL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPNPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCPTNSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPNDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numItemSL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCTPNAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
+            this.pnMidR.ResumeLayout(false);
+            this.pnMidR.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1086,8 +1074,7 @@
         private System.Windows.Forms.DataGridView dtgvCTPN;
         private System.Windows.Forms.Panel pnMidL;
         private System.Windows.Forms.Label lbListPN;
-        private System.Windows.Forms.Panel pnMidL2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbLonBe;
         private Bunifu.Framework.UI.BunifuSwitch switchItemOpe;
         private System.Windows.Forms.NumericUpDown numItemSL;
         private System.Windows.Forms.TextBox tbCTPNSearch;
@@ -1114,9 +1101,9 @@
         private System.Windows.Forms.Label lbInfoNumNCC;
         private System.Windows.Forms.Label lbInfoTong;
         private System.Windows.Forms.Label lbTongQuan;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbGiaTri;
         private Bunifu.Framework.UI.BunifuSwitch switchItemPrice;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbSL;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
         private System.Windows.Forms.DataGridViewComboBoxColumn TENKHO;

@@ -20,18 +20,18 @@ namespace DAO
             }
         }
 
-        public List<ChiTietPhieuXuat> loadData(string idpx, string idEmp)
+        public List<ChiTietPhieuXuat> loadData(string sidpx, string idEmp)
         {
             List<ChiTietPhieuXuat> lCTPX = new List<ChiTietPhieuXuat>();
             string str;
             if (idEmp == "TK000")
-                str = "SELECT * FROM dbo.VI_ChiTietPhieuXuat_LoadData WHERE idpx = '" + idpx + "'";
+                str = "SELECT * FROM dbo.VI_ChiTietPhieuXuat_LoadData WHERE idpx = '" + sidpx + "'";
             else
-                str = "SELECT * FROM dbo.FN_ChiTietPhieuXuat_LoadDataByIdTk('" + idEmp + "') WHERE idpx ='" + idpx + "'";
+                str = "SELECT * FROM dbo.FN_ChiTietPhieuXuat_LoadDataByIdTk('" + idEmp + "') WHERE idpx ='" + sidpx + "'";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
-                string idpn = item["idpx"].ToString();
+                string idpx = item["idpx"].ToString();
                 string tensp = item["tensp"].ToString();
                 string tenkh = item["tenkh"].ToString();
                 string tenlsp = item["tenlsp"].ToString();
@@ -40,20 +40,20 @@ namespace DAO
                 int soluong = Convert.ToInt32(item["sl"]);
                 double tong = Convert.ToDouble(item["tongtien"]);
                 string dvtiente = item["dvitiente"].ToString();
-                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat(idpn, tensp, tenkh, tenlsp, tenkho, dongia, soluong, tong, dvtiente);
+                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat(idpx, tensp, tenkh, tenlsp, tenkho, dongia, soluong, tong, dvtiente);
                 lCTPX.Add(ctpx);
             }
             return lCTPX;
         }
 
-        public List<ChiTietPhieuXuat> searchByKeyword(string keyword)
+        public List<ChiTietPhieuXuat> searchByKeyword(string id, string keyword, string idEmp)
         {
             List<ChiTietPhieuXuat> lCTPX = new List<ChiTietPhieuXuat>();
-            string str = "SELECT * FROM FN_ChiTietPhieuXuat_SearchByKeyword(N'" + keyword + "')";
+            string str = "SELECT * FROM FN_ChiTietPhieuXuat_SearchByKeyword('"+id+"', N'" + keyword + "', '" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
-                string idpn = item["idpx"].ToString();
+                string idpx = item["idpx"].ToString();
                 string tensp = item["tensp"].ToString();
                 string tenkh = item["tenkh"].ToString();
                 string tenlsp = item["tenlsp"].ToString();
@@ -62,20 +62,20 @@ namespace DAO
                 int soluong = Convert.ToInt32(item["sl"]);
                 double tong = Convert.ToDouble(item["tong"]);
                 string dvtiente = item["dvitiente"].ToString();
-                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat(idpn, tensp, tenkh, tenlsp, tenkho, dongia, soluong, tong, dvtiente);
+                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat(idpx, tensp, tenkh, tenlsp, tenkho, dongia, soluong, tong, dvtiente);
                 lCTPX.Add(ctpx);
             }
             return lCTPX;
         }
 
-        public List<ChiTietPhieuXuat> searchByAmount(int num, int comp)
+        public List<ChiTietPhieuXuat> searchByAmount(string id, int num, int comp, string idEmp)
         {
             List<ChiTietPhieuXuat> lCTPX = new List<ChiTietPhieuXuat>();
-            string str = "SELECT * FROM FN_ChiTietPhieuXuat_SearchByAmount(" + num + "," + comp + ")";
+            string str = "SELECT * FROM FN_ChiTietPhieuXuat_SearchByAmount('"+id+"', " + num + "," + comp + ", '" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
-                string idpn = item["idpx"].ToString();
+                string idpx = item["idpx"].ToString();
                 string tensp = item["tensp"].ToString();
                 string tenkh = item["tenkh"].ToString();
                 string tenlsp = item["tenlsp"].ToString();
@@ -84,20 +84,20 @@ namespace DAO
                 int soluong = Convert.ToInt32(item["sl"]);
                 double tong = Convert.ToDouble(item["tong"]);
                 string dvtiente = item["dvitiente"].ToString();
-                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat(idpn, tensp, tenkh, tenlsp, tenkho, dongia, soluong, tong, dvtiente);
+                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat(idpx, tensp, tenkh, tenlsp, tenkho, dongia, soluong, tong, dvtiente);
                 lCTPX.Add(ctpx);
             }
             return lCTPX;
         }
 
-        public List<ChiTietPhieuXuat> searchByPrice(int num)
+        public List<ChiTietPhieuXuat> searchByPrice(string id, int num, string idEmp)
         {
             List<ChiTietPhieuXuat> lCTPX = new List<ChiTietPhieuXuat>();
-            string str = "SELECT * FROM FN_ChiTietPhieuXuat_SearchByPrice(" + num + ")";
+            string str = "SELECT * FROM FN_ChiTietPhieuXuat_SearchByPrice('" + id + "'," + num + ",'" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
-                string idpn = item["idpx"].ToString();
+                string idpx = item["idpx"].ToString();
                 string tensp = item["tensp"].ToString();
                 string tenkh = item["tenkh"].ToString();
                 string tenlsp = item["tenlsp"].ToString();
@@ -106,7 +106,7 @@ namespace DAO
                 int soluong = Convert.ToInt32(item["sl"]);
                 double tong = Convert.ToDouble(item["tong"]);
                 string dvtiente = item["dvitiente"].ToString();
-                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat(idpn, tensp, tenkh, tenlsp, tenkho, dongia, soluong, tong, dvtiente);
+                ChiTietPhieuXuat ctpx = new ChiTietPhieuXuat(idpx, tensp, tenkh, tenlsp, tenkho, dongia, soluong, tong, dvtiente);
                 lCTPX.Add(ctpx);
             }
             return lCTPX;

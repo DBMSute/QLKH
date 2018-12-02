@@ -20,10 +20,14 @@ namespace DAO
             }
         }
 
-        public List<ChiTietPhieuNhap> loadData(string id)
+        public List<ChiTietPhieuNhap> loadData(string sidpn, string idEmp)
         {
             List<ChiTietPhieuNhap> lCTPN = new List<ChiTietPhieuNhap>();
-            string str = "SELECT * FROM dbo.VI_ChiTietPhieuNhap_LoadData WHERE idpn = '" + id + "'";
+            string str;
+            if (idEmp == "TK000")
+                str = "SELECT * FROM dbo.VI_ChiTietPhieuNhap_LoadData WHERE idpn = '" + sidpn + "'";
+            else
+                str = "SELECT * FROM dbo.FN_ChiTietPhieuNhap_LoadDataByIdTk('" + idEmp + "') WHERE idpn ='" + sidpn + "'";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -42,10 +46,10 @@ namespace DAO
             return lCTPN;
         }
 
-        public List<ChiTietPhieuNhap> searchByKeyword(string keyword)
+        public List<ChiTietPhieuNhap> searchByKeyword(string id, string keyword, string idEmp)
         {
             List<ChiTietPhieuNhap> lCTPN = new List<ChiTietPhieuNhap>();
-            string str = "SELECT * FROM FN_ChiTietPhieuNhap_SearchByKeyword(N'" + keyword + "')";
+            string str = "SELECT * FROM FN_ChiTietPhieuNhap_SearchByKeyword('" + id + "', N'" + keyword + "', '" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -64,10 +68,10 @@ namespace DAO
             return lCTPN;
         }
 
-        public List<ChiTietPhieuNhap> searchByAmount(int num, int comp)
+        public List<ChiTietPhieuNhap> searchByAmount(string id, int num, int comp, string idEmp)
         {
             List<ChiTietPhieuNhap> lCTPN = new List<ChiTietPhieuNhap>();
-            string str = "SELECT * FROM FN_ChiTietPhieuNhap_SearchByAmount(" + num + "," + comp + ")";
+            string str = "SELECT * FROM FN_ChiTietPhieuNhap_SearchByAmount('" + id + "', " + num + "," + comp + ", '" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -86,10 +90,10 @@ namespace DAO
             return lCTPN;
         }
 
-        public List<ChiTietPhieuNhap> searchByPrice(int num)
+        public List<ChiTietPhieuNhap> searchByPrice(string id, int num, string idEmp)
         {
             List<ChiTietPhieuNhap> lCTPN = new List<ChiTietPhieuNhap>();
-            string str = "SELECT * FROM FN_ChiTietPhieuNhap_SearchByPrice(" + num + ")";
+            string str = "SELECT * FROM FN_ChiTietPhieuNhap_SearchByPrice('" + id + "'," + num + ",'" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {

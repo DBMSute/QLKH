@@ -126,22 +126,29 @@ namespace QuanLyKhoHang.GiaoDien
 
         private void btnCusPrint_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Mã khách hàng", typeof(string));
-            dt.Columns.Add("Tên khách hàng", typeof(string));
-            dt.Columns.Add("Số điện thoại", typeof(string));
-            dt.Columns.Add("Địa chỉ", typeof(string));
-            foreach (DataGridViewRow row in dtgvCus.Rows)
+            try
             {
-                DataRow dr;
-                dr = dt.NewRow();
-                dr[0] = row.Cells[0].Value.ToString();
-                dr[1] = row.Cells[1].Value.ToString();
-                dr[2] = row.Cells[2].Value.ToString();
-                dr[3] = row.Cells[3].Value.ToString();
-                dt.Rows.Add(dr);
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Mã khách hàng", typeof(string));
+                dt.Columns.Add("Tên khách hàng", typeof(string));
+                dt.Columns.Add("Số điện thoại", typeof(string));
+                dt.Columns.Add("Địa chỉ", typeof(string));
+                foreach (DataGridViewRow row in dtgvCus.Rows)
+                {
+                    DataRow dr;
+                    dr = dt.NewRow();
+                    dr[0] = row.Cells[0].Value.ToString();
+                    dr[1] = row.Cells[1].Value.ToString();
+                    dr[2] = row.Cells[2].Value.ToString();
+                    dr[3] = row.Cells[3].Value.ToString();
+                    dt.Rows.Add(dr);
+                }
+                new QuanLyKhoHang.Report.fmReport(dt, "DANH SÁCH KHÁCH HÀNG", "Poon Nguyễn").ShowDialog();
+            }catch(Exception)
+            {
+                MessageBox.Show("Không tìm thấy Crystal Report trên máy bạn.\nVui lòng cài đặt!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            new QuanLyKhoHang.Report.fmReport(dt, "DANH SÁCH KHÁCH HÀNG", "Poon Nguyễn").ShowDialog();
         }
 
         private void dtgvCus_CellValueChanged(object sender, DataGridViewCellEventArgs e)

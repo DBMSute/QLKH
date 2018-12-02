@@ -28,7 +28,7 @@ namespace DAO
             if (idEmp == "TK000")
                 str = "SELECT * FROM dbo.VI_PhieuNhap_LoadData";
             else
-                str = "SELECT * FROM dbo.VI_PhieuNhap_LoadData WHERE taikhoan = '" + idEmp + "'";
+                str = "SELECT * FROM dbo.FN_PhieuNhap_LoadDataByQuanLy('" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -49,11 +49,11 @@ namespace DAO
             DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
-        public List<PhieuNhap> searchByKeyword(string keyword)
+        public List<PhieuNhap> searchByKeyword(string keyword, string idEmp)
         {
             DateTime date = new DateTime();
             List<PhieuNhap> lPN = new List<PhieuNhap>();
-            string str = "SELECT * FROM dbo.FN_PhieuNhap_SearchByKeyword(N'" + keyword + "')";
+            string str = "SELECT * FROM dbo.FN_PhieuNhap_SearchByKeyword(N'" + keyword + "', '" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -68,11 +68,11 @@ namespace DAO
             return lPN;
         }
 
-        public List<PhieuNhap> searchByStatus(int status)
+        public List<PhieuNhap> searchByStatus(int status, string idEmp)
         {
             DateTime date = new DateTime();
             List<PhieuNhap> lPN = new List<PhieuNhap>();
-            string str = "SELECT * FROM dbo.FN_PhieuNhap_SearchByStatus(" + status + ")";
+            string str = "SELECT * FROM dbo.FN_PhieuNhap_SearchByStatus(" + status + ", '" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {
@@ -87,11 +87,11 @@ namespace DAO
             return lPN;
         }
 
-        public List<PhieuNhap> searchByBetweenDate(string start, string finish)
+        public List<PhieuNhap> searchByBetweenDate(string start, string finish, string idEmp)
         {
             DateTime date = new DateTime();
             List<PhieuNhap> lPN = new List<PhieuNhap>();
-            string str = "SELECT * FROM dbo.FN_PhieuNhap_SearchByBetweenDate('" + start + "', '" + finish + "')";
+            string str = "SELECT * FROM dbo.FN_PhieuNhap_SearchByBetweenDate('" + start + "', '" + finish + "', '" + idEmp + "')";
             DataTable data = DataConn.INSTANCE.ExecuteQueryTable(str);
             foreach (DataRow item in data.Rows)
             {

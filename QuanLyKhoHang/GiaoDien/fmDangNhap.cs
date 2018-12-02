@@ -29,6 +29,7 @@ namespace QuanLyKhoHang.GiaoDien
                 Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts");
                 key.SetValue("My Font Description", "CenturyGothic.TTF");
                 key.Close();
+                MessageBox.Show("Đã cài thành công font Century Gothic.\nNếu đây là lần đầu sử dụng, vui lòng dùng:\nTài khoản: admin\nMật khẩu: admin", "Chào mừng bạn", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Refresh();
             }
             catch (Exception)

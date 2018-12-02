@@ -48,20 +48,20 @@ namespace BUS
             DAO.ChiTietPhieuXuatDAO.INSTANCE.Delete(idpn, tensp);
         }
 
-        public void searchByKeyword(DataGridView dgv, string keyword)
+        public void searchByKeyword(DataGridView dgv, string idpx, string keyword, string idEmp)
         {
-            dgv.DataSource = DAO.ChiTietPhieuXuatDAO.INSTANCE.searchByKeyword(keyword);
+            dgv.DataSource = DAO.ChiTietPhieuXuatDAO.INSTANCE.searchByKeyword(idpx, keyword, idEmp);
         }
 
-        public void searchByAmount(DataGridView dgv, int num, bool comp)
+        public void searchByAmount(DataGridView dgv, string idpx, int num, bool comp, string idEmp)
         {
             int tempComp = comp == true ? 1 : 0;
-            dgv.DataSource = DAO.ChiTietPhieuXuatDAO.INSTANCE.searchByAmount(num, tempComp);
+            dgv.DataSource = DAO.ChiTietPhieuXuatDAO.INSTANCE.searchByAmount(idpx, num, tempComp, idEmp);
         }
 
-        public void searchByPrice(DataGridView dgv, int num)
+        public void searchByPrice(DataGridView dgv, string idpx, int num, string idEmp)
         {
-            dgv.DataSource = DAO.ChiTietPhieuXuatDAO.INSTANCE.searchByPrice(num);
+            dgv.DataSource = DAO.ChiTietPhieuXuatDAO.INSTANCE.searchByPrice(idpx, num, idEmp);
         }
     }
 }

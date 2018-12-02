@@ -45,13 +45,13 @@ namespace DAO
 
         public DataTable chartTop10SellSL(int isLast, int typeSum)
         {
-            string str = "SELECT * FROM dbo.FN_Top10Sell_SL(" + isLast + "," + typeSum + ")";
+            string str = "SELECT * FROM dbo.FN_Top10Sell_SL(" + isLast + "," + typeSum + ") ORDER BY sValue ASC";
             return DataConn.INSTANCE.ExecuteQueryTable(str);
         }
 
         public DataTable chartTop10SellDoanhThu(string typeCur, int isLast, int typeSum)
         {
-            string str = "SELECT * FROM dbo.FN_Top10Sell_DoanhThu('" + typeCur + "'," + isLast + "," + typeSum + ")";
+            string str = "SELECT * FROM dbo.FN_Top10Sell_DoanhThu('" + typeCur + "'," + isLast + "," + typeSum + ") ORDER BY sValue ASC";
             return DataConn.INSTANCE.ExecuteQueryTable(str);
         }
     }

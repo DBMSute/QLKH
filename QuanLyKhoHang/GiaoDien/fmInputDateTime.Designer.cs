@@ -58,8 +58,7 @@
             // 
             // fmInputDateTime
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(384, 111);
             this.Controls.Add(this.btnSubmit);

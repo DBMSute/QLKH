@@ -36,21 +36,27 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.lbClock = new System.Windows.Forms.Label();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbNhaCC = new System.Windows.Forms.Label();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.tmrSlide = new System.Windows.Forms.Timer(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pnBot = new System.Windows.Forms.Panel();
             this.btnRank = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnTongQuan = new Bunifu.Framework.UI.BunifuTileButton();
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.lbClock = new System.Windows.Forms.Label();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbNhaCC = new System.Windows.Forms.Label();
             this.pnMid = new System.Windows.Forms.Panel();
             this.btnError = new Bunifu.Framework.UI.BunifuTileButton();
-            this.cbbTypeChart = new System.Windows.Forms.ComboBox();
             this.chartRank = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cbbTypeChart = new System.Windows.Forms.ComboBox();
             this.btnByDay = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnByHour = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnByDate = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -60,13 +66,17 @@
             this.chartThongKe = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnDoanhSo = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDoanhThu = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuGradientPanel1.SuspendLayout();
-            this.pnBot.SuspendLayout();
+            this.chartThongKe2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartRank2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.bunifuGradientPanel1.SuspendLayout();
+            this.pnBot.SuspendLayout();
             this.pnMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartThongKe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartThongKe2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRank2)).BeginInit();
             this.SuspendLayout();
             // 
             // DragControl
@@ -75,6 +85,57 @@
             this.DragControl.Horizontal = true;
             this.DragControl.TargetControl = this.pnTop;
             this.DragControl.Vertical = true;
+            // 
+            // pnTop
+            // 
+            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnTop.Controls.Add(this.lbClock);
+            this.pnTop.Controls.Add(this.btnExit);
+            this.pnTop.Controls.Add(this.lbNhaCC);
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(1080, 100);
+            this.pnTop.TabIndex = 3;
+            // 
+            // lbClock
+            // 
+            this.lbClock.BackColor = System.Drawing.Color.Transparent;
+            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClock.ForeColor = System.Drawing.Color.White;
+            this.lbClock.Location = new System.Drawing.Point(670, 55);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(400, 33);
+            this.lbClock.TabIndex = 13;
+            this.lbClock.Text = "Clock";
+            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(1028, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lbNhaCC
+            // 
+            this.lbNhaCC.AutoSize = true;
+            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
+            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
+            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
+            this.lbNhaCC.Location = new System.Drawing.Point(10, 0);
+            this.lbNhaCC.Name = "lbNhaCC";
+            this.lbNhaCC.Size = new System.Drawing.Size(387, 94);
+            this.lbNhaCC.TabIndex = 0;
+            this.lbNhaCC.Text = "Thống Kê";
             // 
             // tmrClock
             // 
@@ -153,63 +214,12 @@
             this.btnTongQuan.TabIndex = 103;
             this.btnTongQuan.Click += new System.EventHandler(this.btnTongQuan_Click);
             // 
-            // pnTop
-            // 
-            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnTop.Controls.Add(this.lbClock);
-            this.pnTop.Controls.Add(this.btnExit);
-            this.pnTop.Controls.Add(this.lbNhaCC);
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1080, 100);
-            this.pnTop.TabIndex = 3;
-            // 
-            // lbClock
-            // 
-            this.lbClock.BackColor = System.Drawing.Color.Transparent;
-            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClock.ForeColor = System.Drawing.Color.White;
-            this.lbClock.Location = new System.Drawing.Point(670, 55);
-            this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(400, 33);
-            this.lbClock.TabIndex = 13;
-            this.lbClock.Text = "Clock";
-            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1028, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lbNhaCC
-            // 
-            this.lbNhaCC.AutoSize = true;
-            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
-            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
-            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
-            this.lbNhaCC.Location = new System.Drawing.Point(10, 0);
-            this.lbNhaCC.Name = "lbNhaCC";
-            this.lbNhaCC.Size = new System.Drawing.Size(387, 94);
-            this.lbNhaCC.TabIndex = 0;
-            this.lbNhaCC.Text = "Thống Kê";
-            // 
             // pnMid
             // 
             this.pnMid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pnMid.Controls.Add(this.btnError);
-            this.pnMid.Controls.Add(this.cbbTypeChart);
             this.pnMid.Controls.Add(this.chartRank);
+            this.pnMid.Controls.Add(this.cbbTypeChart);
             this.pnMid.Controls.Add(this.btnByDay);
             this.pnMid.Controls.Add(this.btnByHour);
             this.pnMid.Controls.Add(this.btnByDate);
@@ -219,6 +229,8 @@
             this.pnMid.Controls.Add(this.chartThongKe);
             this.pnMid.Controls.Add(this.btnDoanhSo);
             this.pnMid.Controls.Add(this.btnDoanhThu);
+            this.pnMid.Controls.Add(this.chartThongKe2);
+            this.pnMid.Controls.Add(this.chartRank2);
             this.pnMid.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnMid.Location = new System.Drawing.Point(10, 110);
             this.pnMid.Name = "pnMid";
@@ -245,6 +257,29 @@
             this.btnError.TabIndex = 102;
             this.btnError.Visible = false;
             // 
+            // chartRank
+            // 
+            this.chartRank.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea1.AxisY.LabelStyle.Format = "{0:0,}K";
+            chartArea1.Name = "ChartArea1";
+            this.chartRank.ChartAreas.Add(chartArea1);
+            legend1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.chartRank.Legends.Add(legend1);
+            this.chartRank.Location = new System.Drawing.Point(-1090, 50);
+            this.chartRank.Name = "chartRank";
+            series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
+            series1.IsVisibleInLegend = false;
+            series1.IsXValueIndexed = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartRank.Series.Add(series1);
+            this.chartRank.Size = new System.Drawing.Size(1040, 440);
+            this.chartRank.TabIndex = 106;
+            this.chartRank.Text = "Doanh số";
+            // 
             // cbbTypeChart
             // 
             this.cbbTypeChart.BackColor = System.Drawing.Color.White;
@@ -261,30 +296,6 @@
             this.cbbTypeChart.TabIndex = 103;
             this.cbbTypeChart.Text = "Theo doanh thu";
             this.cbbTypeChart.SelectedIndexChanged += new System.EventHandler(this.cbbTypeChart_SelectedIndexChanged);
-            // 
-            // chartRank
-            // 
-            this.chartRank.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea1.AxisY.LabelStyle.Format = "{0:0,}K";
-            chartArea1.Name = "ChartArea1";
-            this.chartRank.ChartAreas.Add(chartArea1);
-            legend1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            this.chartRank.Legends.Add(legend1);
-            this.chartRank.Location = new System.Drawing.Point(-1090, 50);
-            this.chartRank.Name = "chartRank";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.IsValueShownAsLabel = true;
-            series1.IsVisibleInLegend = false;
-            series1.IsXValueIndexed = true;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartRank.Series.Add(series1);
-            this.chartRank.Size = new System.Drawing.Size(1040, 440);
-            this.chartRank.TabIndex = 0;
-            this.chartRank.Text = "Doanh số";
             // 
             // btnByDay
             // 
@@ -505,25 +516,71 @@
             this.btnDoanhThu.TabIndex = 8;
             this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
             // 
+            // chartThongKe2
+            // 
+            this.chartThongKe2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea3.AxisY.LabelStyle.Format = "{0:0,}K";
+            chartArea3.Name = "ChartArea1";
+            this.chartThongKe2.ChartAreas.Add(chartArea3);
+            legend3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            this.chartThongKe2.Legends.Add(legend3);
+            this.chartThongKe2.Location = new System.Drawing.Point(10, 50);
+            this.chartThongKe2.Name = "chartThongKe2";
+            series3.ChartArea = "ChartArea1";
+            series3.IsValueShownAsLabel = true;
+            series3.IsVisibleInLegend = false;
+            series3.IsXValueIndexed = true;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartThongKe2.Series.Add(series3);
+            this.chartThongKe2.Size = new System.Drawing.Size(910, 440);
+            this.chartThongKe2.TabIndex = 104;
+            this.chartThongKe2.Text = "Doanh số";
+            // 
+            // chartRank2
+            // 
+            this.chartRank2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea4.Name = "ChartArea1";
+            this.chartRank2.ChartAreas.Add(chartArea4);
+            legend4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Legend1";
+            this.chartRank2.Legends.Add(legend4);
+            this.chartRank2.Location = new System.Drawing.Point(-1090, 50);
+            this.chartRank2.Name = "chartRank2";
+            series4.ChartArea = "ChartArea1";
+            series4.IsValueShownAsLabel = true;
+            series4.IsVisibleInLegend = false;
+            series4.IsXValueIndexed = true;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartRank2.Series.Add(series4);
+            this.chartRank2.Size = new System.Drawing.Size(1040, 440);
+            this.chartRank2.TabIndex = 105;
+            this.chartRank2.Text = "Doanh số";
+            // 
             // fmThongKe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1080, 720);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fmThongKe";
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.pnBot.ResumeLayout(false);
+            this.Text = "Thống Kê";
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.pnBot.ResumeLayout(false);
             this.pnMid.ResumeLayout(false);
             this.pnMid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartThongKe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartThongKe2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRank2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -548,11 +605,13 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnByHour;
         private Bunifu.Framework.UI.BunifuTileButton btnError;
         private Bunifu.Framework.UI.BunifuTileButton btnDoanhThu;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartRank;
         private System.Windows.Forms.ComboBox cbbTypeChart;
         private Bunifu.Framework.UI.BunifuTileButton btnTongQuan;
         private Bunifu.Framework.UI.BunifuTileButton btnRank;
         private System.Windows.Forms.Timer tmrSlide;
         private System.Windows.Forms.Label lbClock;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartThongKe2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRank2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRank;
     }
 }

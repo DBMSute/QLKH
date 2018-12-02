@@ -30,12 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmKhachHang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.lbClock = new System.Windows.Forms.Label();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbNhaCC = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnMidR = new System.Windows.Forms.Panel();
@@ -44,20 +48,16 @@
             this.btnCusDel = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnCusAdd = new Bunifu.Framework.UI.BunifuTileButton();
             this.tbCusSearch = new System.Windows.Forms.TextBox();
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.lbClock = new System.Windows.Forms.Label();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbNhaCC = new System.Windows.Forms.Label();
             this.pnMidL = new System.Windows.Forms.Panel();
             this.dtgvCus = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SODT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHI = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bunifuGradientPanel1.SuspendLayout();
-            this.pnMidR.SuspendLayout();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.bunifuGradientPanel1.SuspendLayout();
+            this.pnMidR.SuspendLayout();
             this.pnMidL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCus)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,57 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.pnTop;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // pnTop
+            // 
+            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnTop.Controls.Add(this.lbClock);
+            this.pnTop.Controls.Add(this.btnExit);
+            this.pnTop.Controls.Add(this.lbNhaCC);
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(1080, 100);
+            this.pnTop.TabIndex = 3;
+            // 
+            // lbClock
+            // 
+            this.lbClock.BackColor = System.Drawing.Color.Transparent;
+            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClock.ForeColor = System.Drawing.Color.White;
+            this.lbClock.Location = new System.Drawing.Point(667, 61);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(400, 33);
+            this.lbClock.TabIndex = 12;
+            this.lbClock.Text = "Clock";
+            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(1028, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lbNhaCC
+            // 
+            this.lbNhaCC.AutoSize = true;
+            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
+            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
+            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
+            this.lbNhaCC.Location = new System.Drawing.Point(10, 0);
+            this.lbNhaCC.Name = "lbNhaCC";
+            this.lbNhaCC.Size = new System.Drawing.Size(519, 94);
+            this.lbNhaCC.TabIndex = 0;
+            this.lbNhaCC.Text = "Khách Hàng";
             // 
             // bunifuGradientPanel1
             // 
@@ -209,57 +260,6 @@
             this.tbCusSearch.Enter += new System.EventHandler(this.tbCusSearch_Enter);
             this.tbCusSearch.Leave += new System.EventHandler(this.tbCusSearch_Leave);
             // 
-            // pnTop
-            // 
-            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnTop.Controls.Add(this.lbClock);
-            this.pnTop.Controls.Add(this.btnExit);
-            this.pnTop.Controls.Add(this.lbNhaCC);
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1080, 100);
-            this.pnTop.TabIndex = 3;
-            // 
-            // lbClock
-            // 
-            this.lbClock.BackColor = System.Drawing.Color.Transparent;
-            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClock.ForeColor = System.Drawing.Color.White;
-            this.lbClock.Location = new System.Drawing.Point(667, 61);
-            this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(400, 33);
-            this.lbClock.TabIndex = 12;
-            this.lbClock.Text = "Clock";
-            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1028, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lbNhaCC
-            // 
-            this.lbNhaCC.AutoSize = true;
-            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
-            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
-            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
-            this.lbNhaCC.Location = new System.Drawing.Point(10, 0);
-            this.lbNhaCC.Name = "lbNhaCC";
-            this.lbNhaCC.Size = new System.Drawing.Size(519, 94);
-            this.lbNhaCC.TabIndex = 0;
-            this.lbNhaCC.Text = "Khách Hàng";
-            // 
             // pnMidL
             // 
             this.pnMidL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -293,8 +293,8 @@
             // ID
             // 
             this.ID.DataPropertyName = "ID";
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
             this.ID.HeaderText = "Mã khách hàng";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -302,24 +302,24 @@
             // TEN
             // 
             this.TEN.DataPropertyName = "TEN";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.TEN.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.TEN.DefaultCellStyle = dataGridViewCellStyle2;
             this.TEN.HeaderText = "Tên";
             this.TEN.Name = "TEN";
             // 
             // SODT
             // 
             this.SODT.DataPropertyName = "SODT";
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.SODT.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.SODT.DefaultCellStyle = dataGridViewCellStyle3;
             this.SODT.HeaderText = "Số điện thoại";
             this.SODT.Name = "SODT";
             // 
             // DIACHI
             // 
             this.DIACHI.DataPropertyName = "DIACHI";
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.DIACHI.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.DIACHI.DefaultCellStyle = dataGridViewCellStyle4;
             this.DIACHI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DIACHI.HeaderText = "Địa chỉ";
             this.DIACHI.Items.AddRange(new object[] {
@@ -393,20 +393,19 @@
             // 
             // fmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 720);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmKhachHang";
             this.Text = "Khách Hàng";
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.pnMidR.ResumeLayout(false);
-            this.pnMidR.PerformLayout();
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.pnMidR.ResumeLayout(false);
+            this.pnMidR.PerformLayout();
             this.pnMidL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCus)).EndInit();
             this.ResumeLayout(false);

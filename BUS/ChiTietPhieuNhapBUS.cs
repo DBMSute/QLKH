@@ -19,9 +19,9 @@ namespace BUS
             }
         }
 
-        public void loadData(DataGridView dgv, string id)
+        public void loadData(DataGridView dgv, string idpn, string idEmp)
         {
-            dgv.DataSource = DAO.ChiTietPhieuNhapDAO.INSTANCE.loadData(id);
+            dgv.DataSource = DAO.ChiTietPhieuNhapDAO.INSTANCE.loadData(idpn, idEmp);
         }
 
         public void saveInsert(DataGridView dgv, string idpn)
@@ -49,20 +49,20 @@ namespace BUS
             DAO.ChiTietPhieuNhapDAO.INSTANCE.Delete(idpn, tensp);
         }
 
-        public void searchByKeyword(DataGridView dgv, string keyword)
+        public void searchByKeyword(DataGridView dgv, string idpn, string keyword, string idEmp)
         {
-            dgv.DataSource = DAO.ChiTietPhieuNhapDAO.INSTANCE.searchByKeyword(keyword);
+            dgv.DataSource = DAO.ChiTietPhieuNhapDAO.INSTANCE.searchByKeyword(idpn, keyword, idEmp);
         }
 
-        public void searchByAmount(DataGridView dgv, int num, bool comp)
+        public void searchByAmount(DataGridView dgv, string idpn, int num, bool comp, string idEmp)
         {
             int tempComp = comp == true ? 1 : 0;
-            dgv.DataSource = DAO.ChiTietPhieuNhapDAO.INSTANCE.searchByAmount(num, tempComp);
+            dgv.DataSource = DAO.ChiTietPhieuNhapDAO.INSTANCE.searchByAmount(idpn, num, tempComp, idEmp);
         }
 
-        public void searchByPrice(DataGridView dgv, int num)
+        public void searchByPrice(DataGridView dgv, string idpn, int num, string idEmp)
         {
-            dgv.DataSource = DAO.ChiTietPhieuNhapDAO.INSTANCE.searchByPrice(num);
+            dgv.DataSource = DAO.ChiTietPhieuNhapDAO.INSTANCE.searchByPrice(idpn, num, idEmp);
         }
     }
 }

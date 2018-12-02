@@ -30,30 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmKho));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tmrSlide = new System.Windows.Forms.Timer(this.components);
             this.tmrSlide2 = new System.Windows.Forms.Timer(this.components);
             this.tmrCPB = new System.Windows.Forms.Timer(this.components);
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.pnBackground = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbClock = new System.Windows.Forms.Label();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbNhaCC = new System.Windows.Forms.Label();
+            this.pnBackground = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pnMidR = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.SwitchWareLonBe = new Bunifu.Framework.UI.BunifuSwitch();
@@ -106,9 +106,9 @@
             this.lbInfoSucChua = new System.Windows.Forms.Label();
             this.lbTongQuan = new System.Windows.Forms.Label();
             this.cpbSucChua = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.pnBackground.SuspendLayout();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.pnBackground.SuspendLayout();
             this.pnMidR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWare)).BeginInit();
             this.pnMidL.SuspendLayout();
@@ -149,26 +149,6 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.pnTop;
             this.bunifuDragControl1.Vertical = true;
-            // 
-            // pnBackground
-            // 
-            this.pnBackground.BackColor = System.Drawing.Color.Transparent;
-            this.pnBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBackground.BackgroundImage")));
-            this.pnBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnBackground.Controls.Add(this.pnTop);
-            this.pnBackground.Controls.Add(this.pnMidR);
-            this.pnBackground.Controls.Add(this.pnMidL);
-            this.pnBackground.Controls.Add(this.panel2);
-            this.pnBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBackground.GradientBottomLeft = System.Drawing.Color.Navy;
-            this.pnBackground.GradientBottomRight = System.Drawing.Color.SeaGreen;
-            this.pnBackground.GradientTopLeft = System.Drawing.Color.SeaGreen;
-            this.pnBackground.GradientTopRight = System.Drawing.Color.Red;
-            this.pnBackground.Location = new System.Drawing.Point(0, 0);
-            this.pnBackground.Name = "pnBackground";
-            this.pnBackground.Quality = 20;
-            this.pnBackground.Size = new System.Drawing.Size(1080, 720);
-            this.pnBackground.TabIndex = 7;
             // 
             // pnTop
             // 
@@ -221,6 +201,26 @@
             this.lbNhaCC.Size = new System.Drawing.Size(210, 94);
             this.lbNhaCC.TabIndex = 0;
             this.lbNhaCC.Text = "KHO";
+            // 
+            // pnBackground
+            // 
+            this.pnBackground.BackColor = System.Drawing.Color.Transparent;
+            this.pnBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBackground.BackgroundImage")));
+            this.pnBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnBackground.Controls.Add(this.pnTop);
+            this.pnBackground.Controls.Add(this.pnMidR);
+            this.pnBackground.Controls.Add(this.pnMidL);
+            this.pnBackground.Controls.Add(this.panel2);
+            this.pnBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnBackground.GradientBottomLeft = System.Drawing.Color.Navy;
+            this.pnBackground.GradientBottomRight = System.Drawing.Color.SeaGreen;
+            this.pnBackground.GradientTopLeft = System.Drawing.Color.SeaGreen;
+            this.pnBackground.GradientTopRight = System.Drawing.Color.Red;
+            this.pnBackground.Location = new System.Drawing.Point(0, 0);
+            this.pnBackground.Name = "pnBackground";
+            this.pnBackground.Quality = 20;
+            this.pnBackground.Size = new System.Drawing.Size(1080, 720);
+            this.pnBackground.TabIndex = 7;
             // 
             // pnMidR
             // 
@@ -460,8 +460,8 @@
             // ID
             // 
             this.ID.DataPropertyName = "ID";
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
             this.ID.HeaderText = "Mã kho";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -469,8 +469,8 @@
             // TEN
             // 
             this.TEN.DataPropertyName = "TEN";
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.TEN.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.TEN.DefaultCellStyle = dataGridViewCellStyle2;
             this.TEN.HeaderText = "Tên kho";
             this.TEN.Name = "TEN";
             // 
@@ -478,8 +478,8 @@
             // 
             this.DIACHI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DIACHI.DataPropertyName = "DIACHI";
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.DIACHI.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.DIACHI.DefaultCellStyle = dataGridViewCellStyle3;
             this.DIACHI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DIACHI.HeaderText = "Địa chỉ";
             this.DIACHI.Items.AddRange(new object[] {
@@ -557,8 +557,8 @@
             // 
             this.MNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.MNG.DataPropertyName = "MNG";
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.MNG.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.MNG.DefaultCellStyle = dataGridViewCellStyle4;
             this.MNG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MNG.HeaderText = "Quản lý";
             this.MNG.Name = "MNG";
@@ -569,16 +569,16 @@
             // GIOIHAN
             // 
             this.GIOIHAN.DataPropertyName = "GIOIHAN";
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.GIOIHAN.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.GIOIHAN.DefaultCellStyle = dataGridViewCellStyle5;
             this.GIOIHAN.HeaderText = "Sức chứa";
             this.GIOIHAN.Name = "GIOIHAN";
             // 
             // SOLUONGHANG
             // 
             this.SOLUONGHANG.DataPropertyName = "SOLUONGHANG";
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.SOLUONGHANG.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.SOLUONGHANG.DefaultCellStyle = dataGridViewCellStyle6;
             this.SOLUONGHANG.HeaderText = "Số lượng hàng";
             this.SOLUONGHANG.Name = "SOLUONGHANG";
             this.SOLUONGHANG.ReadOnly = true;
@@ -740,8 +740,8 @@
             // 
             this.ID2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.ID2.DataPropertyName = "ID";
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.ID2.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.ID2.DefaultCellStyle = dataGridViewCellStyle7;
             this.ID2.HeaderText = "ID";
             this.ID2.Name = "ID2";
             this.ID2.ReadOnly = true;
@@ -751,8 +751,8 @@
             // 
             this.TENSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.TENSP.DataPropertyName = "TEN";
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.TENSP.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.TENSP.DefaultCellStyle = dataGridViewCellStyle8;
             this.TENSP.HeaderText = "Tên sản phẩm";
             this.TENSP.Name = "TENSP";
             this.TENSP.Width = 118;
@@ -761,8 +761,8 @@
             // 
             this.TENLOAI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.TENLOAI.DataPropertyName = "TENLOAI";
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.TENLOAI.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.TENLOAI.DefaultCellStyle = dataGridViewCellStyle9;
             this.TENLOAI.HeaderText = "Loại sản phẩm";
             this.TENLOAI.Name = "TENLOAI";
             this.TENLOAI.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -773,8 +773,8 @@
             // 
             this.KHO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.KHO.DataPropertyName = "IDKHO";
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.KHO.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.KHO.DefaultCellStyle = dataGridViewCellStyle10;
             this.KHO.HeaderText = "Kho";
             this.KHO.Name = "KHO";
             this.KHO.Visible = false;
@@ -782,24 +782,24 @@
             // SOLUONG
             // 
             this.SOLUONG.DataPropertyName = "SOLUONG";
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.SOLUONG.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.SOLUONG.DefaultCellStyle = dataGridViewCellStyle11;
             this.SOLUONG.HeaderText = "Số lượng";
             this.SOLUONG.Name = "SOLUONG";
             // 
             // DONGIA
             // 
             this.DONGIA.DataPropertyName = "DONGIA";
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.DONGIA.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.DONGIA.DefaultCellStyle = dataGridViewCellStyle12;
             this.DONGIA.HeaderText = "Đơn giá";
             this.DONGIA.Name = "DONGIA";
             // 
             // DONVITINH
             // 
             this.DONVITINH.DataPropertyName = "DONVITINH";
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.DONVITINH.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.DONVITINH.DefaultCellStyle = dataGridViewCellStyle13;
             this.DONVITINH.HeaderText = "Đơn vị";
             this.DONVITINH.Items.AddRange(new object[] {
             "VND",
@@ -812,8 +812,8 @@
             // TINHTRANG
             // 
             this.TINHTRANG.DataPropertyName = "TINHTRANG";
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            this.TINHTRANG.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            this.TINHTRANG.DefaultCellStyle = dataGridViewCellStyle14;
             this.TINHTRANG.HeaderText = "Tình trạng";
             this.TINHTRANG.Name = "TINHTRANG";
             this.TINHTRANG.ReadOnly = true;
@@ -1029,8 +1029,7 @@
             // 
             // fmKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -1040,10 +1039,10 @@
             this.Name = "fmKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kho Hàng";
-            this.pnBackground.ResumeLayout(false);
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            this.pnBackground.ResumeLayout(false);
             this.pnMidR.ResumeLayout(false);
             this.pnMidR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWare)).EndInit();

@@ -37,6 +37,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.lbClock = new System.Windows.Forms.Label();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbNhaCC = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pnMidR = new System.Windows.Forms.Panel();
             this.btnSupSave = new Bunifu.Framework.UI.BunifuTileButton();
@@ -52,16 +56,12 @@
             this.DIACHI = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.SODT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.lbClock = new System.Windows.Forms.Label();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbNhaCC = new System.Windows.Forms.Label();
+            this.pnTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.pnMidR.SuspendLayout();
             this.pnMidL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSup)).BeginInit();
-            this.pnTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrClock
@@ -75,6 +75,56 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.pnTop;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // pnTop
+            // 
+            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnTop.Controls.Add(this.lbClock);
+            this.pnTop.Controls.Add(this.btnExit);
+            this.pnTop.Controls.Add(this.lbNhaCC);
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(1080, 100);
+            this.pnTop.TabIndex = 0;
+            // 
+            // lbClock
+            // 
+            this.lbClock.BackColor = System.Drawing.Color.Transparent;
+            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClock.ForeColor = System.Drawing.Color.White;
+            this.lbClock.Location = new System.Drawing.Point(667, 61);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(400, 33);
+            this.lbClock.TabIndex = 13;
+            this.lbClock.Text = "Clock";
+            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(1028, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 2;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lbNhaCC
+            // 
+            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
+            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
+            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
+            this.lbNhaCC.Location = new System.Drawing.Point(10, 0);
+            this.lbNhaCC.Name = "lbNhaCC";
+            this.lbNhaCC.Size = new System.Drawing.Size(829, 94);
+            this.lbNhaCC.TabIndex = 0;
+            this.lbNhaCC.Text = "Nhà Cung Cấp";
             // 
             // bunifuGradientPanel1
             // 
@@ -349,60 +399,9 @@
             this.QGIA.HeaderText = "Quốc gia";
             this.QGIA.Name = "QGIA";
             // 
-            // pnTop
-            // 
-            this.pnTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnTop.Controls.Add(this.lbClock);
-            this.pnTop.Controls.Add(this.btnExit);
-            this.pnTop.Controls.Add(this.lbNhaCC);
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1080, 100);
-            this.pnTop.TabIndex = 0;
-            // 
-            // lbClock
-            // 
-            this.lbClock.BackColor = System.Drawing.Color.Transparent;
-            this.lbClock.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClock.ForeColor = System.Drawing.Color.White;
-            this.lbClock.Location = new System.Drawing.Point(667, 61);
-            this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(400, 33);
-            this.lbClock.TabIndex = 13;
-            this.lbClock.Text = "Clock";
-            this.lbClock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Image = global::QuanLyKhoHang.Properties.Resources.exit;
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1028, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 2;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lbNhaCC
-            // 
-            this.lbNhaCC.BackColor = System.Drawing.Color.Transparent;
-            this.lbNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNhaCC.Font = new System.Drawing.Font("Century Gothic", 59F);
-            this.lbNhaCC.ForeColor = System.Drawing.Color.White;
-            this.lbNhaCC.Location = new System.Drawing.Point(10, 0);
-            this.lbNhaCC.Name = "lbNhaCC";
-            this.lbNhaCC.Size = new System.Drawing.Size(829, 94);
-            this.lbNhaCC.TabIndex = 0;
-            this.lbNhaCC.Text = "Nhà Cung Cấp";
-            // 
             // fmNhaCC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 720);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -412,13 +411,13 @@
             this.Name = "fmNhaCC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà cung cấp";
+            this.pnTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.pnMidR.ResumeLayout(false);
             this.pnMidR.PerformLayout();
             this.pnMidL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSup)).EndInit();
-            this.pnTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
 
         }

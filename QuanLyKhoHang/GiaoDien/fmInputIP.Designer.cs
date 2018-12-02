@@ -57,8 +57,7 @@
             // 
             // fmInputIP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(384, 111);
             this.Controls.Add(this.mtbIP);

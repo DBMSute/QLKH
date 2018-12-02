@@ -157,7 +157,7 @@
             this.btnExit.ActiveFillColor = System.Drawing.Color.Transparent;
             this.btnExit.ActiveForecolor = System.Drawing.Color.White;
             this.btnExit.ActiveLineColor = System.Drawing.Color.White;
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
             this.btnExit.ButtonText = "Thoát";
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -183,7 +183,7 @@
             this.btnLogin.ActiveFillColor = System.Drawing.Color.Transparent;
             this.btnLogin.ActiveForecolor = System.Drawing.Color.White;
             this.btnLogin.ActiveLineColor = System.Drawing.Color.White;
-            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
             this.btnLogin.ButtonText = "Đăng nhập";
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -286,8 +286,7 @@
             // 
             // fmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Teal;
             this.BackgroundImage = global::QuanLyKhoHang.Properties.Resources.background;
